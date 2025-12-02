@@ -34,7 +34,7 @@ a {
 	top: 0px;
 	width: 100%;
 	height: 50px;
-	background: #2b6964;
+	background: #1a202c;
 	z-index: 98;
     display: flex;
     align-items: baseline;
@@ -43,7 +43,7 @@ a {
 }
 #title {
 	font-size: 20px;
-	color: #b0ddce;
+	color: #ffffff;
 	padding: 10px 15px;
 }
 #menu {
@@ -58,7 +58,7 @@ a {
 }
 #menu .menu-item-link{
 	font-size: 12px;
-	color: #b0ddce;
+	color: #ffffff;
 }
 #menu .menu-item-link:hover {
 	border-bottom: 1px solid;
@@ -97,7 +97,7 @@ a {
 	left: -250px;
 	height: 100%;
 	top: 0px;
-	background: #41555d;
+	background: rgba(28, 36, 54, 0.9);
 	z-index: 99;
 }
 #sidebar.on {
@@ -107,14 +107,15 @@ a {
   left: -250px;
 }
 #search-input {
-	position: absolute;
-	width: 230px;
-	height: 35px;
-	margin: 5px 10px 5px 10px;
-	border-radius:5px;
-	background: #3f4448;
-	text-indent: 20px;
-	color: #64cfff;
+    position: absolute;
+    width: 230px;
+    height: 35px;
+    margin: 5px 10px 5px 10px;
+    border-radius: 5px;
+    background: #2d3748;
+    text-indent: 20px;
+    color: #ffffff;
+	border: 1px solid #4a5568;
 }
 .sidebar-toc {
 	position: absolute;
@@ -159,7 +160,7 @@ a {
 	white-space: nowrap;
 }
 #sidebar ul li a {
-	color: #999;
+	color: #e0e0f0;
 	font-size: 14px;
 }
 
@@ -168,8 +169,8 @@ a {
 	border-bottom: 1px solid #ccc;
 }
 #sidebar .active a{
-	color: #9cc7b8;
-	border-bottom: 1px solid #9cc7b8;
+	color: #409EFF;
+	border-bottom: 1px solid #409EFF;
 }
 .article-toc ul li i {
 	color: #999;
@@ -189,7 +190,7 @@ a {
 	margin-left: 60px;
 }
 #sidebar .article-toc a.read{
-	color: #9cc7b8;
+	color: #7e8aa0;
 	border-bottom: 0;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
@@ -205,6 +206,9 @@ a {
 	flex-shrink: 1;
 	flex-basis: 0;
 	margin: 50px auto auto auto;
+}
+body{
+	background-color: #f8f9fa;
 }
 .index-li {
 	margin: 20px 0 0 0;
@@ -401,12 +405,13 @@ figure{
 #footer{
 	font-size: 14px;
 	height: 50px;
-	background-color: #60281e;
-	color: #dfb7b7;
+	background-color: #1a202c;
+	color: #eDe0f0;
 	text-align: center;
+	border: 1px solid #2d3748;
 }
 #footer a {
-    color: #fff;
+    color: #409EFF;
 }
 #footer p {
     padding: 5px;
