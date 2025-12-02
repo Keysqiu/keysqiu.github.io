@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Ubuntu安装Anaconda | 
+	 
+	Keysqiu的小屋
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+<script src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+	
+<script src="/libs/codeBlock/codeCopy.js"></script>
+
+	
+<script src="/libs/codeBlock/codeLang.js"></script>
+
+	
+<script src="/libs/codeBlock/codeShrink.js"></script>
+
+	
+<script src="/libs/codeBlock/clipboard.min.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Keysqiu的小屋</a>
+
+	<ul id="menu">
+    
+      <li class="menu-item">
+        <a href="/about" class="menu-item-link">关于</a>
+      </li>
+    
+
+    
+
+    
+
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/Keysqiu' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Anaconda
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                     
+										    Anaconda的一些见解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2025/11/30/Anaconda/Ubuntu%E5%AE%89%E8%A3%85Anaconda/">
+                     
+										    Ubuntu安装Anaconda
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/conda%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+                     
+										    conda常用指令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/%E5%88%A9%E7%94%A8Anaconda%E5%AE%89%E8%A3%85pytorch%E5%92%8Cpaddle%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83+pycharm%E5%AE%89%E8%A3%85---%E5%85%8D%E9%A2%9D%E5%A4%96%E5%AE%89%E8%A3%85CUDA%E5%92%8Ccudnn%EF%BC%88%E9%80%82%E5%90%88%E5%B0%8F%E7%99%BD%E7%9A%84%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E5%AD%A6%EF%BC%89/">
+                     
+										    利用Anaconda安装pytorch和paddle深度学习环境+pycharm安装---免额外安装CUDA和cudnn（适合小白的保姆级教学）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	Ubuntu安装Anaconda
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Keysqiu</span>
+	<span>2025-11-30 18:19:01</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1>Ubuntu安装Anaconda</h1>
+<h1>1. 下载Anconda安装包</h1>
+<h2 id="1-1-wget命令下载">1.1 wget命令下载</h2>
+<p>**当然还可以去清华大学开源软件镜像站：**​<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/</a>​ <strong>，下载各种版本的Anaconda。</strong><br>
+wget下载命令如下：</p>
+<blockquote>
+<p><strong>我这里下载的是</strong>2024.02-1<strong>版本的</strong></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-c</span> <span class="token string">'https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh'</span> <span class="token parameter variable">-P</span> ~/Downloads --user-agent<span class="token operator">=</span><span class="token string">"Mozilla/5.0 (X11;U;Linux i686;en-US;rv:1.9.0.3) Geco/2008092416 Firefox/3.0.3"</span>
+<span class="token comment"># 下载网站不允许通过非浏览器的方式进行下载，使用代理既可以解决问题，代理的参数为：</span>
+--user-agent<span class="token operator">=</span><span class="token string">"Mozilla/5.0 (X11;U;Linux i686;en-US;rv:1.9.0.3) Geco/2008092416 Firefox/3.0.3"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>【PS：wget的参数-c允许断点继续下载、-P指定下载目录】</p>
+<ul>
+<li>下载结果：</li>
+<li>【<strong>下的过程有点漫长…😩😩😩</strong> 】<br>
+​<img src="assets/Ubuntu%E5%AE%89%E8%A3%85Anaconda_image_0-20251130181901-yr6j8jo.png" alt=""></li>
+</ul>
+<h1>2. 安装Anaconda</h1>
+<h2 id="STEP1：使用bash命令安装Anaconda">STEP1：使用bash命令安装Anaconda</h2>
+<p><em>Control +Alt +T</em> <em><strong><strong>打开新的命令行窗口，使用bash</strong></strong></em>​<em>命令安装Anaconda</em></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/Downloads
+<span class="token function">bash</span> Anaconda3-2024.02-1-Linux-x86_64.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>指令执行结果：<br>
+​<img src="assets/Ubuntu%E5%AE%89%E8%A3%85Anaconda_image_1-20251130181901-q2afh7a.png" alt=""></p>
+<h2 id="STEP2：阅读并接受安装协议">STEP2：阅读并接受安装协议</h2>
+<p><strong>在</strong>​<strong><strong><strong>STEP1</strong></strong></strong>​<strong>中已经执行了安装命令。指令执行结果首先让我们审阅安装协议，这里一直按</strong>​<strong><strong><strong>Enter</strong></strong></strong>​<strong>直到出现 Do you accept the license terms? [yes|no] ，表示协议阅读完毕输入</strong>​**==yes==<strong>​</strong>即可继续安装，如下：**<br>
+​<img src="assets/Ubuntu%E5%AE%89%E8%A3%85Anaconda_image_2-20251130181901-k9suqya.png" alt=""></p>
+<h2 id="STEP3：确认安装位置">STEP3：确认安装位置</h2>
+<p><strong>在STEP2输入yes后会提示确认安装位置，这里按Enter，默认即可，界面如下：</strong><br>
+​<img src="assets/Ubuntu%E5%AE%89%E8%A3%85Anaconda_image_3-20251130181901-nmxrko2.png" alt=""><br>
+<strong>接下来Anaconda就会开始安装。</strong></p>
+<h2 id="STEP4：初始化Anaconda（包含环境变量的设置）">STEP4：初始化Anaconda（包含环境变量的设置）</h2>
+<p><strong>执行完</strong>​<strong><strong><strong>STEP3</strong></strong></strong>​<strong>Anaconda在Ubuntu系统里面的安装基本完毕了，但是还需要最后一步</strong> <strong><strong><strong>初始化Anaconda</strong></strong></strong>​ <strong>，这一步只需要根据提示输入yes即可，界面如下：</strong><br>
+​<img src="assets/Ubuntu%E5%AE%89%E8%A3%85Anaconda_image_4-20251130181901-cuvc507.png" alt=""><br>
+<strong>如果出现以下界面，那么恭喜你已经成功在Ubuntu系统里面安装上Anaconda啦，鼓掌撒花👏👏🎉🎉~，那么接下来就是进一步的学习和使用了。</strong><br>
+​<img src="assets/Ubuntu%E5%AE%89%E8%A3%85Anaconda_image_5-20251130181901-nurqqgs.png" alt=""></p>
+<p>**参见另一篇笔记：**​<a href="conda%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4.md">conda常用指令</a></p>
+<h1>4.可能出现的问题</h1>
+<p>====<br>
+<img src="assets/Ubuntu%E5%AE%89%E8%A3%85Anaconda_image_6-20251130181901-0fk3pom.png" alt=""><br>
+<strong>两种解决办法：</strong></p>
+<ol>
+<li>安装在当前用户目录下的情况只需要将Anconda3的安装地址添加进PATH即可。首先打开 <strong><strong>~/.bashrc</strong></strong>，然后在将<strong><strong>export PATH=$PATH:/home/USERNAME/anaconda3/bin</strong></strong>添加到末尾，最后更新一下 <strong><strong>~/.bashrc</strong></strong>。依次执行下面代码。</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gedit ~/.bashrc
+<span class="token comment"># 注意这里的USERNAME需要切换成自己的用户名</span>
+<span class="token builtin class-name">export</span>  <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/home/<span class="token punctuation">[</span>USERNAME<span class="token punctuation">]</span>/anaconda3/bin
+<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>安装Anconda3时使用了sudo权限，则以后需要运行conda则需要进入root用户才行，否则也会弹出<strong><strong>conda: command not found</strong></strong>错误！</li>
+</ol>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Anaconda的一些见解
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2025/11/30/Anaconda/conda%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+                conda常用指令
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+	</div>
+	<div id="footer">
+	<span>Copyright @ 2025 - 现在 邱庆胜 All Rights Reserved</span>
+	<p>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		Anaconda的一些见解 | 
 	 
 	Keysqiu的小屋
 	</title>
@@ -145,7 +147,7 @@
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
                      
 										    Anaconda的一些见解
@@ -198,113 +200,92 @@
 
 	<!-- 引入正文 -->
 	<div id="content" class="content">
-		<div id="index">
+		<h1 id="article-title">
+	Anaconda的一些见解
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
 	
-		<div class="index-li">
-			<a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
-				<h2 class="index-title">
-					Anaconda的一些见解
-				</h2>
-				<div class="index-brief">
-					Anaconda的一些见解
-① 和PyCharm一样，就是给每一个项目创建一个独立的虚拟环境，防止​**==包污染事件==​发生**
-查看电脑显卡最高支持的CUDA版本
-nvidia-smi
-查看已存在的虚拟环境
-conda env list
-创建虚拟环境
-conda create -n 环境名字（
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Anaconda/Ubuntu%E5%AE%89%E8%A3%85Anaconda/">
-				<h2 class="index-title">
-					Ubuntu安装Anaconda
-				</h2>
-				<div class="index-brief">
-					Ubuntu安装Anaconda
-1. 下载Anconda安装包
-1.1 wget命令下载
-**当然还可以去清华大学开源软件镜像站：**​https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/​ ，下载各种版本的Anaconda。
-wget下载命
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Anaconda/conda%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
-				<h2 class="index-title">
-					conda常用指令
-				</h2>
-				<div class="index-brief">
-					conda常用指令
-一、conda基础命令
-① 查看conda帮助信息
-conda --help
-# 或者：
-conda -h
-② 查看conda版本
-conda --version
-③ 更新conda
-conda update conda
-④ 降级conda版本
-conda install -n 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Anaconda/%E5%88%A9%E7%94%A8Anaconda%E5%AE%89%E8%A3%85pytorch%E5%92%8Cpaddle%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83+pycharm%E5%AE%89%E8%A3%85---%E5%85%8D%E9%A2%9D%E5%A4%96%E5%AE%89%E8%A3%85CUDA%E5%92%8Ccudnn%EF%BC%88%E9%80%82%E5%90%88%E5%B0%8F%E7%99%BD%E7%9A%84%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E5%AD%A6%EF%BC%89/">
-				<h2 class="index-title">
-					利用Anaconda安装pytorch和paddle深度学习环境+pycharm安装---免额外安装CUDA和cudnn（适合小白的保姆级教学）
-				</h2>
-				<div class="index-brief">
-					利用Anaconda安装pytorch和paddle深度学习环境+pycharm安装—免额外安装CUDA和cudnn（适合小白的保姆级教学）
-一、英伟达驱动安装与更新
-二、Anaconda 的安装
-三、Pytorch环境安装
-四、paddlepaddle环境安装
-五、pycharm安装–验证CUDA
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
+
+	<span>Keysqiu</span>
+	<span>2025-11-30 18:19:01</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
 </div>
 
+<!-- content -->
+<div id="article-content">
+	<h1>Anaconda的一些见解</h1>
+<p><strong>① 和PyCharm一样，就是给每一个项目创建一个独立的虚拟环境，防止</strong>​**==包污染事件==<strong>​</strong>发生**</p>
+<p><strong>查看电脑显卡最高支持的CUDA版本</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">nvidia-smi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>查看已存在的虚拟环境</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">conda env list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>创建虚拟环境</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">conda create -n 环境名字（英文） python&#x3D;x.x（python版本）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>进入虚拟环境</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">conda activate 虚拟环境名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>清华源</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;main&#x2F;
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;conda-forge 
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;msys2&#x2F;
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;pytorch&#x2F;
+conda config --set show_channel_urls yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2025/11/30/Anaconda/Ubuntu%E5%AE%89%E8%A3%85Anaconda/">
+                Ubuntu安装Anaconda
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 	</div>
 	<div id="footer">
 	<span>Copyright @ 2025 - 现在 邱庆胜 All Rights Reserved</span>
