@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Ubuntu中安装qt-ros-opencv | 
+	 
+	Keysqiu的小屋
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+<script src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+	
+<script src="/libs/codeBlock/codeCopy.js"></script>
+
+	
+<script src="/libs/codeBlock/codeLang.js"></script>
+
+	
+<script src="/libs/codeBlock/codeShrink.js"></script>
+
+	
+<script src="/libs/codeBlock/clipboard.min.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Keysqiu的小屋</a>
+
+	<ul id="menu">
+    
+      <li class="menu-item">
+        <a href="/about" class="menu-item-link">关于</a>
+      </li>
+    
+
+    
+
+    
+
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/Keysqiu' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Anaconda
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                     
+										    Anaconda的一些见解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/Ubuntu%E5%AE%89%E8%A3%85Anaconda/">
+                     
+										    Ubuntu安装Anaconda
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/conda%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+                     
+										    conda常用指令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/%E5%88%A9%E7%94%A8Anaconda%E5%AE%89%E8%A3%85pytorch%E5%92%8Cpaddle%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83+pycharm%E5%AE%89%E8%A3%85---%E5%85%8D%E9%A2%9D%E5%A4%96%E5%AE%89%E8%A3%85CUDA%E5%92%8Ccudnn%EF%BC%88%E9%80%82%E5%90%88%E5%B0%8F%E7%99%BD%E7%9A%84%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E5%AD%A6%EF%BC%89/">
+                     
+										    利用Anaconda安装pytorch和paddle深度学习环境+pycharm安装---免额外安装CUDA和cudnn（适合小白的保姆级教学）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										C++
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/C++/C++%E5%8A%A8%E6%80%81%E5%BC%80%E8%BE%9F%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/">
+                     
+										    C++动态开辟二维数组
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										C语言
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/C%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80%E9%80%BB%E8%BE%91%E7%9F%AD%E8%B7%AF/">
+                     
+										    C语言逻辑短路
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										EDA
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/EDA/EDA%E7%94%BB%E5%9B%BE/">
+                     
+										    EDA画图
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Git
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Git/Git%E5%AE%89%E8%A3%85/">
+                     
+										    Git安装
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Git/git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
+                     
+										    git常用操作
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Git/git%E6%8F%90%E4%BA%A4%E5%88%B0%E4%BB%93%E5%BA%93%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8D%E8%83%BD%E7%82%B9%E5%87%BB/">
+                     
+										    git提交到仓库的文件夹不能点击
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Go
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Go/Go%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E6%97%B6%EF%BC%8C%E5%87%BA%E7%8E%B0%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98/">
+                     
+										    Go下载插件时，出现网络代理问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Go/Go%E5%AD%A6%E4%B9%A0/">
+                     
+										    Go学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										IDEA
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/IDEA%20%E5%89%8D%E8%BF%9B%20%E5%90%8E%E9%80%80%20%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%B7%A5%E5%85%B7%E6%A0%8F/">
+                     
+										    IDEA 前进 后退 添加到工具栏
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20f%20%E6%97%A0%E6%95%88/">
+                     
+										    IDEA的ctrl alt f 无效
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20v%20%E6%97%A0%E6%95%88/">
+                     
+										    IDEA的ctrl alt v 无效
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/%E5%A6%82%E4%BD%95%E6%8A%8AIDEA%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%8F%E8%B0%83%E8%87%B3%E5%B7%A6%E4%BE%A7%E6%98%BE%E7%A4%BA/">
+                     
+										    如何把IDEA的工具栏调至左侧显示
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/%E5%AF%B9%E7%BC%96%E7%A8%8BIDE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                     
+										    对编程IDE使用的一些见解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Java
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/IDEA%20%E9%9B%86%E6%88%90JavaFX/">
+                     
+										    IDEA 集成JavaFX
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/Java%20%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E6%8A%9B%E5%BC%82%E5%B8%B8%E5%BE%80%E8%BF%99%E7%9C%8B/">
+                     
+										    Java 莫名其妙抛异常往这看
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                     
+										    JavaWeb学习笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/SpringBoot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
+                     
+										    SpringBoot解决跨域问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/Spring%E5%AD%A6%E4%B9%A0/">
+                     
+										    Spring学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/">
+                     
+										    个人博客部署
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/">
+                     
+										    如何下载MySQL的JDBC驱动包并导入IDEA中
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Jekyll
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Jekyll/%E4%BD%BF%E7%94%A8Jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
+                     
+										    使用Jekyll搭建博客，并绑定域名
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MySQL
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE/">
+                     
+										    MySQL 防止被爬走数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
+                     
+										    MySQL插入数据时，自动获取当前时间写入表中
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
+                     
+										    MySQL笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
+                     
+										    mysql常用的聚合函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
+                     
+										    mysql连接详解（内外连接，左右连接）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+                     
+										    数据库中ID从一个很奇怪的数开始
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										配环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/">
+                     
+										    Windows下MySQL数据库安装（详细）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										OpenCV
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/OpenCV/Windows%E4%B8%8B%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83/">
+                     
+										    Windows下配置opencv环境
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										PS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/PS/PS%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C/">
+                     
+										    PS的一些常规操作
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Python
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/Python%E2%80%94TTS%EF%BC%88%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%EF%BC%89/">
+                     
+										    Python—TTS（文本转语音）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
+                     
+										    Python学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										配环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
+                     
+										    ERROR Could not build wheels for XXX, which is required to install pyprojec
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
+                     
+										    Python安装requirements文件里的软件包时报错
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
+                     
+										    Python安装软件包的一些总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+                     
+										    Python环境安装与配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%20%E4%B8%8B%20python%20%E7%89%88%E6%9C%AC%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2/">
+                     
+										    Windows 下 python 版本快速切换
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ubuntu%E5%8D%87%E7%BA%A7python%E5%88%B0python3.11/">
+                     
+										    ubuntu升级python到python3.11
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+                     
+										    内层包报ModuleNotFoundError
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%9C%A8%E4%BB%BB%E6%84%8F%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%88%9B%E5%BB%BAPython%E7%8E%AF%E5%A2%83/">
+                     
+										    在任意目录下创建Python环境
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+                     
+										    外层包报ModuleNotFoundError
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Qt
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+                     
+										    Qt 网络编程经验总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0/">
+                     
+										    Qt修改项目名称
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E5%AD%A6%E4%B9%A0/">
+                     
+										    Qt学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                     
+										    Qt开发过程中的一些解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
+                     
+										    Qt打包发布
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ROS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/RM%E5%AF%BC%E8%88%AA/">
+                     
+										    RM导航
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2025/11/30/ROS/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv/">
+                     
+										    Ubuntu中安装qt-ros-opencv
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E5%AD%A6%E4%B9%A0/">
+                     
+										    ros学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
+                     
+										    ros的HelloWorld案例
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+                     
+										    ros通信机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
+                     
+										    ros配置launch文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
+                     
+										    安装ros
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+                     
+										    用VSCode实现HelloWorld案例
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										RabbitMQ
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                     
+										    环境配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Redis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
+                     
+										    Linux上安装Redis
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                     
+										    Redis常用命令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                     
+										    Redis的一些见解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+                     
+										    Window下Redis的安装和部署详细教程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	Ubuntu中安装qt-ros-opencv
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Keysqiu</span>
+	<span>2025-11-30 18:19:01</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1>Ubuntu中安装qt-ros-opencv</h1>
+<blockquote>
+<p><strong>测试项目demo</strong></p>
+</blockquote>
+<p><a href="assets/catkin_csdn-20251130181901-75m9dau.zip">catkin_csdn.zip</a></p>
+<h1>一、先在小鱼下安装ros</h1>
+<pre class="line-numbers language-none"><code class="language-none">wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishros<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>根据提示一步一步下载即可，大佬就是大佬！！！（版本下载 ros1）</strong></p>
+<h1>二、安装插件</h1>
+<h2 id="背景">背景</h2>
+<p><strong>项目中需要开发与ROS生态和点云可视化相关的图形界面程序（例如开发一个实时接收雷达ros点云话题并显示的例程），经过调研发现在ubuntu上使用Qt是一个比较好的选择。这里对开发环境的配置过程进行记录，供大家参考。</strong><br>
+<strong>环境：ubuntu20.04，ROS noetic</strong></p>
+<h2 id="搭建流程">搭建流程</h2>
+<h3 id="1-ROS的安装会附带很多我们本次环境搭建中需要的包，例如cmake、qt5、pcl、vtk，因此直接安装ros是一个方便的选择，就不需要再单独下载这些东西了。"><strong>1.ROS的安装会附带很多我们本次环境搭建中需要的包，例如cmake、qt5、pcl、vtk，因此直接安装ros是一个方便的选择，就不需要再单独下载这些东西了。</strong></h3>
+<h3 id="2-安装带ros插件的Qt5版本"><strong>2.安装带ros插件的Qt5版本</strong></h3>
+<p><strong>ros-qt-plugin是一个可以将ros开发逻辑导入到Qt中的Qt插件，有了这个插件，使用Qt进行ros开发会方便很多。Qt官方的版本是不能向里面添加插件的，这里需要下载能添加插件的Qt5版本。首先到其github进行下载：</strong></p>
+<p><strong>这里我下载的版本为0.4.3，因为从0.5开始使用的就是Qt6，而经测试Qt6不支持QVTK控件的导入。如下图所示，下载</strong>​<strong><strong><strong>ROSProjectManager-0.4.1-Linux-x86_64.zip</strong></strong></strong>​<strong>和Source code(tar.gz)两个文件。其中Source code(tar.gz)是Qt软件安装包，ROSProjectManager-0.4.1-Linux-x86_64.zip是Qt的ros插件。（下面有安装包）</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_0-20251130181901-z4qdtxu.png" alt=""><br>
+<strong>安装包：</strong><br>
+<a href="assets/ros_qtc_plugin-0.4.3.tar-20251130181901-gvouon3.gz">ros_qtc_plugin-0.4.3.tar.gz</a><br>
+<a href="assets/rosprojectmanager-0.4.1-linux-x86_64-20251130181901-ebwqcib.zip">rosprojectmanager-0.4.1-linux-x86_64.zip</a></p>
+<p><strong>下载完毕后解压，打开Source code(tar.gz)解压后的目录，在终端输入下述指令，进行安装。首先在根目录下建立Qt-ros文件夹作为安装路径，然后开始安装：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ~/Qt-ros
+python3 setup.py <span class="token parameter variable">--install_path</span> ~/Qt-ros<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>安装完毕后，打开刚安装好的Qt：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/Qt-ros/Tools/QtCreator/bin
+./qtcreator<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>点击菜单栏的帮助-&gt;About Qt Creator，可以看到我们安装了Qt5.15版本：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_1-20251130181901-l75klwm.png" alt=""><br>
+<strong>然后安装ros插件。点击</strong>​<strong><strong><strong>帮助</strong></strong></strong>​ <strong>-&gt;<strong>​</strong></strong><strong>关于插件</strong><strong><strong>​ <strong>，在弹出的窗口中选择“Install Plugin”，如下图所示：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_2-20251130181901-kjroqd3.png" alt=""><br>
+<strong>指定插件的路径为刚才下载的</strong>​</strong></strong><strong>ROSProjectManager-0.4.1-Linux-x86_64.zip</strong><strong><strong>​</strong>文件的路径，下一步，进行确认。</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_3-20251130181901-oot9s4j.png" alt=""><br>
+<strong>安装位置可以选择Qt Creator的安装路径，便于对不同的Qt版本进行管理：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_4-20251130181901-4ca1dah.png" alt=""><br>
+<strong>完成后重启Qt，进入关于插件，搜索ROS检查插件的开启情况：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_5-20251130181901-1eicqrf.png" alt=""><br>
+<strong>这里看到插件已经成功安装（这里若安装失败可见文末的解决办法）<strong>​ <strong><strong><strong>，点击</strong></strong></strong>​</strong>菜单-&gt;<strong>​</strong></strong><strong>文件</strong><strong><strong>​ <strong>-&gt;<strong>​</strong></strong></strong>新建文件或项目</strong><strong><strong>​ <strong>，在“<strong>​</strong></strong></strong>其他项目</strong><strong><strong>​ <strong>”中就可以找到</strong>​</strong></strong><strong>ROS Workspace</strong><strong><strong>​</strong>的选项，点击</strong>​<strong><strong><strong>choose</strong></strong></strong>​ <strong>：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_6-20251130181901-m3vxdza.png" alt=""><br>
+<strong>这里参考了官方的教程</strong>​<a target="_blank" rel="noopener" href="https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html">https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html</a>​ <strong>，新建一个ros工作空间，输入name，构建系统选择为CatkinMake，指定工作空间路径，我的指定为根目录下新建的</strong>​<strong><strong><strong>catkin_csdn</strong></strong></strong>​<strong>文件夹：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_7-20251130181901-a1tpnqb.png" alt=""><br>
+完成后建立了一个空的工作空间：<br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_8-20251130181901-7jh3uc2.png" alt=""><br>
+<strong>这时需要我们手动建立该工作空间的文件结构：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/catkin_csdn
+<span class="token function">mkdir</span> src
+catkin_make<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>完成后重新打开Qt（如果系统中有多个Qt的版本，注意要打开本次安装的Qt）<strong>​ <strong><strong>，可以在Projects文字的下方打开刚才的ros项目（我的是catkin_csdn）：</strong></strong> <img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_9-20251130181901-oe6douw.png" alt=""><strong><strong><strong>可以看到这时候文件的结构发生了变化：</strong></strong></strong> <img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_10-20251130181901-uzm0au9.png" alt=""><strong><strong>右键点击</strong></strong>​</strong>src，选择</strong>​<strong><strong>Add New</strong></strong>​ <strong>，选择</strong>​<strong><strong>Package</strong></strong>​<strong>添加一个ros包：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_11-20251130181901-39pe2d1.png" alt=""><br>
+<strong>输入包名，依赖中的Catkin中填入roscpp，导入基本的roscpp代码包：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_12-20251130181901-exo4n92.png" alt=""><br>
+<strong>到这里就使用Qt成功创建了一个ros包，可以在Qt中直接进行工作空间的编译了。此时的文件结构：</strong><br>
+​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_13-20251130181901-pkhkhlc.png" alt=""></p>
+<h3 id="3-向Qt-Designer中加入QVTK控件">3.向Qt Designer中加入QVTK控件</h3>
+<p><strong>Qt窗体开发本身并不自带QVTK控件，需要向Qt的特定安装路径自行加入一个QVTK的库文件</strong><br>
+<strong>安装包为：</strong><br>
+<a href="assets/libqvtkwidgetplugin-20251130181901-b5w68qn.so">libqvtkwidgetplugin.so</a><br>
+<strong>下载</strong>​<strong><strong><strong><a target="_blank" rel="noopener" href="http://libQVTKWidgetPlugin.so">libQVTKWidgetPlugin.so</a></strong></strong></strong>​<strong>文件，将其复制到</strong>​ <strong><strong><strong>~/Qt-ros/Tools/QtCreator/lib/Qt/plugins/designer</strong></strong></strong>​<strong>目录下，完成后可以</strong>​<strong><strong><strong>重新打开Qt</strong></strong></strong>​ <strong>，新建一个窗体工程，选择mainwindow.ui进入Qt Desinger界面：</strong><br>
+<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_14-20251130181901-8f1b5th.png" alt=""><br>
+<strong>可以看到控件列表最下方新增了一个QVTKWidget控件，就说明QVTK控件添加成功了。</strong><br>
+<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_15-20251130181901-xanppld.png" alt=""></p>
+<h3 id="4-创建Qt窗体工程并导入依赖">4.创建Qt窗体工程并导入依赖</h3>
+<p><strong>为了方便，需要使用cmake接管Qt窗体工程，并把Qt窗体工程的文件作为ros开发逻辑的一部分。这里仍然参照Qt官网的cmake教程进行操作：打开刚才安装的Qt，<strong>​</strong></strong><strong>点击new project创建一个Qt Widgets Application（Qt窗体项目），使用默认选项，记住项目创建的路径。然后退出Qt，将刚才项目路径文件夹下自动生成的所有文件拷贝到刚才我们创建的ros包的src文件夹下</strong><strong><strong>​ <strong>，因为要使用cmake管理项目，故可删除无用的csdn.pro和csdn.pro.user文件。也就是</strong>​</strong></strong><strong>拷贝下面四个文件到src下</strong>****​ <strong>：</strong><br>
+<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_16-20251130181901-3crp82i.png" alt=""><br>
+<strong>此时catkin_csdn工作空间的目录结构如下所示：</strong><br>
+<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_17-20251130181901-igdc0qe.png" alt=""><br>
+<strong>更改与src同级的包CMakeLists.txt文件为：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">cmake_minimum_required(VERSION 3.0.2)
+project(test)
+## Compile as C++11, supported in ROS Kinetic and newer
+# add_compile_options(-std&#x3D;c++11)
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+)
+catkin_package()
+#some qt5-camke setting
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+#load Qt5 include and lib path variables
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+#load PCL and VTK include and lib path variables
+find_package(PCL REQUIRED)
+find_package(VTK REQUIRED)
+#note: &lt;pcl&gt; has included the &lt;vtk&gt;, so we just need to set the &lt;pcl&gt;&#39;s include and lib path for project
+include_directories($&#123;PCL_INCLUDE_DIRS&#125;) #set the .h search path for &lt;pcl&gt; and &lt;vtk&gt;
+link_directories($&#123;PCL_LIBRARY_DIRS&#125;) #set the lib search path for &lt;pcl&gt; and &lt;vtk&gt;
+add_definitions($&#123;PCL_DEFINITIONS&#125;)
+add_executable(test1
+    src&#x2F;mainwindow.ui
+    src&#x2F;mainwindow.cpp
+    src&#x2F;main.cpp
+)
+target_link_libraries(test1 Qt5::Widgets $&#123;VTK_LIBRARIES&#125; $&#123;PCL_LIBRARIES&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em><strong>其中，set(CMAKE_AUTOMOC ON)、set(CMAKE_AUTORCC ON)和set(CMAKE_AUTOUIC ON)指定了cmake接管Qt窗体工程的窗体构建逻辑，find_package(Qt5 COMPONENTS Widgets REQUIRED)引入了Qt5库，find_package(PCL REQUIRED)和find_package(VTK REQUIRED)显式引入了PCL和VTK，由于在安装ROS时它们都会被附带安装，因此在这里均能被找到。</strong></em><br>
+<strong>修改后点击锤子进行编译，编译成功后将会在~/catkin_csdn/devel/lib/test目录下生成test1可执行文件，运行：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/catkin_csdn/devel/lib/test
+./test1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>运行后若窗体正确弹出，说明至此环境配置成功，可以在此工程中调用ros库、pcl库和vtk库，并可使用QVTKWidget实现一些显示功能。</strong></p>
+<h1>一些常见问题的解决方案</h1>
+<h2 id="1-Qt安装ros插件时提示安装失败">1.Qt安装ros插件时提示安装失败</h2>
+<p><strong>我在安装插件的时候遇到了这样的问题，在安装完成后重启Qt，提示：</strong><br>
+<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_18-20251130181901-lfvz0a8.png" alt=""><br>
+<strong>这是由于插件的安装缺少了一个叫做libqtermwidget5.so.1的库文件</strong><br>
+<strong>安装包：</strong><br>
+<a href="assets/libqtermwidget5.so-20251130181901-slwm7j9.0">libqtermwidget5.so.0</a><br>
+<strong>下载后将libqtermwidget5.so.0文件复制到与libROSProjectManager.so同级目录下即可。</strong></p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2025/11/30/Java/IDEA%20%E9%9B%86%E6%88%90JavaFX/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  IDEA 集成JavaFX
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+                ros通信机制
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+	</div>
+	<div id="footer">
+	<span>Copyright @ 2025 - 现在 邱庆胜 All Rights Reserved</span>
+	<p>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
