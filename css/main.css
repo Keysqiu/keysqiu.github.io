@@ -12,6 +12,9 @@ a {
     color: #069;
     text-decoration: none;
 }
+a:hover {
+    color: #1A202C;
+}
 .content-on{
 	padding: 14px 14px 14px 250px
 }
@@ -254,7 +257,8 @@ body{
 #index-paginator .extend:hover,
 #index-paginator .page-number:hover {
   color: #fff !important;
-  background-color: #21a675 !important;
+  background-color: #4CAF50 !important;
+  border: #555 !important;
 }
 #index-paginator .extend,
 #index-paginator .page-number {
@@ -266,8 +270,8 @@ body{
   margin: 0.3rem;
   font-size: 0.9rem;
   border-radius: 5px;
-  color: #0c0807;
-  background-color: #e0eee8;
+  color: white;
+  background-color: #3a3a3a;
   transition: all 0.2s;
 }
 /* article */
@@ -376,6 +380,12 @@ figure{
 	justify-content: space-between;
 	padding: 1rem 0;
 	border-bottom: 1px solid #ddd;
+}
+.space{
+	color: #999; /* 更浅的灰色，表示不可点击 */
+    background: transparent; /* 无背景 */
+    border: none; /* 无边框 */
+    cursor: default; /* 默认光标，表明不可点击 */
 }
 .post-guide .item {
 	width: 50%;
@@ -560,4 +570,54 @@ code[class*="language-"],
 pre[class*="language-"] {
     color: #e8eaf6;
     white-space: pre-wrap !important;
+}
+
+/* 全局滚动条样式 - 适用于所有元素 */
+::-webkit-scrollbar {
+    width: 8px; /* 滚动条宽度 */
+    height: 8px;
+}
+
+/* 滚动条轨道 - 背景颜色 */
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+}
+
+/* 滚动条滑块 - 滚动条本身 */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.6); /* 深灰半透明 */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* 滚动条悬停效果 */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(100, 100, 100, 0.8);
+}
+
+/* 针对侧边栏：更暗一些 */
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.5);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(150, 150, 150, 0.7);
+}
+
+/* 主内容区：更浅，避免突兀 */
+.main-content::-webkit-scrollbar-thumb {
+    background-color: rgba(180, 180, 180, 0.4);
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(180, 180, 180, 0.6);
+}
+
+/* 可选：隐藏滚动条，鼠标悬停时显示 */
+.main-content::-webkit-scrollbar {
+    display: none;
+}
+.main-content:hover::-webkit-scrollbar {
+    display: block;
 }
