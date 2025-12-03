@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		docker安装各种组件 | 
+	 
+	Keysqiu的小屋
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+<script src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+	
+<script src="/libs/codeBlock/codeCopy.js"></script>
+
+	
+<script src="/libs/codeBlock/codeLang.js"></script>
+
+	
+<script src="/libs/codeBlock/codeShrink.js"></script>
+
+	
+<script src="/libs/codeBlock/clipboard.min.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Keysqiu的小屋</a>
+
+	<ul id="menu">
+    
+      <li class="menu-item">
+        <a href="/about" class="menu-item-link">关于</a>
+      </li>
+    
+
+    
+
+    
+
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/Keysqiu' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										1运维
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/CentOS7%20%E5%AE%89%E8%A3%85Anaconda/">
+                     
+										    CentOS7 安装Anaconda
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Centos7%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/">
+                     
+										    Centos7防火墙设置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Jenkins%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%9E%84%E5%BB%BAmaven%E9%A1%B9%E7%9B%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                     
+										    Jenkins创建任务没有构建maven项目解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
+                     
+										    Linux关闭占用指定端口的进程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Springboot%E9%A1%B9%E7%9B%AE/">
+                     
+										    Linux安装Jenkins自动化部署Springboot项目
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85Nginx/">
+                     
+										    Linux安装Nginx
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85docker/">
+                     
+										    Linux安装docker
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85jdk/">
+                     
+										    Linux安装jdk
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85maven%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/">
+                     
+										    Linux安装maven指定版本
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                     
+										    Linux常用命令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/My-%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                     
+										    My-定时备份服务器MySQL数据库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
+                     
+										    MySQL数据库定时备份
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Python%E5%85%8D%E8%B4%B9%E6%97%A0%E9%99%90%E5%88%B6%E8%B0%83%E7%94%A8%E5%9B%BD%E4%BA%A7GPT%EF%BC%8C%E6%98%9F%E7%81%AB%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%81%9A%E6%88%91%E7%9A%84AI%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%81%9A%E7%BE%A4%E5%86%85AI%E6%98%BE%E7%9C%BC%E5%8C%85/">
+                     
+										    Python免费无限制调用国产GPT，星火大模型做我的AI助手，做群内AI显眼包
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/SpringBoot%E5%92%8CVue2%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2https%E5%8D%8F%E8%AE%AE/">
+                     
+										    SpringBoot和Vue2项目部署https协议
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Ubuntu22.04%E5%AE%89%E8%A3%85Jenkins%EF%BC%88JDK11%E7%89%88%EF%BC%89/">
+                     
+										    Ubuntu22.04安装Jenkins（JDK11版）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%A9%E7%94%A8gparted%E9%87%8D%E6%96%B0%E8%B0%83%E6%95%B4%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F/">
+                     
+										    Ubuntu虚拟机利用gparted重新调整磁盘大小
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Windows%20%E5%AE%89%E8%A3%85docker/">
+                     
+										    Windows 安装docker
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+                     
+										    Window下Redis的安装和部署详细教程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/bad%20interpreter,No%20such%20file%20or%20directory/">
+                     
+										    bad interpreter,No such file or directory
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6/">
+                     
+										    docker安装各种组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E7%9A%84%E6%91%B8%E7%B4%A2%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%A6%88%E7%9A%84%EF%BC%89/">
+                     
+										    docker的摸索之路（妈的）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/nomachine%E4%BD%BF%E7%94%A8/">
+                     
+										    nomachine使用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/ubuntu%E4%B8%8Bmake%E3%80%81cmake%E5%8F%8Aopencv%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B/">
+                     
+										    ubuntu下make、cmake及opencv版本查看
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E4%BB%A3%E7%A0%81%E5%8F%98%E5%8A%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E9%87%8D%E6%96%B0%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF/">
+                     
+										    代码变动，如何重新上传到服务器端
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E4%BD%BF%E7%94%A8CMD%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8CVue%E9%A1%B9%E7%9B%AE/">
+                     
+										    使用CMD命令行运行Vue项目
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E5%AE%9E%E7%8E%B0Ubuntu%E4%B8%8EWindows%E4%B9%8B%E9%97%B4%E7%9A%84%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/">
+                     
+										    实现Ubuntu与Windows之间的复制粘贴
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E5%BE%AE%E4%BF%A1%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%9C%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%EF%BC%9F%E6%B6%88%E6%81%AF%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%EF%BC%8CDocker%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E3%80%82%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">
+                     
+										    微信机器人运行在Linux服务器上？消息自动回复，Docker一键部署。详细安装使用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/">
+                     
+										    服务器和客户端通信总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%EF%BC%88Centos%EF%BC%89/">
+                     
+										    脚本自动化部署springboot（Centos）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%AE%9A%E4%B9%89/">
+                     
+										    跨域的定义
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Anaconda
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                     
+										    Anaconda的一些见解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/Ubuntu%E5%AE%89%E8%A3%85Anaconda/">
+                     
+										    Ubuntu安装Anaconda
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/conda%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+                     
+										    conda常用指令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Anaconda/%E5%88%A9%E7%94%A8Anaconda%E5%AE%89%E8%A3%85pytorch%E5%92%8Cpaddle%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83+pycharm%E5%AE%89%E8%A3%85---%E5%85%8D%E9%A2%9D%E5%A4%96%E5%AE%89%E8%A3%85CUDA%E5%92%8Ccudnn%EF%BC%88%E9%80%82%E5%90%88%E5%B0%8F%E7%99%BD%E7%9A%84%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E5%AD%A6%EF%BC%89/">
+                     
+										    利用Anaconda安装pytorch和paddle深度学习环境+pycharm安装---免额外安装CUDA和cudnn（适合小白的保姆级教学）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										C++
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/C++/C++%E5%8A%A8%E6%80%81%E5%BC%80%E8%BE%9F%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/">
+                     
+										    C++动态开辟二维数组
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										C语言
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/C%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80%E9%80%BB%E8%BE%91%E7%9F%AD%E8%B7%AF/">
+                     
+										    C语言逻辑短路
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										EDA
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/EDA/EDA%E7%94%BB%E5%9B%BE/">
+                     
+										    EDA画图
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Git
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Git/Git%E5%AE%89%E8%A3%85/">
+                     
+										    Git安装
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Git/git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
+                     
+										    git常用操作
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Git/git%E6%8F%90%E4%BA%A4%E5%88%B0%E4%BB%93%E5%BA%93%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8D%E8%83%BD%E7%82%B9%E5%87%BB/">
+                     
+										    git提交到仓库的文件夹不能点击
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Go
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Go/Go%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E6%97%B6%EF%BC%8C%E5%87%BA%E7%8E%B0%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98/">
+                     
+										    Go下载插件时，出现网络代理问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Go/Go%E5%AD%A6%E4%B9%A0/">
+                     
+										    Go学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										IDEA
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/IDEA%20%E5%89%8D%E8%BF%9B%20%E5%90%8E%E9%80%80%20%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%B7%A5%E5%85%B7%E6%A0%8F/">
+                     
+										    IDEA 前进 后退 添加到工具栏
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20f%20%E6%97%A0%E6%95%88/">
+                     
+										    IDEA的ctrl alt f 无效
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20v%20%E6%97%A0%E6%95%88/">
+                     
+										    IDEA的ctrl alt v 无效
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/%E5%A6%82%E4%BD%95%E6%8A%8AIDEA%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%8F%E8%B0%83%E8%87%B3%E5%B7%A6%E4%BE%A7%E6%98%BE%E7%A4%BA/">
+                     
+										    如何把IDEA的工具栏调至左侧显示
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/IDEA/%E5%AF%B9%E7%BC%96%E7%A8%8BIDE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                     
+										    对编程IDE使用的一些见解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Java
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/IDEA%20%E9%9B%86%E6%88%90JavaFX/">
+                     
+										    IDEA 集成JavaFX
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/Java%20%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E6%8A%9B%E5%BC%82%E5%B8%B8%E5%BE%80%E8%BF%99%E7%9C%8B/">
+                     
+										    Java 莫名其妙抛异常往这看
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                     
+										    JavaWeb学习笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/SpringBoot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
+                     
+										    SpringBoot解决跨域问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/Spring%E5%AD%A6%E4%B9%A0/">
+                     
+										    Spring学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/">
+                     
+										    个人博客部署
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/">
+                     
+										    如何下载MySQL的JDBC驱动包并导入IDEA中
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Jekyll
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Jekyll/%E4%BD%BF%E7%94%A8Jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
+                     
+										    使用Jekyll搭建博客，并绑定域名
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MySQL
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE/">
+                     
+										    MySQL 防止被爬走数据
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
+                     
+										    MySQL插入数据时，自动获取当前时间写入表中
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
+                     
+										    MySQL笔记
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
+                     
+										    mysql常用的聚合函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
+                     
+										    mysql连接详解（内外连接，左右连接）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+                     
+										    数据库中ID从一个很奇怪的数开始
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										配环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/">
+                     
+										    Windows下MySQL数据库安装（详细）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										OpenCV
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/OpenCV/Windows%E4%B8%8B%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83/">
+                     
+										    Windows下配置opencv环境
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										PS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/PS/PS%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C/">
+                     
+										    PS的一些常规操作
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Python
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/Python%E2%80%94TTS%EF%BC%88%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%EF%BC%89/">
+                     
+										    Python—TTS（文本转语音）
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
+                     
+										    Python学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										配环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
+                     
+										    ERROR Could not build wheels for XXX, which is required to install pyprojec
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
+                     
+										    Python安装requirements文件里的软件包时报错
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
+                     
+										    Python安装软件包的一些总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+                     
+										    Python环境安装与配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%20%E4%B8%8B%20python%20%E7%89%88%E6%9C%AC%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2/">
+                     
+										    Windows 下 python 版本快速切换
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ubuntu%E5%8D%87%E7%BA%A7python%E5%88%B0python3.11/">
+                     
+										    ubuntu升级python到python3.11
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+                     
+										    内层包报ModuleNotFoundError
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%9C%A8%E4%BB%BB%E6%84%8F%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%88%9B%E5%BB%BAPython%E7%8E%AF%E5%A2%83/">
+                     
+										    在任意目录下创建Python环境
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+                     
+										    外层包报ModuleNotFoundError
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Qt
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+                     
+										    Qt 网络编程经验总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0/">
+                     
+										    Qt修改项目名称
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E5%AD%A6%E4%B9%A0/">
+                     
+										    Qt学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                     
+										    Qt开发过程中的一些解决方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Qt/Qt%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
+                     
+										    Qt打包发布
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ROS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/RM%E5%AF%BC%E8%88%AA/">
+                     
+										    RM导航
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv/">
+                     
+										    Ubuntu中安装qt-ros-opencv
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E5%AD%A6%E4%B9%A0/">
+                     
+										    ros学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
+                     
+										    ros的HelloWorld案例
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+                     
+										    ros通信机制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
+                     
+										    ros配置launch文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
+                     
+										    安装ros
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+                     
+										    用VSCode实现HelloWorld案例
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										RabbitMQ
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                     
+										    环境配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Redis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
+                     
+										    Linux上安装Redis
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                     
+										    Redis常用命令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+                     
+										    Redis的一些见解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+                     
+										    Window下Redis的安装和部署详细教程
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	docker安装各种组件
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Keysqiu</span>
+	<span>2025-11-30 18:19:01</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1>docker安装各种组件</h1>
+<p>==镜像的概念：镜像是将应用程序及其需要的系统函数库、环境、配置、依赖打包而成。==</p>
+<h1>一	docker基本命令</h1>
+<h2 id="镜像操作">镜像操作</h2>
+<h3 id="①-查看所有镜像">① <strong>查看所有镜像</strong></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> images<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="②-搜索镜像（以jdk为例）">② 搜索镜像（<strong><strong>以jdk为例</strong></strong>）</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> search jdk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/assets/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6_image_0-20251130181901-4lh9qqa.png" alt=""></p>
+<h3 id="③-下载镜像">③ 下载镜像</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull <span class="token function">java</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="④-启动镜像（以jdk8为例）">④ 启动镜像（以jdk8为例）</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--name</span> jdk1.8 <span class="token parameter variable">-d</span> java:latest /bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="⑤-删除镜像">⑤ 删除镜像</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> rmi <span class="token punctuation">[</span>镜像id<span class="token punctuation">]</span>
+<span class="token function">docker</span> rmi <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span>:<span class="token punctuation">[</span>tag<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="⑥-数据卷直接挂载操作">⑥ <strong>数据卷直接挂载操作</strong></h3>
+<p>语法：在docker run后面加上 -v参数</p>
+<ul>
+<li>-v [宿主机目录]:[容器内目录]</li>
+<li>-v [宿主机文件]:[容器内文件]</li>
+</ul>
+<h2 id="容器操作"><strong>容器操作</strong></h2>
+<h3 id="①-进入某个容器进行操作"><strong>① 进入某个容器进行操作</strong></h3>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token operator">/</span><span class="token operator">/</span> 以进入mysql容器为例： 
+docker exec <span class="token operator">-</span>it <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>容器名称<span class="token operator">/</span>容器ID，用docker <span class="token function">ps</span>查看<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span> bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="②-查看所有运行着的容器"><strong>② 查看所有运行着的容器</strong></h3>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker <span class="token function">ps</span> <span class="token operator">-</span>a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="③-启动容器"><strong>③ 启动容器</strong></h3>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker <span class="token function">start</span> <span class="token punctuation">[</span>容器id<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="④-停止容器"><strong>④ 停止容器</strong></h3>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker stop <span class="token punctuation">[</span>容器id<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="⑤-删除容器"><strong>⑤ 删除容器</strong></h3>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker <span class="token function">rm</span> <span class="token punctuation">[</span>容器id<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="⑥-查看运行的容器日志"><strong>⑥ 查看运行的容器日志</strong></h3>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker logs <span class="token namespace">[OPTIONS]</span> 容器ID或容器名称
+<span class="token comment"># 例：查看全部日志</span>
+docker logs <span class="token operator">-</span>f 容器名称
+ 
+<span class="token namespace">[OPTIONS]</span>
+ 
+<span class="token operator">-</span>f : 跟踪日志输出
+ 
+<span class="token operator">-</span>t : 显示时间戳
+ 
+<span class="token operator">--</span>tail :仅列出最新N条容器日志
+ 
+<span class="token operator">--</span>since：显示某个日期至今的所有日志<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>查看最近10条日志, 并持续打印</p>
+</blockquote>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker logs <span class="token operator">-</span>f <span class="token operator">--</span>tail 10 efb78392fcc6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/assets/0-20251202182336-s73t00f.png" alt="0"></p>
+<p>查看某个日期至今的所有日志, 并持续打印</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker logs <span class="token operator">-</span>f <span class="token operator">--</span>since <span class="token string">"2022-05-16"</span> efb78392fcc6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><strong>二	安装mysql</strong></h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> login <span class="token parameter variable">--username</span><span class="token operator">=</span>akeys registry.cn-chengdu.aliyuncs.com
+<span class="token function">docker</span> pull registry.cn-chengdu.aliyuncs.com/keys-docker-hub/mysql:8.1.0
+<span class="token comment"># Ubuntu</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/data <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/conf <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> gedit /tmp/mysql/conf/my.cnf
+<span class="token comment"># Centos</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/data <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/conf <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">vim</span> /tmp/mysql/conf/my.cnf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>mysql配置文件:  vim</strong>  <strong>/tmp/mysql/conf/my.cnf</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+default-character-set<span class="token operator">=</span>utf8
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+default-character-set<span class="token operator">=</span>utf8
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span><span class="token string">'SET collation_ connection = utf8mb4_unicode_ci'</span>
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span><span class="token string">'SET NAMES utf8'</span>
+character-set-server<span class="token operator">=</span>utf8mb4
+collation-server<span class="token operator">=</span>utf8mb4_unicode_ci
+skip-character-set-client-handshake
+skip-name-resolve<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>主库配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># mysql服务ID，保证整个集群环境中唯一，取值范围:1---2^32-1，默认为1</span>
+server<span class="token punctuation">-</span>id=1
+<span class="token comment"># 是否只读,1代表只读,0代表读写</span>
+read<span class="token punctuation">-</span>only=0
+<span class="token comment"># 忽略的数据,指不需要同步的数据库</span>
+<span class="token comment">#binlog-ignore-db=mysql</span>
+<span class="token comment"># 指定同步的数据库</span>
+<span class="token comment">#binlog-do-db=db01</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从库配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># mysql服务ID，保证整个集群环境中唯一，取值范围:1---2^32-1，默认为1</span>
+server<span class="token punctuation">-</span>id=2
+<span class="token comment"># 是否只读,1代表只读,0代表读写</span>
+read<span class="token punctuation">-</span>only=1
+<span class="token comment"># 忽略的数据,指不需要同步的数据库</span>
+<span class="token comment">#binlog-ignore-db=mysql</span>
+<span class="token comment"># 指定同步的数据库</span>
+<span class="token comment">#binlog-do-db=db01</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>启动mysql</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 第一个3306是物理机端口，第二个3306是docker容器端口</span>
+docker run <span class="token operator">--</span>name mysql \
+  <span class="token operator">-</span>v <span class="token operator">/</span>tmp/mysql/conf/my<span class="token punctuation">.</span>cnf:<span class="token operator">/</span>etc/mysql/my<span class="token punctuation">.</span>cnf \
+  <span class="token operator">-</span>v <span class="token operator">/</span>tmp/mysql/<span class="token keyword">data</span>:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/mysql \
+  <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD=root \
+  <span class="token operator">-</span>p 3306:3306 \
+  <span class="token operator">-</span>d registry<span class="token punctuation">.</span>cn-chengdu<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com/keys-docker-hub/mysql:8<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后修改权限</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 进入mysql容器：</span>
+docker exec <span class="token operator">-</span>it mysql <span class="token operator">/</span>bin/bash
+<span class="token comment"># 登录mysql：</span>
+mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>proot
+<span class="token comment"># 修改密码：记得flush privileges一下</span>
+ALTER USER <span class="token string">'root'</span>@<span class="token string">'%'</span> IDENTIFIED BY <span class="token string">'G#t9WhZr2@qL7BmPnXeD'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span>
+<span class="token comment"># 修改了之后，如果exit退出去再重进还是没修改的话，不用理他，其实已经修改了的！用Navicat来连就知道了，意思就是拿Navicat来测</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>主库配置</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token string">'itcast'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">WITH</span> mysql_native_password <span class="token keyword">BY</span> <span class="token string">'Root@123456'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">GRANT</span> <span class="token keyword">REPLICATION</span> SLAVE <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'itcast'</span><span class="token variable">@'%'</span><span class="token punctuation">;</span>
+<span class="token comment"># 查看binlog文件位置的命令</span>
+<span class="token keyword">show</span> master <span class="token keyword">status</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从库配置</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">change <span class="token keyword">replication</span> source <span class="token keyword">to</span> SOURCE_HOST<span class="token operator">=</span><span class="token string">'主库IP'</span><span class="token punctuation">,</span>SOURCE_USER<span class="token operator">=</span><span class="token string">'主库设置的用户名'</span><span class="token punctuation">,</span>SOURCE_PASSWORD<span class="token operator">=</span><span class="token string">'主库设置的密码'</span><span class="token punctuation">,</span>SOURCE_LOG_FILE<span class="token operator">=</span><span class="token string">'主库log文件位置'</span><span class="token punctuation">,</span>SOURCE_LOG_POS<span class="token operator">=</span>同步主库的开始位置<span class="token punctuation">;</span>
+<span class="token comment"># 例子：</span>
+change <span class="token keyword">replication</span> source <span class="token keyword">to</span> SOURCE_HOST<span class="token operator">=</span><span class="token string">'192.168.126.132'</span><span class="token punctuation">,</span>SOURCE_USER<span class="token operator">=</span><span class="token string">'itcast'</span><span class="token punctuation">,</span>SOURCE_PASSWORD<span class="token operator">=</span><span class="token string">'Root@123456'</span><span class="token punctuation">,</span>SOURCE_LOG_FILE<span class="token operator">=</span><span class="token string">'binlog.000002'</span><span class="token punctuation">,</span>SOURCE_LOG_POS<span class="token operator">=</span><span class="token number">664</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 开启同步操作</span>
+<span class="token keyword">start</span> replica<span class="token punctuation">;</span>
+<span class="token comment"># 查看主从同步状态</span>
+<span class="token keyword">show</span> replica <span class="token keyword">status</span>\G<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>下图所示红框都是Yes说明主从复制开启成功！</p>
+<p><img src="/assets/0-20251202182651-39brhko.png" alt="0"></p>
+<blockquote>
+<p>测试是否已经部署成功</p>
+</blockquote>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> db01<span class="token punctuation">;</span>
+<span class="token keyword">use</span> db01<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb_user<span class="token punctuation">(</span>
+id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+sex <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token keyword">engine</span><span class="token operator">=</span><span class="token keyword">innodb</span> <span class="token keyword">default</span> <span class="token keyword">charset</span><span class="token operator">=</span>utf8mb4<span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> tb_user<span class="token punctuation">(</span>id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span><span class="token keyword">values</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'Tom'</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'Keys'</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'HaHa'</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>主库中执行上述语句，看看从库有没有作相应改变，如果有，则完结撒花！！！</p>
+<p>如果主库中已经存在数据了，可以先把主库中的数据导出到一个sql文件中，然后在从库中执行这个sql文件，再开启同步即可</p>
+<h1><strong>三	安装Oracle</strong></h1>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 安装oracle</span>
+https:<span class="token operator">/</span><span class="token operator">/</span>hub<span class="token punctuation">.</span>docker<span class="token punctuation">.</span>com/r/oracleinanutshell/oracle-xe-11g
+
+docker pull oracleinanutshell/oracle-xe-11g
+
+<span class="token comment"># 运行镜像  -p: 是容器内部端口绑定到指定的主机端口</span>
+docker run <span class="token operator">--</span>name oracle <span class="token operator">-</span>p 1521:1521 <span class="token operator">-</span>e ORACLE_ALLOW_REMOTE=true oracleinanutshell/oracle-xe-11g
+
+<span class="token comment"># 进入容器</span>
+docker exec <span class="token operator">-</span>it oracle bash
+
+<span class="token comment"># 连接 oracle</span>
+su oracle
+cd <span class="token variable">$ORACLE_HOME</span>
+bin/sqlplus <span class="token operator">/</span> as sysdba
+<span class="token comment"># 创建账号</span>
+create user qingxi identified by 123456<span class="token punctuation">;</span>
+grant connect<span class="token punctuation">,</span>resource to qingxi<span class="token punctuation">;</span>
+
+<span class="token comment"># 修改密码</span>
+alter user 用户名 identified by 新密码<span class="token punctuation">;</span>
+
+<span class="token comment"># 删除用户</span>
+drop user 用户名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><strong>四	安装Postgresql</strong></h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 拉取镜像</span>
+<span class="token function">docker</span> pull postgres
+<span class="token comment"># 启动镜像</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">5432</span>:5432 <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_PASSWORD</span><span class="token operator">=</span>pass123 postgres
+<span class="token comment"># 进入容器</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> 容器id <span class="token function">bash</span>
+<span class="token comment"># 连接pg</span>
+psql <span class="token parameter variable">-U</span> postgres <span class="token parameter variable">-h</span> <span class="token number">127.0</span>.0.1 <span class="token parameter variable">-p</span> <span class="token number">5432</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><strong>五	安装redis</strong></h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>启动</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">// 创建配置文件
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mydata/redis/data <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mydata/redis/conf <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> gedit /mydata/redis/conf/redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-p</span> <span class="token number">6379</span>:6379 <span class="token parameter variable">--name</span> redis <span class="token punctuation">\</span>
+<span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /mydata/redis/data:/data <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /mydata/redis/conf/redis.conf:/etc/redis/redis.conf <span class="token punctuation">\</span>
+<span class="token parameter variable">-d</span> redis redis-server /etc/redis/redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>redis-cli控制台:</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> redis redis-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>redis开启持久化，修改配置文件redis.conf，启动aof持久化，输入：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">appendonly <span class="token function">yes</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>docker启动之后，mysql、redis也自动启动：</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> update mysql <span class="token parameter variable">--restart</span><span class="token operator">=</span>always
+<span class="token function">docker</span> update redis <span class="token parameter variable">--restart</span><span class="token operator">=</span>always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1>六	安装portainer</h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">-it表示使用交互方式运行容器，能进入容器内部进行内容的查看
+<span class="token parameter variable">-p</span> <span class="token number">9000</span>:9000把主机的9000端口映射到docker的9000端口上
+--name给容器命名
+<span class="token parameter variable">--restart</span><span class="token operator">=</span>always是重启策略，表示随着docker的重启而重启
+-v表示把数据挂载到本机
+<span class="token parameter variable">--privileged</span><span class="token operator">=</span>true表示授权
+ 
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">9000</span>:9000  <span class="token parameter variable">--name</span> portainer <span class="token punctuation">\</span>
+<span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+<span class="token parameter variable">--privileged</span><span class="token operator">=</span>true portainer/portainer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><strong>七	Linux图形话监控netdata</strong></h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span><span class="token operator">=</span>netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">19999</span>:19999 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> netdataconfig:/etc/netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> netdatalib:/var/lib/netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> netdatacache:/var/cache/netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /etc/passwd:/host/etc/passwd:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /etc/group:/host/etc/group:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /proc:/host/proc:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /sys:/host/sys:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /etc/os-release:/host/etc/os-release:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">--restart</span> unless-stopped <span class="token punctuation">\</span>
+  --cap-add SYS_PTRACE <span class="token punctuation">\</span>
+  --security-opt <span class="token assign-left variable">apparmor</span><span class="token operator">=</span>unconfined <span class="token punctuation">\</span>
+  netdata/netdata<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1>八	安装Gitlab</h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span>  <span class="token parameter variable">-p</span> <span class="token number">443</span>:443 <span class="token parameter variable">-p</span> <span class="token number">8001</span>:8001 <span class="token parameter variable">-p</span> <span class="token number">222</span>:22 <span class="token parameter variable">--name</span> gitlab <span class="token punctuation">\</span>
+<span class="token parameter variable">--restart</span> always <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/gitlab/config:/etc/gitlab <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/gitlab/logs:/var/log/gitlab <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:12.7.6-ce.0
+<span class="token comment"># -d：后台运行</span>
+<span class="token comment"># -p：将容器内部端口向外映射</span>
+<span class="token comment"># --name：命名容器名称</span>
+<span class="token comment"># -v：将容器内数据文件夹或者日志、配置等文件夹挂载到宿主机指定目录</span>
+   
+<span class="token comment"># 配置http协议所使用的访问地址,不加端口号默认为80</span>
+external_url <span class="token string">'http://121.4.123.248'</span>
+<span class="token comment"># 配置ssh协议所使用的访问地址和端口</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'gitlab_ssh_host'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'121.4.123.248'</span>
+<span class="token comment"># 此端口是run时22端口映射的222端口</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'gitlab_shell_ssh_port'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">222</span> 
+nginx<span class="token punctuation">[</span><span class="token string">'listen_port'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">8001</span>
+http://121.4.123.248:8001/
+root/ChatP@ss7633<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1>九	安装Grafana</h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull grafana/grafana
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">3000</span>:3000 <span class="token parameter variable">--restart</span> always <span class="token parameter variable">--name</span><span class="token operator">=</span>grafana <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /root/grafana/data:/var/lib/grafana grafana/grafana<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1>十	安装 Prometheus</h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull bitnami/prometheus
+<span class="token function">docker</span> run <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">9090</span>:9090 <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /root/prometheus/conf/prometheus.yml:/etc/prometheus/prometheus.yml <span class="token punctuation">\</span>
+<span class="token parameter variable">--name</span> prometheus bitnami/prometheus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Window下Redis的安装和部署详细教程
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Windows%20%E5%AE%89%E8%A3%85docker/">
+                Windows 安装docker
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+	</div>
+	<div id="footer">
+	<span>Copyright @ 2025 - 现在 邱庆胜 All Rights Reserved</span>
+	<p>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
