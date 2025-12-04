@@ -1757,9 +1757,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -1768,9 +1768,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2577,28 +2577,6 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -2698,6 +2676,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										慢SQL优化
 									</a>
 									
@@ -2769,15 +2769,18 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ubuntu%E5%8D%87%E7%BA%A7python%E5%88%B0python3.11/">
 				<h2 class="index-title">
-					Python环境安装与配置
+					ubuntu升级python到python3.11
 				</h2>
 				<div class="index-brief">
-					Python环境安装与配置
-一、准备工作
-Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带Python环境，在Windows系统上需要安装一下，超简单
-打开官网 https://www.python.org/downloads/  下载中心，根据自己的系统和版本选择合
+					ubuntu升级python到python3.11
+在 Ubuntu 中升级 Python 到 3.11 版本可以通过编译源代码或者使用第三方工具来完成。请注意，在升级 Python 之前，请确保备份重要数据，并谨慎操作。
+以下是通过编译源代码的步骤：
+
+安装编译所需的依赖项：
+
+sudo apt 
 					...
 				</div>
 			</a>
@@ -2790,20 +2793,22 @@ Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
 				<h2 class="index-title">
-					外层包报ModuleNotFoundError
+					内层包报ModuleNotFoundError
 				</h2>
 				<div class="index-brief">
-					外层包报ModuleNotFoundError
+					内层包报ModuleNotFoundError
+问题：
+最外层的包安装有了，且可以访问到，但是还是报缺少里面的模块，下面是一个示例
 
-前提：包确实安装有，且可以访问到
+ModuleNotFoundError: No module named ‘libsvm.python’
 
+附原先的代码
+​
+解决方案
+这里以anaconda为例，
 
-**前提没问题再往下看，不然往下也没意义⚠️⚠️⚠️**
-
-可能的原因：当前解释器安装的软件包污染了（所以为什么PyCharm会让你对每一个工程创建对应的虚拟环境）
-①：用pip list 查看当前解释器已安装的
 					...
 				</div>
 			</a>

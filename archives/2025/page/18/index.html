@@ -1757,9 +1757,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -1768,9 +1768,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2577,28 +2577,6 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -2698,6 +2676,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										慢SQL优化
 									</a>
 									
@@ -2769,19 +2769,94 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
+			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
 				<h2 class="index-title">
-					ros的HelloWorld案例
+					MySQL笔记
 				</h2>
 				<div class="index-brief">
-					ros的HelloWorld案例
-1.创建工作空间并初始化
-mkdir -p 自定义空间名称/src
-cd 自定义空间名称
-catkin_make  #自动生成构建目录
-2.进入src创建ros包并添加依赖
-cd src
-catkin_create_pkg 自定义ROS包名 roscpp rospy
+					MySQL笔记
+数据库存储数据的特点
+1、将数据放到表中，表再放到库中
+2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
+3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
+4、表由列组成，我们也称为字段。所有表都是由一个或多个列组
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+				<h2 class="index-title">
+					数据库中ID从一个很奇怪的数开始
+				</h2>
+				<div class="index-brief">
+					数据库中ID从一个很奇怪的数开始
+==说明你上一次生成的id就是乱序了==
+解决方法：
+使用 navicat ，右键表名，选择截断表
+
+截断表：清空数据表中所有数据，然后ID从1开始
+清空表：清空数据表中所有数据
+
+‍
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
+				<h2 class="index-title">
+					mysql连接详解（内外连接，左右连接）
+				</h2>
+				<div class="index-brief">
+					mysql连接详解（内外连接，左右连接）
+假设有两个表 T1，T2
+表的结构如下图所示
+
+一、内连接（inner join）【普通外键引用】
+如果想把用户信息、积分、等级都列出来，那么一般会这样写：
+
+select * from T1 ,T2 where T1.userid = T2.userid
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
+				<h2 class="index-title">
+					mysql常用的聚合函数
+				</h2>
+				<div class="index-brief">
+					mysql常用的聚合函数
+① 常用的聚合函数（以下都是求以列为单位）
+count(col) 表示求指定列的总行数
+**max(col)**​ :  表示求指定列的最大值
+******min(col)******​ : 表示求指定列的最小值
+sum(col): 表示求指定列的和
+avg(col): 表
 					...
 				</div>
 			</a>
@@ -2839,20 +2914,15 @@ wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishro
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
 				<h2 class="index-title">
-					用VSCode实现HelloWorld案例
+					ros通信机制
 				</h2>
 				<div class="index-brief">
-					用VSCode实现HelloWorld案例
-1.创建工作空间并初始化
-mkdir -p 自定义空间名称/src
-cd 自定义空间名称
-catkin_make  #自动生成构建目录
-2.用VSCode打开
-code .  #在工作区文件夹下
-3.配置json文件
-按住​Ctrl+Shift+B​ ，在
+					ros通信机制
+1.话题通信机制（发布/订阅模式）
+具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
+
 					...
 				</div>
 			</a>
@@ -2887,15 +2957,22 @@ sudo apt-get install terminat
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+			<a href="/2025/11/30/ROS/RM%E5%AF%BC%E8%88%AA/">
 				<h2 class="index-title">
-					ros通信机制
+					RM导航
 				</h2>
 				<div class="index-brief">
-					ros通信机制
-1.话题通信机制（发布/订阅模式）
-具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
-
+					RM导航
+欧拉角的单位是****弧度
+1弧度=180/pai 度
+1度=pai/180 弧度
+记不住的时候就像圆
+一个圆是360度,2pai弧度
+不用写一行代码，ROS都帮你写好了，你只需要调参（​调参侠****​ ）
+需要求的就为参考的坐标系
+导航涉及的关键技术有如下五点：
+1。全局地图
+2。自身
 					...
 				</div>
 			</a>
@@ -2908,95 +2985,19 @@ sudo apt-get install terminat
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0/">
+			<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
 				<h2 class="index-title">
-					Qt修改项目名称
+					ros的HelloWorld案例
 				</h2>
 				<div class="index-brief">
-					Qt修改项目名称
-一、复制项目内容到新的文件夹中。修改文件夹名称
-
-
-二、手动把  .pro 的名字改写为新的项目名称。删除.pro.user文件
-
-
-三、用QT Creator打开修改名字之后的.pro文件，重新配置项目（configure project） 完成！
-
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
-				<h2 class="index-title">
-					ros配置launch文件
-				</h2>
-				<div class="index-brief">
-					ros配置launch文件
-1.选定功能包右击 —&gt; 添加launch文件夹
-2.选定launch文件夹右击 —&gt; 添加launch文件
-3.编辑launch文件内容
-&lt;launch&gt;
-    &lt;node pkg&#x3D;&quot;helloworld&quot; 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-				<h2 class="index-title">
-					Qt开发过程中的一些解决方案
-				</h2>
-				<div class="index-brief">
-					Qt开发过程中的一些解决方案
-一、QT使用QLabel控件显示图片，报错：QPixmap::scaled: Pixmap is a null pixmap
-在网上看了很多帖子：
-
-文件名改为英文（未解决问题）
-图片路径改为绝对路径（未解决问题）
-图片格式不对（如果上面两个都没有解决问题，那么请试用这
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
-				<h2 class="index-title">
-					安装ros
-				</h2>
-				<div class="index-brief">
-					安装ros
-系统：Ubuntu 18.04
-安装ROS版本：melodic
-​
-前四个勾选
-​
-打开命令终端，输入以下命令
-1.添加ROS源
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) mai
+					ros的HelloWorld案例
+1.创建工作空间并初始化
+mkdir -p 自定义空间名称/src
+cd 自定义空间名称
+catkin_make  #自动生成构建目录
+2.进入src创建ros包并添加依赖
+cd src
+catkin_create_pkg 自定义ROS包名 roscpp rospy
 					...
 				</div>
 			</a>
