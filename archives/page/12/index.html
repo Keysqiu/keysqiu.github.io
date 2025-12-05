@@ -103,6 +103,7 @@
 <body>
 	<header id="header">
     <a id="title" href="/" class="logo">Keysqiu的小屋</a>
+    <span id="subtitle">故不积跬步，无以至千里</span>
 
 	<ul id="menu">
     
@@ -2769,17 +2770,16 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/My%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/CentOS7%20%E5%AE%89%E8%A3%85Anaconda/">
 				<h2 class="index-title">
-					My编程经验
+					CentOS7 安装Anaconda
 				</h2>
 				<div class="index-brief">
-					My编程经验
-如果你在使用一个框架，在具体业务逻辑中得到意料之外的结果，除去特殊情况，一般就是还有一些代码其他人写的，你还没找到罢了
-for&lt;=2层，if&lt;=3层
-2147483646
-Centos查看Ip地址命令：ip addr
-使用Linux 时不要乱删或乱改根目录下的东西（非必要）
+					CentOS7 安装Anaconda
+wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+2.执行脚本
+下载完成后，在终端中进入包所在的目录，并执行以下命令：
+bash Anaconda3-2021.05-
 					...
 				</div>
 			</a>
@@ -2792,16 +2792,21 @@ Centos查看Ip地址命令：ip addr
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/Git/git%E6%8F%90%E4%BA%A4%E5%88%B0%E4%BB%93%E5%BA%93%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8D%E8%83%BD%E7%82%B9%E5%87%BB/">
 				<h2 class="index-title">
-					Redis的一些见解
+					git提交到仓库的文件夹不能点击
 				</h2>
 				<div class="index-brief">
-					Redis的一些见解
-缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了
+					git提交到仓库的文件夹不能点击
+上传本地文件到gitee远程仓库后，发现如下情况：
+
+文件夹显示为灰色并且无法访问，不能点击。瞬间就慌了，不着急往下看。
+
+
+分析原因
+
+主要原因：无法点击的灰色文件夹中含有 .git 文件夹
+意思就是，在本地初始化的仓库(使用 git init 初始化的文件夹) 
 					...
 				</div>
 			</a>
@@ -2814,19 +2819,20 @@ Centos查看Ip地址命令：ip addr
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Sublime%20Text3%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
 				<h2 class="index-title">
-					Sublime Text3关闭自动更新
+					Linux关闭占用指定端口的进程
 				</h2>
 				<div class="index-brief">
-					Sublime Text3关闭自动更新
-方法一：打开sublime——首选项(preferences)——设置(setting)
+					Linux关闭占用指定端口的进程
+两种方式
+① 第一种
+用netstat -ano | grep 端口 找出进程号
+然后 kill -9 进程号 杀进程
+② 第二种
+例：关闭占用80端口的进程
+sudo fuser -k -n tcp 80
 
-然后加入下面这一句代码，重新打开Sublime Text3
-"update_check":false
-
-如果方法一不行，用方法二
-方法二：打开hosts文件，在里面加入
 					...
 				</div>
 			</a>
@@ -2839,16 +2845,16 @@ Centos查看Ip地址命令：ip addr
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%85%B1%E6%9C%89%E5%A4%9A%E5%B0%91%E7%AB%AF%E5%8F%A3%EF%BC%9F/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Centos7%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/">
 				<h2 class="index-title">
-					一台电脑共有多少端口？
+					Centos7防火墙设置
 				</h2>
 				<div class="index-brief">
-					一台电脑共有多少端口？
-一台电脑会有65536个端口，计算是由256*256得出，端口号从0开始到65535.
-
-公认端口（baiWell Known Ports）：从0到1023，它们紧密绑定于一些服务。通常这些端口的通讯明确表明了某种服务的协议。例如：80端口实际上总是HTTP通讯。
-注册端口（
+					Centos7防火墙设置
+CentOS 7.0默认使用的是firewall作为防火墙， 使用systemctl来管理服务和程序，包括了service和chkconfig
+1、检查是否已安装防火墙
+yum install firewalld firewall-config
+2、查看默认防火墙状态（开启
 					...
 				</div>
 			</a>
@@ -2861,27 +2867,21 @@ Centos查看Ip地址命令：ip addr
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E4%B8%9C%E8%A5%BF/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85Jenkins%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Springboot%E9%A1%B9%E7%9B%AE/">
 				<h2 class="index-title">
-					如何快速学习一个新东西
+					Linux安装Jenkins自动化部署Springboot项目
 				</h2>
 				<div class="index-brief">
-					如何快速学习一个新东西
-问：新手学Python容易上手吗？
-答：建议直接从项目开始做
-某个东西，你想做但不会，就去抄一个项目，先跑起来
+					Linux安装Jenkins自动化部署Springboot项目
+Jenkins构建项目并运行的流程如下
 
-比如你想爬百度的内容，肯定有人做过
-
-**你就直接抄过来，能跑就是第一步**
-
-然后开始改
-
-改着改着你就入门了
-
-这比你看枯燥的课程快多了
-
-然后学一学基本的语
+Git：我用的yum安装
+# Ubuntu
+apt-get install git
+# Centos 
+yum install git
+git --version
+Jenkins：注意的是Jen
 					...
 				</div>
 			</a>
@@ -2894,22 +2894,17 @@ Centos查看Ip地址命令：ip addr
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85Nginx/">
 				<h2 class="index-title">
-					Java和C++的区别
+					Linux安装Nginx
 				</h2>
 				<div class="index-brief">
-					Java和C++的区别
-Java和C++的区别
-
-
-C++中的virtual虚函数，Java中不用什么前缀，子类直接重写即可，用@Override作标记
-
-
-C++中的纯虚函数，Java中加abstract前缀，且类也要声明为抽象类，C++不用声明
-
-
-Java中的接口，其实就是一个抽象类，里面都是
+					Linux安装Nginx
+1、安装依赖和相关库：
+yum -y install gcc-c++ zlib-devel openssl-devel libtool
+2、下载nginx安装包并解压：
+cd /usr/local
+wget http://nginx.org/download/nginx-1
 					...
 				</div>
 			</a>
@@ -2922,16 +2917,24 @@ Java中的接口，其实就是一个抽象类，里面都是
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/yolov5%E8%AE%AD%E7%BB%83%E6%B5%81%E7%A8%8B%E6%80%BB%E7%BB%93/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Jenkins%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%9E%84%E5%BB%BAmaven%E9%A1%B9%E7%9B%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 				<h2 class="index-title">
-					yolov5训练流程总结
+					Jenkins创建任务没有构建maven项目解决方案
 				</h2>
 				<div class="index-brief">
-					yolov5训练流程总结
+					Jenkins创建任务没有构建maven项目解决方案
+问题：缺少插件​Maven Intergration
 
-主要是两个脚本文件，train.py（模型训练脚本文件），detect.py（利用训练出来最好的权重文件进行推理的脚本文件）
-流程为：先用开始模型自带的权重文件进行训练，等到模型训练完之后会生成一个最好的权重文件，然后利用这个最好的权重文件进行推理
-需要更改的文件：一个是
+解决：
+1.进入系统管理
+
+2.点击插件管理
+
+3.选择可选插件
+
+4.搜索Maven（因我已安装）
+
+
 					...
 				</div>
 			</a>
@@ -2944,18 +2947,18 @@ Java中的接口，其实就是一个抽象类，里面都是
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85docker/">
 				<h2 class="index-title">
-					基本数据结构
+					Linux安装docker
 				</h2>
 				<div class="index-brief">
-					基本数据结构
-哈希表
-哈希表的思想就是一个数组的下标嵌套另一个数组的值，形成一个键值的对应关系，将键作为数组的索引，数组中索引为i存储的值就是它对应的值
-栈
-栈的指针为什么一开始赋值为-1，这是因为当压入数据时，可以使（下标++）的代码不用特殊处理，也就是一直（下标++）
-二叉树的遍历
-由前序知道树
+					Linux安装docker
+docker报错时查看日志命令
+journalctl -xe
+# 把错误拿去百度即可
+# 经验一：是否是防火墙和docker内的网络冲突了，关掉防火墙试试！
+systemctl stop firewalld.service    		--停止firewall
+system
 					...
 				</div>
 			</a>
@@ -2968,21 +2971,19 @@ Java中的接口，其实就是一个抽象类，里面都是
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85jdk/">
 				<h2 class="index-title">
-					内网穿透
+					Linux安装jdk
 				</h2>
 				<div class="index-brief">
-					内网穿透
+					Linux安装jdk
+一、JDK8
+**链接：**​https://pan.baidu.com/s/1NfzIezipNTuAujzxcjTZ3w?pwd=pul3
+提取码：pul3
+–来自百度网盘超级会员V5的分享
+解压：
+tar -zxvf jdk-8u291-linux-x64.tar.gz
 
-作用：普通型http(s)隧道穿透,用于搭建网站,微信开发等穿透到本地web服务
-
-1 安装NATAPP软件
-将下面文件解压到一个目录
-natapp_windows_amd64_2_3_9.zip
-解压后，文件夹的内容如下
-
-主要是替换natapp.bat下的authtoken，具体au
 					...
 				</div>
 			</a>
@@ -2995,14 +2996,24 @@ natapp_windows_amd64_2_3_9.zip
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8E%A5%E6%89%8B%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85maven%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/">
 				<h2 class="index-title">
-					如何快速接手一个项目
+					Linux安装maven指定版本
 				</h2>
 				<div class="index-brief">
-					如何快速接手一个项目
-（注：一开始最好不要直接看项目具体的逻辑，先跑起来再说，这个思想很重要！！！）
-**1、**​ ******（也是最重要的一步）******​ ，按照上一个开发者的 readme 配好环境，（如果没有 readme，那就量力而行，看看这个框架自己熟不熟悉需要哪些环境，或者 CS
+					Linux安装maven指定版本
+① 官方下载：
+② 附件
+
+也可以用下面的这个安装包，这个是3.9.6的
+
+apache-maven-3.9.6-bin.tar.gz
+下载好安装包之后，通过sftp工具丢到服务器喜欢的目录
+# 查看存放路径
+pwd
+1、解压
+# 解压
+tar -zxvf apac
 					...
 				</div>
 			</a>

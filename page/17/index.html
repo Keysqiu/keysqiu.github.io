@@ -103,6 +103,7 @@
 <body>
 	<header id="header">
     <a id="title" href="/" class="logo">Keysqiu的小屋</a>
+    <span id="subtitle">故不积跬步，无以至千里</span>
 
 	<ul id="menu">
     
@@ -2769,37 +2770,39 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/IDEA/%E5%AF%B9%E7%BC%96%E7%A8%8BIDE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/MySQL/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE/">
 				<h2 class="index-title">
-					对编程IDE使用的一些见解
+					MySQL 防止被爬走数据
 				</h2>
 				<div class="index-brief">
-					对编程IDE使用的一些见解
-1、如果是在IDE里面删除了文件，此文件不会进回收站的，（​在文件资源管理器中删除的才会进回收站****​ ）要想找回，请看下图
-
-点击了之后，就可以在弹出的窗口中进行恢复操作了。
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/IDEA/%E5%A6%82%E4%BD%95%E6%8A%8AIDEA%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%8F%E8%B0%83%E8%87%B3%E5%B7%A6%E4%BE%A7%E6%98%BE%E7%A4%BA/">
-				<h2 class="index-title">
-					如何把IDEA的工具栏调至左侧显示
-				</h2>
-				<div class="index-brief">
-					如何把IDEA的工具栏调至左侧显示
-
-效果如下：
+					MySQL 防止被爬走数据
+前两天申请了个云服务器，然后去关掉防火墙方便调试，结果没两天MySQL就被黑了
 ​
+一个库被删，多了一个库
+​
+内容如下：
+All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
+				<h2 class="index-title">
+					MySQL插入数据时，自动获取当前时间写入表中
+				</h2>
+				<div class="index-brief">
+					MySQL插入数据时，自动获取当前时间写入表中
+字段的类型为：timestamp，
+往下看，默认那里改为 ==CURRENT_TIMESTAMP==
+‍
 
 					...
 				</div>
@@ -2813,18 +2816,17 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/IDEA/IDEA%20%E5%89%8D%E8%BF%9B%20%E5%90%8E%E9%80%80%20%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%B7%A5%E5%85%B7%E6%A0%8F/">
+			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
 				<h2 class="index-title">
-					IDEA 前进 后退 添加到工具栏
+					MySQL笔记
 				</h2>
 				<div class="index-brief">
-					IDEA 前进 后退 添加到工具栏
-
-IDEA安装后，前进  后退快捷按钮默认不在工具栏显示，需要手动将其添加到工具栏
-
-① 按照图一选中Toolbar Run Actions ，点击右上角的 add after
-② 弹出图二，ctrl同时选中前进和后退，点击确定
-③ 在工具栏便添加了前进后退快捷按
+					MySQL笔记
+数据库存储数据的特点
+1、将数据放到表中，表再放到库中
+2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
+3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
+4、表由列组成，我们也称为字段。所有表都是由一个或多个列组
 					...
 				</div>
 			</a>
@@ -2837,85 +2839,19 @@ IDEA安装后，前进  后退快捷按钮默认不在工具栏显示，需要�
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/">
+			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
 				<h2 class="index-title">
-					如何下载MySQL的JDBC驱动包并导入IDEA中
+					mysql连接详解（内外连接，左右连接）
 				</h2>
 				<div class="index-brief">
-					如何下载MySQL的JDBC驱动包并导入IDEA中
-一、下载JDBC驱动包
-1.打开 MySQL 官网：https://www.mysql.com/
-2.点击 DOWNLOADS，把页面滚动到最下面，点击 MySQL Community (GPL) Downloads
+					mysql连接详解（内外连接，左右连接）
+假设有两个表 T1，T2
+表的结构如下图所示
 
+一、内连接（inner join）【普通外键引用】
+如果想把用户信息、积分、等级都列出来，那么一般会这样写：
 
-3.点击 Connecto
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv/">
-				<h2 class="index-title">
-					Ubuntu中安装qt-ros-opencv
-				</h2>
-				<div class="index-brief">
-					Ubuntu中安装qt-ros-opencv
-
-测试项目demo
-
-catkin_csdn.zip
-一、先在小鱼下安装ros
-wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishros
-根据提示一
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E5%AD%A6%E4%B9%A0/">
-				<h2 class="index-title">
-					ros学习
-				</h2>
-				<div class="index-brief">
-					ros学习
-** 在ROS（机器人操作系统）中，`declare_parameter是一个用于在ROS参数服务器上参数的函数。参数服务器是一个全局的键值存储系统，它允许不同的ROS节点之间共享参数 **
-Ubuntu终端多窗口操作
-# 安装
-sudo apt-get install terminat
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
-				<h2 class="index-title">
-					ros通信机制
-				</h2>
-				<div class="index-brief">
-					ros通信机制
-1.话题通信机制（发布/订阅模式）
-具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
+select * from T1 ,T2 where T1.userid = T2.userid
 
 					...
 				</div>
@@ -2929,41 +2865,13 @@ sudo apt-get install terminat
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/">
 				<h2 class="index-title">
-					ros配置launch文件
+					配环境
 				</h2>
 				<div class="index-brief">
-					ros配置launch文件
-1.选定功能包右击 —&gt; 添加launch文件夹
-2.选定launch文件夹右击 —&gt; 添加launch文件
-3.编辑launch文件内容
-&lt;launch&gt;
-    &lt;node pkg&#x3D;&quot;helloworld&quot; 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/PS/PS%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C/">
-				<h2 class="index-title">
-					PS的一些常规操作
-				</h2>
-				<div class="index-brief">
-					PS的一些常规操作
-黑白交界地带是透明的
-1、ALT+鼠标滚轮：放大/缩小素材
-2、ESC：取消当前操作
-3、魔术棒：按住alt或者alt+shift看效果
-4、把鼠标焦点放在图层上，按住ctrl+alt+t，可以实现对该图层的缩放以及旋转
-5、钢笔是拿来画的，而笔是拿来涂的
+					配环境
+‍
 
 					...
 				</div>
@@ -2977,18 +2885,114 @@ sudo apt-get install terminat
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/OpenCV/Windows%E4%B8%8B%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83/">
+			<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
 				<h2 class="index-title">
-					Windows下配置opencv环境
+					mysql常用的聚合函数
 				</h2>
 				<div class="index-brief">
-					Windows下配置opencv环境
-① 下载软件包
-**链接：**​https://pan.baidu.com/s/1-clw63SKe2hBkCToTnHmgw?pwd=9g68
-提取码：9g68
-–来自百度网盘超级会员V4的分享
-② 配置环境
-**OpenCV环境配置教程：**​https:/
+					mysql常用的聚合函数
+① 常用的聚合函数（以下都是求以列为单位）
+count(col) 表示求指定列的总行数
+**max(col)**​ :  表示求指定列的最大值
+******min(col)******​ : 表示求指定列的最小值
+sum(col): 表示求指定列的和
+avg(col): 表
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
+				<h2 class="index-title">
+					配环境
+				</h2>
+				<div class="index-brief">
+					配环境
+‍
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+				<h2 class="index-title">
+					Qt 网络编程经验总结
+				</h2>
+				<div class="index-brief">
+					Qt 网络编程经验总结
+1、同步/异步：指 I/O 操作，也就是说同步会等到程序 IO 操作结束之后才往下执行，而异步的话，在执行 IO 操作时，程序会先往下继续跑，等到 IO 操作完成之后，再合并资源
+阻塞/非阻塞：指进程，具体解释和上面差不多，就是说对象不一样而已
+2、​在数据流传输过程中，如果
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+				<h2 class="index-title">
+					数据库中ID从一个很奇怪的数开始
+				</h2>
+				<div class="index-brief">
+					数据库中ID从一个很奇怪的数开始
+==说明你上一次生成的id就是乱序了==
+解决方法：
+使用 navicat ，右键表名，选择截断表
+
+截断表：清空数据表中所有数据，然后ID从1开始
+清空表：清空数据表中所有数据
+
+‍
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					Qt学习
+				</h2>
+				<div class="index-brief">
+					Qt学习
+1、​qt项目相对路径的起源是以​编译的build文件夹为主目录
+2、信号写在发送窗口的.h中，写一个声明即可，无需实现。槽函数写在目标窗口的.h和.cpp文件中，需要实现。连接写在哪都可。
+
+
+信号：发送窗口
+
+
+槽函数与连接：目标窗口
+
+利用Tab进行选中的排序，双击这个数字，它就会变
 					...
 				</div>
 			</a>

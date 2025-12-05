@@ -103,6 +103,7 @@
 <body>
 	<header id="header">
     <a id="title" href="/" class="logo">Keysqiu的小屋</a>
+    <span id="subtitle">故不积跬步，无以至千里</span>
 
 	<ul id="menu">
     
@@ -2769,19 +2770,18 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
+			<a href="/2025/11/30/Qt/Qt%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
 				<h2 class="index-title">
-					ros的HelloWorld案例
+					Qt打包发布
 				</h2>
 				<div class="index-brief">
-					ros的HelloWorld案例
-1.创建工作空间并初始化
-mkdir -p 自定义空间名称/src
-cd 自定义空间名称
-catkin_make  #自动生成构建目录
-2.进入src创建ros包并添加依赖
-cd src
-catkin_create_pkg 自定义ROS包名 roscpp rospy
+					Qt打包发布
+一. 执行Release编译
+1. 首先打开想要发布的程序所在的项目。
+2. 点击左下角 项目——&gt;构建套件(Kit)——&gt;构建，选择Release。 3. 点击构建项目 （左下角那把锤子），或者使用快捷键Ctrl+R。
+
+二. 构建可执行程序
+1. 编译完成后到程序的输出
 					...
 				</div>
 			</a>
@@ -2794,21 +2794,18 @@ catkin_create_pkg 自定义ROS包名 roscpp rospy
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+			<a href="/2025/11/30/Qt/Qt%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 				<h2 class="index-title">
-					环境配置
+					Qt开发过程中的一些解决方案
 				</h2>
 				<div class="index-brief">
-					环境配置
-1.选择下载的Erlang安装包，并双击运行
+					Qt开发过程中的一些解决方案
+一、QT使用QLabel控件显示图片，报错：QPixmap::scaled: Pixmap is a null pixmap
+在网上看了很多帖子：
 
-2.点击Next，选择安装的目录位置，点击下一步即可
-
-3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
-
-4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
-
-5.例如Erlang
+文件名改为英文（未解决问题）
+图片路径改为绝对路径（未解决问题）
+图片格式不对（如果上面两个都没有解决问题，那么请试用这
 					...
 				</div>
 			</a>
@@ -2821,65 +2818,19 @@ catkin_create_pkg 自定义ROS包名 roscpp rospy
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+			<a href="/2025/11/30/PS/PS%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C/">
 				<h2 class="index-title">
-					用VSCode实现HelloWorld案例
+					PS的一些常规操作
 				</h2>
 				<div class="index-brief">
-					用VSCode实现HelloWorld案例
-1.创建工作空间并初始化
-mkdir -p 自定义空间名称/src
-cd 自定义空间名称
-catkin_make  #自动生成构建目录
-2.用VSCode打开
-code .  #在工作区文件夹下
-3.配置json文件
-按住​Ctrl+Shift+B​ ，在
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/">
-				<h2 class="index-title">
-					配环境
-				</h2>
-				<div class="index-brief">
-					配环境
-‍
+					PS的一些常规操作
+黑白交界地带是透明的
+1、ALT+鼠标滚轮：放大/缩小素材
+2、ESC：取消当前操作
+3、魔术棒：按住alt或者alt+shift看效果
+4、把鼠标焦点放在图层上，按住ctrl+alt+t，可以实现对该图层的缩放以及旋转
+5、钢笔是拿来画的，而笔是拿来涂的
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/Python%E2%80%94TTS%EF%BC%88%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%EF%BC%89/">
-				<h2 class="index-title">
-					Python—TTS（文本转语音）
-				</h2>
-				<div class="index-brief">
-					Python—TTS（文本转语音）
-sudo apt-get update &amp;&amp; sudo apt-get install espeak
-安装pyttsx3
-pyttsx3官方参考文档
-pip install pyttsx3
-测试代码
-import pyttsx3
-def say_t
 					...
 				</div>
 			</a>
@@ -2920,43 +2871,21 @@ def say_t
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 				<h2 class="index-title">
-					Qt学习
+					环境配置
 				</h2>
 				<div class="index-brief">
-					Qt学习
-1、​qt项目相对路径的起源是以​编译的build文件夹为主目录
-2、信号写在发送窗口的.h中，写一个声明即可，无需实现。槽函数写在目标窗口的.h和.cpp文件中，需要实现。连接写在哪都可。
+					环境配置
+1.选择下载的Erlang安装包，并双击运行
 
+2.点击Next，选择安装的目录位置，点击下一步即可
 
-信号：发送窗口
+3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
 
+4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
 
-槽函数与连接：目标窗口
-
-利用Tab进行选中的排序，双击这个数字，它就会变
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
-				<h2 class="index-title">
-					Qt 网络编程经验总结
-				</h2>
-				<div class="index-brief">
-					Qt 网络编程经验总结
-1、同步/异步：指 I/O 操作，也就是说同步会等到程序 IO 操作结束之后才往下执行，而异步的话，在执行 IO 操作时，程序会先往下继续跑，等到 IO 操作完成之后，再合并资源
-阻塞/非阻塞：指进程，具体解释和上面差不多，就是说对象不一样而已
-2、​在数据流传输过程中，如果
+5.例如Erlang
 					...
 				</div>
 			</a>
@@ -2997,17 +2926,87 @@ def say_t
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/ROS/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv/">
 				<h2 class="index-title">
-					Python学习
+					Ubuntu中安装qt-ros-opencv
 				</h2>
 				<div class="index-brief">
-					Python学习
-1、Python中类的继承是直接写在类后面的括号里面的，直接写类名即可，震碎我三观
-2、Python中一个标准类的定义
-==记住每一个方法都要带self，通过self才能访问类内的属性和方法，不加self，找的是类外的东西==
-class Demo:
-    def __init_
+					Ubuntu中安装qt-ros-opencv
+
+测试项目demo
+
+catkin_csdn.zip
+一、先在小鱼下安装ros
+wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishros
+根据提示一
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/ROS/ros%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					ros学习
+				</h2>
+				<div class="index-brief">
+					ros学习
+** 在ROS（机器人操作系统）中，`declare_parameter是一个用于在ROS参数服务器上参数的函数。参数服务器是一个全局的键值存储系统，它允许不同的ROS节点之间共享参数 **
+Ubuntu终端多窗口操作
+# 安装
+sudo apt-get install terminat
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
+				<h2 class="index-title">
+					ros的HelloWorld案例
+				</h2>
+				<div class="index-brief">
+					ros的HelloWorld案例
+1.创建工作空间并初始化
+mkdir -p 自定义空间名称/src
+cd 自定义空间名称
+catkin_make  #自动生成构建目录
+2.进入src创建ros包并添加依赖
+cd src
+catkin_create_pkg 自定义ROS包名 roscpp rospy
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+				<h2 class="index-title">
+					ros通信机制
+				</h2>
+				<div class="index-brief">
+					ros通信机制
+1.话题通信机制（发布/订阅模式）
+具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
+
 					...
 				</div>
 			</a>

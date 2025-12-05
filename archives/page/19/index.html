@@ -103,6 +103,7 @@
 <body>
 	<header id="header">
     <a id="title" href="/" class="logo">Keysqiu的小屋</a>
+    <span id="subtitle">故不积跬步，无以至千里</span>
 
 	<ul id="menu">
     
@@ -2769,6 +2770,29 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
+				<h2 class="index-title">
+					ros配置launch文件
+				</h2>
+				<div class="index-brief">
+					ros配置launch文件
+1.选定功能包右击 —&gt; 添加launch文件夹
+2.选定launch文件夹右击 —&gt; 添加launch文件
+3.编辑launch文件内容
+&lt;launch&gt;
+    &lt;node pkg&#x3D;&quot;helloworld&quot; 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
 				<h2 class="index-title">
 					安装ros
@@ -2795,54 +2819,6 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) mai
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-				<h2 class="index-title">
-					Qt开发过程中的一些解决方案
-				</h2>
-				<div class="index-brief">
-					Qt开发过程中的一些解决方案
-一、QT使用QLabel控件显示图片，报错：QPixmap::scaled: Pixmap is a null pixmap
-在网上看了很多帖子：
-
-文件名改为英文（未解决问题）
-图片路径改为绝对路径（未解决问题）
-图片格式不对（如果上面两个都没有解决问题，那么请试用这
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
-				<h2 class="index-title">
-					Qt打包发布
-				</h2>
-				<div class="index-brief">
-					Qt打包发布
-一. 执行Release编译
-1. 首先打开想要发布的程序所在的项目。
-2. 点击左下角 项目——&gt;构建套件(Kit)——&gt;构建，选择Release。 3. 点击构建项目 （左下角那把锤子），或者使用快捷键Ctrl+R。
-
-二. 构建可执行程序
-1. 编译完成后到程序的输出
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
 				<h2 class="index-title">
 					Window下Redis的安装和部署详细教程
@@ -2854,6 +2830,56 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) mai
 以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
 
 链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
+				<h2 class="index-title">
+					Linux上安装Redis
+				</h2>
+				<div class="index-brief">
+					Linux上安装Redis
+1、安装Redis依赖
+Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
+yum install -y gcc tcl
+2、下载压缩包
+进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
+cd /us
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+				<h2 class="index-title">
+					用VSCode实现HelloWorld案例
+				</h2>
+				<div class="index-brief">
+					用VSCode实现HelloWorld案例
+1.创建工作空间并初始化
+mkdir -p 自定义空间名称/src
+cd 自定义空间名称
+catkin_make  #自动生成构建目录
+2.用VSCode打开
+code .  #在工作区文件夹下
+3.配置json文件
+按住​Ctrl+Shift+B​ ，在
 					...
 				</div>
 			</a>
@@ -2902,30 +2928,6 @@ redis-cli -h host -p port -a password
 逻辑是这样的：
 1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
 2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
-				<h2 class="index-title">
-					Linux上安装Redis
-				</h2>
-				<div class="index-brief">
-					Linux上安装Redis
-1、安装Redis依赖
-Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
-yum install -y gcc tcl
-2、下载压缩包
-进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
-cd /us
 					...
 				</div>
 			</a>
@@ -2989,22 +2991,19 @@ cd /us
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
 				<h2 class="index-title">
-					SpringCloud学习
+					RabbitMQ
 				</h2>
 				<div class="index-brief">
-					SpringCloud学习
-微服务结构
+					RabbitMQ
+1.初识MQ
+1.1.同步和异步通讯
+微服务间通讯有同步和异步两种方式：
+同步通讯：就像打电话，需要实时响应。
+异步通讯：就像发邮件，不需要马上回复。
+两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
 
-Nacos结构
-
-Nacos与Eureka的区别
-
-Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
-临时实例心跳不正常会被剔除，非临时实例则不会被剔除
-Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
-N
 					...
 				</div>
 			</a>

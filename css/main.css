@@ -41,13 +41,16 @@ a:hover {
 	z-index: 98;
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 	box-shadow: 0 4px 1px rgba(0,0,0,0.15);
 }
 #title {
 	font-size: 20px;
 	color: #ffffff;
 	padding: 10px 15px;
+}
+#subtitle{
+	color: #E6A23C;
 }
 #menu {
 	position:fixed;
