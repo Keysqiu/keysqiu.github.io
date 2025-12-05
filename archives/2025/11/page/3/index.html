@@ -1758,9 +1758,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1769,9 +1769,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2578,6 +2578,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -2677,28 +2699,6 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
 										慢SQL优化
 									</a>
 									
@@ -2770,17 +2770,19 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/nextTick%E7%9A%84%E7%90%86%E8%A7%A3/">
+			<a href="/2025/11/30/Visual%20Studio/VS%E8%AE%BE%E7%BD%AE%E5%8F%82%E8%80%83/">
 				<h2 class="index-title">
-					nextTick的理解
+					VS设置参考
 				</h2>
 				<div class="index-brief">
-					nextTick的理解
-其实就是在DOM内容完全更新了之后再执行callback中的操作，避免拿到脏DOM
-常用于需要操作更新后 DOM 的场景，比如获取元素尺寸、聚焦输入框、初始化第三方库等。
-export default &#123;
-  data() &#123;
-    return &#1
+					VS设置参考
+1、启用并行编译, 生成时仅生成启动项目依赖项不全部
+
+2、启用增量编译  
+
+3、关闭解决方案实时代码分析
+
+
 					...
 				</div>
 			</a>
@@ -2793,23 +2795,16 @@ export default &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/vue2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">
+			<a href="/2025/11/30/Visual%20Studio/VS%E7%BC%96%E8%AF%91%E5%99%A8%E6%8A%A51%E4%B8%AA%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90%E7%9A%84%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
 				<h2 class="index-title">
-					vue2生命周期函数
+					VS编译器报1个无法解析的外部命令
 				</h2>
 				<div class="index-brief">
-					vue2生命周期函数
-🌿 1. created
-
-“我出生了！数据有了，但页面还没长出来。”
-
-
-数据、方法已准备好，可以访问 this.data。
-常用于：发请求、初始化数据。
-页面（DOM）还没生成，不能操作。
-
-created() &#123;
-  console.log('我出生了！', 
+					VS编译器报1个无法解析的外部命令
+解决思路：（以下思路需对照代码进行逐点分析）
+①：代码里函数有声明，但是没有定义  （初学者错这个比较多）
+②：类中有静态变量成员，没有对它进行初始化（是变量，不是函数）（开发后期错这个比较多）
+③：缺少lib库，可能代码里面引用了一些第三方的库，这个后面导入处理
 					...
 				</div>
 			</a>
@@ -2822,20 +2817,14 @@ created() &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue%E6%8F%92%E6%A7%BD/">
+			<a href="/2025/11/30/YOLO/Python%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%96%87%E6%A1%A3/">
 				<h2 class="index-title">
-					Vue插槽
+					Python项目打包文档
 				</h2>
 				<div class="index-brief">
-					Vue插槽
-插槽就是 留个坑，让父组件填内容
-举个🌰
-好的，用一个简单例子说明：
-比如你有一个通用的卡片组件（Card.vue），但想让每个卡片的内容不一样。
-子组件 Card.vue：
-&lt;template>
-  &lt;div class="card">
-    &lt;header>卡片
+					Python项目打包文档
+① 在已经安装了依赖的环境里面（也就是说安装好requirements.txt软件包的环境），再安装pyinstaller软件包
+pip install pyinstaller -i http://mirrors.aliyun.com/pypi/simple/ --trus
 					...
 				</div>
 			</a>
@@ -2848,18 +2837,21 @@ created() &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/%E5%89%8D%E7%AB%AF%E9%A2%84%E7%95%99%E4%BB%A3%E7%A0%81/">
+			<a href="/2025/11/30/VsCode/VsCode%E6%8F%92%E4%BB%B6%E6%94%B6%E5%BD%95/">
 				<h2 class="index-title">
-					前端预留代码
+					VsCode插件收录
 				</h2>
 				<div class="index-brief">
-					前端预留代码
-JavaScript
-//=====
-使用 setup，你不需要显式地定义 setup 函数。所有在 &lt;script setup> 中的代码都会自动作为 setup 函数的一部分。
-//=====
-&lt;script setup lang="ts"> //ts或js
-&lt;/
+					VsCode插件收录
+
+Vue 3 Snippets
+Vue - Official
+vue
+Spring Initializr Java Support
+Spring Boot Tools
+Spring Boot Extension Pack
+Spring Boot Dashboard
+Python
 					...
 				</div>
 			</a>
@@ -2872,18 +2864,42 @@ JavaScript
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/%E8%84%9A%E6%89%8B%E6%9E%B6vue-cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">
+			<a href="/2025/11/30/VsCode/VS%20Code%20%E4%B8%AD%E8%BF%90%E8%A1%8CJava%20SpringBoot%E7%9A%84%E9%A1%B9%E7%9B%AE/">
 				<h2 class="index-title">
-					脚手架vue-cli创建Vue项目
+					VS Code 中运行Java SpringBoot的项目
 				</h2>
 				<div class="index-brief">
-					脚手架vue-cli创建Vue项目
-一、安装vue-cli
-npm install -g @vue/cli 
-
-安装完成后：输入vue -V检查版本，出现版本号就表示安装成功，如果出现“vue” 不是内部或外部命令，也不是可运行的程序或批处理文件，就说明安装失败了
-
-（1）新建一个空文件夹，在该文件
+					VS Code 中运行Java SpringBoot的项目
+一、前提条件
+JDK、Maven已配置好
+二、安装插件
+Language Support for Java(TM) by Red Hat
+Debugger for Java
+Spring Boot Extension
+Spring Boot
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/VsCode/VSCode%E8%AE%BE%E7%BD%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+				<h2 class="index-title">
+					VSCode设置配置文件
+				</h2>
+				<div class="index-brief">
+					VSCode设置配置文件
+&#123;
+    //?系统配置
+    "debug.onTaskErrors": "debugAnyway",          
+    //调试时忽略异常                            
+    "diffEditor.wordWrap"
 					...
 				</div>
 			</a>
@@ -2924,14 +2940,17 @@ $FileName$ -o $FileN
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/YOLO/Python%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%96%87%E6%A1%A3/">
+			<a href="/2025/11/30/YOLO/qt%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
 				<h2 class="index-title">
-					Python项目打包文档
+					qt部署文档
 				</h2>
 				<div class="index-brief">
-					Python项目打包文档
-① 在已经安装了依赖的环境里面（也就是说安装好requirements.txt软件包的环境），再安装pyinstaller软件包
-pip install pyinstaller -i http://mirrors.aliyun.com/pypi/simple/ --trus
+					qt部署文档
+一、安装anaconda3
+**① 访问Anaconda官网：**​https://www.anaconda.com/products/individual
+② 选择相应的操作系统版本并下载对应的安装包（推荐下载64位版本）
+③ 打开下载的安装包，按照提示进行安装即可
+④ 创建一个虚拟
 					...
 				</div>
 			</a>
@@ -2944,20 +2963,17 @@ pip install pyinstaller -i http://mirrors.aliyun.com/pypi/simple/ --trus
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/YOLO/PySide6%EF%BC%9Aui%E8%BD%ACpy%E5%92%8Cqrc%E8%BD%ACpy/">
+			<a href="/2025/11/30/VsCode/%E8%AE%BE%E7%BD%AEVsCode%E7%BC%96%E7%A0%81/">
 				<h2 class="index-title">
-					PySide6：ui转py和qrc转py
+					设置VsCode编码
 				</h2>
 				<div class="index-brief">
-					PySide6：ui转py和qrc转py
+					设置VsCode编码
+① 按 Ctrl+Shift+P 搜索所有命令
+② 输入​settings​ ，打开用户设置
+​
+​
 
-
-前提：需要安装有PySide6，如未安装
-
-
-pip install PySide6 -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-ui转py
-pyside6-uic in
 					...
 				</div>
 			</a>
@@ -2981,39 +2997,6 @@ pyside6-uic in
 netstat -ano | findstr 443
 
 查看该
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Windows/Windows%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7/">
-				<h2 class="index-title">
-					Windows内置工具
-				</h2>
-				<div class="index-brief">
-					Windows内置工具
-打开网络连接面板
-ncpa.cpl
-服务
-services.msc
-Windows事件查看器
-eventvwr
-远程桌面
-mstsc
-控制面板
-control
-注册表
-regedit
-任务执行计划
-taskschd.msc
-
 					...
 				</div>
 			</a>
