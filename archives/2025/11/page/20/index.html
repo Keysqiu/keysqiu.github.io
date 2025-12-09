@@ -2792,18 +2792,20 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
 				<h2 class="index-title">
-					Linux上安装Redis
+					RabbitMQ部署指南
 				</h2>
 				<div class="index-brief">
-					Linux上安装Redis
-1、安装Redis依赖
-Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
-yum install -y gcc tcl
-2、下载压缩包
-进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
-cd /us
+					RabbitMQ部署指南
+1、单机部署
+我们在Centos7虚拟机中使用Docker来安装。
+1.1、下载镜像
+方式一：在线拉取
+docker pull rabbitmq:3-management
+方式二：从本地加载
+镜像包下载链接：
+**链接：**​https://pan.baidu.com/s/
 					...
 				</div>
 			</a>
@@ -2816,16 +2818,19 @@ cd /us
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
 				<h2 class="index-title">
-					Redis的一些见解
+					Nacos安装指南
 				</h2>
 				<div class="index-brief">
-					Redis的一些见解
-缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了
+					Nacos安装指南
+1、Windows安装（单点部署）
+1.1、下载安装包
+在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：
+**GitHub主页：**​https://github.com/alibaba/nacos
+如图：
+
+我这里是用1.4.1.版本
 					...
 				</div>
 			</a>
@@ -2838,17 +2843,22 @@ cd /us
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					Window下Redis的安装和部署详细教程
+					SpringCloud学习
 				</h2>
 				<div class="index-brief">
-					Window下Redis的安装和部署详细教程
-1、下载Redis压缩包
+					SpringCloud学习
+微服务结构
 
-以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
+Nacos结构
 
-链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码
+Nacos与Eureka的区别
+
+Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
+临时实例心跳不正常会被剔除，非临时实例则不会被剔除
+Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
+N
 					...
 				</div>
 			</a>
@@ -2876,50 +2886,6 @@ cd /us
 –来自百度网盘超级会员V4的分享
 二、配置环境变量
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
-				<h2 class="index-title">
-					Python安装软件包的一些总结
-				</h2>
-				<div class="index-brief">
-					Python安装软件包的一些总结
-1、在线安装
-# 如果是安装单个包
-pip install [包名]
-** 建议使用下面这一个命令，毕竟是万能命令，一般的包拿这个命令来装都不会有什么问题 **
-pip install [包名] -i http:&#x2F;&#x2F;pypi.douban.com
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
-				<h2 class="index-title">
-					ERROR Could not build wheels for XXX, which is required to install pyprojec
-				</h2>
-				<div class="index-brief">
-					ERROR Could not build wheels for XXX, which is required to install pyprojec
-报错内容：
-
-ERROR: Could not build wheels for XXX， which is required to install
 					...
 				</div>
 			</a>
@@ -2996,20 +2962,64 @@ python -–ve
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
 				<h2 class="index-title">
-					外层包报ModuleNotFoundError
+					Python环境安装与配置
 				</h2>
 				<div class="index-brief">
-					外层包报ModuleNotFoundError
+					Python环境安装与配置
+一、准备工作
+Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带Python环境，在Windows系统上需要安装一下，超简单
+打开官网 https://www.python.org/downloads/  下载中心，根据自己的系统和版本选择合
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+				<h2 class="index-title">
+					内层包报ModuleNotFoundError
+				</h2>
+				<div class="index-brief">
+					内层包报ModuleNotFoundError
+问题：
+最外层的包安装有了，且可以访问到，但是还是报缺少里面的模块，下面是一个示例
 
-前提：包确实安装有，且可以访问到
+ModuleNotFoundError: No module named ‘libsvm.python’
 
+附原先的代码
+​
+解决方案
+这里以anaconda为例，
 
-**前提没问题再往下看，不然往下也没意义⚠️⚠️⚠️**
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
+				<h2 class="index-title">
+					ERROR Could not build wheels for XXX, which is required to install pyprojec
+				</h2>
+				<div class="index-brief">
+					ERROR Could not build wheels for XXX, which is required to install pyprojec
+报错内容：
 
-可能的原因：当前解释器安装的软件包污染了（所以为什么PyCharm会让你对每一个工程创建对应的虚拟环境）
-①：用pip list 查看当前解释器已安装的
+ERROR: Could not build wheels for XXX， which is required to install
 					...
 				</div>
 			</a>
