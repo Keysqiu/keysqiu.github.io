@@ -207,6 +207,28 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2025/12/24/1%E7%BB%8F%E9%AA%8C/Linux%20%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/">
+                     
+										    Linux 文件和目录操作命令速查表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/12/09/1%E7%BB%8F%E9%AA%8C/Linux%E5%A4%87%E4%BB%BD%EF%BC%8F%E8%BF%98%E5%8E%9F%E6%96%87%E4%BB%B6%E5%A4%B9/">
+                     
+										    Linux备份／还原文件夹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2025/12/24/1%E7%BB%8F%E9%AA%8C/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/">
                      
 										    Linux文件和目录操作命令速查表
@@ -1769,9 +1791,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -1780,9 +1802,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2880,22 +2902,15 @@ wx.switchTab()//只能
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/1%E9%AB%98%E5%B9%B6%E5%8F%91%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/">
 				<h2 class="index-title">
-					Java和C++的区别
+					1高并发方案总结
 				</h2>
 				<div class="index-brief">
-					Java和C++的区别
-Java和C++的区别
+					1、频繁使用、并发率高的表尽量使用DB.Update进行更新对应的字段，使用RF.Save更新会存在字段被覆盖更新的情况
+2、批处理与延迟提交，使用批量插入/更新数据，减少数据库往返次数。
+3、能使用异步处理，尽量使用异步、消息队列处理，可降低主线程阻塞情况。
 
-
-C++中的virtual虚函数，Java中不用什么前缀，子类直接重写即可，用@Override作标记
-
-
-C++中的纯虚函数，Java中加abstract前缀，且类也要声明为抽象类，C++不用声明
-
-
-Java中的接口，其实就是一个抽象类，里面都是
 					...
 				</div>
 			</a>
@@ -2908,15 +2923,15 @@ Java中的接口，其实就是一个抽象类，里面都是
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/1%E9%AB%98%E5%B9%B6%E5%8F%91%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Invalid%20HTTP%20request%20received/">
 				<h2 class="index-title">
-					1高并发方案总结
+					Invalid HTTP request received.
 				</h2>
 				<div class="index-brief">
-					1高并发方案总结
-1、频繁使用、并发率高的表尽量使用DB.Update进行更新对应的字段，使用RF.Save更新会存在字段被覆盖更新的情况
-2、批处理与延迟提交，使用批量插入/更新数据，减少数据库往返次数。
-3、能使用异步处理，尽量使用异步、消息队列处理，可降低主线程阻塞情况。
+					排查方法：看看是不是你的请求链接写错了，详细对照以下几点
+① http写成https
+② 端口号写错了
+③ 网址写错了！！！
 
 					...
 				</div>
@@ -2935,37 +2950,13 @@ Java中的接口，其实就是一个抽象类，里面都是
 					Java和C一些不一样的地方
 				</h2>
 				<div class="index-brief">
-					Java和C一些不一样的地方
-
+					
 Java源文件的名字跟类中的public修饰的类一样。
 Java的一个类中可以没有public类，有也只能有一个，且要与源文件同名，非public类可以有多个
 Java里面的char占两个字节
 float类型的变量怎么与double区别的呢？
 答：值后面加上f或F
-J
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Invalid%20HTTP%20request%20received/">
-				<h2 class="index-title">
-					Invalid HTTP request received.
-				</h2>
-				<div class="index-brief">
-					Invalid HTTP request received.
-排查方法：看看是不是你的请求链接写错了，详细对照以下几点
-① http写成https
-② 端口号写错了
-③ 网址写错了！！！
-
+Java中 int[]a,b; 
 					...
 				</div>
 			</a>
@@ -2983,14 +2974,40 @@ J
 					Java开发中一些疑惑的解释
 				</h2>
 				<div class="index-brief">
-					Java开发中一些疑惑的解释
-① 公司中是用html+css还是用vue
+					① 公司中是用html+css还是用vue
 答：
 这得看应用场景，如果需要被搜索引擎搜录 -&gt; html+css
 不需要，只需要服务于特定群体，而且要快速落地 -&gt; Vue
 ② 为什么很多公司都用第三方组件
 答：
-因为谁都不想消耗巨大的人力和物力造轮子，公司
+因为谁都不想消耗巨大的人力和物力造轮子，公司主要看效益，能用就行，能赚钱就
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/">
+				<h2 class="index-title">
+					Java和C++的区别
+				</h2>
+				<div class="index-brief">
+					Java和C++的区别
+
+
+C++中的virtual虚函数，Java中不用什么前缀，子类直接重写即可，用@Override作标记
+
+
+C++中的纯虚函数，Java中加abstract前缀，且类也要声明为抽象类，C++不用声明
+
+
+Java中的接口，其实就是一个抽象类，里面都是常量和abstract方
 					...
 				</div>
 			</a>
@@ -3008,8 +3025,7 @@ J
 					MP4视频测试URL地址，亲测有效
 				</h2>
 				<div class="index-brief">
-					MP4视频测试URL地址，亲测有效
-MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
+					MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
 ‍
 
 					...
@@ -3024,18 +3040,16 @@ MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Navicat%20Premium%2015%20%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/My%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/">
 				<h2 class="index-title">
-					Navicat Premium 15 永久破解激活工具及安装教程
+					My编程经验
 				</h2>
 				<div class="index-brief">
-					Navicat Premium 15 永久破解激活工具及安装教程
-下载安装包和破解工具
-Navicat安装包
-**链接：**​https://pan.baidu.com/s/1omVvljarD88EiJY1dSkqnw?pwd=dmue
-提取码：dmue
-–来自百度网盘超级会员V5的分享
-破解工具
+					如果你在使用一个框架，在具体业务逻辑中得到意料之外的结果，除去特殊情况，一般就是还有一些代码其他人写的，你还没找到罢了
+for&lt;=2层，if&lt;=3层
+2147483646
+Centos查看Ip地址命令：ip addr
+使用Linux 时不要乱删或乱改根目录下的东西（非必要）。家目录随便你
 					...
 				</div>
 			</a>

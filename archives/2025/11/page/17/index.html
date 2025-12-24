@@ -207,6 +207,28 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2025/12/24/1%E7%BB%8F%E9%AA%8C/Linux%20%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/">
+                     
+										    Linux 文件和目录操作命令速查表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/12/09/1%E7%BB%8F%E9%AA%8C/Linux%E5%A4%87%E4%BB%BD%EF%BC%8F%E8%BF%98%E5%8E%9F%E6%96%87%E4%BB%B6%E5%A4%B9/">
+                     
+										    Linux备份／还原文件夹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2025/12/24/1%E7%BB%8F%E9%AA%8C/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/">
                      
 										    Linux文件和目录操作命令速查表
@@ -1769,9 +1791,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -1780,9 +1802,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2803,14 +2825,19 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/">
+			<a href="/2025/11/30/Python/Python%E2%80%94TTS%EF%BC%88%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%EF%BC%89/">
 				<h2 class="index-title">
-					配环境
+					Python—TTS（文本转语音）
 				</h2>
 				<div class="index-brief">
-					配环境
-‍
-
+					Python—TTS（文本转语音）
+sudo apt-get update &amp;&amp; sudo apt-get install espeak
+安装pyttsx3
+pyttsx3官方参考文档
+pip install pyttsx3
+测试代码
+import pyttsx3
+def say_t
 					...
 				</div>
 			</a>
@@ -2823,39 +2850,17 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
+			<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					MySQL插入数据时，自动获取当前时间写入表中
+					Python学习
 				</h2>
 				<div class="index-brief">
-					MySQL插入数据时，自动获取当前时间写入表中
-字段的类型为： timestamp ，
-**往下看，默认那里改为 **CURRENT_TIMESTAMP
-‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
-				<h2 class="index-title">
-					MySQL笔记
-				</h2>
-				<div class="index-brief">
-					MySQL笔记
-数据库存储数据的特点
-​ 1、将数据放到表中，表再放到库中
-​ 2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
-​ 3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
-​ 4、表由列组成，我们也称为字段。所有表都是
+					Python学习
+1、Python中类的继承是直接写在类后面的括号里面的，直接写类名即可，震碎我三观
+2、Python中一个标准类的定义
+==记住每一个方法都要带self，通过self才能访问类内的属性和方法，不加self，找的是类外的东西==
+class Demo:
+    def __init_
 					...
 				</div>
 			</a>
@@ -2892,70 +2897,15 @@ All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RK
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+			<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
 				<h2 class="index-title">
-					数据库中ID从一个很奇怪的数开始
+					MySQL插入数据时，自动获取当前时间写入表中
 				</h2>
 				<div class="index-brief">
-					数据库中ID从一个很奇怪的数开始
-==说明你上一次生成的id就是乱序了==
-解决方法：
-使用 navicat ，右键表名，选择截断表
-
-截断表：清空数据表中所有数据，然后ID从1开始
-清空表：清空数据表中所有数据
-
+					MySQL插入数据时，自动获取当前时间写入表中
+字段的类型为： timestamp ，
+**往下看，默认那里改为 **CURRENT_TIMESTAMP
 ‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
-				<h2 class="index-title">
-					mysql常用的聚合函数
-				</h2>
-				<div class="index-brief">
-					mysql常用的聚合函数
-① 常用的聚合函数（以下都是求以列为单位）
-count(col) 表示求指定列的总行数
-**max(col)**​ :  表示求指定列的最大值
-******min(col)******​ : 表示求指定列的最小值
-sum(col): 表示求指定列的和
-avg(col): 表
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
-				<h2 class="index-title">
-					mysql连接详解（内外连接，左右连接）
-				</h2>
-				<div class="index-brief">
-					mysql连接详解（内外连接，左右连接）
-假设有两个表 T1，T2
-表的结构如下图所示
-
-一、内连接（inner join）【普通外键引用】
-如果想把用户信息、积分、等级都列出来，那么一般会这样写：
-
-select * from T1 ,T2 where T1.userid = T2.userid
 
 					...
 				</div>
@@ -2996,12 +2946,66 @@ select * from T1 ,T2 where T1.userid = T2.userid
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
+			<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
 				<h2 class="index-title">
-					配环境
+					mysql常用的聚合函数
 				</h2>
 				<div class="index-brief">
-					配环境
+					mysql常用的聚合函数
+① 常用的聚合函数（以下都是求以列为单位）
+count(col) 表示求指定列的总行数
+**max(col)**​ :  表示求指定列的最大值
+******min(col)******​ : 表示求指定列的最小值
+sum(col): 表示求指定列的和
+avg(col): 表
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
+				<h2 class="index-title">
+					MySQL笔记
+				</h2>
+				<div class="index-brief">
+					MySQL笔记
+数据库存储数据的特点
+​ 1、将数据放到表中，表再放到库中
+​ 2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
+​ 3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
+​ 4、表由列组成，我们也称为字段。所有表都是
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+				<h2 class="index-title">
+					数据库中ID从一个很奇怪的数开始
+				</h2>
+				<div class="index-brief">
+					数据库中ID从一个很奇怪的数开始
+==说明你上一次生成的id就是乱序了==
+解决方法：
+使用 navicat ，右键表名，选择截断表
+
+截断表：清空数据表中所有数据，然后ID从1开始
+清空表：清空数据表中所有数据
+
 ‍
 
 					...
@@ -3016,18 +3020,40 @@ select * from T1 ,T2 where T1.userid = T2.userid
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/OpenCV/Windows%E4%B8%8B%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83/">
+			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
 				<h2 class="index-title">
-					Windows下配置opencv环境
+					mysql连接详解（内外连接，左右连接）
 				</h2>
 				<div class="index-brief">
-					Windows下配置opencv环境
-① 下载软件包
-**链接：**​https://pan.baidu.com/s/1-clw63SKe2hBkCToTnHmgw?pwd=9g68
-提取码：9g68
-–来自百度网盘超级会员V4的分享
-② 配置环境
-**OpenCV环境配置教程：**​https:/
+					mysql连接详解（内外连接，左右连接）
+假设有两个表 T1，T2
+表的结构如下图所示
+
+一、内连接（inner join）【普通外键引用】
+如果想把用户信息、积分、等级都列出来，那么一般会这样写：
+
+select * from T1 ,T2 where T1.userid = T2.userid
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
+				<h2 class="index-title">
+					配环境
+				</h2>
+				<div class="index-brief">
+					配环境
+‍
+
 					...
 				</div>
 			</a>

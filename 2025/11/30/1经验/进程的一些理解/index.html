@@ -209,6 +209,28 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2025/12/24/1%E7%BB%8F%E9%AA%8C/Linux%20%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/">
+                     
+										    Linux 文件和目录操作命令速查表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/12/09/1%E7%BB%8F%E9%AA%8C/Linux%E5%A4%87%E4%BB%BD%EF%BC%8F%E8%BF%98%E5%8E%9F%E6%96%87%E4%BB%B6%E5%A4%B9/">
+                     
+										    Linux备份／还原文件夹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2025/12/24/1%E7%BB%8F%E9%AA%8C/Linux%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/">
                      
 										    Linux文件和目录操作命令速查表
@@ -1771,9 +1793,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -1782,9 +1804,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2829,8 +2851,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1>进程的一些理解</h1>
-<p><strong>1、父辈比子辈多一辈，所以父进程的pid为1，子进程的pid为0<br>
+	<p><strong>1、父辈比子辈多一辈，所以父进程的pid为1，子进程的pid为0<br>
 2、sleep(1)的作用是在子进程尝试使用sem_p()获取信号量之前引入1秒的延迟。这个延迟给父进程足够的时间将字符串写入文件并使用sem_v()释放信号量。如果没有这个延迟，存在子进程在父进程写入文件之前执行的可能性（主要是为了限制进程的不可预测性，您细品），导致子进程读取到空字符串或不完整的字符串。通过引入延迟，确保了父进程和子进程之间的正确同步。</strong></p>
 <p>‍</p>
 
