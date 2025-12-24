@@ -2825,141 +2825,49 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/YOLO/qt%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
+			<a href="/2025/11/30/Vue/Vue%E6%8F%92%E6%A7%BD/">
 				<h2 class="index-title">
-					qt部署文档
+					Vue插槽
 				</h2>
 				<div class="index-brief">
-					qt部署文档
-一、安装anaconda3
-**① 访问Anaconda官网：**​https://www.anaconda.com/products/individual
-② 选择相应的操作系统版本并下载对应的安装包（推荐下载64位版本）
-③ 打开下载的安装包，按照提示进行安装即可
-④ 创建一个虚拟
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/VsCode/%E8%AE%BE%E7%BD%AEVsCode%E7%BC%96%E7%A0%81/">
-				<h2 class="index-title">
-					设置VsCode编码
-				</h2>
-				<div class="index-brief">
-					设置VsCode编码
-① 按 Ctrl+Shift+P 搜索所有命令
-② 输入​settings​ ，打开用户设置
-​
-​
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue2%E9%A1%B9%E7%9B%AE%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90ElementUI/">
-				<h2 class="index-title">
-					Vue2项目快速集成ElementUI
-				</h2>
-				<div class="index-brief">
-					Vue2项目快速集成ElementUI
-1、下载依赖
-npm i element-ui -S
-2、导入依赖
-在main.js文件下添加如下代码即可
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/YOLO/PySide6%EF%BC%9Aui%E8%BD%ACpy%E5%92%8Cqrc%E8%BD%ACpy/">
-				<h2 class="index-title">
-					PySide6：ui转py和qrc转py
-				</h2>
-				<div class="index-brief">
-					PySide6：ui转py和qrc转py
-
-
-前提：需要安装有PySide6，如未安装
-
-
-pip install PySide6 -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-ui转py
-pyside6-uic in
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/nextTick%E7%9A%84%E7%90%86%E8%A7%A3/">
-				<h2 class="index-title">
-					nextTick的理解
-				</h2>
-				<div class="index-brief">
-					nextTick的理解
-其实就是在DOM内容完全更新了之后再执行callback中的操作，避免拿到脏DOM
-常用于需要操作更新后 DOM 的场景，比如获取元素尺寸、聚焦输入框、初始化第三方库等。
-export default &#123;
-  data() &#123;
-    return &#1
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue2%E7%BB%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/">
-				<h2 class="index-title">
-					Vue2组件基本结构
-				</h2>
-				<div class="index-brief">
-					Vue2组件基本结构
+					Vue插槽
+插槽就是 留个坑，让父组件填内容
+举个🌰
+好的，用一个简单例子说明：
+比如你有一个通用的卡片组件（Card.vue），但想让每个卡片的内容不一样。
+子组件 Card.vue：
 &lt;template>
-  &lt;div>
-  //code...
-  &lt;/div>
-&lt;/template>
-&lt;script>
-export default &#123;
-  data() &#123;
-    return &#123;&#125;
- 
+  &lt;div class="card">
+    &lt;header>卡片
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/Vue2%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E6%AD%A5%E9%AA%A4/">
+				<h2 class="index-title">
+					Vue2代码运行步骤
+				</h2>
+				<div class="index-brief">
+					Vue2代码运行步骤
+
+浏览器加载 index.html。
+加载并执行 main.js。
+初始化 Vue 实例并挂载到 DOM。
+解析根组件 App.vue。
+加载路由和状态管理（如果有）。
+执行组件的生命周期钩子。
+渲染子组件。
+响应式数据更新，动态更新页面。
+
+当 Vue 实例启动后，组件会经历
 					...
 				</div>
 			</a>
@@ -3001,20 +2909,41 @@ created() &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue%E6%8F%92%E6%A7%BD/">
+			<a href="/2025/11/30/Vue/nextTick%E7%9A%84%E7%90%86%E8%A7%A3/">
 				<h2 class="index-title">
-					Vue插槽
+					nextTick的理解
 				</h2>
 				<div class="index-brief">
-					Vue插槽
-插槽就是 留个坑，让父组件填内容
-举个🌰
-好的，用一个简单例子说明：
-比如你有一个通用的卡片组件（Card.vue），但想让每个卡片的内容不一样。
-子组件 Card.vue：
-&lt;template>
-  &lt;div class="card">
-    &lt;header>卡片
+					nextTick的理解
+其实就是在DOM内容完全更新了之后再执行callback中的操作，避免拿到脏DOM
+常用于需要操作更新后 DOM 的场景，比如获取元素尺寸、聚焦输入框、初始化第三方库等。
+export default &#123;
+  data() &#123;
+    return &#1
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/%E5%89%8D%E7%AB%AF%E9%A2%84%E7%95%99%E4%BB%A3%E7%A0%81/">
+				<h2 class="index-title">
+					前端预留代码
+				</h2>
+				<div class="index-brief">
+					前端预留代码
+JavaScript
+//=====
+使用 setup，你不需要显式地定义 setup 函数。所有在 &lt;script setup> 中的代码都会自动作为 setup 函数的一部分。
+//=====
+&lt;script setup lang="ts"> //ts或js
+&lt;/
 					...
 				</div>
 			</a>
@@ -3051,18 +2980,95 @@ npm install -g @vue/cli
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/%E5%89%8D%E7%AB%AF%E9%A2%84%E7%95%99%E4%BB%A3%E7%A0%81/">
+			<a href="/2025/11/30/Visual%20Studio/VS%E5%85%B3%E9%97%AD%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E7%9A%84%E4%BB%A3%E7%A0%81/">
 				<h2 class="index-title">
-					前端预留代码
+					VS关闭安全检查的代码
 				</h2>
 				<div class="index-brief">
-					前端预留代码
-JavaScript
-//=====
-使用 setup，你不需要显式地定义 setup 函数。所有在 &lt;script setup> 中的代码都会自动作为 setup 函数的一部分。
-//=====
-&lt;script setup lang="ts"> //ts或js
-&lt;/
+					VS关闭安全检查的代码
+#define _CRT_SECURE_NO_WARNINGS 1
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Windows/Windows%20%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
+				<h2 class="index-title">
+					Windows 关闭占用指定端口的进程
+				</h2>
+				<div class="index-brief">
+					Windows 关闭占用指定端口的进程
+找出占用443端口**的进程号(pid)**​ ******（**​第二列是你本机的应用占用的端口，看第二列就行）如下图，看第二列中对应过去的pid是18072
+# 输出的最后一列就是进程号pid
+netstat -ano | findstr 443
+
+查看该
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Visual%20Studio/VS%E8%AE%BE%E7%BD%AE%E5%8F%82%E8%80%83/">
+				<h2 class="index-title">
+					VS设置参考
+				</h2>
+				<div class="index-brief">
+					VS设置参考
+1、启用并行编译, 生成时仅生成启动项目依赖项不全部
+
+2、启用增量编译  
+
+3、关闭解决方案实时代码分析
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Windows/Windows%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7/">
+				<h2 class="index-title">
+					Windows内置工具
+				</h2>
+				<div class="index-brief">
+					Windows内置工具
+打开网络连接面板
+ncpa.cpl
+服务
+services.msc
+Windows事件查看器
+eventvwr
+远程桌面
+mstsc
+控制面板
+control
+注册表
+regedit
+任务执行计划
+taskschd.msc
+
 					...
 				</div>
 			</a>
