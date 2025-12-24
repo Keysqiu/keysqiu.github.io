@@ -2655,6 +2655,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -2755,28 +2777,6 @@
 			
 								</li>
 								
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 								</li>
@@ -2902,20 +2902,18 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/ubuntu%E4%B8%8Bmake%E3%80%81cmake%E5%8F%8Aopencv%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/">
 				<h2 class="index-title">
-					ubuntu下make、cmake及opencv版本查看
+					服务器和客户端通信总结
 				</h2>
 				<div class="index-brief">
-					查看make版本：
-**make -v**
-查看cmake版本：
-**cmake -version**
-安装cmake命令：
-**sudo apt-get install cmake**
-查看opencv版本：
-**pkg-config --modversion opencv**
-
+					C/S架构
+服务器：监听某个端口，等待客户端连接
+客户端：利用已知的（主机IP、主机监听的端口号）与服务器建立socket连接
+建立连接之后，后面的操作那不水到渠成了，嘿嘿嘿~~~
+B/S架构
+服务器：监听某个端口，等待客户端发起请求
+客户端：利用已知的（主机IP、主机监听的端口号）对服务器发起请求
 					...
 				</div>
 			</a>
@@ -2928,93 +2926,22 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Ubuntu22.04%E5%AE%89%E8%A3%85Jenkins%EF%BC%88JDK11%E7%89%88%EF%BC%89/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6/">
 				<h2 class="index-title">
-					Ubuntu22.04安装Jenkins（JDK11版）
+					docker安装各种组件
 				</h2>
 				<div class="index-brief">
-					1 安装java (建议安装11版本的java)
-sudo apt update
-sudo apt install openjdk-11-jdk
-安装完成后 查看下java版本是否安装完成
-java -version
-安装完成后输出下面的结果则表示成功
+					==镜像的概念：镜像是将应用程序及其需要的系统函数库、环境、配置、依赖打包而成。==
+一	docker基本命令
+镜像操作
+① 查看所有镜像
+docker images
+② 搜索镜像（以jdk为例）
+docker search jdk
 
-openjdk version “11.0.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E4%BB%A3%E7%A0%81%E5%8F%98%E5%8A%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E9%87%8D%E6%96%B0%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF/">
-				<h2 class="index-title">
-					代码变动，如何重新上传到服务器端
-				</h2>
-				<div class="index-brief">
-					1、前期准备
-1.1 安装Xshell和Xftp
-安装包.zip
-
-
-ps:文件解压完之后双击安装即可，如若提示更新，点击立即更新，不然它不给使用，后面再注册一下即可使用
-
-
-1.2 利用Xshell连接远程服务器
-① 在弹出的界面中点击新建会话，按下图填写相应的信息即可
-
-
-② 连接成功如下图所示
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E4%BD%BF%E7%94%A8CMD%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8CVue%E9%A1%B9%E7%9B%AE/">
-				<h2 class="index-title">
-					使用CMD命令行运行Vue项目
-				</h2>
-				<div class="index-brief">
-					先看！！！（ps：前提是你已经配置好nodejs，一般高版本的nodejs里面都内置有npm，所以需不需要安装npm可以看nodejs的版本）
-1、安装nodejs教程网址
-https://blog.csdn.net/m0_63550153/article/details/136531545
-2、安
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%EF%BC%88Centos%EF%BC%89/">
-				<h2 class="index-title">
-					脚本自动化部署springboot（Centos）
-				</h2>
-				<div class="index-brief">
-					
-如果报-bash: ./xxx.sh: /bin/sh^M: bad interpreter: No such file or directory
-
-请参考​bad interpreter,No such file or directory
-deploy_software.sh（安装软件）
-#!/
+③ 下载镜像
+docker pull java
+④ 启动镜像（以
 					...
 				</div>
 			</a>
@@ -3052,18 +2979,14 @@ sudo apt-get install open-vm-tools
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/">
+			<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					服务器和客户端通信总结
+					51单片机学习
 				</h2>
 				<div class="index-brief">
-					C/S架构
-服务器：监听某个端口，等待客户端连接
-客户端：利用已知的（主机IP、主机监听的端口号）与服务器建立socket连接
-建立连接之后，后面的操作那不水到渠成了，嘿嘿嘿~~~
-B/S架构
-服务器：监听某个端口，等待客户端发起请求
-客户端：利用已知的（主机IP、主机监听的端口号）对服务器发起请求
+					首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解
+首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解大多数单片机或芯片： ==高电平弱驱动，低电平强驱动==
+大多数单片机或芯片：​==高电平弱驱动，
 					...
 				</div>
 			</a>
@@ -3100,17 +3023,63 @@ B/S架构
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E5%BE%AE%E4%BF%A1%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%9C%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%EF%BC%9F%E6%B6%88%E6%81%AF%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%EF%BC%8CDocker%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E3%80%82%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/1%E9%AB%98%E5%B9%B6%E5%8F%91%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/">
 				<h2 class="index-title">
-					微信机器人运行在Linux服务器上？消息自动回复，Docker一键部署。详细安装使用
+					1高并发方案总结
 				</h2>
 				<div class="index-brief">
-					前期工作
-项目地址：
-https://github.com/danni-cool/docker-wechatbot-webhook
-简单来说就是docker封装的微信机器人，可以实现自动化收发消息，可以一键部署到Linux服务器。
-1、首先在Ubuntu系统安装docker
-sudo apt upd
+					1、频繁使用、并发率高的表尽量使用DB.Update进行更新对应的字段，使用RF.Save更新会存在字段被覆盖更新的情况
+2、批处理与延迟提交，使用批量插入/更新数据，减少数据库往返次数。
+3、能使用异步处理，尽量使用异步、消息队列处理，可降低主线程阻塞情况。
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%EF%BC%88Centos%EF%BC%89/">
+				<h2 class="index-title">
+					脚本自动化部署springboot（Centos）
+				</h2>
+				<div class="index-brief">
+					
+如果报-bash: ./xxx.sh: /bin/sh^M: bad interpreter: No such file or directory
+
+请参考​bad interpreter,No such file or directory
+deploy_software.sh（安装软件）
+#!/
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+				<h2 class="index-title">
+					快捷键
+				</h2>
+				<div class="index-brief">
+					1.折叠所有代码
+
+先ctrl+m
+再ctrl+o（这是字母O）
+先ctrl+m
+再ctrl+l（这是字母L）
+
+
 					...
 				</div>
 			</a>
@@ -3133,6 +3102,30 @@ sudo apt upd
 ② 端口号写错了
 ③ 网址写错了！！！
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%BC%80%E5%8F%91%E4%B8%AD%E4%B8%80%E4%BA%9B%E7%96%91%E6%83%91%E7%9A%84%E8%A7%A3%E9%87%8A/">
+				<h2 class="index-title">
+					Java开发中一些疑惑的解释
+				</h2>
+				<div class="index-brief">
+					① 公司中是用html+css还是用vue
+答：
+这得看应用场景，如果需要被搜索引擎搜录 -&gt; html+css
+不需要，只需要服务于特定群体，而且要快速落地 -&gt; Vue
+② 为什么很多公司都用第三方组件
+答：
+因为谁都不想消耗巨大的人力和物力造轮子，公司主要看效益，能用就行，能赚钱就
 					...
 				</div>
 			</a>

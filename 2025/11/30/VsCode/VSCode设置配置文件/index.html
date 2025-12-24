@@ -2657,6 +2657,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -2757,28 +2779,6 @@
 			
 								</li>
 								
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 								</li>
@@ -2912,7 +2912,7 @@
 	<div>作者：Keysqiu</div>
   <div>
 	<span>创建时间：2025-11-30 18:19:02</span>
-	<span>最后一次修改时间：2025-11-30 18:19:02</span>
+	<span>最后一次修改时间：2025-12-24 21:00:51</span>
   </div>
 
 
@@ -2933,53 +2933,49 @@
 <!-- content -->
 <div id="article-content">
 	<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token comment">//?系统配置</span>
-    <span class="token property">"debug.onTaskErrors"</span><span class="token operator">:</span> <span class="token string">"debugAnyway"</span><span class="token punctuation">,</span>          
-    <span class="token comment">//调试时忽略异常                            </span>
+    <span class="token comment">// 调试时即使任务出错也继续调试</span>
+    <span class="token property">"debug.onTaskErrors"</span><span class="token operator">:</span> <span class="token string">"debugAnyway"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 差异编辑器中开启自动换行</span>
     <span class="token property">"diffEditor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
-    <span class="token comment">//视距折行                                               </span>
-    <span class="token property">"editor.cursorBlinking"</span><span class="token operator">:</span> <span class="token string">"smooth"</span><span class="token punctuation">,</span> 
-    <span class="token comment">//光标动画</span>
-    <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">13.5</span><span class="token punctuation">,</span> 
-    <span class="token comment">//字体大小</span>
-    <span class="token property">"editor.guides.bracketPairs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> 
-    <span class="token comment">//匹配括号</span>
-    <span class="token property">"editor.mouseWheelZoom"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> 
-    <span class="token comment">//缩放</span>
+    <span class="token comment">// 光标平滑闪烁</span>
+    <span class="token property">"editor.cursorBlinking"</span><span class="token operator">:</span> <span class="token string">"smooth"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编辑器字体大小（支持小数）</span>
+    <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">13.5</span><span class="token punctuation">,</span>
+    <span class="token comment">// 显示括号对引导线</span>
+    <span class="token property">"editor.guides.bracketPairs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 按住 Ctrl 并滚动鼠标滚轮可缩放字体</span>
+    <span class="token property">"editor.mouseWheelZoom"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 启用编辑器平滑滚动</span>
     <span class="token property">"editor.smoothScrolling"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">//平滑滚动</span>
+    <span class="token comment">// 代码补全默认选中第一个建议项</span>
     <span class="token property">"editor.suggestSelection"</span><span class="token operator">:</span> <span class="token string">"first"</span><span class="token punctuation">,</span>
-    <span class="token comment">//建议选择</span>
+    <span class="token comment">// 编辑器自动换行</span>
     <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
-    <span class="token comment">//视距折行</span>
-    <span class="token property">"editor.rulers"</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token number">120</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token comment">//设置标尺</span>
+    <span class="token comment">// 在第 120 列显示标尺线（辅助代码宽度控制）</span>
+    <span class="token property">"editor.rulers"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">120</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Tab 缩进为 4 个空格</span>
     <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-    <span class="token comment">//设置tab缩进</span>
-    <span class="token property">"explorer.confirmDelete"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token comment">//删除文件时不询问</span>
+    <span class="token comment">// 自动猜测文件编码（避免乱码）</span>
     <span class="token property">"files.autoGuessEncoding"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">//自动保存</span>
+    <span class="token comment">// 打开不受信任的文件时不提示</span>
     <span class="token property">"security.workspace.trust.untrustedFiles"</span><span class="token operator">:</span> <span class="token string">"open"</span><span class="token punctuation">,</span>
-    <span class="token comment">//信任打开的文件</span>
-    <span class="token property">"terminal.integrated.enableMultiLinePasteWarning"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token comment">//禁止多行粘贴警告</span>
+    <span class="token comment">// 粘贴多行内容到终端时不警告</span>
+    <span class="token property">"terminal.integrated.enableMultiLinePasteWarning"</span><span class="token operator">:</span> <span class="token string">"never"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 终端启用平滑滚动</span>
     <span class="token property">"terminal.integrated.smoothScrolling"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">//平滑滚动</span>
+    <span class="token comment">// 使用 VS Code 自定义对话框样式（非系统原生）</span>
     <span class="token property">"window.dialogStyle"</span><span class="token operator">:</span> <span class="token string">"custom"</span><span class="token punctuation">,</span>
-    <span class="token comment">//图标主题</span>
+    <span class="token comment">// 资源管理器列表平滑滚动</span>
     <span class="token property">"workbench.list.smoothScrolling"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">//?c语言插件配置</span>
+    <span class="token comment">// 打开项目时自动运行 CMake 配置</span>
     <span class="token property">"cmake.configureOnOpen"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">//在打开文件时配置CMake项目</span>
-    <span class="token comment">//?oneDarkPro主题配置</span>
-    <span class="token property">"oneDarkPro.italic"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token property">"chat.editing.alwaysSaveWithGeneratedChanges"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Vue 文件使用 Volar 作为默认格式化工具</span>
     <span class="token property">"[vue]"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
         <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"Vue.volar"</span>
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token property">"editor.linkedEditing"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment">// 启用关联编辑（如修改 HTML 标签时同步更新闭合标签）</span>
+    <span class="token property">"editor.linkedEditing"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </div>
 
@@ -2988,9 +2984,9 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/11/30/VsCode/VS%20Code%20%E4%B8%AD%E8%BF%90%E8%A1%8CJava%20SpringBoot%E7%9A%84%E9%A1%B9%E7%9B%AE/">
+              <a href="/2025/11/30/Unity/Unity%E5%AD%A6%E4%B9%A0/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  VS Code 中运行Java SpringBoot的项目
+                  Unity学习
               </a>
             
         </div>
