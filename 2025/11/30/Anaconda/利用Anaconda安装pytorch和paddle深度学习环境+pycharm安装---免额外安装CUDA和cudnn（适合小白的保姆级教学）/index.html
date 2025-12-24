@@ -842,6 +842,39 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										51单片机
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
+                     
+										    51单片机学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										Anaconda
 									</a>
 									
@@ -2691,6 +2724,17 @@
 									
 							<ul>
 								<li class="file">
+									<a href="/2025/12/09/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/van-dialog_%E7%A1%AE%E8%AE%A4_%E4%B8%8D%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD/">
+                     
+										    van-dialog_确认_不自动关闭
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/wx%E5%AD%A6%E4%B9%A0/">
                      
 										    wx学习
@@ -2778,6 +2822,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										收藏笔记
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E6%94%B6%E8%97%8F%E7%AC%94%E8%AE%B0/2025%20%E6%96%B0%E7%89%88Android%20Studio%E5%88%9B%E5%BB%BAJava%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE/">
+                     
+										    2025 新版Android Studio创建Java语言项目
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										自动化测试
 									</a>
 									
@@ -2818,6 +2884,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										面试
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E7%BB%8F/">
+                     
+										    面试经
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 		</div>
 	</div>
 </div>
@@ -2835,7 +2923,7 @@
 	<div>作者：Keysqiu</div>
   <div>
 	<span>创建时间：2025-11-30 18:19:01</span>
-	<span>最后一次修改时间：2025-12-02 18:55:22</span>
+	<span>最后一次修改时间：2025-12-03 10:46:40</span>
   </div>
 
 
@@ -2855,8 +2943,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1>利用Anaconda安装pytorch和paddle深度学习环境+pycharm安装—免额外安装CUDA和cudnn（适合小白的保姆级教学）</h1>
-<p><strong>一、英伟达驱动安装与更新</strong><br>
+	<p><strong>一、英伟达驱动安装与更新</strong><br>
 <strong>二、Anaconda 的安装</strong><br>
 <strong>三、Pytorch环境安装</strong><br>
 <strong>四、paddlepaddle环境安装</strong><br>
@@ -2865,7 +2952,7 @@
 <pre><code>    之前我们在利用GPU进行深度学习的时候，都要去NVIDIA的官网下载CUDA的安装程序和cudnn的压缩包，然后再进行很繁琐的系统环境配置。不仅环境配置麻烦，而且还特别容易配置错误，特别还有CUDA和cudnn版本的对应也特别容易搞错，但是利用anaconda安装配置pytorch和paddlepaddle环境的时候会自动帮我们配置好cuda和cudnn。这篇博客就是针对小白的保姆级深度学习的环境配置教程
 </code></pre>
 <h1>一、NVIDIA驱动安装与更新</h1>
-<pre><code>   **显卡驱动程序就是用来驱动显卡的程序，它是硬件所对应的软件。驱动程序即添加到操作系统中的一小块代码，其中包含有关硬件设备的信息。正常有显卡的电脑都是有驱动程序的，但是有的时候驱动可能版本比较低，支持的cuda版本也是比较低的（**​**&lt;u&gt;但是有的人的显卡是比较老的，就不建议更新驱动，这样会导致各种各样的问题，但是搞深度学习还是要用一块好的显卡用来学习，这点我是有血泪教训的，咬咬牙买块好的显卡，把知识学到手，以后的工资可以多赚会很多显卡的钱&lt;/u&gt;**​ **），NVIDIA出的30系列的显卡好像只支持cuda11以上的版本。 首先查看电脑的显卡版本，步骤为：此电脑右击--&gt;管理--&gt;设备管理器--&gt;显示适配器。就可以看到电脑显卡的版本了。如图，可以看到我的是一块RTX3060显卡。**
+<pre><code>   显卡驱动程序就是用来驱动显卡的程序，它是硬件所对应的软件。驱动程序即添加到操作系统中的一小块代码，其中包含有关硬件设备的信息。正常有显卡的电脑都是有驱动程序的，但是有的时候驱动可能版本比较低，支持的cuda版本也是比较低的（&lt;u&gt;但是有的人的显卡是比较老的，就不建议更新驱动，这样会导致各种各样的问题，但是搞深度学习还是要用一块好的显卡用来学习，这点我是有血泪教训的，咬咬牙买块好的显卡，把知识学到手，以后的工资可以多赚会很多显卡的钱&lt;/u&gt;），NVIDIA出的30系列的显卡好像只支持cuda11以上的版本。 首先查看电脑的显卡版本，步骤为：此电脑右击--&gt;管理--&gt;设备管理器--&gt;显示适配器。就可以看到电脑显卡的版本了。如图，可以看到我的是一块RTX3060显卡。
 </code></pre>
 <p><img src="/assets/%E5%88%A9%E7%94%A8Anaconda%E5%AE%89%E8%A3%85pytorch%E5%92%8Cpaddle%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83+pycharm%E5%AE%89%E8%A3%85---%E5%85%8D%E9%A2%9D%E5%A4%96%E5%AE%89%E8%A3%85CUDA%E5%92%8Ccudnn%EF%BC%88%E9%80%82%E5%90%88%E5%B0%8F%E7%99%BD%E7%9A%84%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E5%AD%A6%EF%BC%89_image_0-20251130181901-j1vxfeg.png" alt=""><br>
 ​<img src="/assets/%E5%88%A9%E7%94%A8Anaconda%E5%AE%89%E8%A3%85pytorch%E5%92%8Cpaddle%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83+pycharm%E5%AE%89%E8%A3%85---%E5%85%8D%E9%A2%9D%E5%A4%96%E5%AE%89%E8%A3%85CUDA%E5%92%8Ccudnn%EF%BC%88%E9%80%82%E5%90%88%E5%B0%8F%E7%99%BD%E7%9A%84%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E5%AD%A6%EF%BC%89_image_1-20251130181901-pfi3frk.png" alt=""><br>
@@ -2963,16 +3050,16 @@ conda config <span class="token parameter variable">--set</span> show_channel_ur
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Invalid%20HTTP%20request%20received/">
+              <a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Invalid HTTP request received.
+                  快捷键
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/">
-                Java和C++的区别
+              <a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
+                51单片机学习
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

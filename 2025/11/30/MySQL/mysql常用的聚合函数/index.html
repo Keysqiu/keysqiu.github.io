@@ -842,6 +842,39 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										51单片机
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
+                     
+										    51单片机学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										Anaconda
 									</a>
 									
@@ -2691,6 +2724,17 @@
 									
 							<ul>
 								<li class="file">
+									<a href="/2025/12/09/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/van-dialog_%E7%A1%AE%E8%AE%A4_%E4%B8%8D%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD/">
+                     
+										    van-dialog_确认_不自动关闭
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/wx%E5%AD%A6%E4%B9%A0/">
                      
 										    wx学习
@@ -2778,6 +2822,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										收藏笔记
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E6%94%B6%E8%97%8F%E7%AC%94%E8%AE%B0/2025%20%E6%96%B0%E7%89%88Android%20Studio%E5%88%9B%E5%BB%BAJava%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE/">
+                     
+										    2025 新版Android Studio创建Java语言项目
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										自动化测试
 									</a>
 									
@@ -2818,6 +2884,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										面试
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E7%BB%8F/">
+                     
+										    面试经
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 		</div>
 	</div>
 </div>
@@ -2835,7 +2923,7 @@
 	<div>作者：Keysqiu</div>
   <div>
 	<span>创建时间：2025-11-30 18:19:01</span>
-	<span>最后一次修改时间：2025-12-02 08:54:05</span>
+	<span>最后一次修改时间：2025-12-05 17:05:20</span>
   </div>
 
 
@@ -2855,36 +2943,34 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1>mysql常用的聚合函数</h1>
-<h1>① 常用的聚合函数（以下都是求以列为单位）</h1>
+	<h1>一、常用的聚合函数（以下都是求以列为单位）</h1>
 <p><strong>count(col) 表示求指定列的总行数</strong></p>
-<p>**max(col)**​ <strong><strong>:</strong></strong>  <strong><strong><strong><strong>表示求指定列的最大值</strong></strong></strong></strong></p>
-<p>******min(col)******​ <strong>: 表示求指定列的最小值</strong></p>
+<p><strong>max(col): 表示求指定列的最大值</strong></p>
+<p><strong>min(col): 表示求指定列的最小值</strong></p>
 <p><strong>sum(col): 表示求指定列的和</strong></p>
 <p><strong>avg(col): 表示求指定列的平均值</strong></p>
-<h2 id="②-求总行数">② 求总行数</h2>
+<h2 id="1、求总行数">1、求总行数</h2>
 <p><strong>– 返回非NULL数据的总行数</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>– 返回总行数,包含null值记录</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="③-求最大值">③ 求最大值</h2>
+<h2 id="2、求最大值">2、求最大值</h2>
 <p><strong>– 查询女生的编号最大值</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="④-求最小值">④ 求最小值</h2>
+<h2 id="3、求最小值">3、求最小值</h2>
 <p><strong>– 查询未删除的学生最小编号</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">min</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> is_delete <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="⑤-求和">⑤ 求和</h2>
+<h2 id="4、求和">4、求和</h2>
 <p><strong>– 查询男生的总身高</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">sum</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>– 平均身高</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">sum</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>⑥ 求平均值</strong><br>
-<strong>– 求男生的平均身高, 聚合函数不统计null值，平均身高有误</strong></p>
+<p><strong>– 求男生的平均身高, 聚合函数不统计null值，平均身高有误</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>– 求男生的平均身高, 包含身高是null的</strong></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>ifnull<span class="token punctuation">(</span>height<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>说明:ifnull函数:表示判断指定字段的值是否为null,如果为空使用自己提供的值</strong></p>
-<h1>-----聚合函数的特点 <strong>-----</strong></h1>
+<h1>聚合函数的特点</h1>
 <p><strong>聚合函数默认忽略字段为null的记录 要想列值为null的记录也参与计算,必须使用ifnull函数对null值做替换（详情请看第⑥的第二个例子即可，就在上面一点）</strong></p>
 
 </div>
@@ -2894,16 +2980,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/11/30/MySQL/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE/">
+              <a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  MySQL 防止被爬走数据
+                  MySQL笔记
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
-                MySQL插入数据时，自动获取当前时间写入表中
+              <a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+                数据库中ID从一个很奇怪的数开始
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

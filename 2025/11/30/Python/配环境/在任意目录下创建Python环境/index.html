@@ -842,6 +842,39 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										51单片机
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
+                     
+										    51单片机学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										Anaconda
 									</a>
 									
@@ -2691,6 +2724,17 @@
 									
 							<ul>
 								<li class="file">
+									<a href="/2025/12/09/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/van-dialog_%E7%A1%AE%E8%AE%A4_%E4%B8%8D%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD/">
+                     
+										    van-dialog_确认_不自动关闭
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/wx%E5%AD%A6%E4%B9%A0/">
                      
 										    wx学习
@@ -2778,6 +2822,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										收藏笔记
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E6%94%B6%E8%97%8F%E7%AC%94%E8%AE%B0/2025%20%E6%96%B0%E7%89%88Android%20Studio%E5%88%9B%E5%BB%BAJava%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE/">
+                     
+										    2025 新版Android Studio创建Java语言项目
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										自动化测试
 									</a>
 									
@@ -2818,6 +2884,28 @@
 								
 							</ul>
 			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										面试
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E7%BB%8F/">
+                     
+										    面试经
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
 		</div>
 	</div>
 </div>
@@ -2835,7 +2923,7 @@
 	<div>作者：Keysqiu</div>
   <div>
 	<span>创建时间：2025-11-30 18:19:01</span>
-	<span>最后一次修改时间：2025-12-02 09:10:11</span>
+	<span>最后一次修改时间：2025-12-11 19:02:50</span>
   </div>
 
 
@@ -2855,8 +2943,7 @@
 
 <!-- content -->
 <div id="article-content">
-	<h1>在任意目录下创建Python环境</h1>
-<h1><strong>创建环境</strong></h1>
+	<h1><strong>创建环境</strong></h1>
 <p>**① 创建虚拟环境：使用python -m venv **​ <strong>&lt;directory&gt;<strong>​</strong>命令，在指定的目录下创建一个虚拟环境，该目录会包含一个Python解释器和一些支持文件。通常，可以将虚拟环境命名为 .venv ，这样可以在终端中隐藏它，并且表明它的用途。</strong></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python <span class="token parameter variable">-m</span> venv <span class="token operator">&lt;</span>directory<span class="token operator">></span>
 <span class="token comment">#例</span>
@@ -2877,6 +2964,7 @@ call .venv<span class="token punctuation">\</span>Scripts<span class="token punc
 pip freeze <span class="token operator">></span> requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>安装requirement.txt，执行命令即可一键安装完所需要的第三方库。</strong></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt <span class="token parameter variable">-i</span> http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>‍</p>
 
 </div>
 
@@ -2885,18 +2973,13 @@ pip freeze <span class="token operator">></span> requirements.txt<span aria-hidd
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+              <a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  内层包报ModuleNotFoundError
+                  外层包报ModuleNotFoundError
               </a>
             
         </div>
         <div class="item right">
-            
-              <a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
-                外层包报ModuleNotFoundError
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
             
         </div>
     </div>
