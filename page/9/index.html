@@ -1791,9 +1791,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1802,9 +1802,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2803,22 +2803,18 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Postman%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B1%89%E5%8C%96/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85docker/">
 				<h2 class="index-title">
-					Postman安装与汉化
+					Linux安装docker
 				</h2>
 				<div class="index-brief">
-					Postman安装与汉化
-一、下载安装包
-**链接：**​https://pan.baidu.com/s/1RCZQXYtEPr9TooOUeSjMIQ?pwd=ywmk
-提取码：ywmk
-–来自百度网盘超级会员V5的分享
-
-下载后的目录如图所示
-
-
-二、Postman安装
-双击目录下的​Postm
+					Linux安装docker
+docker报错时查看日志命令
+journalctl -xe
+# 把错误拿去百度即可
+# 经验一：是否是防火墙和docker内的网络冲突了，关掉防火墙试试！
+systemctl stop firewalld.service    		--停止firewall
+system
 					...
 				</div>
 			</a>
@@ -2831,14 +2827,180 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/MP4%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95URL%E5%9C%B0%E5%9D%80%EF%BC%8C%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85maven%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/">
 				<h2 class="index-title">
-					MP4视频测试URL地址，亲测有效
+					Linux安装maven指定版本
 				</h2>
 				<div class="index-brief">
-					MP4视频测试URL地址，亲测有效
-MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
+					Linux安装maven指定版本
+① 官方下载：
+② 附件
+
+也可以用下面的这个安装包，这个是3.9.6的
+
+apache-maven-3.9.6-bin.tar.gz
+下载好安装包之后，通过sftp工具丢到服务器喜欢的目录
+# 查看存放路径
+pwd
+1、解压
+# 解压
+tar -zxvf apac
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85jdk/">
+				<h2 class="index-title">
+					Linux安装jdk
+				</h2>
+				<div class="index-brief">
+					Linux安装jdk
+一、JDK8
+**链接：**​https://pan.baidu.com/s/1NfzIezipNTuAujzxcjTZ3w?pwd=pul3
+提取码：pul3
+–来自百度网盘超级会员V5的分享
+解压：
+tar -zxvf jdk-8u291-linux-x64.tar.gz
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
+				<h2 class="index-title">
+					Linux关闭占用指定端口的进程
+				</h2>
+				<div class="index-brief">
+					Linux关闭占用指定端口的进程
+两种方式
+① 第一种
+用netstat -ano | grep 端口 找出进程号
+然后 kill -9 进程号 杀进程
+② 第二种
+例：关闭占用80端口的进程
+sudo fuser -k -n tcp 80
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/My-%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+				<h2 class="index-title">
+					My-定时备份服务器MySQL数据库
+				</h2>
+				<div class="index-brief">
+					My-定时备份服务器MySQL数据库
+shell脚本如下：（主要改的地方：第 2​ 、4、5、7、9、11、​13****​ 、14、16 行）
+#用户名
+mysql_user="root"
+#密码
+mysql_password="G#t9WhZr2@qL7BmPnXeD"
+mysql_host="
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+				<h2 class="index-title">
+					Linux常用命令
+				</h2>
+				<div class="index-brief">
+					Linux常用命令
+查看主机当前内存
+**free -h**
+查看主机当前外存
+**df -h**
+查看当前主机运行的程序
+**top**
+删除文件/文件夹
+rm 文件名 #删除文件
+rm -d 目录名 #删除一个空目录
+rm -r 目录名 #删除一个非空目录
+安装Ubuntu终端分屏工具
+**su
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
+				<h2 class="index-title">
+					MySQL数据库定时备份
+				</h2>
+				<div class="index-brief">
+					MySQL数据库定时备份
 ‍
+一、查看 MySQL 是否安装了 crontab
+yum -y install vixie-cron
+yum -y install crontabs
+二、crontab 常用命令
+# 查看进程是否正在进行
+ps aux | grep crond
+# 查看运行状态
+sys
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/SpringBoot%E5%92%8CVue2%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2https%E5%8D%8F%E8%AE%AE/">
+				<h2 class="index-title">
+					SpringBoot和Vue2项目部署https协议
+				</h2>
+				<div class="index-brief">
+					SpringBoot和Vue2项目部署https协议
+一、SpringBoot项目
+1、去你自己的云申请并下载好相关文件，SpringBoot下载的是Tomcat（默认），Vue2下载的是Nginx
+
+2、将下载的压缩包里面的.pfx后缀文件拷贝到项目的resources目录下
+
+3、编辑配置文件
 
 					...
 				</div>
@@ -2852,16 +3014,17 @@ MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%A9%E7%94%A8gparted%E9%87%8D%E6%96%B0%E8%B0%83%E6%95%B4%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F/">
 				<h2 class="index-title">
-					Redis的一些见解
+					Ubuntu虚拟机利用gparted重新调整磁盘大小
 				</h2>
 				<div class="index-brief">
-					Redis的一些见解
-缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了
+					Ubuntu虚拟机利用gparted重新调整磁盘大小
+1、先在VMware Workstation里面扩展虚拟机的虚拟内存
+
+2、安装gparted
+sudo apt-get install gparted
+2.1、打开gparted，开始重新调整磁盘大小（如果点击调整大小这里出现问题，请往后看，有
 					...
 				</div>
 			</a>
@@ -2874,172 +3037,18 @@ MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Navicat%20Premium%2015%20%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Ubuntu22.04%E5%AE%89%E8%A3%85Jenkins%EF%BC%88JDK11%E7%89%88%EF%BC%89/">
 				<h2 class="index-title">
-					Navicat Premium 15 永久破解激活工具及安装教程
+					Ubuntu22.04安装Jenkins（JDK11版）
 				</h2>
 				<div class="index-brief">
-					Navicat Premium 15 永久破解激活工具及安装教程
-下载安装包和破解工具
-Navicat安装包
-**链接：**​https://pan.baidu.com/s/1omVvljarD88EiJY1dSkqnw?pwd=dmue
-提取码：dmue
-–来自百度网盘超级会员V5的分享
-破解工具
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/My%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/">
-				<h2 class="index-title">
-					My编程经验
-				</h2>
-				<div class="index-brief">
-					My编程经验
-如果你在使用一个框架，在具体业务逻辑中得到意料之外的结果，除去特殊情况，一般就是还有一些代码其他人写的，你还没找到罢了
-for&lt;=2层，if&lt;=3层
-2147483646
-Centos查看Ip地址命令：ip addr
-使用Linux 时不要乱删或乱改根目录下的东西（非必要）
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Sublime%20Text3%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/">
-				<h2 class="index-title">
-					Sublime Text3关闭自动更新
-				</h2>
-				<div class="index-brief">
-					Sublime Text3关闭自动更新
-方法一：打开sublime——首选项(preferences)——设置(setting)
-
-然后加入下面这一句代码，重新打开Sublime Text3
-"update_check":false
-
-如果方法一不行，用方法二
-方法二：打开hosts文件，在里面加入
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-				<h2 class="index-title">
-					基本数据结构
-				</h2>
-				<div class="index-brief">
-					基本数据结构
-哈希表
-哈希表的思想就是一个数组的下标嵌套另一个数组的值，形成一个键值的对应关系，将键作为数组的索引，数组中索引为i存储的值就是它对应的值
-栈
-栈的指针为什么一开始赋值为-1，这是因为当压入数据时，可以使（下标++）的代码不用特殊处理，也就是一直（下标++）
-二叉树的遍历
-由前序知道树
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
-				<h2 class="index-title">
-					内网穿透
-				</h2>
-				<div class="index-brief">
-					内网穿透
-
-作用：普通型http(s)隧道穿透,用于搭建网站,微信开发等穿透到本地web服务
-
-1 安装NATAPP软件
-将下面文件解压到一个目录
-natapp_windows_amd64_2_3_9.zip
-解压后，文件夹的内容如下
-
-主要是替换natapp.bat下的authtoken，具体au
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%85%B1%E6%9C%89%E5%A4%9A%E5%B0%91%E7%AB%AF%E5%8F%A3%EF%BC%9F/">
-				<h2 class="index-title">
-					一台电脑共有多少端口？
-				</h2>
-				<div class="index-brief">
-					一台电脑共有多少端口？
-一台电脑会有65536个端口，计算是由256*256得出，端口号从0开始到65535.
-
-公认端口（baiWell Known Ports）：从0到1023，它们紧密绑定于一些服务。通常这些端口的通讯明确表明了某种服务的协议。例如：80端口实际上总是HTTP通讯。
-注册端口（
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E4%B8%9C%E8%A5%BF/">
-				<h2 class="index-title">
-					如何快速学习一个新东西
-				</h2>
-				<div class="index-brief">
-					如何快速学习一个新东西
-问：新手学Python容易上手吗？
-答：建议直接从项目开始做
-某个东西，你想做但不会，就去抄一个项目，先跑起来
-
-比如你想爬百度的内容，肯定有人做过
-
-**你就直接抄过来，能跑就是第一步**
-
-然后开始改
-
-改着改着你就入门了
-
-这比你看枯燥的课程快多了
-
-然后学一学基本的语
+					Ubuntu22.04安装Jenkins（JDK11版）
+1 安装java (建议安装11版本的java)
+sudo apt update
+sudo apt install openjdk-11-jdk
+安装完成后 查看下java版本是否安装完成
+java -version
+安装完成后输出下面的结果
 					...
 				</div>
 			</a>

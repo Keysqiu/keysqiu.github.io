@@ -1791,9 +1791,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1802,9 +1802,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2803,16 +2803,115 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Unity/Unity%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/elasticsearch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
 				<h2 class="index-title">
-					Unity学习
+					elasticsearch安装指南
 				</h2>
 				<div class="index-brief">
-					Unity学习
-1、​游戏物体都是一个空物体，它表现出不同的形式，都是由于它的​组件​ ******。******​ （超级重要，空物体仅仅只有一个transform，其他的都是外带的）
-2、向量的加法是做一个平行四边形，对角线就是最终的结果。
-3、向量的减法是如果 A - B，则指向A
-4、变体依
+					elasticsearch安装指南
+1、部署单点es
+1.1、创建网络
+因为我们还需要部署kibana容器，因此需要让es和kibana容器互联。这里先创建一个网络：
+docker network create es-net
+1.2、加载镜像
+镜像tar包的下载链接：
+**链接：**​https:/
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/elasticsearch_02/">
+				<h2 class="index-title">
+					elasticsearch_02
+				</h2>
+				<div class="index-brief">
+					elasticsearch_02
+1.DSL查询文档
+elasticsearch的查询依然是基于JSON风格的DSL来实现的。
+1.1.DSL查询分类
+Elasticsearch提供了基于JSON的DSL（Domain Specific Language）来定义查询。常见的查询类型包括：
+
+
+查询所
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Windows/Windows%20%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
+				<h2 class="index-title">
+					Windows 关闭占用指定端口的进程
+				</h2>
+				<div class="index-brief">
+					Windows 关闭占用指定端口的进程
+找出占用443端口**的进程号(pid)**​ ******（**​第二列是你本机的应用占用的端口，看第二列就行）如下图，看第二列中对应过去的pid是18072
+# 输出的最后一列就是进程号pid
+netstat -ano | findstr 443
+
+查看该
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/%E9%85%92%E5%BA%97%E7%B4%A2%E5%BC%95%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93/">
+				<h2 class="index-title">
+					酒店索引库与数据库
+				</h2>
+				<div class="index-brief">
+					酒店索引库与数据库
+酒店索引库与数据库
+// 酒店数据索引库
+PUT /hotel
+&#123;
+  "settings": &#123;
+    "analysis": &#123;
+      "analyzer": &#123;
+        "text_anlyzer": &#123;
+ 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Windows/Windows%E4%B8%8B%E5%B0%86%E2%80%9C%E4%BD%BF%E7%94%A8VSCode%E6%89%93%E5%BC%80%E2%80%9D%E6%B7%BB%E5%8A%A0%E8%87%B3%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/">
+				<h2 class="index-title">
+					Windows下将“使用VSCode打开”添加至右键菜单
+				</h2>
+				<div class="index-brief">
+					Windows下将“使用VSCode打开”添加至右键菜单
+
+新建一个名为 1.reg 的文件，找一个记事本或者sublime打开，文件名无所谓，但是一定需要带上 .reg 后缀。
+查看你自己的电脑的vscode安装目录，最简单的方法就是右键桌面的vscode，查看属性就知道了。以我的安装地址为例：C
 					...
 				</div>
 			</a>
@@ -2850,40 +2949,26 @@ elasticsearch安装指南
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Visual%20Studio/VS%E7%BC%96%E8%AF%91%E5%99%A8%E6%8A%A51%E4%B8%AA%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90%E7%9A%84%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
+			<a href="/2025/11/30/Windows/Windows%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7/">
 				<h2 class="index-title">
-					VS编译器报1个无法解析的外部命令
+					Windows内置工具
 				</h2>
 				<div class="index-brief">
-					VS编译器报1个无法解析的外部命令
-解决思路：（以下思路需对照代码进行逐点分析）
-①：代码里函数有声明，但是没有定义  （初学者错这个比较多）
-②：类中有静态变量成员，没有对它进行初始化（是变量，不是函数）（开发后期错这个比较多）
-③：缺少lib库，可能代码里面引用了一些第三方的库，这个后面导入处理
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Visual%20Studio/VS%E8%AE%BE%E7%BD%AE%E5%8F%82%E8%80%83/">
-				<h2 class="index-title">
-					VS设置参考
-				</h2>
-				<div class="index-brief">
-					VS设置参考
-1、启用并行编译, 生成时仅生成启动项目依赖项不全部
-
-2、启用增量编译  
-
-3、关闭解决方案实时代码分析
-
+					Windows内置工具
+打开网络连接面板
+ncpa.cpl
+服务
+services.msc
+Windows事件查看器
+eventvwr
+远程桌面
+mstsc
+控制面板
+control
+注册表
+regedit
+任务执行计划
+taskschd.msc
 
 					...
 				</div>
@@ -2897,91 +2982,22 @@ elasticsearch安装指南
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/VsCode/VS%20Code%20%E4%B8%AD%E8%BF%90%E8%A1%8CJava%20SpringBoot%E7%9A%84%E9%A1%B9%E7%9B%AE/">
+			<a href="/2025/11/30/Windows/Windows%E5%BF%AB%E6%8D%B7%E9%94%AE/">
 				<h2 class="index-title">
-					VS Code 中运行Java SpringBoot的项目
+					Windows快捷键
 				</h2>
 				<div class="index-brief">
-					VS Code 中运行Java SpringBoot的项目
-一、前提条件
-JDK、Maven已配置好
-二、安装插件
-Language Support for Java(TM) by Red Hat
-Debugger for Java
-Spring Boot Extension
-Spring Boot
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/VsCode/VSCode%E8%AE%BE%E7%BD%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
-				<h2 class="index-title">
-					VSCode设置配置文件
-				</h2>
-				<div class="index-brief">
-					VSCode设置配置文件
-&#123;
-    //?系统配置
-    "debug.onTaskErrors": "debugAnyway",          
-    //调试时忽略异常                            
-    "diffEditor.wordWrap"
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/VsCode/VsCode%E6%8F%92%E4%BB%B6%E6%94%B6%E5%BD%95/">
-				<h2 class="index-title">
-					VsCode插件收录
-				</h2>
-				<div class="index-brief">
-					VsCode插件收录
-
-Vue 3 Snippets
-Vue - Official
-vue
-Spring Initializr Java Support
-Spring Boot Tools
-Spring Boot Extension Pack
-Spring Boot Dashboard
-Python
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/VsCode/%E8%AE%BE%E7%BD%AEVsCode%E7%BC%96%E7%A0%81/">
-				<h2 class="index-title">
-					设置VsCode编码
-				</h2>
-				<div class="index-brief">
-					设置VsCode编码
-① 按 Ctrl+Shift+P 搜索所有命令
-② 输入​settings​ ，打开用户设置
-​
-​
+					Windows快捷键
+打开文件资源管理器
+win + E
+打开文件属性
+Alt + 回车
+重命名
+F2
+刷新当前窗口内容
+Ctrl + R
+妙用快捷键
+Win + X
 
 					...
 				</div>
@@ -2995,23 +3011,15 @@ Python
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue2%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E6%AD%A5%E9%AA%A4/">
+			<a href="/2025/11/30/Windows/Windows%E7%9A%84CredSSP%E5%8A%A0%E5%AF%86%E6%95%B0%E6%8D%AE%E5%BA%93%E9%AA%8C%E8%AF%81%E6%8A%A5%E9%94%99/">
 				<h2 class="index-title">
-					Vue2代码运行步骤
+					Windows的CredSSP加密数据库验证报错
 				</h2>
 				<div class="index-brief">
-					Vue2代码运行步骤
-
-浏览器加载 index.html。
-加载并执行 main.js。
-初始化 Vue 实例并挂载到 DOM。
-解析根组件 App.vue。
-加载路由和状态管理（如果有）。
-执行组件的生命周期钩子。
-渲染子组件。
-响应式数据更新，动态更新页面。
-
-当 Vue 实例启动后，组件会经历
+					Windows的CredSSP加密数据库验证报错
+新建一个脚本，后缀为.reg，名称随便给，然后双击运行即可
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVers
 					...
 				</div>
 			</a>
@@ -3024,22 +3032,14 @@ Python
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue2%E7%BB%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/">
+			<a href="/2025/11/30/Windows/Windows%E6%97%B6%E9%97%B4%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC/">
 				<h2 class="index-title">
-					Vue2组件基本结构
+					Windows时间批处理脚本
 				</h2>
 				<div class="index-brief">
-					Vue2组件基本结构
-&lt;template>
-  &lt;div>
-  //code...
-  &lt;/div>
-&lt;/template>
-&lt;script>
-export default &#123;
-  data() &#123;
-    return &#123;&#125;
- 
+					Windows时间批处理脚本
+Windows时间批处理脚本.zip
+
 					...
 				</div>
 			</a>

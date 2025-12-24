@@ -1791,9 +1791,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1802,9 +1802,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2803,17 +2803,23 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/Keil5%E4%B8%8B%E8%BD%BD%E7%A8%8B%E5%BA%8F%E5%90%8E%E8%A6%81%E7%A1%AC%E4%BB%B6%E5%A4%8D%E4%BD%8D%E5%90%8E%E6%89%8D%E6%89%A7%E8%A1%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+			<a href="/2025/11/30/Vue/vue2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">
 				<h2 class="index-title">
-					Keil5下载程序后要硬件复位后才执行解决方法
+					vue2生命周期函数
 				</h2>
 				<div class="index-brief">
-					Keil5下载程序后要硬件复位后才执行解决方法
-1.勾选  Reset and Run（主要）
+					vue2生命周期函数
+🌿 1. created
 
-2.不勾选Enable（第2点这里，有就勾，没有的话，不勾也无所谓的）
+“我出生了！数据有了，但页面还没长出来。”
 
 
+数据、方法已准备好，可以访问 this.data。
+常用于：发请求、初始化数据。
+页面（DOM）还没生成，不能操作。
+
+created() &#123;
+  console.log('我出生了！', 
 					...
 				</div>
 			</a>
@@ -2826,17 +2832,88 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/Keil5%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%8F%8A%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/">
+			<a href="/2025/11/30/Vue/nextTick%E7%9A%84%E7%90%86%E8%A7%A3/">
 				<h2 class="index-title">
-					Keil5如何开启代码自动补全及如何加快编译速度
+					nextTick的理解
 				</h2>
 				<div class="index-brief">
-					Keil5如何开启代码自动补全及如何加快编译速度
-一、Keil5代码自动补全
-对于一些stm32自带的一些库函数有时候名字很长,如果自己敲的话就很很麻烦，甚至有时候会敲错。好在keil有自动补全这一功能，大大提高了编程速度。
-步骤：1、打开keil5，点击edit，configraution
-​
-选
+					nextTick的理解
+其实就是在DOM内容完全更新了之后再执行callback中的操作，避免拿到脏DOM
+常用于需要操作更新后 DOM 的场景，比如获取元素尺寸、聚焦输入框、初始化第三方库等。
+export default &#123;
+  data() &#123;
+    return &#1
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/%E5%89%8D%E7%AB%AF%E9%A2%84%E7%95%99%E4%BB%A3%E7%A0%81/">
+				<h2 class="index-title">
+					前端预留代码
+				</h2>
+				<div class="index-brief">
+					前端预留代码
+JavaScript
+//=====
+使用 setup，你不需要显式地定义 setup 函数。所有在 &lt;script setup> 中的代码都会自动作为 setup 函数的一部分。
+//=====
+&lt;script setup lang="ts"> //ts或js
+&lt;/
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/%E8%84%9A%E6%89%8B%E6%9E%B6vue-cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">
+				<h2 class="index-title">
+					脚手架vue-cli创建Vue项目
+				</h2>
+				<div class="index-brief">
+					脚手架vue-cli创建Vue项目
+一、安装vue-cli
+npm install -g @vue/cli 
+
+安装完成后：输入vue -V检查版本，出现版本号就表示安装成功，如果出现“vue” 不是内部或外部命令，也不是可运行的程序或批处理文件，就说明安装失败了
+
+（1）新建一个空文件夹，在该文件
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/IO%E5%8F%A3%E4%B8%8D%E6%8C%89%E9%A2%84%E6%9C%9F%E8%BE%93%E5%87%BA/">
+				<h2 class="index-title">
+					IO口不按预期输出
+				</h2>
+				<div class="index-brief">
+					IO口不按预期输出
+
+前提：接线和代码都没问题（一定要先检查完这个前提再往下排查，不然往下毫无意义）
+
+看看是不是你的模块之间设置的IO口都是那一个，冲突了，错了几次，真的艹了！！！
+
 					...
 				</div>
 			</a>
@@ -2860,6 +2937,50 @@
 提取码：hsb0
 –来自百度网盘超级会员V4的分享
 二、下面针对工具的配置和使用：格式化当前文件、
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/IC%EF%BC%88Input%20Capture%EF%BC%89%E8%BE%93%E5%85%A5%E6%8D%95%E8%8E%B7/">
+				<h2 class="index-title">
+					IC（Input Capture）输入捕获
+				</h2>
+				<div class="index-brief">
+					IC（Input Capture）输入捕获
+理解：输入捕获模式下，当通道输入引脚出现指定电平跳变时，当前CNT的值将被锁存到CCR中，可用于测量PWM波形的频率、占空比、脉冲间隔、电平持续时间等参数（可以想象成示波器，您细品就懂了！！！）
+‍
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/Keil5%E4%B8%8B%E8%BD%BD%E7%A8%8B%E5%BA%8F%E5%90%8E%E8%A6%81%E7%A1%AC%E4%BB%B6%E5%A4%8D%E4%BD%8D%E5%90%8E%E6%89%8D%E6%89%A7%E8%A1%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+				<h2 class="index-title">
+					Keil5下载程序后要硬件复位后才执行解决方法
+				</h2>
+				<div class="index-brief">
+					Keil5下载程序后要硬件复位后才执行解决方法
+1.勾选  Reset and Run（主要）
+
+2.不勾选Enable（第2点这里，有就勾，没有的话，不勾也无所谓的）
+
+
 					...
 				</div>
 			</a>
@@ -2897,135 +3018,17 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/OC%EF%BC%88Output%20Compare%EF%BC%89%E8%BE%93%E5%87%BA%E6%AF%94%E8%BE%83/">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/Keil5%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%8F%8A%E5%A6%82%E4%BD%95%E5%8A%A0%E5%BF%AB%E7%BC%96%E8%AF%91%E9%80%9F%E5%BA%A6/">
 				<h2 class="index-title">
-					OC（Output Compare）输出比较
+					Keil5如何开启代码自动补全及如何加快编译速度
 				</h2>
 				<div class="index-brief">
-					OC（Output Compare）输出比较
-OC理解：输出比较可以通过比较CNT与CCR寄存器值的关系，来对输出电平进行置1、置0或翻转的操作，用于输出一定频率和占空比的PWM波形（可以想象成信号发生器，您细品就懂了！！！）
-PWM简介
-
-（上图中Ts的值从第二个图中可以看出，代表一个高低电平变换
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/PADS%209.5%E5%AE%89%E8%A3%85/">
-				<h2 class="index-title">
-					PADS 9.5安装
-				</h2>
-				<div class="index-brief">
-					PADS 9.5安装
-1、获取安装包，链接如下：
-**链接：**​https://pan.baidu.com/s/1p4d7C_iwPF46ReDbf-SHVg?pwd=ml3e
-提取码：ml3e
-–来自百度网盘超级会员V4的分享
-2、开始安装
-①：下载好pads9.5.iso之后，鼠标右击软件压缩
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/STM32F103C8T6%20%E6%8C%89%E9%94%AE%E6%89%AB%E6%8F%8F%E8%BE%93%E5%85%A5/">
-				<h2 class="index-title">
-					STM32F103C8T6 按键扫描输入
-				</h2>
-				<div class="index-brief">
-					STM32F103C8T6 按键扫描输入
-（嫌无聊直接看最后一行的结论）
-一、原理
-1.按键类型
-现在市场上大部分采用的都是这种按键按钮微动开关，这个开关使用简单、价格便宜。
-
-2.按键消抖
-因为按键按下和弹起这段时间会产生抖动现象，该现象会导致按键扫描误判。按键按下的瞬间和弹起的瞬间都会产生一个1
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/stm32%E5%AD%A6%E4%B9%A0/">
-				<h2 class="index-title">
-					stm32学习
-				</h2>
-				<div class="index-brief">
-					stm32学习
-
-Reset是给低电平，Set是给高电平
-代码提示快捷键：Ctrl+Alt+空格
-GPIO设置好了之后默认输出低电平，GPIO就是单片机与外部设备通信的接口，用来读取外部设备的信号或者控制外部设备的状态
-推挽模式和开漏模式：推挽输出高低电平均有驱动能力，开漏输出高电平相当于高阻态，没
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/stm32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-				<h2 class="index-title">
-					stm32基础知识
-				</h2>
-				<div class="index-brief">
-					stm32基础知识
-stm32F103C8T6芯片
-①只有TIM 1,2,3,4 		4个定时器
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/stm32%E4%BD%BF%E7%94%A8ST-LINK%E7%83%A7%E5%BD%95%E6%97%B6%E6%8A%A5%E9%94%99No%20ST-LINK%20detected/">
-				<h2 class="index-title">
-					stm32使用ST-LINK烧录时报错No ST-LINK detected
-				</h2>
-				<div class="index-brief">
-					stm32使用ST-LINK烧录时报错No ST-LINK detected
-报错示意图如下：
-
-开始排查
-①：确认ST-LINK与stm32芯片的四个引脚连接是否正确（这一步至关重要，先排查完这一步才往下走，不然都是浪费时间！！！）
-②：按照如下示意图进行操作
-
-
-确认一下②那个地方是否是ST-L
+					Keil5如何开启代码自动补全及如何加快编译速度
+一、Keil5代码自动补全
+对于一些stm32自带的一些库函数有时候名字很长,如果自己敲的话就很很麻烦，甚至有时候会敲错。好在keil有自动补全这一功能，大大提高了编程速度。
+步骤：1、打开keil5，点击edit，configraution
+​
+选
 					...
 				</div>
 			</a>

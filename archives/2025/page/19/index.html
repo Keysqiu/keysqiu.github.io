@@ -1791,9 +1791,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1802,9 +1802,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2824,6 +2824,32 @@
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
+				<h2 class="index-title">
+					安装ros
+				</h2>
+				<div class="index-brief">
+					安装ros
+系统：Ubuntu 18.04
+安装ROS版本：melodic
+​
+前四个勾选
+​
+打开命令终端，输入以下命令
+1.添加ROS源
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) mai
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
 				<h2 class="index-title">
 					ros配置launch文件
@@ -2873,20 +2899,18 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
+			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
 				<h2 class="index-title">
-					安装ros
+					Linux上安装Redis
 				</h2>
 				<div class="index-brief">
-					安装ros
-系统：Ubuntu 18.04
-安装ROS版本：melodic
-​
-前四个勾选
-​
-打开命令终端，输入以下命令
-1.添加ROS源
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) mai
+					Linux上安装Redis
+1、安装Redis依赖
+Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
+yum install -y gcc tcl
+2、下载压缩包
+进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
+cd /us
 					...
 				</div>
 			</a>
@@ -2899,21 +2923,17 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) mai
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
 				<h2 class="index-title">
-					环境配置
+					Window下Redis的安装和部署详细教程
 				</h2>
 				<div class="index-brief">
-					环境配置
-1.选择下载的Erlang安装包，并双击运行
+					Window下Redis的安装和部署详细教程
+1、下载Redis压缩包
 
-2.点击Next，选择安装的目录位置，点击下一步即可
+以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
 
-3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
-
-4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
-
-5.例如Erlang
+链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码
 					...
 				</div>
 			</a>
@@ -2952,39 +2972,21 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 				<h2 class="index-title">
-					Window下Redis的安装和部署详细教程
+					环境配置
 				</h2>
 				<div class="index-brief">
-					Window下Redis的安装和部署详细教程
-1、下载Redis压缩包
+					环境配置
+1.选择下载的Erlang安装包，并双击运行
 
-以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
+2.点击Next，选择安装的目录位置，点击下一步即可
 
-链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
-				<h2 class="index-title">
-					Redis的一些见解
-				</h2>
-				<div class="index-brief">
-					Redis的一些见解
-缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了
+3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
+
+4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
+
+5.例如Erlang
 					...
 				</div>
 			</a>
