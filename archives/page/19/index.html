@@ -1769,9 +1769,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1780,9 +1780,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2803,21 +2803,39 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0/">
+			<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
 				<h2 class="index-title">
-					Qt修改项目名称
+					ros的HelloWorld案例
 				</h2>
 				<div class="index-brief">
-					Qt修改项目名称
-一、复制项目内容到新的文件夹中。修改文件夹名称
-
-
-二、手动把  .pro 的名字改写为新的项目名称。删除.pro.user文件
-
-
-三、用QT Creator打开修改名字之后的.pro文件，重新配置项目（configure project） 完成！
-
-
+					ros的HelloWorld案例
+1.创建工作空间并初始化
+mkdir -p 自定义空间名称/src
+cd 自定义空间名称
+catkin_make  #自动生成构建目录
+2.进入src创建ros包并添加依赖
+cd src
+catkin_create_pkg 自定义ROS包名 roscpp rospy
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+				<h2 class="index-title">
+					ros通信机制
+				</h2>
+				<div class="index-brief">
+					ros通信机制
+1.话题通信机制（发布/订阅模式）
+具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
 
 					...
 				</div>
@@ -2831,22 +2849,17 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
 				<h2 class="index-title">
-					Qt学习
+					ros配置launch文件
 				</h2>
 				<div class="index-brief">
-					Qt学习
-1、​qt项目相对路径的起源是以​编译的build文件夹为主目录
-2、信号写在发送窗口的.h中，写一个声明即可，无需实现。槽函数写在目标窗口的.h和.cpp文件中，需要实现。连接写在哪都可。
-
-
-信号：发送窗口
-
-
-槽函数与连接：目标窗口
-
-利用Tab进行选中的排序，双击这个数字，它就会变
+					ros配置launch文件
+1.选定功能包右击 —&gt; 添加launch文件夹
+2.选定launch文件夹右击 —&gt; 添加launch文件
+3.编辑launch文件内容
+&lt;launch&gt;
+    &lt;node pkg&#x3D;&quot;helloworld&quot; 
 					...
 				</div>
 			</a>
@@ -2859,88 +2872,20 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
 				<h2 class="index-title">
-					Qt开发过程中的一些解决方案
+					安装ros
 				</h2>
 				<div class="index-brief">
-					Qt开发过程中的一些解决方案
-一、QT使用QLabel控件显示图片，报错：QPixmap::scaled: Pixmap is a null pixmap
-在网上看了很多帖子：
-
-文件名改为英文（未解决问题）
-图片路径改为绝对路径（未解决问题）
-图片格式不对（如果上面两个都没有解决问题，那么请试用这
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
-				<h2 class="index-title">
-					Qt打包发布
-				</h2>
-				<div class="index-brief">
-					Qt打包发布
-一. 执行Release编译
-1. 首先打开想要发布的程序所在的项目。
-2. 点击左下角 项目——&gt;构建套件(Kit)——&gt;构建，选择Release。 3. 点击构建项目 （左下角那把锤子），或者使用快捷键Ctrl+R。
-
-二. 构建可执行程序
-1. 编译完成后到程序的输出
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
-				<h2 class="index-title">
-					Linux上安装Redis
-				</h2>
-				<div class="index-brief">
-					Linux上安装Redis
-1、安装Redis依赖
-Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
-yum install -y gcc tcl
-2、下载压缩包
-进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
-cd /us
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
-				<h2 class="index-title">
-					Redis的一些见解
-				</h2>
-				<div class="index-brief">
-					Redis的一些见解
-缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了
+					安装ros
+系统：Ubuntu 18.04
+安装ROS版本：melodic
+​
+前四个勾选
+​
+打开命令终端，输入以下命令
+1.添加ROS源
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) mai
 					...
 				</div>
 			</a>
@@ -2979,6 +2924,54 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+				<h2 class="index-title">
+					用VSCode实现HelloWorld案例
+				</h2>
+				<div class="index-brief">
+					用VSCode实现HelloWorld案例
+1.创建工作空间并初始化
+mkdir -p 自定义空间名称/src
+cd 自定义空间名称
+catkin_make  #自动生成构建目录
+2.用VSCode打开
+code .  #在工作区文件夹下
+3.配置json文件
+按住​Ctrl+Shift+B​ ，在
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+				<h2 class="index-title">
+					Redis的一些见解
+				</h2>
+				<div class="index-brief">
+					Redis的一些见解
+缓存的意义在于可以保护后台的接口不被大量的请求所攻击
+逻辑是这样的：
+1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
+2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
 				<h2 class="index-title">
 					Window下Redis的安装和部署详细教程
@@ -3002,21 +2995,20 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
 				<h2 class="index-title">
-					环境配置
+					Docker实用篇
 				</h2>
 				<div class="index-brief">
-					环境配置
-1.选择下载的Erlang安装包，并双击运行
+					Docker实用篇
+1.初识Docker
+1.1.什么是Docker
+微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
 
-2.点击Next，选择安装的目录位置，点击下一步即可
+分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
+在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
 
-3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
-
-4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
-
-5.例如Erlang
+1.1.1.应用部署的
 					...
 				</div>
 			</a>
@@ -3029,19 +3021,18 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
 				<h2 class="index-title">
-					RabbitMQ
+					Linux上安装Redis
 				</h2>
 				<div class="index-brief">
-					RabbitMQ
-1.初识MQ
-1.1.同步和异步通讯
-微服务间通讯有同步和异步两种方式：
-同步通讯：就像打电话，需要实时响应。
-异步通讯：就像发邮件，不需要马上回复。
-两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
-
+					Linux上安装Redis
+1、安装Redis依赖
+Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
+yum install -y gcc tcl
+2、下载压缩包
+进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
+cd /us
 					...
 				</div>
 			</a>

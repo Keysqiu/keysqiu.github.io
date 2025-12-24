@@ -1769,9 +1769,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1780,9 +1780,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2803,19 +2803,33 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/wx%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%82%BBB%E9%97%AE%E9%A2%98/">
 				<h2 class="index-title">
-					wx学习
+					微信小游戏开发遇到的一些傻B问题
 				</h2>
 				<div class="index-brief">
-					wx学习
-
-经验：”在使用样式时两个父组件之间用margin，父组件自己内部的子组件之间用paddding，从而达到隔开的效果，不那么紧密&quot;
-
-① 把一个组件的角进行圆润：
- box-sizing: border-box; 
-border-radius: 20rpx;
-② 给一个组件的四条
+					微信小游戏开发遇到的一些傻B问题
+1、如果微信开发者工具报一些莫名奇妙的undefined（未定义），（前提是你检查过你代码中报未定义函数或变量的名字没有写错 ）， 试试把微信自动生成导入包的语句注释掉，看看能不能跑的通 ，因为微信自动生成导入包的语句生成的贼tm傻逼（可能大小写出错，也可能根本不需
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97/">
+				<h2 class="index-title">
+					使用外部组件的一些心得
+				</h2>
+				<div class="index-brief">
+					使用外部组件的一些心得
+有赞的Props和element的Attributes都是一个意思，Events也是这样用的，都是放在标签里面做键（就是写在左边，然后等于一个什么类型的值）
+反正记得一句话，人家给啥，你就写标签里面，且是以键的形式，不管名字有多奇怪，你直接复制过去就ok了，然后注意下人家需要
 					...
 				</div>
 			</a>
@@ -2841,6 +2855,31 @@ npm i @vant/weapp -S --production
 2、修改 app.json
 找到&quot;style&quot;: &quot;v2&quot;并去掉
 最后，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A9%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E9%9D%A0%E5%8F%B3%E3%80%81%E9%9D%A0%E5%B7%A6%E3%80%81%E6%88%96%E8%80%85%E5%A4%84%E4%BA%8E%E7%88%B6%E5%85%83%E7%B4%A0%E7%9A%84%E4%BB%BB%E6%84%8F%E7%BA%A6%E6%9D%9F%E4%BD%8D%E7%BD%AE/">
+				<h2 class="index-title">
+					微信小程序-让某个元素靠右、靠左、或者处于父元素的任意约束位置
+				</h2>
+				<div class="index-brief">
+					微信小程序-让某个元素靠右、靠左、或者处于父元素的任意约束位置
+口诀：父相对，子绝对，靠哪，哪里置为0
+WXML:
+&lt;view class='task-box'>
+ &lt;view class='checkbutton'>参与讨论&lt;/view>
+&lt;/view>
+WXSS:
+父元素
 					...
 				</div>
 			</a>
@@ -2880,50 +2919,6 @@ wx.switchTab()//只能
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A9%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E9%9D%A0%E5%8F%B3%E3%80%81%E9%9D%A0%E5%B7%A6%E3%80%81%E6%88%96%E8%80%85%E5%A4%84%E4%BA%8E%E7%88%B6%E5%85%83%E7%B4%A0%E7%9A%84%E4%BB%BB%E6%84%8F%E7%BA%A6%E6%9D%9F%E4%BD%8D%E7%BD%AE/">
-				<h2 class="index-title">
-					微信小程序-让某个元素靠右、靠左、或者处于父元素的任意约束位置
-				</h2>
-				<div class="index-brief">
-					微信小程序-让某个元素靠右、靠左、或者处于父元素的任意约束位置
-口诀：父相对，子绝对，靠哪，哪里置为0
-WXML:
-&lt;view class='task-box'>
- &lt;view class='checkbutton'>参与讨论&lt;/view>
-&lt;/view>
-WXSS:
-父元素
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%82%BBB%E9%97%AE%E9%A2%98/">
-				<h2 class="index-title">
-					微信小游戏开发遇到的一些傻B问题
-				</h2>
-				<div class="index-brief">
-					微信小游戏开发遇到的一些傻B问题
-1、如果微信开发者工具报一些莫名奇妙的undefined（未定义），（前提是你检查过你代码中报未定义函数或变量的名字没有写错 ）， 试试把微信自动生成导入包的语句注释掉，看看能不能跑的通 ，因为微信自动生成导入包的语句生成的贼tm傻逼（可能大小写出错，也可能根本不需
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/">
 				<h2 class="index-title">
 					Java和C++的区别
@@ -2940,29 +2935,6 @@ C++中的纯虚函数，Java中加abstract前缀，且类也要声明为抽象�
 
 
 Java中的接口，其实就是一个抽象类，里面都是
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Invalid%20HTTP%20request%20received/">
-				<h2 class="index-title">
-					Invalid HTTP request received.
-				</h2>
-				<div class="index-brief">
-					Invalid HTTP request received.
-排查方法：看看是不是你的请求链接写错了，详细对照以下几点
-① http写成https
-② 端口号写错了
-③ 网址写错了！！！
-
 					...
 				</div>
 			</a>
@@ -3010,6 +2982,29 @@ Java里面的char占两个字节
 float类型的变量怎么与double区别的呢？
 答：值后面加上f或F
 J
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Invalid%20HTTP%20request%20received/">
+				<h2 class="index-title">
+					Invalid HTTP request received.
+				</h2>
+				<div class="index-brief">
+					Invalid HTTP request received.
+排查方法：看看是不是你的请求链接写错了，详细对照以下几点
+① http写成https
+② 端口号写错了
+③ 网址写错了！！！
+
 					...
 				</div>
 			</a>
