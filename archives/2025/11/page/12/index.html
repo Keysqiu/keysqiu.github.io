@@ -768,6 +768,17 @@
 			
 							<ul>
 								<li class="file">
+									<a href="/2026/01/15/1%E8%BF%90%E7%BB%B4/%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E8%BF%9C%E7%A8%8BDocker%E5%AE%B9%E5%99%A8-Portainer/">
+                     
+										    可视化管理你的远程Docker容器-Portainer
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E5%AE%9E%E7%8E%B0Ubuntu%E4%B8%8EWindows%E4%B9%8B%E9%97%B4%E7%9A%84%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/">
                      
 										    实现Ubuntu与Windows之间的复制粘贴
@@ -2902,6 +2913,50 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/1%E9%AB%98%E5%B9%B6%E5%8F%91%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93/">
+				<h2 class="index-title">
+					1高并发方案总结
+				</h2>
+				<div class="index-brief">
+					1、频繁使用、并发率高的表尽量使用DB.Update进行更新对应的字段，使用RF.Save更新会存在字段被覆盖更新的情况
+2、批处理与延迟提交，使用批量插入/更新数据，减少数据库往返次数。
+3、能使用异步处理，尽量使用异步、消息队列处理，可降低主线程阻塞情况。
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Anaconda/Ubuntu%E5%AE%89%E8%A3%85Anaconda/">
+				<h2 class="index-title">
+					Ubuntu安装Anaconda
+				</h2>
+				<div class="index-brief">
+					1. 下载Anconda安装包
+1.1 wget命令下载
+当然还可以去清华大学开源软件镜像站：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/，下载各种版本的Anaconda。
+wget下载命令如下：
+
+我这里下载的是2024.02-1版本
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/">
 				<h2 class="index-title">
 					Java和C++的区别
@@ -2929,6 +2984,54 @@ Java中的接口，其实就是一个抽象类，里面都是常量和abstract�
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%BC%80%E5%8F%91%E4%B8%AD%E4%B8%80%E4%BA%9B%E7%96%91%E6%83%91%E7%9A%84%E8%A7%A3%E9%87%8A/">
+				<h2 class="index-title">
+					Java开发中一些疑惑的解释
+				</h2>
+				<div class="index-brief">
+					① 公司中是用html+css还是用vue
+答：
+这得看应用场景，如果需要被搜索引擎搜录 -&gt; html+css
+不需要，只需要服务于特定群体，而且要快速落地 -&gt; Vue
+② 为什么很多公司都用第三方组件
+答：
+因为谁都不想消耗巨大的人力和物力造轮子，公司主要看效益，能用就行，能赚钱就
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Anaconda/%E5%88%A9%E7%94%A8Anaconda%E5%AE%89%E8%A3%85pytorch%E5%92%8Cpaddle%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83+pycharm%E5%AE%89%E8%A3%85---%E5%85%8D%E9%A2%9D%E5%A4%96%E5%AE%89%E8%A3%85CUDA%E5%92%8Ccudnn%EF%BC%88%E9%80%82%E5%90%88%E5%B0%8F%E7%99%BD%E7%9A%84%E4%BF%9D%E5%A7%86%E7%BA%A7%E6%95%99%E5%AD%A6%EF%BC%89/">
+				<h2 class="index-title">
+					利用Anaconda安装pytorch和paddle深度学习环境+pycharm安装---免额外安装CUDA和cudnn（适合小白的保姆级教学）
+				</h2>
+				<div class="index-brief">
+					一、英伟达驱动安装与更新
+二、Anaconda 的安装
+三、Pytorch环境安装
+四、paddlepaddle环境安装
+五、pycharm安装–验证CUDA和cudnn版本
+前言
+    之前我们在利用GPU进行深度学习的时候，都要去NVIDIA的官网下载CUDA的安装程序和cudnn的压缩包，然
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC%E4%B8%80%E4%BA%9B%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%9C%B0%E6%96%B9/">
 				<h2 class="index-title">
 					Java和C一些不一样的地方
@@ -2941,94 +3044,6 @@ Java里面的char占两个字节
 float类型的变量怎么与double区别的呢？
 答：值后面加上f或F
 Java中 int[]a,b; 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/My%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/">
-				<h2 class="index-title">
-					My编程经验
-				</h2>
-				<div class="index-brief">
-					如果你在使用一个框架，在具体业务逻辑中得到意料之外的结果，除去特殊情况，一般就是还有一些代码其他人写的，你还没找到罢了
-for&lt;=2层，if&lt;=3层
-2147483646
-Centos查看Ip地址命令：ip addr
-使用Linux 时不要乱删或乱改根目录下的东西（非必要）。家目录随便你
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
-				<h2 class="index-title">
-					Redis的一些见解
-				</h2>
-				<div class="index-brief">
-					缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了增加、修改、删除，那么
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/MP4%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95URL%E5%9C%B0%E5%9D%80%EF%BC%8C%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88/">
-				<h2 class="index-title">
-					MP4视频测试URL地址，亲测有效
-				</h2>
-				<div class="index-brief">
-					MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
-‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Sublime%20Text3%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/">
-				<h2 class="index-title">
-					Sublime Text3关闭自动更新
-				</h2>
-				<div class="index-brief">
-					方法一：打开sublime——首选项(preferences)——设置(setting)
-
-然后加入下面这一句代码，重新打开Sublime Text3
-"update_check":false
-
-如果方法一不行，用方法二
-方法二：打开hosts文件，在里面加入下面两句
-文件路径参考：C:\Windo
 					...
 				</div>
 			</a>
@@ -3092,15 +3107,14 @@ Navicat安装包
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%85%B1%E6%9C%89%E5%A4%9A%E5%B0%91%E7%AB%AF%E5%8F%A3%EF%BC%9F/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/MP4%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95URL%E5%9C%B0%E5%9D%80%EF%BC%8C%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88/">
 				<h2 class="index-title">
-					一台电脑共有多少端口？
+					MP4视频测试URL地址，亲测有效
 				</h2>
 				<div class="index-brief">
-					一台电脑会有65536个端口，计算是由256*256得出，端口号从0开始到65535.
+					MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
+‍
 
-公认端口（baiWell Known Ports）：从0到1023，它们紧密绑定于一些服务。通常这些端口的通讯明确表明了某种服务的协议。例如：80端口实际上总是HTTP通讯。
-注册端口（Registered P
 					...
 				</div>
 			</a>
@@ -3113,20 +3127,19 @@ Navicat安装包
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Sublime%20Text3%E5%85%B3%E9%97%AD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/">
 				<h2 class="index-title">
-					内网穿透
+					Sublime Text3关闭自动更新
 				</h2>
 				<div class="index-brief">
-					
-作用：普通型http(s)隧道穿透,用于搭建网站,微信开发等穿透到本地web服务
+					方法一：打开sublime——首选项(preferences)——设置(setting)
 
-1 安装NATAPP软件
-将下面文件解压到一个目录
-natapp_windows_amd64_2_3_9.zip
-解压后，文件夹的内容如下
+然后加入下面这一句代码，重新打开Sublime Text3
+"update_check":false
 
-主要是替换natapp.bat下的authtoken，具体authtok
+如果方法一不行，用方法二
+方法二：打开hosts文件，在里面加入下面两句
+文件路径参考：C:\Windo
 					...
 				</div>
 			</a>
