@@ -6,6 +6,9 @@ $(document).ready(function () {
     Prism.highlightAll();
   }
   
+  // 初始化代码块功能
+  initCodeBlocks();
+  
   clickTreeDirectory();
   serachTree();
   // pjaxLoad();
@@ -161,6 +164,11 @@ function pjaxLoad() {
       if (typeof Prism !== 'undefined') {
         Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/';
         Prism.highlightAll();
+      }
+      
+      // 重新初始化代码块功能
+      if (typeof initCodeBlocks !== 'undefined') {
+        initCodeBlocks();
       }
       
       // 添加 active

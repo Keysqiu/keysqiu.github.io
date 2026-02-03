@@ -70,23 +70,137 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
 	
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+	
 <script src="/js/main.js"></script>
 
 	
-<script src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+	<!-- 代码块功能初始化 -->
+	<script>
+	function initCodeBlocks() {
+		// 确保代码区域包装存在
+		$('pre:not(.code-area pre)').wrap('<div class="code-area" style="position: relative"></div>');
+		
+		// 添加收缩按钮
+		$('.code-area:not(:has(.code-expand))').each(function() {
+			var $code_expand = $('<i class="fa fa-chevron-down code-expand" title="折叠代码" aria-hidden="true"></i>');
+			$(this).prepend($code_expand);
+		});
+		
+		// 添加复制按钮
+		$('.code-area:not(:has(.code_copy))').each(function() {
+			var $copyIcon = $('<i class="fa fa-copy code_copy" title="复制代码" aria-hidden="true"></i>');
+			$(this).prepend($copyIcon);
+		});
+		
+		// 添加语言标识
+		$('pre:not(:has(+ .code_lang))').each(function () {
+			var $highlight_lang = $('<div class="code_lang" title="代码语言"></div>');
+			$(this).after($highlight_lang);
+			
+			var code_language = $(this).attr('class');
+			if (code_language) {
+				var lang_name = code_language.replace("line-numbers", "").trim().replace("language-", "").trim();
+				// 首字母大写
+				lang_name = lang_name.slice(0, 1).toUpperCase() + lang_name.slice(1);
+				$(this).siblings(".code_lang").text(lang_name);
+			}
+		});
+		
+		// 初始化ClipboardJS（只初始化一次）
+		if (typeof ClipboardJS !== 'undefined' && !window.clipboardInitialized) {
+			console.log('初始化ClipboardJS');
+			var clipboard = new ClipboardJS('.code_copy', {
+				text: function(trigger) {
+					// 找到复制按钮对应的pre标签中的代码
+					var $pre = $(trigger).siblings('pre');
+					var codeText = $pre.find('code').text();
+					console.log('要复制的代码长度:', codeText.length);
+					return codeText;
+				}
+			});
+			
+			// 添加成功和错误回调
+			clipboard.on('success', function(e) {
+				console.log('复制成功');
+				e.clearSelection();
+				
+				// 视觉反馈 - 图标变化
+				$(e.trigger).addClass('copied');
+				
+				// 显示成功提示
+				var $tip = $('<div class="copy-success-tip">复制成功!</div>');
+				$(e.trigger).parent().append($tip);
+				
+				// 显示动画
+				setTimeout(function() {
+					$tip.addClass('show');
+				}, 10);
+				
+				// 1.5秒后隐藏提示
+				setTimeout(function() {
+					$tip.removeClass('show');
+					setTimeout(function() {
+						$tip.remove();
+					}, 300);
+				}, 1500);
+				
+				// 1秒后恢复图标
+				setTimeout(function() {
+					$(e.trigger).removeClass('copied');
+				}, 1000);
+			});
+			
+			clipboard.on('error', function(e) {
+				console.error('复制失败:', e);
+				
+				// 显示失败提示
+				var $tip = $('<div class="copy-success-tip" style="background: #f44336;">复制失败!</div>');
+				$(e.trigger).parent().append($tip);
+				
+				// 显示动画
+				setTimeout(function() {
+					$tip.addClass('show');
+				}, 10);
+				
+				// 1.5秒后隐藏提示
+				setTimeout(function() {
+					$tip.removeClass('show');
+					setTimeout(function() {
+						$tip.remove();
+					}, 300);
+				}, 1500);
+			});
+			
+			window.clipboardInitialized = true;
+		} else if (typeof ClipboardJS === 'undefined') {
+			console.error('ClipboardJS未加载');
+		} else {
+			console.log('ClipboardJS已初始化');
+		}
+	}
 	
-<script src="/libs/codeBlock/codeCopy.js"></script>
-
-	
-<script src="/libs/codeBlock/codeLang.js"></script>
-
-	
-<script src="/libs/codeBlock/codeShrink.js"></script>
-
-	
-<script src="/libs/codeBlock/clipboard.min.js"></script>
-
+	// 绑定代码块收缩事件（只需要绑定一次）
+	if (!window.codeBlockEventsBound) {
+		$(document).on('click', '.code-expand', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			
+			var $parent = $(this).parent();
+			var $code = $(this).siblings('pre').find('code');
+			
+			if ($parent.hasClass('code-closed')) {
+				$code.show();
+				$parent.removeClass('code-closed');
+			} else {
+				$code.hide();
+				$parent.addClass('code-closed');
+			}
+		});
+		window.codeBlockEventsBound = true;
+	}
+	</script>
 
 	
 		
@@ -2913,18 +3027,16 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/Python%E2%80%94TTS%EF%BC%88%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%EF%BC%89/">
+			<a href="/2025/11/30/Java/SpringBoot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
 				<h2 class="index-title">
-					Python—TTS（文本转语音）
+					SpringBoot解决跨域问题
 				</h2>
 				<div class="index-brief">
-					sudo apt-get update &amp;&amp; sudo apt-get install espeak
-安装pyttsx3
-pyttsx3官方参考文档
-pip install pyttsx3
-测试代码
-import pyttsx3
-def say_text(engine, words,
+					遇到前端跨域访问问题，类似于这样的：
+​
+在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。
+import org.springframework.context.annotation.Bean;
+import org.spri
 					...
 				</div>
 			</a>
@@ -2937,14 +3049,134 @@ def say_text(engine, words,
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
+			<a href="/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 				<h2 class="index-title">
-					MySQL插入数据时，自动获取当前时间写入表中
+					JavaWeb学习笔记
 				</h2>
 				<div class="index-brief">
-					字段的类型为：timestamp，
-往下看，默认那里改为 ==CURRENT_TIMESTAMP==
-‍
+					开始打代码之前，先要进行一些前期准备
+①：新建一个Maven项目，点击下一步，修改项目路径及项目名称，最后点完成即可。
+②：文件-&gt;项目结构-&gt;Facet-&gt;添加Web项目，文件夹名称为webapp，下一级目录为WEB-INF，再下一级有一个文件web.xml，如果选项变灰添加不了
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/">
+				<h2 class="index-title">
+					如何下载MySQL的JDBC驱动包并导入IDEA中
+				</h2>
+				<div class="index-brief">
+					一、下载JDBC驱动包
+1.打开 MySQL 官网：https://www.mysql.com/
+2.点击 DOWNLOADS，把页面滚动到最下面，点击 MySQL Community (GPL) Downloads
+
+
+3.点击 Connector/J
+4.点击 General Availabil
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Java/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/">
+				<h2 class="index-title">
+					个人博客部署
+				</h2>
+				<div class="index-brief">
+					1、JDK17
+wget http://49.232.8.65/jdk/jdk17/jdk-17_linux-x64_bin.tar.gz
+tar -zxvf jdk-17_linux-x64_bin.tar.gz
+vim /etc/profile
+# 文件添加如下内容
+export JAVA_HO
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+				<h2 class="index-title">
+					Qt 网络编程经验总结
+				</h2>
+				<div class="index-brief">
+					1、同步/异步：指 I/O 操作，也就是说同步会等到程序 IO 操作结束之后才往下执行，而异步的话，在执行 IO 操作时，程序会先往下继续跑，等到 IO 操作完成之后，再合并资源
+阻塞/非阻塞：指进程，具体解释和上面差不多，就是说对象不一样而已
+2、​在数据流传输过程中，如果服务器和客户端的连接没有
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					Qt学习
+				</h2>
+				<div class="index-brief">
+					1、​qt项目相对路径的起源是以​编译的build文件夹为主目录
+2、信号写在发送窗口的.h中，写一个声明即可，无需实现。槽函数写在目标窗口的.h和.cpp文件中，需要实现。连接写在哪都可。
+
+
+信号：发送窗口
+
+
+槽函数与连接：目标窗口
+
+利用Tab进行选中的排序，双击这个数字，它就会变了，直到变
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0/">
+				<h2 class="index-title">
+					Qt修改项目名称
+				</h2>
+				<div class="index-brief">
+					一、复制项目内容到新的文件夹中。修改文件夹名称
+
+
+二、手动把  .pro 的名字改写为新的项目名称。删除.pro.user文件
+
+
+三、用QT Creator打开修改名字之后的.pro文件，重新配置项目（configure project） 完成！
+
+
 
 					...
 				</div>
@@ -2958,20 +3190,18 @@ def say_text(engine, words,
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Java/IDEA%20%E9%9B%86%E6%88%90JavaFX/">
+			<a href="/2025/11/30/Qt/Qt%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 				<h2 class="index-title">
-					IDEA 集成JavaFX
+					Qt开发过程中的一些解决方案
 				</h2>
 				<div class="index-brief">
-					前提
-先在IDEA中安装两个插件，如下图所示
+					一、QT使用QLabel控件显示图片，报错：QPixmap::scaled: Pixmap is a null pixmap
+在网上看了很多帖子：
 
-1、安装图形化驱动程序（Scene Builder）
-==其实只需要下载一个外部程序即可（就这么简单，不要下什么eclipse，纯纯sb！！！）==
-提取码：m0ej
-–来自百度网盘超级会员V4的分享
-改一下安装路径，然后不断next即可
-2、具体使用
+文件名改为英文（未解决问题）
+图片路径改为绝对路径（未解决问题）
+图片格式不对（如果上面两个都没有解决问题，那么请试用这种方法）
+将图片位深(8-&g
 					...
 				</div>
 			</a>
@@ -2984,20 +3214,17 @@ def say_text(engine, words,
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
+			<a href="/2025/11/30/Qt/Qt%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
 				<h2 class="index-title">
-					mysql常用的聚合函数
+					Qt打包发布
 				</h2>
 				<div class="index-brief">
-					一、常用的聚合函数（以下都是求以列为单位）
-count(col) 表示求指定列的总行数
-max(col): 表示求指定列的最大值
-min(col): 表示求指定列的最小值
-sum(col): 表示求指定列的和
-avg(col): 表示求指定列的平均值
-1、求总行数
-– 返回非NULL数据的总行数
-s
+					一. 执行Release编译
+1. 首先打开想要发布的程序所在的项目。
+2. 点击左下角 项目——&gt;构建套件(Kit)——&gt;构建，选择Release。 3. 点击构建项目 （左下角那把锤子），或者使用快捷键Ctrl+R。
+
+二. 构建可执行程序
+1. 编译完成后到程序的输出文件夹中，一般
 					...
 				</div>
 			</a>
@@ -3010,136 +3237,18 @@ s
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
+			<a href="/2025/11/30/PS/PS%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C/">
 				<h2 class="index-title">
-					mysql连接详解（内外连接，左右连接）
+					PS的一些常规操作
 				</h2>
 				<div class="index-brief">
-					假设有两个表 T1，T2
-表的结构如下图所示
+					黑白交界地带是透明的
+1、ALT+鼠标滚轮：放大/缩小素材
+2、ESC：取消当前操作
+3、魔术棒：按住alt或者alt+shift看效果
+4、把鼠标焦点放在图层上，按住ctrl+alt+t，可以实现对该图层的缩放以及旋转
+5、钢笔是拿来画的，而笔是拿来涂的
 
-一、内连接（inner join）【普通外键引用】
-如果想把用户信息、积分、等级都列出来，那么一般会这样写：
-
-select * from T1 ,T2 where T1.userid = T2.userid
-(其实这样的结果等同于select * f
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
-				<h2 class="index-title">
-					配环境
-				</h2>
-				<div class="index-brief">
-					‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
-				<h2 class="index-title">
-					MySQL笔记
-				</h2>
-				<div class="index-brief">
-					数据库存储数据的特点
-1、将数据放到表中，表再放到库中
-2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
-3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
-4、表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
-				<h2 class="index-title">
-					数据库中ID从一个很奇怪的数开始
-				</h2>
-				<div class="index-brief">
-					==说明你上一次生成的id就是乱序了==
-解决方法：
-使用 navicat ，右键表名，选择截断表
-
-截断表：清空数据表中所有数据，然后ID从1开始
-清空表：清空数据表中所有数据
-
-‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
-				<h2 class="index-title">
-					Linux上安装Redis
-				</h2>
-				<div class="index-brief">
-					1、安装Redis依赖
-Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
-yum install -y gcc tcl
-2、下载压缩包
-进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
-cd /usr/local/src
-**
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-				<h2 class="index-title">
-					Redis常用命令
-				</h2>
-				<div class="index-brief">
-					一、客户端连接
-redis-cli -h host -p port -a password
-输入命令：redis-cli -p 6379
-二、数据导出导入
-导出
-执行备份命令：save
-该命令将在 redis 备份目录中创建dump.rdb文件。
-查看备份路径：config get dir
-备份后的
 					...
 				</div>
 			</a>

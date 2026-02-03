@@ -72,23 +72,137 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
 	
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+	
 <script src="/js/main.js"></script>
 
 	
-<script src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+	<!-- 代码块功能初始化 -->
+	<script>
+	function initCodeBlocks() {
+		// 确保代码区域包装存在
+		$('pre:not(.code-area pre)').wrap('<div class="code-area" style="position: relative"></div>');
+		
+		// 添加收缩按钮
+		$('.code-area:not(:has(.code-expand))').each(function() {
+			var $code_expand = $('<i class="fa fa-chevron-down code-expand" title="折叠代码" aria-hidden="true"></i>');
+			$(this).prepend($code_expand);
+		});
+		
+		// 添加复制按钮
+		$('.code-area:not(:has(.code_copy))').each(function() {
+			var $copyIcon = $('<i class="fa fa-copy code_copy" title="复制代码" aria-hidden="true"></i>');
+			$(this).prepend($copyIcon);
+		});
+		
+		// 添加语言标识
+		$('pre:not(:has(+ .code_lang))').each(function () {
+			var $highlight_lang = $('<div class="code_lang" title="代码语言"></div>');
+			$(this).after($highlight_lang);
+			
+			var code_language = $(this).attr('class');
+			if (code_language) {
+				var lang_name = code_language.replace("line-numbers", "").trim().replace("language-", "").trim();
+				// 首字母大写
+				lang_name = lang_name.slice(0, 1).toUpperCase() + lang_name.slice(1);
+				$(this).siblings(".code_lang").text(lang_name);
+			}
+		});
+		
+		// 初始化ClipboardJS（只初始化一次）
+		if (typeof ClipboardJS !== 'undefined' && !window.clipboardInitialized) {
+			console.log('初始化ClipboardJS');
+			var clipboard = new ClipboardJS('.code_copy', {
+				text: function(trigger) {
+					// 找到复制按钮对应的pre标签中的代码
+					var $pre = $(trigger).siblings('pre');
+					var codeText = $pre.find('code').text();
+					console.log('要复制的代码长度:', codeText.length);
+					return codeText;
+				}
+			});
+			
+			// 添加成功和错误回调
+			clipboard.on('success', function(e) {
+				console.log('复制成功');
+				e.clearSelection();
+				
+				// 视觉反馈 - 图标变化
+				$(e.trigger).addClass('copied');
+				
+				// 显示成功提示
+				var $tip = $('<div class="copy-success-tip">复制成功!</div>');
+				$(e.trigger).parent().append($tip);
+				
+				// 显示动画
+				setTimeout(function() {
+					$tip.addClass('show');
+				}, 10);
+				
+				// 1.5秒后隐藏提示
+				setTimeout(function() {
+					$tip.removeClass('show');
+					setTimeout(function() {
+						$tip.remove();
+					}, 300);
+				}, 1500);
+				
+				// 1秒后恢复图标
+				setTimeout(function() {
+					$(e.trigger).removeClass('copied');
+				}, 1000);
+			});
+			
+			clipboard.on('error', function(e) {
+				console.error('复制失败:', e);
+				
+				// 显示失败提示
+				var $tip = $('<div class="copy-success-tip" style="background: #f44336;">复制失败!</div>');
+				$(e.trigger).parent().append($tip);
+				
+				// 显示动画
+				setTimeout(function() {
+					$tip.addClass('show');
+				}, 10);
+				
+				// 1.5秒后隐藏提示
+				setTimeout(function() {
+					$tip.removeClass('show');
+					setTimeout(function() {
+						$tip.remove();
+					}, 300);
+				}, 1500);
+			});
+			
+			window.clipboardInitialized = true;
+		} else if (typeof ClipboardJS === 'undefined') {
+			console.error('ClipboardJS未加载');
+		} else {
+			console.log('ClipboardJS已初始化');
+		}
+	}
 	
-<script src="/libs/codeBlock/codeCopy.js"></script>
-
-	
-<script src="/libs/codeBlock/codeLang.js"></script>
-
-	
-<script src="/libs/codeBlock/codeShrink.js"></script>
-
-	
-<script src="/libs/codeBlock/clipboard.min.js"></script>
-
+	// 绑定代码块收缩事件（只需要绑定一次）
+	if (!window.codeBlockEventsBound) {
+		$(document).on('click', '.code-expand', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			
+			var $parent = $(this).parent();
+			var $code = $(this).siblings('pre').find('code');
+			
+			if ($parent.hasClass('code-closed')) {
+				$code.show();
+				$parent.removeClass('code-closed');
+			} else {
+				$code.hide();
+				$parent.addClass('code-closed');
+			}
+		});
+		window.codeBlockEventsBound = true;
+	}
+	</script>
 
 	
 		
@@ -2956,16 +3070,16 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/11/30/Unity/Unity%E5%AD%A6%E4%B9%A0/">
+              <a href="/2025/11/30/VsCode/VsCode%E6%8F%92%E4%BB%B6%E6%94%B6%E5%BD%95/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Unity学习
+                  VsCode插件收录
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/elasticsearch_02/">
-                elasticsearch_02
+              <a href="/2025/11/30/VsCode/VS%20Code%20%E4%B8%AD%E8%BF%90%E8%A1%8CJava%20SpringBoot%E7%9A%84%E9%A1%B9%E7%9B%AE/">
+                VS Code 中运行Java SpringBoot的项目
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
@@ -2985,14 +3099,7 @@
 </script>
 
 
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块功能已在 head.ejs 中引入，此处无需重复引入 --> 
 <!-- 代码块折行 -->
 <style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 	</div>

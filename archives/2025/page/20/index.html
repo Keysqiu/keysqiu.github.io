@@ -70,23 +70,137 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
 	
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+	
 <script src="/js/main.js"></script>
 
 	
-<script src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+	<!-- 代码块功能初始化 -->
+	<script>
+	function initCodeBlocks() {
+		// 确保代码区域包装存在
+		$('pre:not(.code-area pre)').wrap('<div class="code-area" style="position: relative"></div>');
+		
+		// 添加收缩按钮
+		$('.code-area:not(:has(.code-expand))').each(function() {
+			var $code_expand = $('<i class="fa fa-chevron-down code-expand" title="折叠代码" aria-hidden="true"></i>');
+			$(this).prepend($code_expand);
+		});
+		
+		// 添加复制按钮
+		$('.code-area:not(:has(.code_copy))').each(function() {
+			var $copyIcon = $('<i class="fa fa-copy code_copy" title="复制代码" aria-hidden="true"></i>');
+			$(this).prepend($copyIcon);
+		});
+		
+		// 添加语言标识
+		$('pre:not(:has(+ .code_lang))').each(function () {
+			var $highlight_lang = $('<div class="code_lang" title="代码语言"></div>');
+			$(this).after($highlight_lang);
+			
+			var code_language = $(this).attr('class');
+			if (code_language) {
+				var lang_name = code_language.replace("line-numbers", "").trim().replace("language-", "").trim();
+				// 首字母大写
+				lang_name = lang_name.slice(0, 1).toUpperCase() + lang_name.slice(1);
+				$(this).siblings(".code_lang").text(lang_name);
+			}
+		});
+		
+		// 初始化ClipboardJS（只初始化一次）
+		if (typeof ClipboardJS !== 'undefined' && !window.clipboardInitialized) {
+			console.log('初始化ClipboardJS');
+			var clipboard = new ClipboardJS('.code_copy', {
+				text: function(trigger) {
+					// 找到复制按钮对应的pre标签中的代码
+					var $pre = $(trigger).siblings('pre');
+					var codeText = $pre.find('code').text();
+					console.log('要复制的代码长度:', codeText.length);
+					return codeText;
+				}
+			});
+			
+			// 添加成功和错误回调
+			clipboard.on('success', function(e) {
+				console.log('复制成功');
+				e.clearSelection();
+				
+				// 视觉反馈 - 图标变化
+				$(e.trigger).addClass('copied');
+				
+				// 显示成功提示
+				var $tip = $('<div class="copy-success-tip">复制成功!</div>');
+				$(e.trigger).parent().append($tip);
+				
+				// 显示动画
+				setTimeout(function() {
+					$tip.addClass('show');
+				}, 10);
+				
+				// 1.5秒后隐藏提示
+				setTimeout(function() {
+					$tip.removeClass('show');
+					setTimeout(function() {
+						$tip.remove();
+					}, 300);
+				}, 1500);
+				
+				// 1秒后恢复图标
+				setTimeout(function() {
+					$(e.trigger).removeClass('copied');
+				}, 1000);
+			});
+			
+			clipboard.on('error', function(e) {
+				console.error('复制失败:', e);
+				
+				// 显示失败提示
+				var $tip = $('<div class="copy-success-tip" style="background: #f44336;">复制失败!</div>');
+				$(e.trigger).parent().append($tip);
+				
+				// 显示动画
+				setTimeout(function() {
+					$tip.addClass('show');
+				}, 10);
+				
+				// 1.5秒后隐藏提示
+				setTimeout(function() {
+					$tip.removeClass('show');
+					setTimeout(function() {
+						$tip.remove();
+					}, 300);
+				}, 1500);
+			});
+			
+			window.clipboardInitialized = true;
+		} else if (typeof ClipboardJS === 'undefined') {
+			console.error('ClipboardJS未加载');
+		} else {
+			console.log('ClipboardJS已初始化');
+		}
+	}
 	
-<script src="/libs/codeBlock/codeCopy.js"></script>
-
-	
-<script src="/libs/codeBlock/codeLang.js"></script>
-
-	
-<script src="/libs/codeBlock/codeShrink.js"></script>
-
-	
-<script src="/libs/codeBlock/clipboard.min.js"></script>
-
+	// 绑定代码块收缩事件（只需要绑定一次）
+	if (!window.codeBlockEventsBound) {
+		$(document).on('click', '.code-expand', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			
+			var $parent = $(this).parent();
+			var $code = $(this).siblings('pre').find('code');
+			
+			if ($parent.hasClass('code-closed')) {
+				$code.show();
+				$parent.removeClass('code-closed');
+			} else {
+				$code.hide();
+				$parent.addClass('code-closed');
+			}
+		});
+		window.codeBlockEventsBound = true;
+	}
+	</script>
 
 	
 		
@@ -2913,22 +3027,14 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/RM%E5%AF%BC%E8%88%AA/">
+			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
 				<h2 class="index-title">
-					RM导航
+					ros通信机制
 				</h2>
 				<div class="index-brief">
-					欧拉角的单位是****弧度
-1弧度=180/pai 度
-1度=pai/180 弧度
-记不住的时候就像圆
-一个圆是360度,2pai弧度
-不用写一行代码，ROS都帮你写好了，你只需要调参（​调参侠****​ ）
-需要求的就为参考的坐标系
-导航涉及的关键技术有如下五点：
-1。全局地图
-2。自身定位
-3。
+					1.话题通信机制（发布/订阅模式）
+具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
+
 					...
 				</div>
 			</a>
@@ -2941,16 +3047,20 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
 				<h2 class="index-title">
-					ros学习
+					Docker实用篇
 				</h2>
 				<div class="index-brief">
-					** 在ROS（机器人操作系统）中，`declare_parameter是一个用于在ROS参数服务器上参数的函数。参数服务器是一个全局的键值存储系统，它允许不同的ROS节点之间共享参数 **
-Ubuntu终端多窗口操作
-# 安装
-sudo apt-get install terminator
-# 卸
+					1.初识Docker
+1.1.什么是Docker
+微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
+
+分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
+在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
+
+1.1.1.应用部署的环境问题
+大型项目组
 					...
 				</div>
 			</a>
@@ -2985,14 +3095,19 @@ sudo apt-get install terminator
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
 				<h2 class="index-title">
-					ros通信机制
+					安装ros
 				</h2>
 				<div class="index-brief">
-					1.话题通信机制（发布/订阅模式）
-具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
-
+					系统：Ubuntu 18.04
+安装ROS版本：melodic
+​
+前四个勾选
+​
+打开命令终端，输入以下命令
+1.添加ROS源
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /
 					...
 				</div>
 			</a>
@@ -3030,30 +3145,6 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
-				<h2 class="index-title">
-					RabbitMQ
-				</h2>
-				<div class="index-brief">
-					1.初识MQ
-1.1.同步和异步通讯
-微服务间通讯有同步和异步两种方式：
-同步通讯：就像打电话，需要实时响应。
-异步通讯：就像发邮件，不需要马上回复。
-两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
-1.1.1.同步通
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
 				<h2 class="index-title">
 					Nacos安装指南
@@ -3078,20 +3169,43 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
 				<h2 class="index-title">
-					Docker实用篇
+					RabbitMQ
 				</h2>
 				<div class="index-brief">
-					1.初识Docker
-1.1.什么是Docker
-微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
-
-分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
-在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
-
-1.1.1.应用部署的环境问题
-大型项目组
+					1.初识MQ
+1.1.同步和异步通讯
+微服务间通讯有同步和异步两种方式：
+同步通讯：就像打电话，需要实时响应。
+异步通讯：就像发邮件，不需要马上回复。
+两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
+1.1.1.同步通
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+				<h2 class="index-title">
+					RabbitMQ部署指南
+				</h2>
+				<div class="index-brief">
+					1、单机部署
+我们在Centos7虚拟机中使用Docker来安装。
+1.1、下载镜像
+方式一：在线拉取
+docker pull rabbitmq:3-management
+方式二：从本地加载
+镜像包下载链接：
+**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
 					...
 				</div>
 			</a>

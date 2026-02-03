@@ -523,6 +523,38 @@ code {
     z-index: 1;
     filter: invert(50%);
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.code_copy:hover {
+    filter: invert(30%);
+    transform: scale(1.1);
+}
+
+.code_copy.copied {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(100%) contrast(100%);
+}
+
+/* 复制成功提示 */
+.copy-success-tip {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    background: #4CAF50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.copy-success-tip.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .code_lang {
