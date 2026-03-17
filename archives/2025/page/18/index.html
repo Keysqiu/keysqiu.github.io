@@ -24,7 +24,7 @@
 
 	<!-- search -->
 	<script>
-		var searchEngine = "https://www.google.com/search?q=";
+		var searchEngine = "https://cn.bing.com/search?q=";
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
@@ -252,7 +252,7 @@
 	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
 	
 	<div id="site-toc">
-		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车bing搜索">
 		<div id="tree">
 			
 
@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3027,17 +3027,14 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE/">
+			<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
 				<h2 class="index-title">
-					MySQL 防止被爬走数据
+					Qt 网络编程经验总结
 				</h2>
 				<div class="index-brief">
-					前两天申请了个云服务器，然后去关掉防火墙方便调试，结果没两天MySQL就被黑了
-​
-一个库被删，多了一个库
-​
-内容如下：
-All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHTChMgrSXU
+					1、同步/异步：指 I/O 操作，也就是说同步会等到程序 IO 操作结束之后才往下执行，而异步的话，在执行 IO 操作时，程序会先往下继续跑，等到 IO 操作完成之后，再合并资源
+阻塞/非阻塞：指进程，具体解释和上面差不多，就是说对象不一样而已
+2、​在数据流传输过程中，如果服务器和客户端的连接没有
 					...
 				</div>
 			</a>
@@ -3050,20 +3047,18 @@ All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHT
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+			<a href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/">
 				<h2 class="index-title">
-					数据库中ID从一个很奇怪的数开始
+					如何下载MySQL的JDBC驱动包并导入IDEA中
 				</h2>
 				<div class="index-brief">
-					==说明你上一次生成的id就是乱序了==
-解决方法：
-使用 navicat ，右键表名，选择截断表
+					一、下载JDBC驱动包
+1.打开 MySQL 官网：https://www.mysql.com/
+2.点击 DOWNLOADS，把页面滚动到最下面，点击 MySQL Community (GPL) Downloads
 
-截断表：清空数据表中所有数据，然后ID从1开始
-清空表：清空数据表中所有数据
 
-‍
-
+3.点击 Connector/J
+4.点击 General Availabil
 					...
 				</div>
 			</a>
@@ -3076,19 +3071,94 @@ All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHT
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
+			<a href="/2025/11/30/Java/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/">
 				<h2 class="index-title">
-					mysql连接详解（内外连接，左右连接）
+					个人博客部署
 				</h2>
 				<div class="index-brief">
-					假设有两个表 T1，T2
-表的结构如下图所示
+					1、JDK17
+wget http://49.232.8.65/jdk/jdk17/jdk-17_linux-x64_bin.tar.gz
+tar -zxvf jdk-17_linux-x64_bin.tar.gz
+vim /etc/profile
+# 文件添加如下内容
+export JAVA_HO
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/OpenCV/Windows%E4%B8%8B%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83/">
+				<h2 class="index-title">
+					Windows下配置opencv环境
+				</h2>
+				<div class="index-brief">
+					① 下载软件包
+**链接：**​https://pan.baidu.com/s/1-clw63SKe2hBkCToTnHmgw?pwd=9g68
+提取码：9g68
+–来自百度网盘超级会员V4的分享
+② 配置环境
+**OpenCV环境配置教程：**​https://www.bilibili.com/v
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					Qt学习
+				</h2>
+				<div class="index-brief">
+					1、​qt项目相对路径的起源是以​编译的build文件夹为主目录
+2、信号写在发送窗口的.h中，写一个声明即可，无需实现。槽函数写在目标窗口的.h和.cpp文件中，需要实现。连接写在哪都可。
 
-一、内连接（inner join）【普通外键引用】
-如果想把用户信息、积分、等级都列出来，那么一般会这样写：
 
-select * from T1 ,T2 where T1.userid = T2.userid
-(其实这样的结果等同于select * f
+信号：发送窗口
+
+
+槽函数与连接：目标窗口
+
+利用Tab进行选中的排序，双击这个数字，它就会变了，直到变
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0/">
+				<h2 class="index-title">
+					Qt修改项目名称
+				</h2>
+				<div class="index-brief">
+					一、复制项目内容到新的文件夹中。修改文件夹名称
+
+
+二、手动把  .pro 的名字改写为新的项目名称。删除.pro.user文件
+
+
+三、用QT Creator打开修改名字之后的.pro文件，重新配置项目（configure project） 完成！
+
+
+
 					...
 				</div>
 			</a>
@@ -3125,20 +3195,18 @@ select * from T1 ,T2 where T1.userid = T2.userid
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+			<a href="/2025/11/30/Python/Python%E2%80%94TTS%EF%BC%88%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%EF%BC%89/">
 				<h2 class="index-title">
-					环境配置
+					Python—TTS（文本转语音）
 				</h2>
 				<div class="index-brief">
-					1.选择下载的Erlang安装包，并双击运行
-
-2.点击Next，选择安装的目录位置，点击下一步即可
-
-3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
-
-4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
-
-5.例如Erlang的bin目
+					sudo apt-get update &amp;&amp; sudo apt-get install espeak
+安装pyttsx3
+pyttsx3官方参考文档
+pip install pyttsx3
+测试代码
+import pyttsx3
+def say_text(engine, words,
 					...
 				</div>
 			</a>
@@ -3151,18 +3219,17 @@ select * from T1 ,T2 where T1.userid = T2.userid
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv/">
+			<a href="/2025/11/30/Qt/Qt%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/">
 				<h2 class="index-title">
-					Ubuntu中安装qt-ros-opencv
+					Qt打包发布
 				</h2>
 				<div class="index-brief">
-					
-测试项目demo
+					一. 执行Release编译
+1. 首先打开想要发布的程序所在的项目。
+2. 点击左下角 项目——&gt;构建套件(Kit)——&gt;构建，选择Release。 3. 点击构建项目 （左下角那把锤子），或者使用快捷键Ctrl+R。
 
-catkin_csdn.zip
-一、先在小鱼下安装ros
-wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishros
-根据提示一步一步下载即可，大佬就是大佬！！！（版本下载 
+二. 构建可执行程序
+1. 编译完成后到程序的输出文件夹中，一般
 					...
 				</div>
 			</a>
@@ -3175,89 +3242,17 @@ wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishro
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/RM%E5%AF%BC%E8%88%AA/">
+			<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					RM导航
+					Python学习
 				</h2>
 				<div class="index-brief">
-					欧拉角的单位是****弧度
-1弧度=180/pai 度
-1度=pai/180 弧度
-记不住的时候就像圆
-一个圆是360度,2pai弧度
-不用写一行代码，ROS都帮你写好了，你只需要调参（​调参侠****​ ）
-需要求的就为参考的坐标系
-导航涉及的关键技术有如下五点：
-1。全局地图
-2。自身定位
-3。
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E7%9A%84HelloWorld%E6%A1%88%E4%BE%8B/">
-				<h2 class="index-title">
-					ros的HelloWorld案例
-				</h2>
-				<div class="index-brief">
-					1.创建工作空间并初始化
-mkdir -p 自定义空间名称/src
-cd 自定义空间名称
-catkin_make  #自动生成构建目录
-2.进入src创建ros包并添加依赖
-cd src
-catkin_create_pkg 自定义ROS包名 roscpp rospy std_msgs
-上述命令，会在
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
-				<h2 class="index-title">
-					ros通信机制
-				</h2>
-				<div class="index-brief">
-					1.话题通信机制（发布/订阅模式）
-具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
+					1、Python中类的继承是直接写在类后面的括号里面的，直接写类名即可，震碎我三观
+2、Python中一个标准类的定义
+==记住每一个方法都要带self，通过self才能访问类内的属性和方法，不加self，找的是类外的东西==
+class Demo:
+    def __init__(self):
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E5%AD%A6%E4%B9%A0/">
-				<h2 class="index-title">
-					ros学习
-				</h2>
-				<div class="index-brief">
-					** 在ROS（机器人操作系统）中，`declare_parameter是一个用于在ROS参数服务器上参数的函数。参数服务器是一个全局的键值存储系统，它允许不同的ROS节点之间共享参数 **
-Ubuntu终端多窗口操作
-# 安装
-sudo apt-get install terminator
-# 卸
 					...
 				</div>
 			</a>

@@ -24,7 +24,7 @@
 
 	<!-- search -->
 	<script>
-		var searchEngine = "https://www.google.com/search?q=";
+		var searchEngine = "https://cn.bing.com/search?q=";
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
@@ -252,7 +252,7 @@
 	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
 	
 	<div id="site-toc">
-		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车bing搜索">
 		<div id="tree">
 			
 
@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3027,192 +3027,6 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
-				<h2 class="index-title">
-					Redis的一些见解
-				</h2>
-				<div class="index-brief">
-					缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了增加、修改、删除，那么
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%85%B1%E6%9C%89%E5%A4%9A%E5%B0%91%E7%AB%AF%E5%8F%A3%EF%BC%9F/">
-				<h2 class="index-title">
-					一台电脑共有多少端口？
-				</h2>
-				<div class="index-brief">
-					一台电脑会有65536个端口，计算是由256*256得出，端口号从0开始到65535.
-
-公认端口（baiWell Known Ports）：从0到1023，它们紧密绑定于一些服务。通常这些端口的通讯明确表明了某种服务的协议。例如：80端口实际上总是HTTP通讯。
-注册端口（Registered P
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-				<h2 class="index-title">
-					基本数据结构
-				</h2>
-				<div class="index-brief">
-					哈希表
-哈希表的思想就是一个数组的下标嵌套另一个数组的值，形成一个键值的对应关系，将键作为数组的索引，数组中索引为i存储的值就是它对应的值
-栈
-栈的指针为什么一开始赋值为-1，这是因为当压入数据时，可以使（下标++）的代码不用特殊处理，也就是一直（下标++）
-二叉树的遍历
-由前序知道树的根节点是哪个
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
-				<h2 class="index-title">
-					内网穿透
-				</h2>
-				<div class="index-brief">
-					
-作用：普通型http(s)隧道穿透,用于搭建网站,微信开发等穿透到本地web服务
-
-1 安装NATAPP软件
-将下面文件解压到一个目录
-natapp_windows_amd64_2_3_9.zip
-解压后，文件夹的内容如下
-
-主要是替换natapp.bat下的authtoken，具体authtok
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8E%A5%E6%89%8B%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/">
-				<h2 class="index-title">
-					如何快速接手一个项目
-				</h2>
-				<div class="index-brief">
-					（注：一开始最好不要直接看项目具体的逻辑，先跑起来再说，这个思想很重要！！！）
-**1、**​ ******（也是最重要的一步）******​ ，按照上一个开发者的 readme 配好环境，（如果没有 readme，那就量力而行，看看这个框架自己熟不熟悉需要哪些环境，或者 CSDN 一下，一般项目都
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E4%B8%9C%E8%A5%BF/">
-				<h2 class="index-title">
-					如何快速学习一个新东西
-				</h2>
-				<div class="index-brief">
-					问：新手学Python容易上手吗？
-答：建议直接从项目开始做
-某个东西，你想做但不会，就去抄一个项目，先跑起来
-
-比如你想爬百度的内容，肯定有人做过
-
-**你就直接抄过来，能跑就是第一步**
-
-然后开始改
-
-改着改着你就入门了
-
-这比你看枯燥的课程快多了
-
-然后学一学基本的语法就ok了
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%9A%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BC%A0%E8%BE%93%E6%97%B6%E8%A6%81%E6%89%93%E5%8C%85%EF%BC%89/">
-				<h2 class="index-title">
-					文件传输的一些见解（文件多的文件夹传输时要打包）
-				</h2>
-				<div class="index-brief">
-					2023 年 11 月 21 日 00：10
-总之记得一句话，文件多的文件夹打包传输
-‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8B%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/">
-				<h2 class="index-title">
-					局域网下两台电脑共享文件
-				</h2>
-				<div class="index-brief">
-					首先：两台电脑需要在同一个局域网里面，且能ping通对方
-一、创建Hyper-V共享文件夹
-步骤1. 在Hyper-V主机中创建一个文件夹，并将您想要传输的文件放入此文件夹中。
-步骤2. 右键单击此文件夹，依次选择 “属性”&gt;“共享”&gt;“共享” ，然后添加 “Everyone” 用户并将
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E9%9C%80%E6%B1%82/">
 				<h2 class="index-title">
 					服务器配置需求
@@ -3252,6 +3066,194 @@ CPU 和显卡温度 正常不会超过 70
 
 ‍
 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A%E5%BC%80%E5%8F%91/">
+				<h2 class="index-title">
+					站在巨人的肩膀上开发
+				</h2>
+				<div class="index-brief">
+					始终记得一个理念：
+非必要，不要自己造轮子，不要觉得全部自己写的就是好的，一定要站在巨人的肩膀上开发，能实现需求就行，管你怎么实现的
+多用别人写好的库，真的香
+最后
+C、C++版
+////////////////////////////////////////////////////////////
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E8%B4%AD%E4%B9%B0%E7%94%B5%E8%84%91%E9%85%8D%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E5%90%8D%E5%8E%82%E5%AE%B6/">
+				<h2 class="index-title">
+					购买电脑配件的一些知名厂家
+				</h2>
+				<div class="index-brief">
+					主板和 CPU 要配对，其他的都是通用的
+CPU：Intel，AMD
+主板：技嘉，华硕
+内存条：金士顿，海盗船，游戏威龙
+显卡：七彩虹，华硕，影驰
+固态：三星
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+				<h2 class="index-title">
+					网站编程的一些见解
+				</h2>
+				<div class="index-brief">
+					1、网站的脚本有两种形式写法：js和ts
+3、Axios和Ajax的区别
+axios是通过Promise（Promise技术，说人话就是把异步变同步，只需要在代码中加入async、await，解决了​******传统 Ajax 回调函数嵌套问题，因为传统的 Ajax 异步调用在需要多个操作的时候，会
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/">
+				<h2 class="index-title">
+					进程的一些理解
+				</h2>
+				<div class="index-brief">
+					1、父辈比子辈多一辈，所以父进程的pid为1，子进程的pid为0
+2、sleep(1)的作用是在子进程尝试使用sem_p()获取信号量之前引入1秒的延迟。这个延迟给父进程足够的时间将字符串写入文件并使用sem_v()释放信号量。如果没有这个延迟，存在子进程在父进程写入文件之前执行的可能性（主要是为了
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%A0%BC%E5%BC%8F%E6%B7%BB%E5%8A%A0%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%EF%BC%88%E9%80%9A%E7%94%A8%EF%BC%89/">
+				<h2 class="index-title">
+					通过修改注册表格式添加右键菜单（通用）
+				</h2>
+				<div class="index-brief">
+					
+输入regedit
+​
+找到路径
+
+计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
+
+现在开始创建一个新的
+
+默认情况是这样，我写了一个android 2
+
+双击下面图片内容
+
+
+
+下面开始
+
+
+
+
+然后在写入地址
+
+然后将command项的右边的
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					51单片机学习
+				</h2>
+				<div class="index-brief">
+					首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解
+首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解大多数单片机或芯片： ==高电平弱驱动，低电平强驱动==
+大多数单片机或芯片：​==高电平弱驱动，
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E9%9C%80%E6%B1%82%E5%AE%9E%E7%8E%B0/">
+				<h2 class="index-title">
+					需求实现
+				</h2>
+				<div class="index-brief">
+					实现一个需求时，无论是别人给的还是自己想的，切记第一点：一开始一定不要想的很复杂，先想最简单的，并且实现它，拿QQ来说，刚开始出来的时候也没多美观啊，只实现了最基本的两个客户端之前互相聊天（​开始可能也没考虑什么高并发啊，这些乱七八糟的****​ ），后面界面的变化都是后来的事情了，反正你就记得，先
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+				<h2 class="index-title">
+					Anaconda的一些见解
+				</h2>
+				<div class="index-brief">
+					① 和PyCharm一样，就是给每一个项目创建一个独立的虚拟环境，防止​**==包污染事件==​发生**
+查看电脑显卡最高支持的CUDA版本
+nvidia-smi
+查看已存在的虚拟环境
+conda env list
+创建虚拟环境
+conda create -n 环境名字（英文） python=x.x
 					...
 				</div>
 			</a>

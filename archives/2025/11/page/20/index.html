@@ -24,7 +24,7 @@
 
 	<!-- search -->
 	<script>
-		var searchEngine = "https://www.google.com/search?q=";
+		var searchEngine = "https://cn.bing.com/search?q=";
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
@@ -252,7 +252,7 @@
 	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
 	
 	<div id="site-toc">
-		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车bing搜索">
 		<div id="tree">
 			
 
@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3027,20 +3027,76 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+			<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
 				<h2 class="index-title">
-					Redis常用命令
+					用VSCode实现HelloWorld案例
 				</h2>
 				<div class="index-brief">
-					一、客户端连接
-redis-cli -h host -p port -a password
-输入命令：redis-cli -p 6379
-二、数据导出导入
-导出
-执行备份命令：save
-该命令将在 redis 备份目录中创建dump.rdb文件。
-查看备份路径：config get dir
-备份后的
+					1.创建工作空间并初始化
+mkdir -p 自定义空间名称/src
+cd 自定义空间名称
+catkin_make  #自动生成构建目录
+2.用VSCode打开
+code .  #在工作区文件夹下
+3.配置json文件
+按住​Ctrl+Shift+B​ ，在弹出的窗口中选择catkin_make:bu
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
+				<h2 class="index-title">
+					SpringCloud01
+				</h2>
+				<div class="index-brief">
+					1.认识微服务
+1.1.单体架构
+单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
+单体架构的优缺点如下：
+优点：
+
+架构简单
+部署成本低
+
+缺点：
+
+耦合度高（维护困难、升级困难）
+
+1.2.分布式架构
+分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+				<h2 class="index-title">
+					RabbitMQ部署指南
+				</h2>
+				<div class="index-brief">
+					1、单机部署
+我们在Centos7虚拟机中使用Docker来安装。
+1.1、下载镜像
+方式一：在线拉取
+docker pull rabbitmq:3-management
+方式二：从本地加载
+镜像包下载链接：
+**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
 					...
 				</div>
 			</a>
@@ -3067,6 +3123,33 @@ redis-cli -h host -p port -a password
 
 1.1.1.应用部署的环境问题
 大型项目组
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					SpringCloud学习
+				</h2>
+				<div class="index-brief">
+					微服务结构
+
+Nacos结构
+
+Nacos与Eureka的区别
+
+Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
+临时实例心跳不正常会被剔除，非临时实例则不会被剔除
+Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
+Nacos集群默认采用AP方式
 					...
 				</div>
 			</a>
@@ -3127,90 +3210,6 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
-				<h2 class="index-title">
-					RabbitMQ部署指南
-				</h2>
-				<div class="index-brief">
-					1、单机部署
-我们在Centos7虚拟机中使用Docker来安装。
-1.1、下载镜像
-方式一：在线拉取
-docker pull rabbitmq:3-management
-方式二：从本地加载
-镜像包下载链接：
-**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
-				<h2 class="index-title">
-					SpringCloud学习
-				</h2>
-				<div class="index-brief">
-					微服务结构
-
-Nacos结构
-
-Nacos与Eureka的区别
-
-Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
-临时实例心跳不正常会被剔除，非临时实例则不会被剔除
-Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
-Nacos集群默认采用AP方式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
-				<h2 class="index-title">
-					SpringCloud01
-				</h2>
-				<div class="index-brief">
-					1.认识微服务
-1.1.单体架构
-单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
-单体架构的优缺点如下：
-优点：
-
-架构简单
-部署成本低
-
-缺点：
-
-耦合度高（维护困难、升级困难）
-
-1.2.分布式架构
-分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/">
 				<h2 class="index-title">
 					Windows下MySQL数据库安装（详细）
@@ -3235,14 +3234,15 @@ pan.baidu
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
 				<h2 class="index-title">
-					Python安装requirements文件里的软件包时报错
+					ERROR Could not build wheels for XXX, which is required to install pyprojec
 				</h2>
 				<div class="index-brief">
-					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
-解决方法：
-以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
+					报错内容：
+
+ERROR: Could not build wheels for XXX， which is required to install pyproject.toml-based projects
+前提：看一下具体报错信息，是不是因为缺少另一个包导致这个包构建失败，如果是的话，先把另一个
 					...
 				</div>
 			</a>
@@ -3255,15 +3255,14 @@ pan.baidu
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
 				<h2 class="index-title">
-					ERROR Could not build wheels for XXX, which is required to install pyprojec
+					Python安装requirements文件里的软件包时报错
 				</h2>
 				<div class="index-brief">
-					报错内容：
-
-ERROR: Could not build wheels for XXX， which is required to install pyproject.toml-based projects
-前提：看一下具体报错信息，是不是因为缺少另一个包导致这个包构建失败，如果是的话，先把另一个
+					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
+解决方法：
+以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
 					...
 				</div>
 			</a>

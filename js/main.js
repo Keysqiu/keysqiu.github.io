@@ -5,10 +5,10 @@ $(document).ready(function () {
     Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/';
     Prism.highlightAll();
   }
-  
+
   // 初始化代码块功能
   initCodeBlocks();
-  
+
   clickTreeDirectory();
   serachTree();
   // pjaxLoad();
@@ -40,7 +40,7 @@ function pageScroll() {
 // 回到顶部
 function scrollToTop() {
   $("#totop-toggle").on("click", function (e) {
-    $("html").animate({scrollTop: 0}, 200);
+    $("html").animate({ scrollTop: 0 }, 200);
   });
 }
 
@@ -109,10 +109,10 @@ function showArticleIndex() {
     }
     if (level != 0) {
       $(labelList[i]).before(
-          '<span class="anchor" id="_label' + i + '"></span>');
+        '<span class="anchor" id="_label' + i + '"></span>');
       content += '<li class="level_' + level
-          + '"><i class="fa fa-circle" aria-hidden="true"></i><a href="#_label'
-          + i + '"> ' + $(labelList[i]).text() + '</a></li>';
+        + '"><i class="fa fa-circle" aria-hidden="true"></i><a href="#_label'
+        + i + '"> ' + $(labelList[i]).text() + '</a></li>';
     }
   }
   content += "</ul>"
@@ -127,8 +127,8 @@ function showArticleIndex() {
       // 获取当前点击的 a 标签，并前触发滚动动画往对应的位置
       var target = $(this.hash);
       $("body, html").animate(
-          {'scrollTop': target.offset().top},
-          500
+        { 'scrollTop': target.offset().top },
+        500
       );
     });
 
@@ -153,11 +153,11 @@ function showArticleIndex() {
 
 function pjaxLoad() {
   $(document).pjax('#menu a', '#content',
-      {fragment: '#content', timeout: 8000});
+    { fragment: '#content', timeout: 8000 });
   $(document).pjax('#tree a', '#content',
-      {fragment: '#content', timeout: 8000});
+    { fragment: '#content', timeout: 8000 });
   $(document).pjax('#index a', '#content',
-      {fragment: '#content', timeout: 8000});
+    { fragment: '#content', timeout: 8000 });
   $(document).on({
     "pjax:complete": function (e) {
       // 使用PrismJS进行代码高亮
@@ -165,28 +165,28 @@ function pjaxLoad() {
         Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/';
         Prism.highlightAll();
       }
-      
+
       // 重新初始化代码块功能
       if (typeof initCodeBlocks !== 'undefined') {
         initCodeBlocks();
       }
-      
+
       // 添加 active
       $("#tree .active").removeClass("active");
       var title = $("#article-title").text().trim();
       if (title.length) {
         var searchResult = $("#tree li.file").find(
-            "a:contains('" + title + "')");
+          "a:contains('" + title + "')");
         if (searchResult.length) {
           $(".fa-minus-square-o").removeClass("fa-minus-square-o").addClass(
-              "fa-plus-square-o");
+            "fa-plus-square-o");
           $("#tree ul").css("display", "none");
           if (searchResult.length > 1) {
             var categorie = $("#article-categories span:last a").html();
             if (typeof categorie != "undefined") {
               categorie = categorie.trim();
               searchResult = $("#tree li.directory a:contains('" + categorie
-                  + "')").siblings().find("a:contains('" + title + "')");
+                + "')").siblings().find("a:contains('" + title + "')");
             }
           }
           searchResult[0].parentNode.classList.add("active");
@@ -215,7 +215,7 @@ function serachTree() {
     // 没值就收起父目录，但是得把 active 的父目录都展开
     if (inputContent.length === 0) {
       $(".fa-minus-square-o").removeClass("fa-minus-square-o").addClass(
-          "fa-plus-square-o");
+        "fa-plus-square-o");
       $("#tree ul").css("display", "none");
       if ($("#tree .active").length) {
         showActiveTree($("#tree .active"), true);
@@ -226,10 +226,10 @@ function serachTree() {
     // 有值就搜索，并且展开父目录
     else {
       $(".fa-plus-square-o").removeClass("fa-plus-square-o").addClass(
-          "fa-minus-square-o");
+        "fa-minus-square-o");
       $("#tree ul").css("display", "none");
       var searchResult = $("#tree li").find(
-          "a:contains('" + inputContent + "')");
+        "a:contains('" + inputContent + "')");
       if (searchResult.length) {
         showActiveTree(searchResult.parent(), false)
       }
@@ -243,8 +243,8 @@ function serachTree() {
 
       if (inputContent.length === 0) {
       } else {
-        window.open(searchEngine + inputContent + "%20site:" + homeHost,
-            "_blank");
+        window.open(searchEngine + inputContent,
+          "_blank");
       }
     }
   });
@@ -271,12 +271,12 @@ function clickTreeDirectory() {
 
     if (iconIsOpen) {
       if (typeof subTree != "undefined") {
-        subTree.slideUp({duration: 100});
+        subTree.slideUp({ duration: 100 });
       }
       icon.addClass("fa-plus-square-o");
     } else {
       if (typeof subTree != "undefined") {
-        subTree.slideDown({duration: 100});
+        subTree.slideDown({ duration: 100 });
       }
       icon.addClass("fa-minus-square-o");
     }
@@ -298,7 +298,7 @@ function showActiveTree(jqNode, isSiblings) {
       jqNode.siblings().css("display", "block");
       jqNode.siblings("a").css("display", "inline");
       jqNode.siblings("a").find(".fa-plus-square-o").removeClass(
-          "fa-plus-square-o").addClass("fa-minus-square-o");
+        "fa-plus-square-o").addClass("fa-minus-square-o");
     }
   }
   jqNode.each(function () {
@@ -308,10 +308,10 @@ function showActiveTree(jqNode, isSiblings) {
 
 function scrollOn() {
   var $sidebar = $('#sidebar'),
-      $content = $('#content'),
-      $header = $('#header'),
-      $footer = $('#footer'),
-      $togglei = $('#sidebar-toggle i');
+    $content = $('#content'),
+    $header = $('#header'),
+    $footer = $('#footer'),
+    $togglei = $('#sidebar-toggle i');
 
   $togglei.addClass('fa-close');
   $togglei.removeClass('fa-arrow-right');
@@ -330,10 +330,10 @@ function scrollOn() {
 
 function scrollOff() {
   var $sidebar = $('#sidebar'),
-      $content = $('#content'),
-      $header = $('#header'),
-      $footer = $('#footer'),
-      $togglei = $('#sidebar-toggle i');
+    $content = $('#content'),
+    $header = $('#header'),
+    $footer = $('#footer'),
+    $togglei = $('#sidebar-toggle i');
 
   $togglei.addClass('fa-arrow-right');
   $togglei.removeClass('fa-close');
