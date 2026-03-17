@@ -28,7 +28,7 @@
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
-		var homeHost = "wujun234.com";
+		var homeHost = "";
 		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
 			homeHost = window.location.host;
 		}
@@ -3027,19 +3027,20 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+			<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 				<h2 class="index-title">
-					用VSCode实现HelloWorld案例
+					Redis常用命令
 				</h2>
 				<div class="index-brief">
-					1.创建工作空间并初始化
-mkdir -p 自定义空间名称/src
-cd 自定义空间名称
-catkin_make  #自动生成构建目录
-2.用VSCode打开
-code .  #在工作区文件夹下
-3.配置json文件
-按住​Ctrl+Shift+B​ ，在弹出的窗口中选择catkin_make:bu
+					一、客户端连接
+redis-cli -h host -p port -a password
+输入命令：redis-cli -p 6379
+二、数据导出导入
+导出
+执行备份命令：save
+该命令将在 redis 备份目录中创建dump.rdb文件。
+查看备份路径：config get dir
+备份后的
 					...
 				</div>
 			</a>
@@ -3052,18 +3053,20 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
 				<h2 class="index-title">
-					Nacos安装指南
+					Docker实用篇
 				</h2>
 				<div class="index-brief">
-					1、Windows安装（单点部署）
-1.1、下载安装包
-在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：
-**GitHub主页：**​https://github.com/alibaba/nacos
-如图：
+					1.初识Docker
+1.1.什么是Docker
+微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
 
-我这里是用1.4.1.版本的Nacos，压缩包
+分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
+在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
+
+1.1.1.应用部署的环境问题
+大型项目组
 					...
 				</div>
 			</a>
@@ -3088,6 +3091,30 @@ code .  #在工作区文件夹下
 异步通讯：就像发邮件，不需要马上回复。
 两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
 1.1.1.同步通
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+				<h2 class="index-title">
+					Nacos安装指南
+				</h2>
+				<div class="index-brief">
+					1、Windows安装（单点部署）
+1.1、下载安装包
+在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：
+**GitHub主页：**​https://github.com/alibaba/nacos
+如图：
+
+我这里是用1.4.1.版本的Nacos，压缩包
 					...
 				</div>
 			</a>
@@ -3184,32 +3211,6 @@ Nacos集群默认采用AP方式
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-				<h2 class="index-title">
-					环境配置
-				</h2>
-				<div class="index-brief">
-					1.选择下载的Erlang安装包，并双击运行
-
-2.点击Next，选择安装的目录位置，点击下一步即可
-
-3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
-
-4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
-
-5.例如Erlang的bin目
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/">
 				<h2 class="index-title">
 					Windows下MySQL数据库安装（详细）
@@ -3234,15 +3235,14 @@ pan.baidu
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
 				<h2 class="index-title">
-					ERROR Could not build wheels for XXX, which is required to install pyprojec
+					Python安装requirements文件里的软件包时报错
 				</h2>
 				<div class="index-brief">
-					报错内容：
-
-ERROR: Could not build wheels for XXX， which is required to install pyproject.toml-based projects
-前提：看一下具体报错信息，是不是因为缺少另一个包导致这个包构建失败，如果是的话，先把另一个
+					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
+解决方法：
+以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
 					...
 				</div>
 			</a>
@@ -3255,16 +3255,15 @@ ERROR: Could not build wheels for XXX， which is required to install pyproject.
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
 				<h2 class="index-title">
-					Python安装软件包的一些总结
+					ERROR Could not build wheels for XXX, which is required to install pyprojec
 				</h2>
 				<div class="index-brief">
-					1、在线安装
-# 如果是安装单个包
-pip install [包名]
-** 建议使用下面这一个命令，毕竟是万能命令，一般的包拿这个命令来装都不会有什么问题 **
-pip install [包名] -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple --tr
+					报错内容：
+
+ERROR: Could not build wheels for XXX， which is required to install pyproject.toml-based projects
+前提：看一下具体报错信息，是不是因为缺少另一个包导致这个包构建失败，如果是的话，先把另一个
 					...
 				</div>
 			</a>

@@ -28,7 +28,7 @@
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
-		var homeHost = "wujun234.com";
+		var homeHost = "";
 		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
 			homeHost = window.location.host;
 		}
@@ -3027,6 +3027,33 @@
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					SpringCloud学习
+				</h2>
+				<div class="index-brief">
+					微服务结构
+
+Nacos结构
+
+Nacos与Eureka的区别
+
+Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
+临时实例心跳不正常会被剔除，非临时实例则不会被剔除
+Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
+Nacos集群默认采用AP方式
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
 				<h2 class="index-title">
 					SpringCloud01
@@ -3047,32 +3074,6 @@
 
 1.2.分布式架构
 分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-				<h2 class="index-title">
-					环境配置
-				</h2>
-				<div class="index-brief">
-					1.选择下载的Erlang安装包，并双击运行
-
-2.点击Next，选择安装的目录位置，点击下一步即可
-
-3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
-
-4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
-
-5.例如Erlang的bin目
 					...
 				</div>
 			</a>
@@ -3109,6 +3110,26 @@ pan.baidu
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
+				<h2 class="index-title">
+					Python安装requirements文件里的软件包时报错
+				</h2>
+				<div class="index-brief">
+					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
+解决方法：
+以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
 				<h2 class="index-title">
 					ERROR Could not build wheels for XXX, which is required to install pyprojec
@@ -3118,6 +3139,26 @@ pan.baidu
 
 ERROR: Could not build wheels for XXX， which is required to install pyproject.toml-based projects
 前提：看一下具体报错信息，是不是因为缺少另一个包导致这个包构建失败，如果是的话，先把另一个
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+				<h2 class="index-title">
+					Python环境安装与配置
+				</h2>
+				<div class="index-brief">
+					一、准备工作
+Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带Python环境，在Windows系统上需要安装一下，超简单
+打开官网 https://www.python.org/downloads/  下载中心，根据自己的系统和版本选择合适的安装包，这里是直接下主页
 					...
 				</div>
 			</a>
@@ -3140,46 +3181,6 @@ ERROR: Could not build wheels for XXX， which is required to install pyproject.
 pip install [包名]
 ** 建议使用下面这一个命令，毕竟是万能命令，一般的包拿这个命令来装都不会有什么问题 **
 pip install [包名] -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple --tr
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
-				<h2 class="index-title">
-					Python安装requirements文件里的软件包时报错
-				</h2>
-				<div class="index-brief">
-					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
-解决方法：
-以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
-				<h2 class="index-title">
-					Python环境安装与配置
-				</h2>
-				<div class="index-brief">
-					一、准备工作
-Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带Python环境，在Windows系统上需要安装一下，超简单
-打开官网 https://www.python.org/downloads/  下载中心，根据自己的系统和版本选择合适的安装包，这里是直接下主页
 					...
 				</div>
 			</a>
@@ -3218,6 +3219,30 @@ python -–version
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ubuntu%E5%8D%87%E7%BA%A7python%E5%88%B0python3.11/">
+				<h2 class="index-title">
+					ubuntu升级python到python3.11
+				</h2>
+				<div class="index-brief">
+					在 Ubuntu 中升级 Python 到 3.11 版本可以通过编译源代码或者使用第三方工具来完成。请注意，在升级 Python 之前，请确保备份重要数据，并谨慎操作。
+以下是通过编译源代码的步骤：
+
+安装编译所需的依赖项：
+
+sudo apt update
+sudo apt install bu
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
 				<h2 class="index-title">
 					内层包报ModuleNotFoundError
@@ -3235,26 +3260,6 @@ ModuleNotFoundError: No module named ‘libsvm.python’
 找到包的路径
 ps：
 E:\anaconda3\
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%9C%A8%E4%BB%BB%E6%84%8F%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%88%9B%E5%BB%BAPython%E7%8E%AF%E5%A2%83/">
-				<h2 class="index-title">
-					在任意目录下创建Python环境
-				</h2>
-				<div class="index-brief">
-					创建环境
-**① 创建虚拟环境：使用python -m venv **​ &lt;directory&gt;​命令，在指定的目录下创建一个虚拟环境，该目录会包含一个Python解释器和一些支持文件。通常，可以将虚拟环境命名为 .venv ，这样可以在终端中隐藏它，并且表明它的用途。
-python -
 					...
 				</div>
 			</a>

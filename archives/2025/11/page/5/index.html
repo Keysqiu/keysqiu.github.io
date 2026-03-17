@@ -28,7 +28,7 @@
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
-		var homeHost = "wujun234.com";
+		var homeHost = "";
 		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
 			homeHost = window.location.host;
 		}
@@ -3027,14 +3027,24 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/Keil5%E4%B8%8B%E8%BD%BD%E7%A8%8B%E5%BA%8F%E5%90%8E%E8%A6%81%E7%A1%AC%E4%BB%B6%E5%A4%8D%E4%BD%8D%E5%90%8E%E6%89%8D%E6%89%A7%E8%A1%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+			<a href="/2025/11/30/%E6%85%A2SQL%E4%BC%98%E5%8C%96/SQL%E4%BC%98%E5%8C%96%E7%9A%84%E5%87%A0%E7%82%B9%E8%A7%81%E8%A7%A3/">
 				<h2 class="index-title">
-					Keil5下载程序后要硬件复位后才执行解决方法
+					SQL优化的几点见解
 				</h2>
 				<div class="index-brief">
-					1.勾选  Reset and Run（主要）
+					
 
-2.不勾选Enable（第2点这里，有就勾，没有的话，不勾也无所谓的）
+
+字段是否走了索引，走不走索引的效率差了几百倍
+
+
+批量操作
+连接的表不要过多
+==避免使用 select==
+小表驱动大表
+使用 limit
+使用 union all 代替 union
+口诀：in 小，exists 大，in 先内后外，exists 先外后内
 
 
 					...
@@ -3049,14 +3059,16 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/IC%EF%BC%88Input%20Capture%EF%BC%89%E8%BE%93%E5%85%A5%E6%8D%95%E8%8E%B7/">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/Keil5-MDK%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%B7%BB%E5%8A%A0%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/">
 				<h2 class="index-title">
-					IC（Input Capture）输入捕获
+					Keil5-MDK的格式化代码工具及添加快捷方式
 				</h2>
 				<div class="index-brief">
-					理解：输入捕获模式下，当通道输入引脚出现指定电平跳变时，当前CNT的值将被锁存到CCR中，可用于测量PWM波形的频率、占空比、脉冲间隔、电平持续时间等参数（可以想象成示波器，您细品就懂了！！！）
-‍
-
+					一、下载Astyle
+**链接：**​https://pan.baidu.com/s/13usAzedx_G2IvIuOVmMHrQ?pwd=hsb0
+提取码：hsb0
+–来自百度网盘超级会员V4的分享
+二、下面针对工具的配置和使用：格式化当前文件、格式化所有的.c文件，格式化所有的.h文件、快捷方
 					...
 				</div>
 			</a>
@@ -3069,15 +3081,16 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/OC%EF%BC%88Output%20Compare%EF%BC%89%E8%BE%93%E5%87%BA%E6%AF%94%E8%BE%83/">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/IO%E5%8F%A3%E4%B8%8D%E6%8C%89%E9%A2%84%E6%9C%9F%E8%BE%93%E5%87%BA/">
 				<h2 class="index-title">
-					OC（Output Compare）输出比较
+					IO口不按预期输出
 				</h2>
 				<div class="index-brief">
-					OC理解：输出比较可以通过比较CNT与CCR寄存器值的关系，来对输出电平进行置1、置0或翻转的操作，用于输出一定频率和占空比的PWM波形（可以想象成信号发生器，您细品就懂了！！！）
-PWM简介
+					
+前提：接线和代码都没问题（一定要先检查完这个前提再往下排查，不然往下毫无意义）
 
-（上图中Ts的值从第二个图中可以看出，代表一个高低电平变换周期的时间；Ton代表一个高低电平变换周期内高
+看看是不是你的模块之间设置的IO口都是那一个，冲突了，错了几次，真的艹了！！！
+
 					...
 				</div>
 			</a>
@@ -3116,17 +3129,14 @@ PWM简介
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/PADS%209.5%E5%AE%89%E8%A3%85/">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/IC%EF%BC%88Input%20Capture%EF%BC%89%E8%BE%93%E5%85%A5%E6%8D%95%E8%8E%B7/">
 				<h2 class="index-title">
-					PADS 9.5安装
+					IC（Input Capture）输入捕获
 				</h2>
 				<div class="index-brief">
-					1、获取安装包，链接如下：
-**链接：**​https://pan.baidu.com/s/1p4d7C_iwPF46ReDbf-SHVg?pwd=ml3e
-提取码：ml3e
-–来自百度网盘超级会员V4的分享
-2、开始安装
-①：下载好pads9.5.iso之后，鼠标右击软件压缩包，选择“解压到pad
+					理解：输入捕获模式下，当通道输入引脚出现指定电平跳变时，当前CNT的值将被锁存到CCR中，可用于测量PWM波形的频率、占空比、脉冲间隔、电平持续时间等参数（可以想象成示波器，您细品就懂了！！！）
+‍
+
 					...
 				</div>
 			</a>
@@ -3149,6 +3159,27 @@ PWM简介
 步骤：1、打开keil5，点击edit，configraution
 ​
 选择跟编译相关的Text Completion,然后
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/OC%EF%BC%88Output%20Compare%EF%BC%89%E8%BE%93%E5%87%BA%E6%AF%94%E8%BE%83/">
+				<h2 class="index-title">
+					OC（Output Compare）输出比较
+				</h2>
+				<div class="index-brief">
+					OC理解：输出比较可以通过比较CNT与CCR寄存器值的关系，来对输出电平进行置1、置0或翻转的操作，用于输出一定频率和占空比的PWM波形（可以想象成信号发生器，您细品就懂了！！！）
+PWM简介
+
+（上图中Ts的值从第二个图中可以看出，代表一个高低电平变换周期的时间；Ton代表一个高低电平变换周期内高
 					...
 				</div>
 			</a>
@@ -3185,6 +3216,28 @@ PWM简介
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/Keil5%E4%B8%8B%E8%BD%BD%E7%A8%8B%E5%BA%8F%E5%90%8E%E8%A6%81%E7%A1%AC%E4%BB%B6%E5%A4%8D%E4%BD%8D%E5%90%8E%E6%89%8D%E6%89%A7%E8%A1%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+				<h2 class="index-title">
+					Keil5下载程序后要硬件复位后才执行解决方法
+				</h2>
+				<div class="index-brief">
+					1.勾选  Reset and Run（主要）
+
+2.不勾选Enable（第2点这里，有就勾，没有的话，不勾也无所谓的）
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/stm32%E4%BD%BF%E7%94%A8ST-LINK%E7%83%A7%E5%BD%95%E6%97%B6%E6%8A%A5%E9%94%99No%20ST-LINK%20detected/">
 				<h2 class="index-title">
 					stm32使用ST-LINK烧录时报错No ST-LINK detected
@@ -3198,48 +3251,6 @@ PWM简介
 
 
 确认一下②那个地方是否是ST-Link Debugger
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/stm32%E5%AD%A6%E4%B9%A0/">
-				<h2 class="index-title">
-					stm32学习
-				</h2>
-				<div class="index-brief">
-					
-Reset是给低电平，Set是给高电平
-代码提示快捷键：Ctrl+Alt+空格
-GPIO设置好了之后默认输出低电平，GPIO就是单片机与外部设备通信的接口，用来读取外部设备的信号或者控制外部设备的状态
-推挽模式和开漏模式：推挽输出高低电平均有驱动能力，开漏输出高电平相当于高阻态，没有驱动能力，低电
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/stm32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-				<h2 class="index-title">
-					stm32基础知识
-				</h2>
-				<div class="index-brief">
-					stm32F103C8T6芯片
-①只有TIM 1,2,3,4 		4个定时器
 
 					...
 				</div>

@@ -28,7 +28,7 @@
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
-		var homeHost = "wujun234.com";
+		var homeHost = "";
 		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
 			homeHost = window.location.host;
 		}
@@ -3027,16 +3027,85 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/YOLO/qt%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
+			<a href="/2025/11/30/Windows/Windows%E6%97%B6%E9%97%B4%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC/">
 				<h2 class="index-title">
-					qt部署文档
+					Windows时间批处理脚本
 				</h2>
 				<div class="index-brief">
-					一、安装anaconda3
-**① 访问Anaconda官网：**​https://www.anaconda.com/products/individual
-② 选择相应的操作系统版本并下载对应的安装包（推荐下载64位版本）
-③ 打开下载的安装包，按照提示进行安装即可
-④ 创建一个虚拟环境：（具体相
+					Windows时间批处理脚本.zip
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Windows/telnet%E5%92%8Ccurl/">
+				<h2 class="index-title">
+					telnet和curl
+				</h2>
+				<div class="index-brief">
+					telnet
+telnet 172.18.200.113 13100
+# 用途：
+1、测试网络服务是否可达以及它们是否正在监听指定端口。
+2、用于调试目的，比如发送简单的HTTP请求来检查Web服务器的行为。
+curl
+# 示例
+发送GET请求：
+curl &lt;http://example.co
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Windows/Windows%20%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
+				<h2 class="index-title">
+					Windows 关闭占用指定端口的进程
+				</h2>
+				<div class="index-brief">
+					找出占用443端口**的进程号(pid)**​ ******（**​第二列是你本机的应用占用的端口，看第二列就行）如下图，看第二列中对应过去的pid是18072
+# 输出的最后一列就是进程号pid
+netstat -ano | findstr :443
+
+查看该pid对应的程序（这步操作可有可无，如
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/Vue2%E9%A1%B9%E7%9B%AE%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90ElementUI/">
+				<h2 class="index-title">
+					Vue2项目快速集成ElementUI
+				</h2>
+				<div class="index-brief">
+					1、下载依赖
+npm i element-ui -S
+2、导入依赖
+在main.js文件下添加如下代码即可
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(Eleme
 					...
 				</div>
 			</a>
@@ -3095,30 +3164,6 @@ export default &#123;
     return &#123;&#125;
   &#125;,
   
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue2%E9%A1%B9%E7%9B%AE%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90ElementUI/">
-				<h2 class="index-title">
-					Vue2项目快速集成ElementUI
-				</h2>
-				<div class="index-brief">
-					1、下载依赖
-npm i element-ui -S
-2、导入依赖
-在main.js文件下添加如下代码即可
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(Eleme
 					...
 				</div>
 			</a>
@@ -3206,34 +3251,6 @@ export default &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/vue2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">
-				<h2 class="index-title">
-					vue2生命周期函数
-				</h2>
-				<div class="index-brief">
-					🌿 1. created
-
-“我出生了！数据有了，但页面还没长出来。”
-
-
-数据、方法已准备好，可以访问 this.data。
-常用于：发请求、初始化数据。
-页面（DOM）还没生成，不能操作。
-
-created() &#123;
-  console.log('我出生了！', this.messag
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/Vue/%E5%89%8D%E7%AB%AF%E9%A2%84%E7%95%99%E4%BB%A3%E7%A0%81/">
 				<h2 class="index-title">
 					前端预留代码
@@ -3245,38 +3262,6 @@ created() &#123;
 //=====
 &lt;script setup lang="ts"> //ts或js
 &lt;/script>
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Windows/Windows%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7/">
-				<h2 class="index-title">
-					Windows内置工具
-				</h2>
-				<div class="index-brief">
-					打开网络连接面板
-ncpa.cpl
-服务
-services.msc
-Windows事件查看器
-eventvwr
-远程桌面
-mstsc
-控制面板
-control
-注册表
-regedit
-任务执行计划
-taskschd.msc
-
 					...
 				</div>
 			</a>

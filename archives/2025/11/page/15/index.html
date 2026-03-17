@@ -28,7 +28,7 @@
 		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
 			searchEngine = "https://www.google.com/search?q=";
 		}
-		var homeHost = "wujun234.com";
+		var homeHost = "";
 		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
 			homeHost = window.location.host;
 		}
@@ -3027,14 +3027,13 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/C%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80%E9%80%BB%E8%BE%91%E7%9F%AD%E8%B7%AF/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/">
 				<h2 class="index-title">
-					C语言逻辑短路
+					进程的一些理解
 				</h2>
 				<div class="index-brief">
-					记住一句话即可
-在逻辑表达式中，只要能确定表达式的结果，还没有进行的判断不再继续
-
+					1、父辈比子辈多一辈，所以父进程的pid为1，子进程的pid为0
+2、sleep(1)的作用是在子进程尝试使用sem_p()获取信号量之前引入1秒的延迟。这个延迟给父进程足够的时间将字符串写入文件并使用sem_v()释放信号量。如果没有这个延迟，存在子进程在父进程写入文件之前执行的可能性（主要是为了
 					...
 				</div>
 			</a>
@@ -3047,17 +3046,52 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Git/Git%E5%AE%89%E8%A3%85/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E9%9C%80%E6%B1%82%E5%AE%9E%E7%8E%B0/">
 				<h2 class="index-title">
-					Git安装
+					需求实现
+				</h2>
+				<div class="index-brief">
+					实现一个需求时，无论是别人给的还是自己想的，切记第一点：一开始一定不要想的很复杂，先想最简单的，并且实现它，拿QQ来说，刚开始出来的时候也没多美观啊，只实现了最基本的两个客户端之前互相聊天（​开始可能也没考虑什么高并发啊，这些乱七八糟的****​ ），后面界面的变化都是后来的事情了，反正你就记得，先
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%A0%BC%E5%BC%8F%E6%B7%BB%E5%8A%A0%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%EF%BC%88%E9%80%9A%E7%94%A8%EF%BC%89/">
+				<h2 class="index-title">
+					通过修改注册表格式添加右键菜单（通用）
 				</h2>
 				<div class="index-brief">
 					
-生成的.git文件夹中就那个config文件比较重要一点，里面配置了远程仓库信息，其他的没啥用，几乎都是二进制文件
+输入regedit
+​
+找到路径
 
-一、绑定远程仓库
-1.1 安装Git（Windows版安装）
-**链接：**​https://pan.baidu.com/s/1n5gAh5QqVwg8f3H5b3ydNA?pwd
+计算机\HKEY_CLASSES_ROOT\Directory\Background\shell
+
+现在开始创建一个新的
+
+默认情况是这样，我写了一个android 2
+
+双击下面图片内容
+
+
+
+下面开始
+
+
+
+
+然后在写入地址
+
+然后将command项的右边的
 					...
 				</div>
 			</a>
@@ -3070,119 +3104,12 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Anaconda/Anaconda%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/Go/Go%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E6%97%B6%EF%BC%8C%E5%87%BA%E7%8E%B0%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98/">
 				<h2 class="index-title">
-					Anaconda的一些见解
+					Go下载插件时，出现网络代理问题
 				</h2>
 				<div class="index-brief">
-					① 和PyCharm一样，就是给每一个项目创建一个独立的虚拟环境，防止​**==包污染事件==​发生**
-查看电脑显卡最高支持的CUDA版本
-nvidia-smi
-查看已存在的虚拟环境
-conda env list
-创建虚拟环境
-conda create -n 环境名字（英文） python=x.x
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Git/git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">
-				<h2 class="index-title">
-					git常用操作
-				</h2>
-				<div class="index-brief">
-					一、git的基本命令
-# 初始化本地仓库
-git init
-# 添加文件(文件夹)到暂存区
-git add 文件(文件夹)
-# 查看文件当前状态
-git status
-# 提交暂存区文件中指定的文件到本地仓库
-git commit 文件(文件夹) -m "提交说明"
-# 提交暂存区中全部的文件到本地
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/EDA/EDA%E7%94%BB%E5%9B%BE/">
-				<h2 class="index-title">
-					EDA画图
-				</h2>
-				<div class="index-brief">
-					布线原则：先从复杂的元器件开始布线
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Git/git%E6%8F%90%E4%BA%A4%E5%88%B0%E4%BB%93%E5%BA%93%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8D%E8%83%BD%E7%82%B9%E5%87%BB/">
-				<h2 class="index-title">
-					git提交到仓库的文件夹不能点击
-				</h2>
-				<div class="index-brief">
-					上传本地文件到gitee远程仓库后，发现如下情况：
-
-文件夹显示为灰色并且无法访问，不能点击。瞬间就慌了，不着急往下看。
-
-
-分析原因
-
-主要原因：无法点击的灰色文件夹中含有 .git 文件夹
-意思就是，在本地初始化的仓库(使用 git init 初始化的文件夹) 中的某一个文件夹里含有 .git 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/IDEA/IDEA%20%E5%89%8D%E8%BF%9B%20%E5%90%8E%E9%80%80%20%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%B7%A5%E5%85%B7%E6%A0%8F/">
-				<h2 class="index-title">
-					IDEA 前进 后退 添加到工具栏
-				</h2>
-				<div class="index-brief">
-					
-IDEA安装后，前进  后退快捷按钮默认不在工具栏显示，需要手动将其添加到工具栏
-
-① 按照图一选中Toolbar Run Actions ，点击右上角的 add after
-② 弹出图二，ctrl同时选中前进和后退，点击确定
-③ 在工具栏便添加了前进后退快捷按钮图三
-图一
-
-图二
-
-图三
-
+					go env -w GOPROXY=https://goproxy.cn
 
 					...
 				</div>
@@ -3251,6 +3178,78 @@ a := [5]int&#123;1,
 ​
 如果不知道是被哪个程序占用了快捷键，可以使用下面这个工具
 链接：https://pan.baidu.com/s/1R7JFKN82QL_7Dq
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/IDEA/%E5%A6%82%E4%BD%95%E6%8A%8AIDEA%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%8F%E8%B0%83%E8%87%B3%E5%B7%A6%E4%BE%A7%E6%98%BE%E7%A4%BA/">
+				<h2 class="index-title">
+					如何把IDEA的工具栏调至左侧显示
+				</h2>
+				<div class="index-brief">
+					
+效果如下：
+​
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/IDEA/IDEA%20%E5%89%8D%E8%BF%9B%20%E5%90%8E%E9%80%80%20%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%B7%A5%E5%85%B7%E6%A0%8F/">
+				<h2 class="index-title">
+					IDEA 前进 后退 添加到工具栏
+				</h2>
+				<div class="index-brief">
+					
+IDEA安装后，前进  后退快捷按钮默认不在工具栏显示，需要手动将其添加到工具栏
+
+① 按照图一选中Toolbar Run Actions ，点击右上角的 add after
+② 弹出图二，ctrl同时选中前进和后退，点击确定
+③ 在工具栏便添加了前进后退快捷按钮图三
+图一
+
+图二
+
+图三
+
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/IDEA/%E5%AF%B9%E7%BC%96%E7%A8%8BIDE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+				<h2 class="index-title">
+					对编程IDE使用的一些见解
+				</h2>
+				<div class="index-brief">
+					1、如果是在IDE里面删除了文件，此文件不会进回收站的，（​在文件资源管理器中删除的才会进回收站****​ ）要想找回，请看下图
+
+点击了之后，就可以在弹出的窗口中进行恢复操作了。
+
 					...
 				</div>
 			</a>
