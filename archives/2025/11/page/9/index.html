@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2956,6 +2956,39 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										数据库
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/03/17/%E6%95%B0%E6%8D%AE%E5%BA%93/Oracle%20SQL%E5%85%B3%E9%94%AE%E5%AD%97%E9%80%9F%E6%9F%A5/">
+                     
+										    Oracle SQL关键字速查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/03/17/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%20SERVER%E5%85%B3%E9%94%AE%E5%AD%97%E9%80%9F%E6%9F%A5/">
+                     
+										    SQL SERVER关键字速查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										自动化测试
 									</a>
 									
@@ -3027,19 +3060,18 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%BC%80%E5%8F%91%E4%B8%AD%E4%B8%80%E4%BA%9B%E7%96%91%E6%83%91%E7%9A%84%E8%A7%A3%E9%87%8A/">
 				<h2 class="index-title">
-					Linux关闭占用指定端口的进程
+					Java开发中一些疑惑的解释
 				</h2>
 				<div class="index-brief">
-					两种方式
-① 第一种
-用netstat -ano | grep 端口 找出进程号
-然后 kill -9 进程号 杀进程
-② 第二种
-例：关闭占用80端口的进程
-sudo fuser -k -n tcp 80
-
+					① 公司中是用html+css还是用vue
+答：
+这得看应用场景，如果需要被搜索引擎搜录 -&gt; html+css
+不需要，只需要服务于特定群体，而且要快速落地 -&gt; Vue
+② 为什么很多公司都用第三方组件
+答：
+因为谁都不想消耗巨大的人力和物力造轮子，公司主要看效益，能用就行，能赚钱就
 					...
 				</div>
 			</a>
@@ -3052,17 +3084,18 @@ sudo fuser -k -n tcp 80
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85Nginx/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC%E4%B8%80%E4%BA%9B%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%9C%B0%E6%96%B9/">
 				<h2 class="index-title">
-					Linux安装Nginx
+					Java和C一些不一样的地方
 				</h2>
 				<div class="index-brief">
-					1、安装依赖和相关库：
-yum -y install gcc-c++ zlib-devel openssl-devel libtool
-2、下载nginx安装包并解压：
-cd /usr/local
-wget http://nginx.org/download/nginx-1.14.0.tar.gz
-
+					
+Java源文件的名字跟类中的public修饰的类一样。
+Java的一个类中可以没有public类，有也只能有一个，且要与源文件同名，非public类可以有多个
+Java里面的char占两个字节
+float类型的变量怎么与double区别的呢？
+答：值后面加上f或F
+Java中 int[]a,b; 
 					...
 				</div>
 			</a>
@@ -3075,120 +3108,21 @@ wget http://nginx.org/download/nginx-1.14.0.tar.gz
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85docker/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Postman%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B1%89%E5%8C%96/">
 				<h2 class="index-title">
-					Linux安装docker
+					Postman安装与汉化
 				</h2>
 				<div class="index-brief">
-					docker报错时查看日志命令
-journalctl -xe
-# 把错误拿去百度即可
-# 经验一：是否是防火墙和docker内的网络冲突了，关掉防火墙试试！
-systemctl stop firewalld.service    		--停止firewall
-systemctl disable fi
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85jdk/">
-				<h2 class="index-title">
-					Linux安装jdk
-				</h2>
-				<div class="index-brief">
-					一、JDK8
-**链接：**​https://pan.baidu.com/s/1NfzIezipNTuAujzxcjTZ3w?pwd=pul3
-提取码：pul3
+					一、下载安装包
+链接：  https://pan.baidu.com/s/1RCZQXYtEPr9TooOUeSjMIQ?pwd=ywmk
+提取码：ywmk
 –来自百度网盘超级会员V5的分享
-解压：
-tar -zxvf jdk-8u291-linux-x64.tar.gz
-移动：
-mv jdk1
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85maven%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/">
-				<h2 class="index-title">
-					Linux安装maven指定版本
-				</h2>
-				<div class="index-brief">
-					① 官方下载：
-② 附件
 
-也可以用下面的这个安装包，这个是3.9.6的
+下载后的目录如图所示
 
-apache-maven-3.9.6-bin.tar.gz
-下载好安装包之后，通过sftp工具丢到服务器喜欢的目录
-# 查看存放路径
-pwd
-1、解压
-# 解压
-tar -zxvf apache-maven-3.9.6-bi
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/My-%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
-				<h2 class="index-title">
-					My-定时备份服务器MySQL数据库
-				</h2>
-				<div class="index-brief">
-					shell脚本如下：（主要改的地方：第 2​ 、4、5、7、9、11、​13****​ 、14、16 行）
-#用户名
-mysql_user="root"
-#密码
-mysql_password="G#t9WhZr2@qL7BmPnXeD"
-mysql_host="106.53.67.124"
-#端口号
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Ubuntu22.04%E5%AE%89%E8%A3%85Jenkins%EF%BC%88JDK11%E7%89%88%EF%BC%89/">
-				<h2 class="index-title">
-					Ubuntu22.04安装Jenkins（JDK11版）
-				</h2>
-				<div class="index-brief">
-					1 安装java (建议安装11版本的java)
-sudo apt update
-sudo apt install openjdk-11-jdk
-安装完成后 查看下java版本是否安装完成
-java -version
-安装完成后输出下面的结果则表示成功
 
-openjdk version “11.0.
+二、Postman安装
+双击目录下的​Postman-win64-9.10.0-
 					...
 				</div>
 			</a>
@@ -3201,23 +3135,16 @@ openjdk version “11.0.
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/My%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/">
 				<h2 class="index-title">
-					Linux常用命令
+					My编程经验
 				</h2>
 				<div class="index-brief">
-					查看主机当前内存
-**free -h**
-查看主机当前外存
-**df -h**
-查看当前主机运行的程序
-**top**
-删除文件/文件夹
-rm 文件名 #删除文件
-rm -d 目录名 #删除一个空目录
-rm -r 目录名 #删除一个非空目录
-安装Ubuntu终端分屏工具
-**sudo apt ins
+					如果你在使用一个框架，在具体业务逻辑中得到意料之外的结果，除去特殊情况，一般就是还有一些代码其他人写的，你还没找到罢了
+for&lt;=2层，if&lt;=3层
+2147483646
+Centos查看Ip地址命令：ip addr
+使用Linux 时不要乱删或乱改根目录下的东西（非必要）。家目录随便你
 					...
 				</div>
 			</a>
@@ -3230,14 +3157,13 @@ rm -r 目录名 #删除一个非空目录
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Python%E5%85%8D%E8%B4%B9%E6%97%A0%E9%99%90%E5%88%B6%E8%B0%83%E7%94%A8%E5%9B%BD%E4%BA%A7GPT%EF%BC%8C%E6%98%9F%E7%81%AB%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%81%9A%E6%88%91%E7%9A%84AI%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%81%9A%E7%BE%A4%E5%86%85AI%E6%98%BE%E7%9C%BC%E5%8C%85/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/MP4%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95URL%E5%9C%B0%E5%9D%80%EF%BC%8C%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88/">
 				<h2 class="index-title">
-					Python免费无限制调用国产GPT，星火大模型做我的AI助手，做群内AI显眼包
+					MP4视频测试URL地址，亲测有效
 				</h2>
 				<div class="index-brief">
-					获取讯飞星火三个参数方法
-Web模式下，需要前往讯飞星火大模型web端通过 F12 抓取 3 个参数：cookie、fd、GtToken，讯飞星火的web端有防护，在web端直接按 F12 不能打开开发者窗口。但是可以通过特殊方法打开：
-1.进入 https://xinghuo.xfyun.cn/
+					MP4视频测试URL地址，亲测有效_视频地址-CSDN博客
+‍
 
 					...
 				</div>
@@ -3251,18 +3177,104 @@ Web模式下，需要前往讯飞星火大模型web端通过 F12 抓取 3 个参
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/SpringBoot%E5%92%8CVue2%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2https%E5%8D%8F%E8%AE%AE/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%85%B1%E6%9C%89%E5%A4%9A%E5%B0%91%E7%AB%AF%E5%8F%A3%EF%BC%9F/">
 				<h2 class="index-title">
-					SpringBoot和Vue2项目部署https协议
+					一台电脑共有多少端口？
 				</h2>
 				<div class="index-brief">
-					一、SpringBoot项目
-1、去你自己的云申请并下载好相关文件，SpringBoot下载的是Tomcat（默认），Vue2下载的是Nginx
+					一台电脑会有65536个端口，计算是由256*256得出，端口号从0开始到65535.
 
-2、将下载的压缩包里面的.pfx后缀文件拷贝到项目的resources目录下
-
-3、编辑配置文件
-（​主要是框里面的内容，注意是配置在server下**
+公认端口（baiWell Known Ports）：从0到1023，它们紧密绑定于一些服务。通常这些端口的通讯明确表明了某种服务的协议。例如：80端口实际上总是HTTP通讯。
+注册端口（Registered P
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/yolov5%E8%AE%AD%E7%BB%83%E6%B5%81%E7%A8%8B%E6%80%BB%E7%BB%93/">
+				<h2 class="index-title">
+					yolov5训练流程总结
+				</h2>
+				<div class="index-brief">
+					
+主要是两个脚本文件，train.py（模型训练脚本文件），detect.py（利用训练出来最好的权重文件进行推理的脚本文件）
+流程为：先用开始模型自带的权重文件进行训练，等到模型训练完之后会生成一个最好的权重文件，然后利用这个最好的权重文件进行推理
+需要更改的文件：一个是data目录下的相应的ya
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Navicat%20Premium%2015%20%E6%B0%B8%E4%B9%85%E7%A0%B4%E8%A7%A3%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+				<h2 class="index-title">
+					Navicat Premium 15 永久破解激活工具及安装教程
+				</h2>
+				<div class="index-brief">
+					下载安装包和破解工具
+Navicat安装包
+**链接：**​https://pan.baidu.com/s/1omVvljarD88EiJY1dSkqnw?pwd=dmue
+提取码：dmue
+–来自百度网盘超级会员V5的分享
+破解工具
+**链接：**​https://pan.baidu.com/s/
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+				<h2 class="index-title">
+					基本数据结构
+				</h2>
+				<div class="index-brief">
+					哈希表
+哈希表的思想就是一个数组的下标嵌套另一个数组的值，形成一个键值的对应关系，将键作为数组的索引，数组中索引为i存储的值就是它对应的值
+栈
+栈的指针为什么一开始赋值为-1，这是因为当压入数据时，可以使（下标++）的代码不用特殊处理，也就是一直（下标++）
+二叉树的遍历
+由前序知道树的根节点是哪个
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+				<h2 class="index-title">
+					Redis的一些见解
+				</h2>
+				<div class="index-brief">
+					缓存的意义在于可以保护后台的接口不被大量的请求所攻击
+逻辑是这样的：
+1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
+2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了增加、修改、删除，那么
 					...
 				</div>
 			</a>

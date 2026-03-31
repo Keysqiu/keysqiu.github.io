@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2956,6 +2956,39 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										数据库
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2026/03/17/%E6%95%B0%E6%8D%AE%E5%BA%93/Oracle%20SQL%E5%85%B3%E9%94%AE%E5%AD%97%E9%80%9F%E6%9F%A5/">
+                     
+										    Oracle SQL关键字速查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2026/03/17/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%20SERVER%E5%85%B3%E9%94%AE%E5%AD%97%E9%80%9F%E6%9F%A5/">
+                     
+										    SQL SERVER关键字速查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										自动化测试
 									</a>
 									
@@ -3027,15 +3060,24 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/yolov5%E8%AE%AD%E7%BB%83%E6%B5%81%E7%A8%8B%E6%80%BB%E7%BB%93/">
+			<a href="/2025/11/30/IDEA/IDEA%20%E5%89%8D%E8%BF%9B%20%E5%90%8E%E9%80%80%20%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%B7%A5%E5%85%B7%E6%A0%8F/">
 				<h2 class="index-title">
-					yolov5训练流程总结
+					IDEA 前进 后退 添加到工具栏
 				</h2>
 				<div class="index-brief">
 					
-主要是两个脚本文件，train.py（模型训练脚本文件），detect.py（利用训练出来最好的权重文件进行推理的脚本文件）
-流程为：先用开始模型自带的权重文件进行训练，等到模型训练完之后会生成一个最好的权重文件，然后利用这个最好的权重文件进行推理
-需要更改的文件：一个是data目录下的相应的ya
+IDEA安装后，前进  后退快捷按钮默认不在工具栏显示，需要手动将其添加到工具栏
+
+① 按照图一选中Toolbar Run Actions ，点击右上角的 add after
+② 弹出图二，ctrl同时选中前进和后退，点击确定
+③ 在工具栏便添加了前进后退快捷按钮图三
+图一
+
+图二
+
+图三
+
+
 					...
 				</div>
 			</a>
@@ -3048,15 +3090,16 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8B%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/">
+			<a href="/2025/11/30/Java/SpringBoot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
 				<h2 class="index-title">
-					局域网下两台电脑共享文件
+					SpringBoot解决跨域问题
 				</h2>
 				<div class="index-brief">
-					首先：两台电脑需要在同一个局域网里面，且能ping通对方
-一、创建Hyper-V共享文件夹
-步骤1. 在Hyper-V主机中创建一个文件夹，并将您想要传输的文件放入此文件夹中。
-步骤2. 右键单击此文件夹，依次选择 “属性”&gt;“共享”&gt;“共享” ，然后添加 “Everyone” 用户并将
+					遇到前端跨域访问问题，类似于这样的：
+​
+在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。
+import org.springframework.context.annotation.Bean;
+import org.spri
 					...
 				</div>
 			</a>
@@ -3069,27 +3112,12 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E4%B8%9C%E8%A5%BF/">
+			<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20f%20%E6%97%A0%E6%95%88/">
 				<h2 class="index-title">
-					如何快速学习一个新东西
+					IDEA的ctrl alt f 无效
 				</h2>
 				<div class="index-brief">
-					问：新手学Python容易上手吗？
-答：建议直接从项目开始做
-某个东西，你想做但不会，就去抄一个项目，先跑起来
-
-比如你想爬百度的内容，肯定有人做过
-
-**你就直接抄过来，能跑就是第一步**
-
-然后开始改
-
-改着改着你就入门了
-
-这比你看枯燥的课程快多了
-
-然后学一学基本的语法就ok了
-
+					排查微软键盘与搜狗输入法
 
 					...
 				</div>
@@ -3103,13 +3131,14 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8E%A5%E6%89%8B%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE/">
+			<a href="/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 				<h2 class="index-title">
-					如何快速接手一个项目
+					JavaWeb学习笔记
 				</h2>
 				<div class="index-brief">
-					（注：一开始最好不要直接看项目具体的逻辑，先跑起来再说，这个思想很重要！！！）
-**1、**​ ******（也是最重要的一步）******​ ，按照上一个开发者的 readme 配好环境，（如果没有 readme，那就量力而行，看看这个框架自己熟不熟悉需要哪些环境，或者 CSDN 一下，一般项目都
+					开始打代码之前，先要进行一些前期准备
+①：新建一个Maven项目，点击下一步，修改项目路径及项目名称，最后点完成即可。
+②：文件-&gt;项目结构-&gt;Facet-&gt;添加Web项目，文件夹名称为webapp，下一级目录为WEB-INF，再下一级有一个文件web.xml，如果选项变灰添加不了
 					...
 				</div>
 			</a>
@@ -3122,24 +3151,17 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/">
+			<a href="/2025/11/30/Java/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/">
 				<h2 class="index-title">
-					注释规范
+					个人博客部署
 				</h2>
 				<div class="index-brief">
-					文件注释：
-@file - 文件名
-@author - 作者
-@version - 版本
-@date - 日期
-@note - 注解
-函数注释：
-@brief - 简短说明
-@param - 输入参数
-@arg - 输入参数取值
-@return - 返回值
-@retval - 返回值取值
-@sa -
+					1、JDK17
+wget http://49.232.8.65/jdk/jdk17/jdk-17_linux-x64_bin.tar.gz
+tar -zxvf jdk-17_linux-x64_bin.tar.gz
+vim /etc/profile
+# 文件添加如下内容
+export JAVA_HO
 					...
 				</div>
 			</a>
@@ -3152,15 +3174,18 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%9A%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BC%A0%E8%BE%93%E6%97%B6%E8%A6%81%E6%89%93%E5%8C%85%EF%BC%89/">
+			<a href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/">
 				<h2 class="index-title">
-					文件传输的一些见解（文件多的文件夹传输时要打包）
+					如何下载MySQL的JDBC驱动包并导入IDEA中
 				</h2>
 				<div class="index-brief">
-					2023 年 11 月 21 日 00：10
-总之记得一句话，文件多的文件夹打包传输
-‍
+					一、下载JDBC驱动包
+1.打开 MySQL 官网：https://www.mysql.com/
+2.点击 DOWNLOADS，把页面滚动到最下面，点击 MySQL Community (GPL) Downloads
 
+
+3.点击 Connector/J
+4.点击 General Availabil
 					...
 				</div>
 			</a>
@@ -3173,21 +3198,20 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E9%9C%80%E6%B1%82/">
+			<a href="/2025/11/30/Java/IDEA%20%E9%9B%86%E6%88%90JavaFX/">
 				<h2 class="index-title">
-					服务器配置需求
+					IDEA 集成JavaFX
 				</h2>
 				<div class="index-brief">
-					前言：如果服务器需要访问外网的服务，不要选择内地的，内地的会被屏蔽用不了，推荐选择中国香港的
-服务器配置选择：
+					前提
+先在IDEA中安装两个插件，如下图所示
 
-1-10人使用：1核2G
-10-30人使用：2核4G
-30-100人使用：4核8G
-100人以上使用：8核16G
-
-‍
-
+1、安装图形化驱动程序（Scene Builder）
+==其实只需要下载一个外部程序即可（就这么简单，不要下什么eclipse，纯纯sb！！！）==
+提取码：m0ej
+–来自百度网盘超级会员V4的分享
+改一下安装路径，然后不断next即可
+2、具体使用
 					...
 				</div>
 			</a>
@@ -3200,17 +3224,14 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E7%94%B5%E8%84%91%E5%90%84%E7%A7%8DSB%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF/">
+			<a href="/2025/11/30/IDEA/%E5%A6%82%E4%BD%95%E6%8A%8AIDEA%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%8F%E8%B0%83%E8%87%B3%E5%B7%A6%E4%BE%A7%E6%98%BE%E7%A4%BA/">
 				<h2 class="index-title">
-					电脑各种SB问题解决思路
+					如何把IDEA的工具栏调至左侧显示
 				</h2>
 				<div class="index-brief">
 					
-内存擦拭金手指还是点不亮：说明主板有问题
-显卡和主板最容易坏，CPU 和内存、硬盘那些都很难坏的
-CPU 和显卡温度 正常不会超过 70
-
-‍
+效果如下：
+​
 
 					...
 				</div>
@@ -3224,17 +3245,15 @@ CPU 和显卡温度 正常不会超过 70
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A%E5%BC%80%E5%8F%91/">
+			<a href="/2025/11/30/IDEA/%E5%AF%B9%E7%BC%96%E7%A8%8BIDE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
 				<h2 class="index-title">
-					站在巨人的肩膀上开发
+					对编程IDE使用的一些见解
 				</h2>
 				<div class="index-brief">
-					始终记得一个理念：
-非必要，不要自己造轮子，不要觉得全部自己写的就是好的，一定要站在巨人的肩膀上开发，能实现需求就行，管你怎么实现的
-多用别人写好的库，真的香
-最后
-C、C++版
-////////////////////////////////////////////////////////////
+					1、如果是在IDE里面删除了文件，此文件不会进回收站的，（​在文件资源管理器中删除的才会进回收站****​ ）要想找回，请看下图
+
+点击了之后，就可以在弹出的窗口中进行恢复操作了。
+
 					...
 				</div>
 			</a>
@@ -3247,18 +3266,16 @@ C、C++版
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E8%B4%AD%E4%B9%B0%E7%94%B5%E8%84%91%E9%85%8D%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E5%90%8D%E5%8E%82%E5%AE%B6/">
+			<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20v%20%E6%97%A0%E6%95%88/">
 				<h2 class="index-title">
-					购买电脑配件的一些知名厂家
+					IDEA的ctrl alt v 无效
 				</h2>
 				<div class="index-brief">
-					主板和 CPU 要配对，其他的都是通用的
-CPU：Intel，AMD
-主板：技嘉，华硕
-内存条：金士顿，海盗船，游戏威龙
-显卡：七彩虹，华硕，影驰
-固态：三星
-
+					原因：可能是被QQ音乐或者有道词典的快捷键占用了，关闭他们或者修改他们的快捷键（建议这个）就解决问题了
+或者直接到idea中设置或修改idea中的快捷键
+​
+如果不知道是被哪个程序占用了快捷键，可以使用下面这个工具
+链接：https://pan.baidu.com/s/1R7JFKN82QL_7Dq
 					...
 				</div>
 			</a>
