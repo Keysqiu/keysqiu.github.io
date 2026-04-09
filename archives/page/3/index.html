@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3060,17 +3060,113 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/nextTick%E7%9A%84%E7%90%86%E8%A7%A3/">
+			<a href="/2025/11/30/Visual%20Studio/VS%E5%85%B3%E9%97%AD%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E7%9A%84%E4%BB%A3%E7%A0%81/">
 				<h2 class="index-title">
-					nextTick的理解
+					VS关闭安全检查的代码
 				</h2>
 				<div class="index-brief">
-					其实就是在DOM内容完全更新了之后再执行callback中的操作，避免拿到脏DOM
-常用于需要操作更新后 DOM 的场景，比如获取元素尺寸、聚焦输入框、初始化第三方库等。
-export default &#123;
-  data() &#123;
-    return &#123;
-      me
+					#define _CRT_SECURE_NO_WARNINGS 1
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/Vue%E6%8F%92%E6%A7%BD/">
+				<h2 class="index-title">
+					Vue插槽
+				</h2>
+				<div class="index-brief">
+					插槽就是 留个坑，让父组件填内容
+举个🌰
+好的，用一个简单例子说明：
+比如你有一个通用的卡片组件（Card.vue），但想让每个卡片的内容不一样。
+子组件 Card.vue：
+&lt;template>
+  &lt;div class="card">
+    &lt;header>卡片标题&lt;
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/Vue2%E9%A1%B9%E7%9B%AE%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90ElementUI/">
+				<h2 class="index-title">
+					Vue2项目快速集成ElementUI
+				</h2>
+				<div class="index-brief">
+					1、下载依赖
+npm i element-ui -S
+2、导入依赖
+在main.js文件下添加如下代码即可
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(Eleme
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E6%AD%A5%E9%AA%A4/">
+				<h2 class="index-title">
+					Vue3代码运行步骤
+				</h2>
+				<div class="index-brief">
+					
+浏览器加载 index.html。
+加载并执行 main.js。
+使用 createApp()创建 Vue 应用实例。
+注册路由和状态管理（如果有）。
+挂载 Vue 应用到 DOM（如  #app）。
+解析根组件 App.vue。
+执行组件的生命周期钩子。
+渲染子组件。
+响应式数据更新，动态更新页
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/%E8%84%9A%E6%89%8B%E6%9E%B6vue-cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">
+				<h2 class="index-title">
+					脚手架vue-cli创建Vue项目
+				</h2>
+				<div class="index-brief">
+					一、安装vue-cli
+npm install -g @vue/cli 
+
+安装完成后：输入vue -V检查版本，出现版本号就表示安装成功，如果出现“vue” 不是内部或外部命令，也不是可运行的程序或批处理文件，就说明安装失败了
+
+（1）新建一个空文件夹，在该文件夹下打开终端，输入创建命令按回车
+#
 					...
 				</div>
 			</a>
@@ -3094,6 +3190,53 @@ export default &#123;
 //=====
 &lt;script setup lang="ts"> //ts或js
 &lt;/script>
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/nextTick%E7%9A%84%E7%90%86%E8%A7%A3/">
+				<h2 class="index-title">
+					nextTick的理解
+				</h2>
+				<div class="index-brief">
+					其实就是在DOM内容完全更新了之后再执行callback中的操作，避免拿到脏DOM
+常用于需要操作更新后 DOM 的场景，比如获取元素尺寸、聚焦输入框、初始化第三方库等。
+export default &#123;
+  data() &#123;
+    return &#123;
+      me
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Visual%20Studio/VS%E8%AE%BE%E7%BD%AE%E5%8F%82%E8%80%83/">
+				<h2 class="index-title">
+					VS设置参考
+				</h2>
+				<div class="index-brief">
+					1、启用并行编译, 生成时仅生成启动项目依赖项不全部
+
+2、启用增量编译  
+
+3、关闭解决方案实时代码分析
+
+
 					...
 				</div>
 			</a>
@@ -3134,168 +3277,16 @@ created() &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Visual%20Studio/VS%E8%AE%BE%E7%BD%AE%E5%8F%82%E8%80%83/">
+			<a href="/2025/11/30/Windows/Windows%20%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
 				<h2 class="index-title">
-					VS设置参考
+					Windows 关闭占用指定端口的进程
 				</h2>
 				<div class="index-brief">
-					1、启用并行编译, 生成时仅生成启动项目依赖项不全部
+					找出占用443端口**的进程号(pid)**​ ******（**​第二列是你本机的应用占用的端口，看第二列就行）如下图，看第二列中对应过去的pid是18072
+# 输出的最后一列就是进程号pid
+netstat -ano | findstr :443
 
-2、启用增量编译  
-
-3、关闭解决方案实时代码分析
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/%E8%84%9A%E6%89%8B%E6%9E%B6vue-cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">
-				<h2 class="index-title">
-					脚手架vue-cli创建Vue项目
-				</h2>
-				<div class="index-brief">
-					一、安装vue-cli
-npm install -g @vue/cli 
-
-安装完成后：输入vue -V检查版本，出现版本号就表示安装成功，如果出现“vue” 不是内部或外部命令，也不是可运行的程序或批处理文件，就说明安装失败了
-
-（1）新建一个空文件夹，在该文件夹下打开终端，输入创建命令按回车
-#
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue2%E9%A1%B9%E7%9B%AE%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90ElementUI/">
-				<h2 class="index-title">
-					Vue2项目快速集成ElementUI
-				</h2>
-				<div class="index-brief">
-					1、下载依赖
-npm i element-ui -S
-2、导入依赖
-在main.js文件下添加如下代码即可
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(Eleme
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/VsCode/VS%20Code%20%E4%B8%AD%E8%BF%90%E8%A1%8CJava%20SpringBoot%E7%9A%84%E9%A1%B9%E7%9B%AE/">
-				<h2 class="index-title">
-					VS Code 中运行Java SpringBoot的项目
-				</h2>
-				<div class="index-brief">
-					一、前提条件
-JDK、Maven已配置好
-二、安装插件
-Language Support for Java(TM) by Red Hat
-Debugger for Java
-Spring Boot Extension
-Spring Boot Dashboard
-3. 创建或导入Spring Boot
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/VsCode/VsCode%E6%8F%92%E4%BB%B6%E6%94%B6%E5%BD%95/">
-				<h2 class="index-title">
-					VsCode插件收录
-				</h2>
-				<div class="index-brief">
-					
-Vue 3 Snippets
-Vue - Official
-vue
-Spring Initializr Java Support
-Spring Boot Tools
-Spring Boot Extension Pack
-Spring Boot Dashboard
-Python
-Pylance
-On
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E6%AD%A5%E9%AA%A4/">
-				<h2 class="index-title">
-					Vue3代码运行步骤
-				</h2>
-				<div class="index-brief">
-					
-浏览器加载 index.html。
-加载并执行 main.js。
-使用 createApp()创建 Vue 应用实例。
-注册路由和状态管理（如果有）。
-挂载 Vue 应用到 DOM（如  #app）。
-解析根组件 App.vue。
-执行组件的生命周期钩子。
-渲染子组件。
-响应式数据更新，动态更新页
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/VsCode/%E8%AE%BE%E7%BD%AEVsCode%E7%BC%96%E7%A0%81/">
-				<h2 class="index-title">
-					设置VsCode编码
-				</h2>
-				<div class="index-brief">
-					① 按 Ctrl+Shift+P 搜索所有命令
-② 输入​settings​ ，打开用户设置
-​
-​
-
+查看该pid对应的程序（这步操作可有可无，如
 					...
 				</div>
 			</a>

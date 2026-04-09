@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3060,20 +3060,23 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
 				<h2 class="index-title">
-					外层包报ModuleNotFoundError
+					内层包报ModuleNotFoundError
 				</h2>
 				<div class="index-brief">
-					
-前提：包确实安装有，且可以访问到
+					问题：
+最外层的包安装有了，且可以访问到，但是还是报缺少里面的模块，下面是一个示例
 
+ModuleNotFoundError: No module named ‘libsvm.python’
 
-**前提没问题再往下看，不然往下也没意义⚠️⚠️⚠️**
-
-可能的原因：当前解释器安装的软件包污染了（所以为什么PyCharm会让你对每一个工程创建对应的虚拟环境）
-①：用pip list 查看当前解释器已安装的所有软件包
-②：找到报错的那个包的包名，使用pi
+附原先的代码
+​
+解决方案
+这里以anaconda为例，
+找到包的路径
+ps：
+E:\anaconda3\
 					...
 				</div>
 			</a>

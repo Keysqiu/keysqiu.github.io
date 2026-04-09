@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3060,17 +3060,20 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/OpenCV/Windows%E4%B8%8B%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/ubuntu%E4%B8%8Bmake%E3%80%81cmake%E5%8F%8Aopencv%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B/">
 				<h2 class="index-title">
-					Windows下配置opencv环境
+					ubuntu下make、cmake及opencv版本查看
 				</h2>
 				<div class="index-brief">
-					① 下载软件包
-**链接：**​https://pan.baidu.com/s/1-clw63SKe2hBkCToTnHmgw?pwd=9g68
-提取码：9g68
-–来自百度网盘超级会员V4的分享
-② 配置环境
-**OpenCV环境配置教程：**​https://www.bilibili.com/v
+					查看make版本：
+**make -v**
+查看cmake版本：
+**cmake -version**
+安装cmake命令：
+**sudo apt-get install cmake**
+查看opencv版本：
+**pkg-config --modversion opencv**
+
 					...
 				</div>
 			</a>
@@ -3083,16 +3086,24 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E4%BB%A3%E7%A0%81%E5%8F%98%E5%8A%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E9%87%8D%E6%96%B0%E4%B8%8A%E4%BC%A0%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF/">
 				<h2 class="index-title">
-					MySQL笔记
+					代码变动，如何重新上传到服务器端
 				</h2>
 				<div class="index-brief">
-					数据库存储数据的特点
-1、将数据放到表中，表再放到库中
-2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
-3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
-4、表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似
+					1、前期准备
+1.1 安装Xshell和Xftp
+安装包.zip
+
+
+ps:文件解压完之后双击安装即可，如若提示更新，点击立即更新，不然它不给使用，后面再注册一下即可使用
+
+
+1.2 利用Xshell连接远程服务器
+① 在弹出的界面中点击新建会话，按下图填写相应的信息即可
+
+
+② 连接成功如下图所示
 					...
 				</div>
 			</a>
@@ -3105,17 +3116,22 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6/">
 				<h2 class="index-title">
-					MySQL 防止被爬走数据
+					docker安装各种组件
 				</h2>
 				<div class="index-brief">
-					前两天申请了个云服务器，然后去关掉防火墙方便调试，结果没两天MySQL就被黑了
-​
-一个库被删，多了一个库
-​
-内容如下：
-All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHTChMgrSXU
+					==镜像的概念：镜像是将应用程序及其需要的系统函数库、环境、配置、依赖打包而成。==
+一	docker基本命令
+镜像操作
+① 查看所有镜像
+docker images
+② 搜索镜像（以jdk为例）
+docker search jdk
+
+③ 下载镜像
+docker pull java
+④ 启动镜像（以
 					...
 				</div>
 			</a>
@@ -3128,20 +3144,18 @@ All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHT
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/nomachine%E4%BD%BF%E7%94%A8/">
 				<h2 class="index-title">
-					mysql常用的聚合函数
+					nomachine使用
 				</h2>
 				<div class="index-brief">
-					一、常用的聚合函数（以下都是求以列为单位）
-count(col) 表示求指定列的总行数
-max(col): 表示求指定列的最大值
-min(col): 表示求指定列的最小值
-sum(col): 表示求指定列的和
-avg(col): 表示求指定列的平均值
-1、求总行数
-– 返回非NULL数据的总行数
-s
+					前提：确保主控机和被控机处于同一局域网内
+Windows安装
+**链接：**​https://pan.baidu.com/s/1CwC8KfN93qLGKa0ecCjLNQ?pwd=tzt9
+提取码：tzt9
+–来自百度网盘超级会员V5的分享
+Linux安装
+**链接：**​https://pan.
 					...
 				</div>
 			</a>
@@ -3154,19 +3168,61 @@ s
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Jekyll/%E4%BD%BF%E7%94%A8Jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%B9%B6%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E5%BE%AE%E4%BF%A1%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%9C%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%EF%BC%9F%E6%B6%88%E6%81%AF%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%EF%BC%8CDocker%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E3%80%82%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">
 				<h2 class="index-title">
-					使用Jekyll搭建博客，并绑定域名
+					微信机器人运行在Linux服务器上？消息自动回复，Docker一键部署。详细安装使用
+				</h2>
+				<div class="index-brief">
+					前期工作
+项目地址：
+https://github.com/danni-cool/docker-wechatbot-webhook
+简单来说就是docker封装的微信机器人，可以实现自动化收发消息，可以一键部署到Linux服务器。
+1、首先在Ubuntu系统安装docker
+sudo apt upd
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E4%BD%BF%E7%94%A8CMD%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8CVue%E9%A1%B9%E7%9B%AE/">
+				<h2 class="index-title">
+					使用CMD命令行运行Vue项目
+				</h2>
+				<div class="index-brief">
+					先看！！！（ps：前提是你已经配置好nodejs，一般高版本的nodejs里面都内置有npm，所以需不需要安装npm可以看nodejs的版本）
+1、安装nodejs教程网址
+https://blog.csdn.net/m0_63550153/article/details/136531545
+2、安
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%EF%BC%88Centos%EF%BC%89/">
+				<h2 class="index-title">
+					脚本自动化部署springboot（Centos）
 				</h2>
 				<div class="index-brief">
 					
-CentOS Linux release 7.9
+如果报-bash: ./xxx.sh: /bin/sh^M: bad interpreter: No such file or directory
 
-安装curl
-# 命令行工具，用来请求 Web 服务器
-sudo yum install curl
-安装RVM（Ruby Version Manager）
-第一步：导入公钥服务器上的公钥（为了验证下载的文件是否准确，需要先从公钥服务器上下载对应的
+请参考​bad interpreter,No such file or directory
+deploy_software.sh（安装软件）
+#!/
 					...
 				</div>
 			</a>
@@ -3179,19 +3235,18 @@ sudo yum install curl
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/">
 				<h2 class="index-title">
-					mysql连接详解（内外连接，左右连接）
+					服务器和客户端通信总结
 				</h2>
 				<div class="index-brief">
-					假设有两个表 T1，T2
-表的结构如下图所示
-
-一、内连接（inner join）【普通外键引用】
-如果想把用户信息、积分、等级都列出来，那么一般会这样写：
-
-select * from T1 ,T2 where T1.userid = T2.userid
-(其实这样的结果等同于select * f
+					C/S架构
+服务器：监听某个端口，等待客户端连接
+客户端：利用已知的（主机IP、主机监听的端口号）与服务器建立socket连接
+建立连接之后，后面的操作那不水到渠成了，嘿嘿嘿~~~
+B/S架构
+服务器：监听某个端口，等待客户端发起请求
+客户端：利用已知的（主机IP、主机监听的端口号）对服务器发起请求
 					...
 				</div>
 			</a>
@@ -3204,84 +3259,37 @@ select * from T1 ,T2 where T1.userid = T2.userid
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
+			<a href="/2025/11/30/EDA/EDA%E7%94%BB%E5%9B%BE/">
 				<h2 class="index-title">
-					数据库中ID从一个很奇怪的数开始
+					EDA画图
 				</h2>
 				<div class="index-brief">
-					==说明你上一次生成的id就是乱序了==
-解决方法：
-使用 navicat ，右键表名，选择截断表
+					布线原则：先从复杂的元器件开始布线
 
-截断表：清空数据表中所有数据，然后ID从1开始
-清空表：清空数据表中所有数据
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%AE%9A%E4%B9%89/">
+				<h2 class="index-title">
+					跨域的定义
+				</h2>
+				<div class="index-brief">
+					跨域：域名不一致就是跨域，主要包括：
+
+域名不同： www.taobao.com 和 www.taobao.org 和 www.jd.com
+域名相同，端口不同：localhost:8080 和 localhost:8081
 
 ‍
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
-				<h2 class="index-title">
-					MySQL插入数据时，自动获取当前时间写入表中
-				</h2>
-				<div class="index-brief">
-					字段的类型为：timestamp，
-往下看，默认那里改为 ==CURRENT_TIMESTAMP==
-‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/">
-				<h2 class="index-title">
-					配环境
-				</h2>
-				<div class="index-brief">
-					‍
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/Python%E2%80%94TTS%EF%BC%88%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%EF%BC%89/">
-				<h2 class="index-title">
-					Python—TTS（文本转语音）
-				</h2>
-				<div class="index-brief">
-					sudo apt-get update &amp;&amp; sudo apt-get install espeak
-安装pyttsx3
-pyttsx3官方参考文档
-pip install pyttsx3
-测试代码
-import pyttsx3
-def say_text(engine, words,
 					...
 				</div>
 			</a>

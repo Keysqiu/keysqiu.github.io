@@ -203,6 +203,36 @@ a:hover {
 	-ms-transition: 0.5s;
 	-o-transition: 0.5s;
 }
+
+/* 文章目录滚动样式 */
+.article-toc {
+	max-height: calc(100vh - 250px) !important;
+	height: auto !important;
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	display: block !important;
+	position: relative !important;
+}
+
+/* 自定义滚动条样式 */
+.article-toc::-webkit-scrollbar {
+	width: 6px;
+}
+
+.article-toc::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 3px;
+}
+
+.article-toc::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 3px;
+}
+
+.article-toc::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
 /* index */
 .content{
 	max-width: calc(100vw - 340px);

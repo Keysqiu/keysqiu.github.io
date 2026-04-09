@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3060,18 +3060,18 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
 				<h2 class="index-title">
-					服务器和客户端通信总结
+					RabbitMQ
 				</h2>
 				<div class="index-brief">
-					C/S架构
-服务器：监听某个端口，等待客户端连接
-客户端：利用已知的（主机IP、主机监听的端口号）与服务器建立socket连接
-建立连接之后，后面的操作那不水到渠成了，嘿嘿嘿~~~
-B/S架构
-服务器：监听某个端口，等待客户端发起请求
-客户端：利用已知的（主机IP、主机监听的端口号）对服务器发起请求
+					1.初识MQ
+1.1.同步和异步通讯
+微服务间通讯有同步和异步两种方式：
+同步通讯：就像打电话，需要实时响应。
+异步通讯：就像发邮件，不需要马上回复。
+两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
+1.1.1.同步通
 					...
 				</div>
 			</a>
@@ -3084,17 +3084,26 @@ B/S架构
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%EF%BC%88Centos%EF%BC%89/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
 				<h2 class="index-title">
-					脚本自动化部署springboot（Centos）
+					SpringCloud01
 				</h2>
 				<div class="index-brief">
-					
-如果报-bash: ./xxx.sh: /bin/sh^M: bad interpreter: No such file or directory
+					1.认识微服务
+1.1.单体架构
+单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
+单体架构的优缺点如下：
+优点：
 
-请参考​bad interpreter,No such file or directory
-deploy_software.sh（安装软件）
-#!/
+架构简单
+部署成本低
+
+缺点：
+
+耦合度高（维护困难、升级困难）
+
+1.2.分布式架构
+分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
 					...
 				</div>
 			</a>
@@ -3107,19 +3116,21 @@ deploy_software.sh（安装软件）
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E5%AE%9E%E7%8E%B0Ubuntu%E4%B8%8EWindows%E4%B9%8B%E9%97%B4%E7%9A%84%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					实现Ubuntu与Windows之间的复制粘贴
+					SpringCloud学习
 				</h2>
 				<div class="index-brief">
-					实现步骤
-实现步骤
-Ctrl+Alt+T，新建一个终端
-# 卸载已有的工具
-sudo apt-get autoremove open-vm-tools
-# 安装工具open-vm-tools
-sudo apt-get install open-vm-tools
-# 安装open-vm-tools-d
+					微服务结构
+
+Nacos结构
+
+Nacos与Eureka的区别
+
+Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
+临时实例心跳不正常会被剔除，非临时实例则不会被剔除
+Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
+Nacos集群默认采用AP方式
 					...
 				</div>
 			</a>
@@ -3132,62 +3143,20 @@ sudo apt-get install open-vm-tools
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%AE%9A%E4%B9%89/">
+			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 				<h2 class="index-title">
-					跨域的定义
+					环境配置
 				</h2>
 				<div class="index-brief">
-					跨域：域名不一致就是跨域，主要包括：
+					1.选择下载的Erlang安装包，并双击运行
 
-域名不同： www.taobao.com 和 www.taobao.org 和 www.jd.com
-域名相同，端口不同：localhost:8080 和 localhost:8081
+2.点击Next，选择安装的目录位置，点击下一步即可
 
-‍
+3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/">
-				<h2 class="index-title">
-					Windows下MySQL数据库安装（详细）
-				</h2>
-				<div class="index-brief">
-					如果是重装数据库​的话，直接把MySQL文件夹下的data文件夹删掉，再从4.1往后按流程走即可​ （先看我！！！）
-一、下载MySQL压缩包
-dev.mysql.com/downloads/mysql/5.5.html#downloads
+4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
 
-也可以直接用我这个v8.1.0版本
-
-pan.baidu
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
-				<h2 class="index-title">
-					Python安装requirements文件里的软件包时报错
-				</h2>
-				<div class="index-brief">
-					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
-解决方法：
-以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
+5.例如Erlang的bin目
 					...
 				</div>
 			</a>
@@ -3209,26 +3178,6 @@ pan.baidu
 
 ERROR: Could not build wheels for XXX， which is required to install pyproject.toml-based projects
 前提：看一下具体报错信息，是不是因为缺少另一个包导致这个包构建失败，如果是的话，先把另一个
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
-				<h2 class="index-title">
-					Python环境安装与配置
-				</h2>
-				<div class="index-brief">
-					一、准备工作
-Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带Python环境，在Windows系统上需要安装一下，超简单
-打开官网 https://www.python.org/downloads/  下载中心，根据自己的系统和版本选择合适的安装包，这里是直接下主页
 					...
 				</div>
 			</a>
@@ -3267,6 +3216,54 @@ python -–version
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ubuntu%E5%8D%87%E7%BA%A7python%E5%88%B0python3.11/">
+				<h2 class="index-title">
+					ubuntu升级python到python3.11
+				</h2>
+				<div class="index-brief">
+					在 Ubuntu 中升级 Python 到 3.11 版本可以通过编译源代码或者使用第三方工具来完成。请注意，在升级 Python 之前，请确保备份重要数据，并谨慎操作。
+以下是通过编译源代码的步骤：
+
+安装编译所需的依赖项：
+
+sudo apt update
+sudo apt install bu
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89/">
+				<h2 class="index-title">
+					Windows下MySQL数据库安装（详细）
+				</h2>
+				<div class="index-brief">
+					如果是重装数据库​的话，直接把MySQL文件夹下的data文件夹删掉，再从4.1往后按流程走即可​ （先看我！！！）
+一、下载MySQL压缩包
+dev.mysql.com/downloads/mysql/5.5.html#downloads
+
+也可以直接用我这个v8.1.0版本
+
+pan.baidu
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
 				<h2 class="index-title">
 					Python安装软件包的一些总结
@@ -3277,6 +3274,32 @@ python -–version
 pip install [包名]
 ** 建议使用下面这一个命令，毕竟是万能命令，一般的包拿这个命令来装都不会有什么问题 **
 pip install [包名] -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple --tr
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+				<h2 class="index-title">
+					外层包报ModuleNotFoundError
+				</h2>
+				<div class="index-brief">
+					
+前提：包确实安装有，且可以访问到
+
+
+**前提没问题再往下看，不然往下也没意义⚠️⚠️⚠️**
+
+可能的原因：当前解释器安装的软件包污染了（所以为什么PyCharm会让你对每一个工程创建对应的虚拟环境）
+①：用pip list 查看当前解释器已安装的所有软件包
+②：找到报错的那个包的包名，使用pi
 					...
 				</div>
 			</a>

@@ -1938,9 +1938,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -1949,9 +1949,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -3060,20 +3060,18 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+			<a href="/2025/11/30/Java/Java%20%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E6%8A%9B%E5%BC%82%E5%B8%B8%E5%BE%80%E8%BF%99%E7%9C%8B/">
 				<h2 class="index-title">
-					Redis常用命令
+					Java 莫名其妙抛异常往这看
 				</h2>
 				<div class="index-brief">
-					一、客户端连接
-redis-cli -h host -p port -a password
-输入命令：redis-cli -p 6379
-二、数据导出导入
-导出
-执行备份命令：save
-该命令将在 redis 备份目录中创建dump.rdb文件。
-查看备份路径：config get dir
-备份后的
+					前提：如果你核查代码确保都没问题的时候，但还是出现莫名其妙的异常❎❎❎
+解决思路
+
+这时候就要看看是不是导的包导错了（这个跟微信开发小游戏时工具自动导的包一样，不过怎么说呢，idea还是比微信开发者工具智能一点，那个是真的sb），或者类名写错了（这个坑过你一个下午，真的艹了！！！）
+
+‍
+
 					...
 				</div>
 			</a>
@@ -3086,18 +3084,17 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/Java/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/">
 				<h2 class="index-title">
-					Nacos安装指南
+					个人博客部署
 				</h2>
 				<div class="index-brief">
-					1、Windows安装（单点部署）
-1.1、下载安装包
-在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：
-**GitHub主页：**​https://github.com/alibaba/nacos
-如图：
-
-我这里是用1.4.1.版本的Nacos，压缩包
+					1、JDK17
+wget http://49.232.8.65/jdk/jdk17/jdk-17_linux-x64_bin.tar.gz
+tar -zxvf jdk-17_linux-x64_bin.tar.gz
+vim /etc/profile
+# 文件添加如下内容
+export JAVA_HO
 					...
 				</div>
 			</a>
@@ -3110,20 +3107,14 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
+			<a href="/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 				<h2 class="index-title">
-					Docker实用篇
+					JavaWeb学习笔记
 				</h2>
 				<div class="index-brief">
-					1.初识Docker
-1.1.什么是Docker
-微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
-
-分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
-在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
-
-1.1.1.应用部署的环境问题
-大型项目组
+					开始打代码之前，先要进行一些前期准备
+①：新建一个Maven项目，点击下一步，修改项目路径及项目名称，最后点完成即可。
+②：文件-&gt;项目结构-&gt;Facet-&gt;添加Web项目，文件夹名称为webapp，下一级目录为WEB-INF，再下一级有一个文件web.xml，如果选项变灰添加不了
 					...
 				</div>
 			</a>
@@ -3136,18 +3127,17 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
+			<a href="/2025/11/30/OpenCV/Windows%E4%B8%8B%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83/">
 				<h2 class="index-title">
-					Linux上安装Redis
+					Windows下配置opencv环境
 				</h2>
 				<div class="index-brief">
-					1、安装Redis依赖
-Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
-yum install -y gcc tcl
-2、下载压缩包
-进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
-cd /usr/local/src
-**
+					① 下载软件包
+**链接：**​https://pan.baidu.com/s/1-clw63SKe2hBkCToTnHmgw?pwd=9g68
+提取码：9g68
+–来自百度网盘超级会员V4的分享
+② 配置环境
+**OpenCV环境配置教程：**​https://www.bilibili.com/v
 					...
 				</div>
 			</a>
@@ -3160,18 +3150,18 @@ cd /usr/local/src
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+			<a href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/">
 				<h2 class="index-title">
-					RabbitMQ
+					如何下载MySQL的JDBC驱动包并导入IDEA中
 				</h2>
 				<div class="index-brief">
-					1.初识MQ
-1.1.同步和异步通讯
-微服务间通讯有同步和异步两种方式：
-同步通讯：就像打电话，需要实时响应。
-异步通讯：就像发邮件，不需要马上回复。
-两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
-1.1.1.同步通
+					一、下载JDBC驱动包
+1.打开 MySQL 官网：https://www.mysql.com/
+2.点击 DOWNLOADS，把页面滚动到最下面，点击 MySQL Community (GPL) Downloads
+
+
+3.点击 Connector/J
+4.点击 General Availabil
 					...
 				</div>
 			</a>
@@ -3184,19 +3174,15 @@ cd /usr/local/src
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/MySQL/MySQL%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E8%A1%A8%E4%B8%AD/">
 				<h2 class="index-title">
-					RabbitMQ部署指南
+					MySQL插入数据时，自动获取当前时间写入表中
 				</h2>
 				<div class="index-brief">
-					1、单机部署
-我们在Centos7虚拟机中使用Docker来安装。
-1.1、下载镜像
-方式一：在线拉取
-docker pull rabbitmq:3-management
-方式二：从本地加载
-镜像包下载链接：
-**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
+					字段的类型为：timestamp，
+往下看，默认那里改为 ==CURRENT_TIMESTAMP==
+‍
+
 					...
 				</div>
 			</a>
@@ -3209,26 +3195,16 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
+			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
 				<h2 class="index-title">
-					SpringCloud01
+					MySQL笔记
 				</h2>
 				<div class="index-brief">
-					1.认识微服务
-1.1.单体架构
-单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
-单体架构的优缺点如下：
-优点：
-
-架构简单
-部署成本低
-
-缺点：
-
-耦合度高（维护困难、升级困难）
-
-1.2.分布式架构
-分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
+					数据库存储数据的特点
+1、将数据放到表中，表再放到库中
+2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
+3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
+4、表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似
 					...
 				</div>
 			</a>
@@ -3241,15 +3217,19 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
 				<h2 class="index-title">
-					Redis的一些见解
+					mysql连接详解（内外连接，左右连接）
 				</h2>
 				<div class="index-brief">
-					缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了增加、修改、删除，那么
+					假设有两个表 T1，T2
+表的结构如下图所示
+
+一、内连接（inner join）【普通外键引用】
+如果想把用户信息、积分、等级都列出来，那么一般会这样写：
+
+select * from T1 ,T2 where T1.userid = T2.userid
+(其实这样的结果等同于select * f
 					...
 				</div>
 			</a>
@@ -3262,19 +3242,20 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E7%94%A8VSCode%E5%AE%9E%E7%8E%B0HelloWorld%E6%A1%88%E4%BE%8B/">
+			<a href="/2025/11/30/MySQL/mysql%E5%B8%B8%E7%94%A8%E7%9A%84%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0/">
 				<h2 class="index-title">
-					用VSCode实现HelloWorld案例
+					mysql常用的聚合函数
 				</h2>
 				<div class="index-brief">
-					1.创建工作空间并初始化
-mkdir -p 自定义空间名称/src
-cd 自定义空间名称
-catkin_make  #自动生成构建目录
-2.用VSCode打开
-code .  #在工作区文件夹下
-3.配置json文件
-按住​Ctrl+Shift+B​ ，在弹出的窗口中选择catkin_make:bu
+					一、常用的聚合函数（以下都是求以列为单位）
+count(col) 表示求指定列的总行数
+max(col): 表示求指定列的最大值
+min(col): 表示求指定列的最小值
+sum(col): 表示求指定列的和
+avg(col): 表示求指定列的平均值
+1、求总行数
+– 返回非NULL数据的总行数
+s
 					...
 				</div>
 			</a>
@@ -3287,17 +3268,20 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
 				<h2 class="index-title">
-					Window下Redis的安装和部署详细教程
+					数据库中ID从一个很奇怪的数开始
 				</h2>
 				<div class="index-brief">
-					1、下载Redis压缩包
+					==说明你上一次生成的id就是乱序了==
+解决方法：
+使用 navicat ，右键表名，选择截断表
 
-以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
+截断表：清空数据表中所有数据，然后ID从1开始
+清空表：清空数据表中所有数据
 
-链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码：x0f1
-这里我在GitHub中下载wind
+‍
+
 					...
 				</div>
 			</a>
