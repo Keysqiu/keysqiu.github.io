@@ -1067,6 +1067,17 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2026/05/27/AI/Windows%0A(RTK%EF%BF%BD%60%EF%BF%BDAI%16%0B%EF%BF%BDK%01%0B70%25Token/">
+                     
+										    Windows上用RTK给你的AI编程助手省下70%Token
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2026,9 +2037,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2037,9 +2048,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -3148,17 +3159,13 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/%E5%89%8D%E7%AB%AF%E9%A2%84%E7%95%99%E4%BB%A3%E7%A0%81/">
+			<a href="/2025/11/30/YOLO/Python%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E6%96%87%E6%A1%A3/">
 				<h2 class="index-title">
-					前端预留代码
+					Python项目打包文档
 				</h2>
 				<div class="index-brief">
-					JavaScript
-//=====
-使用 setup，你不需要显式地定义 setup 函数。所有在 &lt;script setup> 中的代码都会自动作为 setup 函数的一部分。
-//=====
-&lt;script setup lang="ts"> //ts或js
-&lt;/script>
+					① 在已经安装了依赖的环境里面（也就是说安装好requirements.txt软件包的环境），再安装pyinstaller软件包
+pip install pyinstaller -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirr
 					...
 				</div>
 			</a>
@@ -3171,18 +3178,16 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/%E8%84%9A%E6%89%8B%E6%9E%B6vue-cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">
+			<a href="/2025/11/30/Windows/Windows%20%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
 				<h2 class="index-title">
-					脚手架vue-cli创建Vue项目
+					Windows 关闭占用指定端口的进程
 				</h2>
 				<div class="index-brief">
-					一、安装vue-cli
-npm install -g @vue/cli 
+					找出占用443端口**的进程号(pid)**​ ******（**​第二列是你本机的应用占用的端口，看第二列就行）如下图，看第二列中对应过去的pid是18072
+# 输出的最后一列就是进程号pid
+netstat -ano | findstr :443
 
-安装完成后：输入vue -V检查版本，出现版本号就表示安装成功，如果出现“vue” 不是内部或外部命令，也不是可运行的程序或批处理文件，就说明安装失败了
-
-（1）新建一个空文件夹，在该文件夹下打开终端，输入创建命令按回车
-#
+查看该pid对应的程序（这步操作可有可无，如
 					...
 				</div>
 			</a>
@@ -3203,25 +3208,6 @@ npm install -g @vue/cli
 					新建一个脚本，后缀为.reg，名称随便给，然后双击运行即可
 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredS
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Windows/Windows%E6%97%B6%E9%97%B4%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC/">
-				<h2 class="index-title">
-					Windows时间批处理脚本
-				</h2>
-				<div class="index-brief">
-					Windows时间批处理脚本.zip
-
 					...
 				</div>
 			</a>
@@ -3262,26 +3248,21 @@ Win + X
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Windows/Windows%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7/">
+			<a href="/2025/11/30/YOLO/qt%E7%BB%B4%E6%8A%A4%E6%96%87%E6%A1%A3/">
 				<h2 class="index-title">
-					Windows内置工具
+					qt维护文档
 				</h2>
 				<div class="index-brief">
-					打开网络连接面板
-ncpa.cpl
-服务
-services.msc
-Windows事件查看器
-eventvwr
-远程桌面
-mstsc
-控制面板
-control
-注册表
-regedit
-任务执行计划
-taskschd.msc
+					一、PyCharm中添加外部工具
+① 菜单栏中，依次点击：文件-&gt;设置-&gt;工具-&gt;外部工具
+② 配置如下图所示
+（1）
 
+$FileDir$
+（2）
+
+# 程序是在..\anaconda3\envs\虚拟空间\Scripts下
+$FileName$ -o $FileNameWith
 					...
 				</div>
 			</a>
@@ -3294,20 +3275,16 @@ taskschd.msc
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Windows/telnet%E5%92%8Ccurl/">
+			<a href="/2025/11/30/YOLO/qt%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
 				<h2 class="index-title">
-					telnet和curl
+					qt部署文档
 				</h2>
 				<div class="index-brief">
-					telnet
-telnet 172.18.200.113 13100
-# 用途：
-1、测试网络服务是否可达以及它们是否正在监听指定端口。
-2、用于调试目的，比如发送简单的HTTP请求来检查Web服务器的行为。
-curl
-# 示例
-发送GET请求：
-curl &lt;http://example.co
+					一、安装anaconda3
+**① 访问Anaconda官网：**​https://www.anaconda.com/products/individual
+② 选择相应的操作系统版本并下载对应的安装包（推荐下载64位版本）
+③ 打开下载的安装包，按照提示进行安装即可
+④ 创建一个虚拟环境：（具体相
 					...
 				</div>
 			</a>
@@ -3320,18 +3297,50 @@ curl &lt;http://example.co
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/%E5%86%8D%E7%94%9F%E9%BE%99/%E5%86%8D%E7%94%9F%E9%BE%99%E5%A4%87%E4%BB%BD/">
+			<a href="/2025/11/30/YOLO/PySide6%EF%BC%9Aui%E8%BD%ACpy%E5%92%8Cqrc%E8%BD%ACpy/">
 				<h2 class="index-title">
-					再生龙备份
+					PySide6：ui转py和qrc转py
 				</h2>
 				<div class="index-brief">
-					再生龙系统备份系统全过程
-利用制作好的再生龙恢复U盘，我们可以备份linux系统，然后进行快速的克隆安装。
-1.配置服务器以U盘作为第一启动顺序，以便开机进入再生龙系统
+					
 
-2.开机进入再生龙系统，选择Other mode
+前提：需要安装有PySide6，如未安装
 
-3.然后选择To RAM，这样我们在使用过程中，系统已经被加载到内存中了，所
+
+pip install PySide6 -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+ui转py
+pyside6-uic input.ui -o output.py
+q
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/%E5%89%8D%E7%AB%AF/CSS%20%E5%AE%9E%E7%8E%B0%E5%BD%A2%E7%8A%B6/">
+				<h2 class="index-title">
+					CSS 实现形状
+				</h2>
+				<div class="index-brief">
+					1.正方形
+
+#square &#123;
+  width: 100px;
+  height: 100px;
+  background: red;
+&#125;
+2.长方形
+
+#rectangle &#123;
+  width: 200px;
+  height: 100px;
+  backgroun
 					...
 				</div>
 			</a>
@@ -3375,14 +3384,18 @@ curl &lt;http://example.co
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/stm32%E5%AD%A6%E4%B9%A0/IC%EF%BC%88Input%20Capture%EF%BC%89%E8%BE%93%E5%85%A5%E6%8D%95%E8%8E%B7/">
+			<a href="/2025/11/30/%E5%86%8D%E7%94%9F%E9%BE%99/%E5%86%8D%E7%94%9F%E9%BE%99%E5%A4%87%E4%BB%BD/">
 				<h2 class="index-title">
-					IC（Input Capture）输入捕获
+					再生龙备份
 				</h2>
 				<div class="index-brief">
-					理解：输入捕获模式下，当通道输入引脚出现指定电平跳变时，当前CNT的值将被锁存到CCR中，可用于测量PWM波形的频率、占空比、脉冲间隔、电平持续时间等参数（可以想象成示波器，您细品就懂了！！！）
-‍
+					再生龙系统备份系统全过程
+利用制作好的再生龙恢复U盘，我们可以备份linux系统，然后进行快速的克隆安装。
+1.配置服务器以U盘作为第一启动顺序，以便开机进入再生龙系统
 
+2.开机进入再生龙系统，选择Other mode
+
+3.然后选择To RAM，这样我们在使用过程中，系统已经被加载到内存中了，所
 					...
 				</div>
 			</a>
