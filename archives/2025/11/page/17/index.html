@@ -2048,9 +2048,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2059,9 +2059,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -3170,20 +3170,16 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+			<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20v%20%E6%97%A0%E6%95%88/">
 				<h2 class="index-title">
-					Redis常用命令
+					IDEA的ctrl alt v 无效
 				</h2>
 				<div class="index-brief">
-					一、客户端连接
-redis-cli -h host -p port -a password
-输入命令：redis-cli -p 6379
-二、数据导出导入
-导出
-执行备份命令：save
-该命令将在 redis 备份目录中创建dump.rdb文件。
-查看备份路径：config get dir
-备份后的
+					原因：可能是被QQ音乐或者有道词典的快捷键占用了，关闭他们或者修改他们的快捷键（建议这个）就解决问题了
+或者直接到idea中设置或修改idea中的快捷键
+​
+如果不知道是被哪个程序占用了快捷键，可以使用下面这个工具
+链接：https://pan.baidu.com/s/1R7JFKN82QL_7Dq
 					...
 				</div>
 			</a>
@@ -3196,18 +3192,13 @@ redis-cli -h host -p port -a password
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
+			<a href="/2025/11/30/IDEA/IDEA%E7%9A%84ctrl%20alt%20f%20%E6%97%A0%E6%95%88/">
 				<h2 class="index-title">
-					Linux上安装Redis
+					IDEA的ctrl alt f 无效
 				</h2>
 				<div class="index-brief">
-					1、安装Redis依赖
-Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
-yum install -y gcc tcl
-2、下载压缩包
-进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
-cd /usr/local/src
-**
+					排查微软键盘与搜狗输入法
+
 					...
 				</div>
 			</a>
@@ -3220,15 +3211,16 @@ cd /usr/local/src
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/Java/SpringBoot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">
 				<h2 class="index-title">
-					Redis的一些见解
+					SpringBoot解决跨域问题
 				</h2>
 				<div class="index-brief">
-					缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了增加、修改、删除，那么
+					遇到前端跨域访问问题，类似于这样的：
+​
+在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。
+import org.springframework.context.annotation.Bean;
+import org.spri
 					...
 				</div>
 			</a>
@@ -3241,17 +3233,15 @@ cd /usr/local/src
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+			<a href="/2025/11/30/IDEA/%E5%AF%B9%E7%BC%96%E7%A8%8BIDE%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
 				<h2 class="index-title">
-					Window下Redis的安装和部署详细教程
+					对编程IDE使用的一些见解
 				</h2>
 				<div class="index-brief">
-					1、下载Redis压缩包
+					1、如果是在IDE里面删除了文件，此文件不会进回收站的，（​在文件资源管理器中删除的才会进回收站****​ ）要想找回，请看下图
 
-以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
+点击了之后，就可以在弹出的窗口中进行恢复操作了。
 
-链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码：x0f1
-这里我在GitHub中下载wind
 					...
 				</div>
 			</a>
@@ -3264,19 +3254,15 @@ cd /usr/local/src
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/IDEA/%E5%A6%82%E4%BD%95%E6%8A%8AIDEA%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%8F%E8%B0%83%E8%87%B3%E5%B7%A6%E4%BE%A7%E6%98%BE%E7%A4%BA/">
 				<h2 class="index-title">
-					RabbitMQ部署指南
+					如何把IDEA的工具栏调至左侧显示
 				</h2>
 				<div class="index-brief">
-					1、单机部署
-我们在Centos7虚拟机中使用Docker来安装。
-1.1、下载镜像
-方式一：在线拉取
-docker pull rabbitmq:3-management
-方式二：从本地加载
-镜像包下载链接：
-**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
+					
+效果如下：
+​
+
 					...
 				</div>
 			</a>
@@ -3289,18 +3275,16 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/MySQL/MySQL%E7%AC%94%E8%AE%B0/">
 				<h2 class="index-title">
-					Nacos安装指南
+					MySQL笔记
 				</h2>
 				<div class="index-brief">
-					1、Windows安装（单点部署）
-1.1、下载安装包
-在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：
-**GitHub主页：**​https://github.com/alibaba/nacos
-如图：
-
-我这里是用1.4.1.版本的Nacos，压缩包
+					数据库存储数据的特点
+1、将数据放到表中，表再放到库中
+2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。
+3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。
+4、表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似
 					...
 				</div>
 			</a>
@@ -3313,18 +3297,20 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
 				<h2 class="index-title">
-					RabbitMQ
+					数据库中ID从一个很奇怪的数开始
 				</h2>
 				<div class="index-brief">
-					1.初识MQ
-1.1.同步和异步通讯
-微服务间通讯有同步和异步两种方式：
-同步通讯：就像打电话，需要实时响应。
-异步通讯：就像发邮件，不需要马上回复。
-两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
-1.1.1.同步通
+					==说明你上一次生成的id就是乱序了==
+解决方法：
+使用 navicat ，右键表名，选择截断表
+
+截断表：清空数据表中所有数据，然后ID从1开始
+清空表：清空数据表中所有数据
+
+‍
+
 					...
 				</div>
 			</a>
@@ -3337,26 +3323,17 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
+			<a href="/2025/11/30/MySQL/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE/">
 				<h2 class="index-title">
-					SpringCloud01
+					MySQL 防止被爬走数据
 				</h2>
 				<div class="index-brief">
-					1.认识微服务
-1.1.单体架构
-单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
-单体架构的优缺点如下：
-优点：
-
-架构简单
-部署成本低
-
-缺点：
-
-耦合度高（维护困难、升级困难）
-
-1.2.分布式架构
-分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
+					前两天申请了个云服务器，然后去关掉防火墙方便调试，结果没两天MySQL就被黑了
+​
+一个库被删，多了一个库
+​
+内容如下：
+All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHTChMgrSXU
 					...
 				</div>
 			</a>
@@ -3369,21 +3346,19 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
 				<h2 class="index-title">
-					SpringCloud学习
+					mysql连接详解（内外连接，左右连接）
 				</h2>
 				<div class="index-brief">
-					微服务结构
+					假设有两个表 T1，T2
+表的结构如下图所示
 
-Nacos结构
+一、内连接（inner join）【普通外键引用】
+如果想把用户信息、积分、等级都列出来，那么一般会这样写：
 
-Nacos与Eureka的区别
-
-Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
-临时实例心跳不正常会被剔除，非临时实例则不会被剔除
-Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
-Nacos集群默认采用AP方式
+select * from T1 ,T2 where T1.userid = T2.userid
+(其实这样的结果等同于select * f
 					...
 				</div>
 			</a>
@@ -3396,20 +3371,13 @@ Nacos集群默认采用AP方式
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
+			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
 				<h2 class="index-title">
-					Docker实用篇
+					配环境
 				</h2>
 				<div class="index-brief">
-					1.初识Docker
-1.1.什么是Docker
-微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
+					‍
 
-分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
-在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
-
-1.1.1.应用部署的环境问题
-大型项目组
 					...
 				</div>
 			</a>
