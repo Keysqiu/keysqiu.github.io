@@ -2048,9 +2048,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2059,9 +2059,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -3170,14 +3170,23 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/51%E5%8D%95%E7%89%87%E6%9C%BA/51%E5%8D%95%E7%89%87%E6%9C%BA%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Jenkins%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%9E%84%E5%BB%BAmaven%E9%A1%B9%E7%9B%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 				<h2 class="index-title">
-					51单片机学习
+					Jenkins创建任务没有构建maven项目解决方案
 				</h2>
 				<div class="index-brief">
-					首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解
-首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解大多数单片机或芯片： ==高电平弱驱动，低电平强驱动==
-大多数单片机或芯片：​==高电平弱驱动，
+					问题：缺少插件​Maven Intergration
+
+解决：
+1.进入系统管理
+
+2.点击插件管理
+
+3.选择可选插件
+
+4.搜索Maven（因我已安装）
+
+
 					...
 				</div>
 			</a>
@@ -3190,37 +3199,19 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/CentOS7%20%E5%AE%89%E8%A3%85Anaconda/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
 				<h2 class="index-title">
-					CentOS7 安装Anaconda
+					Linux关闭占用指定端口的进程
 				</h2>
 				<div class="index-brief">
-					wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
-2.执行脚本
-下载完成后，在终端中进入包所在的目录，并执行以下命令：
-bash Anaconda3-2021.05-Linux-x86_64.sh
-3.按
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Centos7%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/">
-				<h2 class="index-title">
-					Centos7防火墙设置
-				</h2>
-				<div class="index-brief">
-					CentOS 7.0默认使用的是firewall作为防火墙， 使用systemctl来管理服务和程序，包括了service和chkconfig
-1、检查是否已安装防火墙
-yum install firewalld firewall-config
-2、查看默认防火墙状态（开启后显示running，关闭
+					两种方式
+① 第一种
+用netstat -ano | grep 端口 找出进程号
+然后 kill -9 进程号 杀进程
+② 第二种
+例：关闭占用80端口的进程
+sudo fuser -k -n tcp 80
+
 					...
 				</div>
 			</a>
@@ -3282,48 +3273,17 @@ wget http://nginx.org/download/nginx-1.14.0.tar.gz
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Jenkins%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%9E%84%E5%BB%BAmaven%E9%A1%B9%E7%9B%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85docker/">
 				<h2 class="index-title">
-					Jenkins创建任务没有构建maven项目解决方案
+					Linux安装docker
 				</h2>
 				<div class="index-brief">
-					问题：缺少插件​Maven Intergration
-
-解决：
-1.进入系统管理
-
-2.点击插件管理
-
-3.选择可选插件
-
-4.搜索Maven（因我已安装）
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/">
-				<h2 class="index-title">
-					Linux关闭占用指定端口的进程
-				</h2>
-				<div class="index-brief">
-					两种方式
-① 第一种
-用netstat -ano | grep 端口 找出进程号
-然后 kill -9 进程号 杀进程
-② 第二种
-例：关闭占用80端口的进程
-sudo fuser -k -n tcp 80
-
+					docker报错时查看日志命令
+journalctl -xe
+# 把错误拿去百度即可
+# 经验一：是否是防火墙和docker内的网络冲突了，关掉防火墙试试！
+systemctl stop firewalld.service    		--停止firewall
+systemctl disable fi
 					...
 				</div>
 			</a>
@@ -3361,6 +3321,56 @@ mv jdk1
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85maven%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/">
+				<h2 class="index-title">
+					Linux安装maven指定版本
+				</h2>
+				<div class="index-brief">
+					① 官方下载：
+② 附件
+
+也可以用下面的这个安装包，这个是3.9.6的
+
+apache-maven-3.9.6-bin.tar.gz
+下载好安装包之后，通过sftp工具丢到服务器喜欢的目录
+# 查看存放路径
+pwd
+1、解压
+# 解压
+tar -zxvf apache-maven-3.9.6-bi
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Centos7%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/">
+				<h2 class="index-title">
+					Centos7防火墙设置
+				</h2>
+				<div class="index-brief">
+					CentOS 7.0默认使用的是firewall作为防火墙， 使用systemctl来管理服务和程序，包括了service和chkconfig
+1、检查是否已安装防火墙
+yum install firewalld firewall-config
+2、查看默认防火墙状态（开启后显示running，关闭
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/My-%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%9C%8D%E5%8A%A1%E5%99%A8MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
 				<h2 class="index-title">
 					My-定时备份服务器MySQL数据库
@@ -3385,23 +3395,23 @@ mysql_host="106.53.67.124"
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%AE%89%E8%A3%85maven%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC/">
+			<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 				<h2 class="index-title">
-					Linux安装maven指定版本
+					Linux常用命令
 				</h2>
 				<div class="index-brief">
-					① 官方下载：
-② 附件
-
-也可以用下面的这个安装包，这个是3.9.6的
-
-apache-maven-3.9.6-bin.tar.gz
-下载好安装包之后，通过sftp工具丢到服务器喜欢的目录
-# 查看存放路径
-pwd
-1、解压
-# 解压
-tar -zxvf apache-maven-3.9.6-bi
+					查看主机当前内存
+**free -h**
+查看主机当前外存
+**df -h**
+查看当前主机运行的程序
+**top**
+删除文件/文件夹
+rm 文件名 #删除文件
+rm -d 目录名 #删除一个空目录
+rm -r 目录名 #删除一个非空目录
+安装Ubuntu终端分屏工具
+**sudo apt ins
 					...
 				</div>
 			</a>
