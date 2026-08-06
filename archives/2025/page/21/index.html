@@ -2048,9 +2048,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2059,9 +2059,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2890,6 +2890,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -2990,28 +3012,6 @@
 			
 								</li>
 								
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 								</li>
@@ -3170,44 +3170,19 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
 				<h2 class="index-title">
-					Docker实用篇
+					RabbitMQ部署指南
 				</h2>
 				<div class="index-brief">
-					1.初识Docker
-1.1.什么是Docker
-微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
-
-分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
-在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
-
-1.1.1.应用部署的环境问题
-大型项目组
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
-				<h2 class="index-title">
-					RabbitMQ
-				</h2>
-				<div class="index-brief">
-					1.初识MQ
-1.1.同步和异步通讯
-微服务间通讯有同步和异步两种方式：
-同步通讯：就像打电话，需要实时响应。
-异步通讯：就像发邮件，不需要马上回复。
-两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
-1.1.1.同步通
+					1、单机部署
+我们在Centos7虚拟机中使用Docker来安装。
+1.1、下载镜像
+方式一：在线拉取
+docker pull rabbitmq:3-management
+方式二：从本地加载
+镜像包下载链接：
+**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
 					...
 				</div>
 			</a>
@@ -3279,19 +3254,44 @@ Nacos集群默认采用AP方式
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
 				<h2 class="index-title">
-					RabbitMQ部署指南
+					RabbitMQ
 				</h2>
 				<div class="index-brief">
-					1、单机部署
-我们在Centos7虚拟机中使用Docker来安装。
-1.1、下载镜像
-方式一：在线拉取
-docker pull rabbitmq:3-management
-方式二：从本地加载
-镜像包下载链接：
-**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
+					1.初识MQ
+1.1.同步和异步通讯
+微服务间通讯有同步和异步两种方式：
+同步通讯：就像打电话，需要实时响应。
+异步通讯：就像发邮件，不需要马上回复。
+两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
+1.1.1.同步通
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
+				<h2 class="index-title">
+					Docker实用篇
+				</h2>
+				<div class="index-brief">
+					1.初识Docker
+1.1.什么是Docker
+微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
+
+分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
+在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
+
+1.1.1.应用部署的环境问题
+大型项目组
 					...
 				</div>
 			</a>
@@ -3348,6 +3348,52 @@ pan.baidu
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+				<h2 class="index-title">
+					Python环境安装与配置
+				</h2>
+				<div class="index-brief">
+					一、准备工作
+Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带Python环境，在Windows系统上需要安装一下，超简单
+打开官网 https://www.python.org/downloads/  下载中心，根据自己的系统和版本选择合适的安装包，这里是直接下主页
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%20%E4%B8%8B%20python%20%E7%89%88%E6%9C%AC%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2/">
+				<h2 class="index-title">
+					Windows 下 python 版本快速切换
+				</h2>
+				<div class="index-brief">
+					前言： 安装新版本Python
+Python环境安装与配置​python的安装可以看我之前的文章，本文主要是讲如何实现python 版本快速切换
+1.查看当前python默认版本
+使用命令，可以发现当前默认运行的Python版本
+python -–version
+例图如下：
+
+2.修改环境变量
+==
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ERROR%20Could%20not%20build%20wheels%20for%20XXX,%20which%20is%20required%20to%20install%20pyprojec/">
 				<h2 class="index-title">
 					ERROR Could not build wheels for XXX, which is required to install pyprojec
@@ -3357,52 +3403,6 @@ pan.baidu
 
 ERROR: Could not build wheels for XXX， which is required to install pyproject.toml-based projects
 前提：看一下具体报错信息，是不是因为缺少另一个包导致这个包构建失败，如果是的话，先把另一个
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
-				<h2 class="index-title">
-					Python安装软件包的一些总结
-				</h2>
-				<div class="index-brief">
-					1、在线安装
-# 如果是安装单个包
-pip install [包名]
-# 建议使用下面这一个命令，毕竟是万能命令，一般的包拿这个命令来装都不会有什么问题
-pip install [包名] -i http://pypi.douban.com/simple --trusted-host pypi.dou
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ubuntu%E5%8D%87%E7%BA%A7python%E5%88%B0python3.11/">
-				<h2 class="index-title">
-					ubuntu升级python到python3.11
-				</h2>
-				<div class="index-brief">
-					在 Ubuntu 中升级 Python 到 3.11 版本可以通过编译源代码或者使用第三方工具来完成。请注意，在升级 Python 之前，请确保备份重要数据，并谨慎操作。
-以下是通过编译源代码的步骤：
-
-安装编译所需的依赖项：
-
-sudo apt update
-sudo apt install bu
 					...
 				</div>
 			</a>

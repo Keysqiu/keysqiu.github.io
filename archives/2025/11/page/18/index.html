@@ -2048,9 +2048,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2059,9 +2059,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2890,6 +2890,28 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -2990,28 +3012,6 @@
 			
 								</li>
 								
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 								</li>
@@ -3170,60 +3170,19 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/MySQL/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89/">
+			<a href="/2025/11/30/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADID%E4%BB%8E%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%87%E6%80%AA%E7%9A%84%E6%95%B0%E5%BC%80%E5%A7%8B/">
 				<h2 class="index-title">
-					mysql连接详解（内外连接，左右连接）
+					数据库中ID从一个很奇怪的数开始
 				</h2>
 				<div class="index-brief">
-					假设有两个表 T1，T2
-表的结构如下图所示
+					==说明你上一次生成的id就是乱序了==
+解决方法：
+使用 navicat ，右键表名，选择截断表
 
-一、内连接（inner join）【普通外键引用】
-如果想把用户信息、积分、等级都列出来，那么一般会这样写：
+截断表：清空数据表中所有数据，然后ID从1开始
+清空表：清空数据表中所有数据
 
-select * from T1 ,T2 where T1.userid = T2.userid
-(其实这样的结果等同于select * f
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
-				<h2 class="index-title">
-					Python学习
-				</h2>
-				<div class="index-brief">
-					1、Python中类的继承是直接写在类后面的括号里面的，直接写类名即可，震碎我三观
-2、Python中一个标准类的定义
-==记住每一个方法都要带self，通过self才能访问类内的属性和方法，不加self，找的是类外的东西==
-class Demo:
-    def __init__(self):
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
-				<h2 class="index-title">
-					配环境
-				</h2>
-				<div class="index-brief">
-					‍
+‍
 
 					...
 				</div>
@@ -3261,6 +3220,25 @@ def say_text(engine, words,
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
+				<h2 class="index-title">
+					配环境
+				</h2>
+				<div class="index-brief">
+					‍
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/PS/PS%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C/">
 				<h2 class="index-title">
 					PS的一些常规操作
@@ -3272,6 +3250,29 @@ def say_text(engine, words,
 3、魔术棒：按住alt或者alt+shift看效果
 4、把鼠标焦点放在图层上，按住ctrl+alt+t，可以实现对该图层的缩放以及旋转
 5、钢笔是拿来画的，而笔是拿来涂的
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
+				<h2 class="index-title">
+					Python学习
+				</h2>
+				<div class="index-brief">
+					1、Python中类的继承是直接写在类后面的括号里面的，直接写类名即可，震碎我三观
+2、Python中一个标准类的定义
+==记住每一个方法都要带self，通过self才能访问类内的属性和方法，不加self，找的是类外的东西==
+class Demo:
+    def __init__(self):
 
 					...
 				</div>
@@ -3304,6 +3305,26 @@ def say_text(engine, words,
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+				<h2 class="index-title">
+					Qt 网络编程经验总结
+				</h2>
+				<div class="index-brief">
+					1、同步/异步：指 I/O 操作，也就是说同步会等到程序 IO 操作结束之后才往下执行，而异步的话，在执行 IO 操作时，程序会先往下继续跑，等到 IO 操作完成之后，再合并资源
+阻塞/非阻塞：指进程，具体解释和上面差不多，就是说对象不一样而已
+2、​在数据流传输过程中，如果服务器和客户端的连接没有
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/Qt/Qt%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0/">
 				<h2 class="index-title">
 					Qt修改项目名称
@@ -3319,26 +3340,6 @@ def say_text(engine, words,
 
 
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Qt/Qt%20%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
-				<h2 class="index-title">
-					Qt 网络编程经验总结
-				</h2>
-				<div class="index-brief">
-					1、同步/异步：指 I/O 操作，也就是说同步会等到程序 IO 操作结束之后才往下执行，而异步的话，在执行 IO 操作时，程序会先往下继续跑，等到 IO 操作完成之后，再合并资源
-阻塞/非阻塞：指进程，具体解释和上面差不多，就是说对象不一样而已
-2、​在数据流传输过程中，如果服务器和客户端的连接没有
 					...
 				</div>
 			</a>
