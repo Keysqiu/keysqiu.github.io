@@ -300,6 +300,8 @@ function serachTree() {
       $(".fa-minus-square-o").removeClass("fa-minus-square-o").addClass(
         "fa-plus-square-o");
       $("#tree ul").css("display", "none");
+      // 上面的选择器会误伤 active 文章目录内部 ul，这里恢复显示
+      $(".article-toc.active-toc").children().show();
       if ($("#tree .active").length) {
         showActiveTree($("#tree .active"), true);
       } else {

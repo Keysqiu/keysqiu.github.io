@@ -3170,19 +3170,36 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
+			<a href="/2025/11/30/Python/Python%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					安装ros
+					Python学习
 				</h2>
 				<div class="index-brief">
-					系统：Ubuntu 18.04
-安装ROS版本：melodic
-​
-前四个勾选
-​
-打开命令终端，输入以下命令
-1.添加ROS源
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /
+					1、Python中类的继承是直接写在类后面的括号里面的，直接写类名即可，震碎我三观
+2、Python中一个标准类的定义
+==记住每一个方法都要带self，通过self才能访问类内的属性和方法，不加self，找的是类外的东西==
+class Demo:
+    def __init__(self):
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/">
+				<h2 class="index-title">
+					配环境
+				</h2>
+				<div class="index-brief">
+					‍
+
 					...
 				</div>
 			</a>
@@ -3220,17 +3237,19 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
 				<h2 class="index-title">
-					Window下Redis的安装和部署详细教程
+					RabbitMQ部署指南
 				</h2>
 				<div class="index-brief">
-					1、下载Redis压缩包
-
-以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
-
-链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码：x0f1
-这里我在GitHub中下载wind
+					1、单机部署
+我们在Centos7虚拟机中使用Docker来安装。
+1.1、下载镜像
+方式一：在线拉取
+docker pull rabbitmq:3-management
+方式二：从本地加载
+镜像包下载链接：
+**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
 					...
 				</div>
 			</a>
@@ -3243,15 +3262,20 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
 				<h2 class="index-title">
-					Redis的一些见解
+					Docker实用篇
 				</h2>
 				<div class="index-brief">
-					缓存的意义在于可以保护后台的接口不被大量的请求所攻击
-逻辑是这样的：
-1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
-2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了增加、修改、删除，那么
+					1.初识Docker
+1.1.什么是Docker
+微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
+
+分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
+在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
+
+1.1.1.应用部署的环境问题
+大型项目组
 					...
 				</div>
 			</a>
@@ -3288,19 +3312,21 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					RabbitMQ部署指南
+					SpringCloud学习
 				</h2>
 				<div class="index-brief">
-					1、单机部署
-我们在Centos7虚拟机中使用Docker来安装。
-1.1、下载镜像
-方式一：在线拉取
-docker pull rabbitmq:3-management
-方式二：从本地加载
-镜像包下载链接：
-**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
+					微服务结构
+
+Nacos结构
+
+Nacos与Eureka的区别
+
+Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
+临时实例心跳不正常会被剔除，非临时实例则不会被剔除
+Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
+Nacos集群默认采用AP方式
 					...
 				</div>
 			</a>
@@ -3345,33 +3371,6 @@ docker pull rabbitmq:3-management
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud%E5%AD%A6%E4%B9%A0/">
-				<h2 class="index-title">
-					SpringCloud学习
-				</h2>
-				<div class="index-brief">
-					微服务结构
-
-Nacos结构
-
-Nacos与Eureka的区别
-
-Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式
-临时实例心跳不正常会被剔除，非临时实例则不会被剔除
-Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
-Nacos集群默认采用AP方式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
 				<h2 class="index-title">
 					RabbitMQ
@@ -3396,20 +3395,20 @@ Nacos集群默认采用AP方式
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Docker%E5%AE%9E%E7%94%A8%E7%AF%87/">
+			<a href="/2025/11/30/RabbitMQ/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 				<h2 class="index-title">
-					Docker实用篇
+					环境配置
 				</h2>
 				<div class="index-brief">
-					1.初识Docker
-1.1.什么是Docker
-微服务虽然具备各种各样的优势，但服务的拆分通用给部署带来了很大的麻烦。
+					1.选择下载的Erlang安装包，并双击运行
 
-分布式系统中，依赖的组件非常多，不同组件之间部署时往往会产生一些冲突。
-在数百上千台服务中重复部署，环境不一定一致，会遇到各种问题
+2.点击Next，选择安装的目录位置，点击下一步即可
 
-1.1.1.应用部署的环境问题
-大型项目组
+3.安装成功后，需要配置环境变量，点击我的电脑–高级系统设置
+
+4.点击环境变量，并选择path点击编辑，将之前安装的Erlang的bin目录路径配置到path中
+
+5.例如Erlang的bin目
 					...
 				</div>
 			</a>

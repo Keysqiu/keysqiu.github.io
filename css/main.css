@@ -73,7 +73,7 @@ a:hover {
 /* sidebar */
 #totop-toggle{
 	position: fixed;
-    bottom: 80px;
+    bottom: 140px;
     right: 50px;
 }
 #sidebar-toggle{
@@ -152,7 +152,9 @@ a:hover {
 }
 #tree{
 	height: calc( 100% - 50px );
-	overflow: auto;
+	overflow-y: auto;
+	/* 禁止水平滚动条：超长标题链接会撑出横向滚动条，右下角显示白点 */
+	overflow-x: hidden;
 	margin-top: 50px;
 }
 #tree ul ul {
