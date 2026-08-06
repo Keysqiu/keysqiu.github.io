@@ -2890,28 +2890,6 @@
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
-										微信
-									</a>
-									
-							<ul>
-								<li class="file">
-									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
-                     
-										    微信表情代码
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-								</li>
-								
-							</ul>
-			
-							<ul>
-								<li class="directory">
-									<a href="#" class="directory">
-										<i class="fa fa-plus-square-o"></i>
 										微信开发
 									</a>
 									
@@ -3012,6 +2990,28 @@
 			
 								</li>
 								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										微信
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%A1%A8%E6%83%85%E4%BB%A3%E7%A0%81/">
+                     
+										    微信表情代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 								</li>
@@ -3170,22 +3170,24 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue2%E7%BB%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/">
+			<a href="/2025/11/30/Vue/Vue2%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E6%AD%A5%E9%AA%A4/">
 				<h2 class="index-title">
-					Vue2组件基本结构
+					Vue2代码运行步骤
 				</h2>
 				<div class="index-brief">
-					&lt;template>
-  &lt;div>
-  //code...
-  &lt;/div>
-&lt;/template>
-&lt;script>
-export default &#123;
-  data() &#123;
-    return &#123;&#125;
-  &#125;,
-  
+					
+浏览器加载 index.html。
+加载并执行 main.js。
+初始化 Vue 实例并挂载到 DOM。
+解析根组件 App.vue。
+加载路由和状态管理（如果有）。
+执行组件的生命周期钩子。
+渲染子组件。
+响应式数据更新，动态更新页面。
+
+当 Vue 实例启动后，组件会经历以下生命周期钩子：
+
+
 					...
 				</div>
 			</a>
@@ -3222,18 +3224,47 @@ Vue.use(Eleme
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/elasticsearch_02/">
+			<a href="/2025/11/30/Vue/Vue%E6%8F%92%E6%A7%BD/">
 				<h2 class="index-title">
-					elasticsearch_02
+					Vue插槽
 				</h2>
 				<div class="index-brief">
-					1.DSL查询文档
-elasticsearch的查询依然是基于JSON风格的DSL来实现的。
-1.1.DSL查询分类
-Elasticsearch提供了基于JSON的DSL（Domain Specific Language）来定义查询。常见的查询类型包括：
+					插槽就是 留个坑，让父组件填内容
+举个🌰
+好的，用一个简单例子说明：
+比如你有一个通用的卡片组件（Card.vue），但想让每个卡片的内容不一样。
+子组件 Card.vue：
+&lt;template>
+  &lt;div class="card">
+    &lt;header>卡片标题&lt;
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Vue/vue2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">
+				<h2 class="index-title">
+					vue2生命周期函数
+				</h2>
+				<div class="index-brief">
+					🌿 1. created
+
+“我出生了！数据有了，但页面还没长出来。”
 
 
-查询所有：查询出所有数据，一般测试用。例
+数据、方法已准备好，可以访问 this.data。
+常用于：发请求、初始化数据。
+页面（DOM）还没生成，不能操作。
+
+created() &#123;
+  console.log('我出生了！', this.messag
 					...
 				</div>
 			</a>
@@ -3296,22 +3327,18 @@ export default &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/vue2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">
+			<a href="/2025/11/30/Vue/%E8%84%9A%E6%89%8B%E6%9E%B6vue-cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">
 				<h2 class="index-title">
-					vue2生命周期函数
+					脚手架vue-cli创建Vue项目
 				</h2>
 				<div class="index-brief">
-					🌿 1. created
+					一、安装vue-cli
+npm install -g @vue/cli 
 
-“我出生了！数据有了，但页面还没长出来。”
+安装完成后：输入vue -V检查版本，出现版本号就表示安装成功，如果出现“vue” 不是内部或外部命令，也不是可运行的程序或批处理文件，就说明安装失败了
 
-
-数据、方法已准备好，可以访问 this.data。
-常用于：发请求、初始化数据。
-页面（DOM）还没生成，不能操作。
-
-created() &#123;
-  console.log('我出生了！', this.messag
+（1）新建一个空文件夹，在该文件夹下打开终端，输入创建命令按回车
+#
 					...
 				</div>
 			</a>
@@ -3324,19 +3351,22 @@ created() &#123;
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Vue/Vue%E6%8F%92%E6%A7%BD/">
+			<a href="/2025/11/30/Vue/Vue2%E7%BB%84%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/">
 				<h2 class="index-title">
-					Vue插槽
+					Vue2组件基本结构
 				</h2>
 				<div class="index-brief">
-					插槽就是 留个坑，让父组件填内容
-举个🌰
-好的，用一个简单例子说明：
-比如你有一个通用的卡片组件（Card.vue），但想让每个卡片的内容不一样。
-子组件 Card.vue：
-&lt;template>
-  &lt;div class="card">
-    &lt;header>卡片标题&lt;
+					&lt;template>
+  &lt;div>
+  //code...
+  &lt;/div>
+&lt;/template>
+&lt;script>
+export default &#123;
+  data() &#123;
+    return &#123;&#125;
+  &#125;,
+  
 					...
 				</div>
 			</a>
@@ -3360,30 +3390,6 @@ created() &#123;
 //=====
 &lt;script setup lang="ts"> //ts或js
 &lt;/script>
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Vue/%E8%84%9A%E6%89%8B%E6%9E%B6vue-cli%E5%88%9B%E5%BB%BAVue%E9%A1%B9%E7%9B%AE/">
-				<h2 class="index-title">
-					脚手架vue-cli创建Vue项目
-				</h2>
-				<div class="index-brief">
-					一、安装vue-cli
-npm install -g @vue/cli 
-
-安装完成后：输入vue -V检查版本，出现版本号就表示安装成功，如果出现“vue” 不是内部或外部命令，也不是可运行的程序或批处理文件，就说明安装失败了
-
-（1）新建一个空文件夹，在该文件夹下打开终端，输入创建命令按回车
-#
 					...
 				</div>
 			</a>
