@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- title -->
 	
@@ -2048,9 +2048,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2059,9 +2059,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -3170,26 +3170,15 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
+			<a href="/2025/11/30/Redis/Redis%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/">
 				<h2 class="index-title">
-					SpringCloud01
+					Redis的一些见解
 				</h2>
 				<div class="index-brief">
-					1.认识微服务
-1.1.单体架构
-单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
-单体架构的优缺点如下：
-优点：
-
-架构简单
-部署成本低
-
-缺点：
-
-耦合度高（维护困难、升级困难）
-
-1.2.分布式架构
-分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
+					缓存的意义在于可以保护后台的接口不被大量的请求所攻击
+逻辑是这样的：
+1、客户端第一次请求的话，先从数据库中查询到数据并将其写入Redis缓存中，后面都是直接从Redis里面读
+2、（​最简单的处理，如需复杂一点的处理，后面再跟进记录****​ ）除了查询，如果后台对数据进行了增加、修改、删除，那么
 					...
 				</div>
 			</a>
@@ -3202,18 +3191,17 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
 				<h2 class="index-title">
-					RabbitMQ
+					Window下Redis的安装和部署详细教程
 				</h2>
 				<div class="index-brief">
-					1.初识MQ
-1.1.同步和异步通讯
-微服务间通讯有同步和异步两种方式：
-同步通讯：就像打电话，需要实时响应。
-异步通讯：就像发邮件，不需要马上回复。
-两种方式各有优劣，打电话可以立即得到响应，但是你却不能跟多个人同时通话。发送邮件可以同时与多个人收发邮件，但是往往响应会有延迟。
-1.1.1.同步通
+					1、下载Redis压缩包
+
+以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
+
+链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码：x0f1
+这里我在GitHub中下载wind
 					...
 				</div>
 			</a>
@@ -3276,6 +3264,26 @@ pan.baidu
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
+				<h2 class="index-title">
+					Python安装requirements文件里的软件包时报错
+				</h2>
+				<div class="index-brief">
+					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
+解决方法：
+以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
 				<h2 class="index-title">
 					Python安装软件包的一些总结
@@ -3286,6 +3294,30 @@ pan.baidu
 pip install [包名]
 # 建议使用下面这一个命令，毕竟是万能命令，一般的包拿这个命令来装都不会有什么问题
 pip install [包名] -i http://pypi.douban.com/simple --trusted-host pypi.dou
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/ubuntu%E5%8D%87%E7%BA%A7python%E5%88%B0python3.11/">
+				<h2 class="index-title">
+					ubuntu升级python到python3.11
+				</h2>
+				<div class="index-brief">
+					在 Ubuntu 中升级 Python 到 3.11 版本可以通过编译源代码或者使用第三方工具来完成。请注意，在升级 Python 之前，请确保备份重要数据，并谨慎操作。
+以下是通过编译源代码的步骤：
+
+安装编译所需的依赖项：
+
+sudo apt update
+sudo apt install bu
 					...
 				</div>
 			</a>
@@ -3339,69 +3371,14 @@ Python目前已支持所有主流操作系统，在Linux,Unix,Mac系统上自带
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%20%E4%B8%8B%20python%20%E7%89%88%E6%9C%AC%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%9C%A8%E4%BB%BB%E6%84%8F%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%88%9B%E5%BB%BAPython%E7%8E%AF%E5%A2%83/">
 				<h2 class="index-title">
-					Windows 下 python 版本快速切换
+					在任意目录下创建Python环境
 				</h2>
 				<div class="index-brief">
-					前言： 安装新版本Python
-Python环境安装与配置​python的安装可以看我之前的文章，本文主要是讲如何实现python 版本快速切换
-1.查看当前python默认版本
-使用命令，可以发现当前默认运行的Python版本
-python -–version
-例图如下：
-
-2.修改环境变量
-==
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Python%E5%AE%89%E8%A3%85requirements%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/">
-				<h2 class="index-title">
-					Python安装requirements文件里的软件包时报错
-				</h2>
-				<div class="index-brief">
-					报错内容：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xa3 in position 13: illegal multibyte sequence
-解决方法：
-以虚拟环境为例，进入到  .venv\Lib\site-packages\pip_
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
-				<h2 class="index-title">
-					内层包报ModuleNotFoundError
-				</h2>
-				<div class="index-brief">
-					问题：
-最外层的包安装有了，且可以访问到，但是还是报缺少里面的模块，下面是一个示例
-
-ModuleNotFoundError: No module named ‘libsvm.python’
-
-附原先的代码
-​
-解决方案
-这里以anaconda为例，
-找到包的路径
-ps：
-E:\anaconda3\
+					创建环境
+**① 创建虚拟环境：使用python -m venv **​ &lt;directory&gt;​命令，在指定的目录下创建一个虚拟环境，该目录会包含一个Python解释器和一些支持文件。通常，可以将虚拟环境命名为 .venv ，这样可以在终端中隐藏它，并且表明它的用途。
+python -
 					...
 				</div>
 			</a>

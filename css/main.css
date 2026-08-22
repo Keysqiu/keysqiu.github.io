@@ -286,6 +286,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 #index-paginator .current,
@@ -359,6 +360,10 @@ body{
 	max-width: 100%;
 	height: auto;
 }
+#article-content iframe,
+#article-content video {
+	max-width: 100%;
+}
 #article-content pre {
 	font-size: 14px;
 	margin: 20px 0 15px;
@@ -383,7 +388,6 @@ table {
   margin: auto auto 15px;
   width: 100%;
   min-height: .01%;
-  overflow-x: auto;
   background: transparent;
   border-collapse: collapse;
   border-spacing: 0;
@@ -402,6 +406,12 @@ table td {
 
 figure{
     overflow:auto
+}
+
+/* 长表格滚动容器：table 自身设置 overflow-x 无效，需外层包装 */
+.table-wrap {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .post-guide{
@@ -461,13 +471,7 @@ figure{
 #footer p {
     padding: 5px;
 }
-/* @media */
-@media screen and (max-width: 850px) {
-
-	#sidebar {
-		opacity: 0.95;
-	}
-}
+/* @media（响应式断点统一放在文件末尾，见下方 1100px / 768px 查询） */
 
 code {
     padding: 1px 5px;
@@ -687,4 +691,89 @@ pre[class*="language-"] {
 }
 .main-content:hover::-webkit-scrollbar {
     display: block;
+}
+
+/* ===== 响应式 ===== */
+/* 平板及以下：侧边栏为浮层，主内容占满宽度（断点与 main.js 的 1100px 对齐） */
+@media screen and (max-width: 1100px) {
+	#sidebar {
+		opacity: 0.95;
+	}
+
+	.content {
+		max-width: 100%;
+	}
+
+	/* 跨断点缩放窗口时 content-on/header-on 可能残留，此处兜底 */
+	.content-on {
+		padding: 14px;
+	}
+
+	.header-on {
+		padding-left: 0;
+	}
+}
+
+/* 手机/窄平板：紧凑排版 */
+@media screen and (max-width: 768px) {
+	#subtitle {
+		display: none;
+	}
+
+	#menu .menu-item {
+		padding: 10px 6px;
+	}
+
+	#article-content h1 {
+		font-size: 24px;
+		line-height: 36px;
+	}
+
+	#article-content h2 {
+		font-size: 20px;
+		line-height: 32px;
+	}
+
+	#article-content h3 {
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	.index-title {
+		font-size: 20px;
+	}
+
+	#article-content ol,
+	#article-content ul {
+		padding-left: 24px;
+	}
+
+	/* 上下篇导航堆叠为两行，避免长标题互相挤压 */
+	.post-guide {
+		flex-direction: column;
+	}
+
+	.post-guide .item {
+		width: 100%;
+	}
+
+	.post-guide .right {
+		justify-content: flex-start;
+	}
+
+	.post-guide .item a {
+		word-break: break-all;
+	}
+
+	#article-content pre {
+		font-size: 13px;
+	}
+
+	.line-numbers {
+		padding: 1.5rem 1rem 1.5rem 2.4rem !important;
+	}
+
+	#totop-toggle {
+		right: 16px;
+	}
 }

@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- title -->
 	
@@ -2048,9 +2048,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2059,9 +2059,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -3170,26 +3170,12 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/%E6%85%A2SQL%E4%BC%98%E5%8C%96/SQL%E4%BC%98%E5%8C%96%E7%9A%84%E5%87%A0%E7%82%B9%E8%A7%81%E8%A7%A3/">
+			<a href="/2025/11/30/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%BF%83%E5%BE%97/">
 				<h2 class="index-title">
-					SQL优化的几点见解
+					自动化测试心得
 				</h2>
 				<div class="index-brief">
-					
-
-
-字段是否走了索引，走不走索引的效率差了几百倍
-
-
-批量操作
-连接的表不要过多
-==避免使用 select==
-小表驱动大表
-使用 limit
-使用 union all 代替 union
-口诀：in 小，exists 大，in 先内后外，exists 先外后内
-
-
+					1、在切换路由之后，如果想要selenium操作的实例也跟着切换，直接再get(路由)一次就ok了，就这么简单，如果是多个页面，才是需要driver.switch_to.window(driver.window_handles[0])，driver.window_handles保存了当前所有窗口实例
 					...
 				</div>
 			</a>
@@ -3220,19 +3206,13 @@
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/wx%E5%AD%A6%E4%B9%A0/">
+			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97/">
 				<h2 class="index-title">
-					wx学习
+					使用外部组件的一些心得
 				</h2>
 				<div class="index-brief">
-					
-经验：”在使用样式时两个父组件之间用margin，父组件自己内部的子组件之间用paddding，从而达到隔开的效果，不那么紧密&quot;
-
-① 把一个组件的角进行圆润：
- box-sizing: border-box; 
-border-radius: 20rpx;
-② 给一个组件的四条边上色：
-
+					有赞的Props和element的Attributes都是一个意思，Events也是这样用的，都是放在标签里面做键（就是写在左边，然后等于一个什么类型的值）
+反正记得一句话，人家给啥，你就写标签里面，且是以键的形式，不管名字有多奇怪，你直接复制过去就ok了，然后注意下人家需要传的参数是什么类型就行了
 					...
 				</div>
 			</a>
@@ -3257,33 +3237,6 @@ npm i @vant/weapp -S --production
 2、修改 app.json
 找到&quot;style&quot;: &quot;v2&quot;并去掉
 最后，打开微信开发者工具，点击 工具 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A9%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E9%9D%A0%E5%8F%B3%E3%80%81%E9%9D%A0%E5%B7%A6%E3%80%81%E6%88%96%E8%80%85%E5%A4%84%E4%BA%8E%E7%88%B6%E5%85%83%E7%B4%A0%E7%9A%84%E4%BB%BB%E6%84%8F%E7%BA%A6%E6%9D%9F%E4%BD%8D%E7%BD%AE/">
-				<h2 class="index-title">
-					微信小程序-让某个元素靠右、靠左、或者处于父元素的任意约束位置
-				</h2>
-				<div class="index-brief">
-					口诀：父相对，子绝对，靠哪，哪里置为0
-WXML:
-&lt;view class='task-box'>
- &lt;view class='checkbutton'>参与讨论&lt;/view>
-&lt;/view>
-WXSS:
-父元素
-.task-box&#123;
- 
-width: 690rpx
 					...
 				</div>
 			</a>
@@ -3323,13 +3276,73 @@ wx.switchTab()//只能跳转到tabBar页面
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97/">
+			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/wx%E5%AD%A6%E4%B9%A0/">
 				<h2 class="index-title">
-					使用外部组件的一些心得
+					wx学习
 				</h2>
 				<div class="index-brief">
-					有赞的Props和element的Attributes都是一个意思，Events也是这样用的，都是放在标签里面做键（就是写在左边，然后等于一个什么类型的值）
-反正记得一句话，人家给啥，你就写标签里面，且是以键的形式，不管名字有多奇怪，你直接复制过去就ok了，然后注意下人家需要传的参数是什么类型就行了
+					
+经验：”在使用样式时两个父组件之间用margin，父组件自己内部的子组件之间用paddding，从而达到隔开的效果，不那么紧密&quot;
+
+① 把一个组件的角进行圆润：
+ box-sizing: border-box; 
+border-radius: 20rpx;
+② 给一个组件的四条边上色：
+
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%AE%A9%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E9%9D%A0%E5%8F%B3%E3%80%81%E9%9D%A0%E5%B7%A6%E3%80%81%E6%88%96%E8%80%85%E5%A4%84%E4%BA%8E%E7%88%B6%E5%85%83%E7%B4%A0%E7%9A%84%E4%BB%BB%E6%84%8F%E7%BA%A6%E6%9D%9F%E4%BD%8D%E7%BD%AE/">
+				<h2 class="index-title">
+					微信小程序-让某个元素靠右、靠左、或者处于父元素的任意约束位置
+				</h2>
+				<div class="index-brief">
+					口诀：父相对，子绝对，靠哪，哪里置为0
+WXML:
+&lt;view class='task-box'>
+ &lt;view class='checkbutton'>参与讨论&lt;/view>
+&lt;/view>
+WXSS:
+父元素
+.task-box&#123;
+ 
+width: 690rpx
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC++%E7%9A%84%E5%8C%BA%E5%88%AB/">
+				<h2 class="index-title">
+					Java和C++的区别
+				</h2>
+				<div class="index-brief">
+					Java和C++的区别
+
+
+C++中的virtual虚函数，Java中不用什么前缀，子类直接重写即可，用@Override作标记
+
+
+C++中的纯虚函数，Java中加abstract前缀，且类也要声明为抽象类，C++不用声明
+
+
+Java中的接口，其实就是一个抽象类，里面都是常量和abstract方
 					...
 				</div>
 			</a>
@@ -3363,42 +3376,17 @@ wx.switchTab()//只能跳转到tabBar页面
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%92%8CC%E4%B8%80%E4%BA%9B%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%9C%B0%E6%96%B9/">
+			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Invalid%20HTTP%20request%20received/">
 				<h2 class="index-title">
-					Java和C一些不一样的地方
+					Invalid HTTP request received.
 				</h2>
 				<div class="index-brief">
-					
-Java源文件的名字跟类中的public修饰的类一样。
-Java的一个类中可以没有public类，有也只能有一个，且要与源文件同名，非public类可以有多个
-Java里面的char占两个字节
-float类型的变量怎么与double区别的呢？
-答：值后面加上f或F
-Java中 int[]a,b; 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/1%E7%BB%8F%E9%AA%8C/Java%E5%BC%80%E5%8F%91%E4%B8%AD%E4%B8%80%E4%BA%9B%E7%96%91%E6%83%91%E7%9A%84%E8%A7%A3%E9%87%8A/">
-				<h2 class="index-title">
-					Java开发中一些疑惑的解释
-				</h2>
-				<div class="index-brief">
-					① 公司中是用html+css还是用vue
-答：
-这得看应用场景，如果需要被搜索引擎搜录 -&gt; html+css
-不需要，只需要服务于特定群体，而且要快速落地 -&gt; Vue
-② 为什么很多公司都用第三方组件
-答：
-因为谁都不想消耗巨大的人力和物力造轮子，公司主要看效益，能用就行，能赚钱就
+					排查方法：看看是不是你的请求链接写错了，详细对照以下几点
+① http写成https
+② 端口号写错了
+③ 网址写错了！！！
+‍
+
 					...
 				</div>
 			</a>

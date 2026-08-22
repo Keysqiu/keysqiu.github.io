@@ -11,6 +11,9 @@ $(document).ready(function () {
   // 初始化代码块功能
   initCodeBlocks();
 
+  // 长表格包滚动容器，窄屏横向滚动
+  wrapTable();
+
   clickTreeDirectory();
   serachTree();
   // pjaxLoad();
@@ -75,6 +78,31 @@ function switchTreeOrIndex() {
     scrollOff();
   }
   ;
+
+  // 窗口跨 1100px 断点时自动切换侧边栏布局（否则缩放窗口后类残留导致布局错乱）
+  var desktopMq = window.matchMedia("(min-width: 1100px)");
+  var handleBreakpointChange = function (e) {
+    if (e.matches) {
+      scrollOn();
+    } else {
+      scrollOff();
+    }
+  };
+  if (desktopMq.addEventListener) {
+    desktopMq.addEventListener('change', handleBreakpointChange);
+  } else if (desktopMq.addListener) {
+    // 旧版浏览器兼容
+    desktopMq.addListener(handleBreakpointChange);
+  }
+}
+
+// 长表格包一层滚动容器（table 自身设置 overflow-x 无效）
+function wrapTable() {
+  $('#article-content table').each(function () {
+    if (!$(this).parent().hasClass('table-wrap')) {
+      $(this).wrap('<div class="table-wrap"></div>');
+    }
+  });
 }
 
 //生成文章目录
