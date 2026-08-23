@@ -2050,9 +2050,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
                      
-										    RabbitMQ
+										    RabbitMQ部署指南
                      
 									</a>
 								</li>
@@ -2061,9 +2061,9 @@
 			
 							<ul>
 								<li class="file">
-									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+									<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ/">
                      
-										    RabbitMQ部署指南
+										    RabbitMQ
                      
 									</a>
 								</li>
@@ -2889,6 +2889,17 @@
 							</ul>
 			
 							<ul>
+								<li class="file">
+									<a href="/2026/08/23/%E5%BC%95%E7%94%A8%E4%BF%AE%E5%A4%8D%E6%95%88%E6%9E%9C%E6%B5%8B%E8%AF%95/">
+                     
+										    引用修复效果测试
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
@@ -3203,7 +3214,7 @@
 	<blockquote>
 <p><strong>测试项目demo</strong></p>
 </blockquote>
-<p><a href="assets/catkin_csdn-20251130181901-75m9dau.zip">catkin_csdn.zip</a></p>
+<p><a href="/assets/catkin_csdn-20251130181901-75m9dau.zip">catkin_csdn.zip</a></p>
 <h1>一、先在小鱼下安装ros</h1>
 <pre class="line-numbers language-none"><code class="language-none">wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishros<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>根据提示一步一步下载即可，大佬就是大佬！！！（版本下载 ros1）</strong></p>
@@ -3218,8 +3229,8 @@
 <p><strong>这里我下载的版本为0.4.3，因为从0.5开始使用的就是Qt6，而经测试Qt6不支持QVTK控件的导入。如下图所示，下载</strong>​<strong><strong><strong>ROSProjectManager-0.4.1-Linux-x86_64.zip</strong></strong></strong>​<strong>和Source code(tar.gz)两个文件。其中Source code(tar.gz)是Qt软件安装包，ROSProjectManager-0.4.1-Linux-x86_64.zip是Qt的ros插件。（下面有安装包）</strong><br>
 ​<img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_0-20251130181901-z4qdtxu.png" alt=""><br>
 <strong>安装包：</strong><br>
-<a href="assets/ros_qtc_plugin-0.4.3.tar-20251130181901-gvouon3.gz">ros_qtc_plugin-0.4.3.tar.gz</a><br>
-<a href="assets/rosprojectmanager-0.4.1-linux-x86_64-20251130181901-ebwqcib.zip">rosprojectmanager-0.4.1-linux-x86_64.zip</a></p>
+<a href="/assets/ros_qtc_plugin-0.4.3.tar-20251130181901-gvouon3.gz">ros_qtc_plugin-0.4.3.tar.gz</a><br>
+<a href="/assets/rosprojectmanager-0.4.1-linux-x86_64-20251130181901-ebwqcib.zip">rosprojectmanager-0.4.1-linux-x86_64.zip</a></p>
 <p><strong>下载完毕后解压，打开Source code(tar.gz)解压后的目录，在终端输入下述指令，进行安装。首先在根目录下建立Qt-ros文件夹作为安装路径，然后开始安装：</strong></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ~/Qt-ros
 python3 setup.py <span class="token parameter variable">--install_path</span> ~/Qt-ros<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -3255,7 +3266,7 @@ catkin_make<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <h3 id="3-向Qt-Designer中加入QVTK控件">3.向Qt Designer中加入QVTK控件</h3>
 <p><strong>Qt窗体开发本身并不自带QVTK控件，需要向Qt的特定安装路径自行加入一个QVTK的库文件</strong><br>
 <strong>安装包为：</strong><br>
-<a href="assets/libqvtkwidgetplugin-20251130181901-b5w68qn.so">libqvtkwidgetplugin.so</a><br>
+<a href="/assets/libqvtkwidgetplugin-20251130181901-b5w68qn.so">libqvtkwidgetplugin.so</a><br>
 <strong>下载</strong>​<strong><strong><strong><a target="_blank" rel="noopener" href="http://libQVTKWidgetPlugin.so">libQVTKWidgetPlugin.so</a></strong></strong></strong>​<strong>文件，将其复制到</strong>​ <strong><strong><strong>~/Qt-ros/Tools/QtCreator/lib/Qt/plugins/designer</strong></strong></strong>​<strong>目录下，完成后可以</strong>​<strong><strong><strong>重新打开Qt</strong></strong></strong>​ <strong>，新建一个窗体工程，选择mainwindow.ui进入Qt Desinger界面：</strong><br>
 <img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_14-20251130181901-8f1b5th.png" alt=""><br>
 <strong>可以看到控件列表最下方新增了一个QVTKWidget控件，就说明QVTK控件添加成功了。</strong><br>
@@ -3307,7 +3318,7 @@ target_link_libraries(test1 Qt5::Widgets $&#123;VTK_LIBRARIES&#125; $&#123;PCL_L
 <img src="/assets/Ubuntu%E4%B8%AD%E5%AE%89%E8%A3%85qt-ros-opencv_image_18-20251130181901-lfvz0a8.png" alt=""><br>
 <strong>这是由于插件的安装缺少了一个叫做libqtermwidget5.so.1的库文件</strong><br>
 <strong>安装包：</strong><br>
-<a href="assets/libqtermwidget5.so-20251130181901-slwm7j9.0">libqtermwidget5.so.0</a><br>
+<a href="/assets/libqtermwidget5.so-20251130181901-slwm7j9.0">libqtermwidget5.so.0</a><br>
 <strong>下载后将libqtermwidget5.so.0文件复制到与libROSProjectManager.so同级目录下即可。</strong></p>
 
 </div>
@@ -3317,9 +3328,9 @@ target_link_libraries(test1 Qt5::Widgets $&#123;VTK_LIBRARIES&#125; $&#123;PCL_L
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2025/11/30/MySQL/%E9%85%8D%E7%8E%AF%E5%A2%83/">
+              <a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  配环境
+                  Window下Redis的安装和部署详细教程
               </a>
             
         </div>
