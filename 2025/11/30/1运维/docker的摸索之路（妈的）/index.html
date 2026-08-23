@@ -1,15 +1,15 @@
-<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>docker的摸索之路（妈的） | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="作用：其实就相当于再生龙🐉，您细品  一、ocker就两步操作： 1、拉取(pull)镜像到本地 2、给镜像创建一个容器并run(跑)起来，其余的想要对哪个容器进行操作，就进入该容器中，执行的相关命令跟Ubuntu是差不多的 具体命令格式请参考​docker安装各种组件 二、docker默认是需要sudo权限的，看到什么权限报错，就在前面加上sudo 三、迭代自定义镜像时，每次都一定要记得co">
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>docker的摸索之路（妈的） | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="作用：其实就相当于再生龙🐉，您细品  一、ocker就两步操作： 1、拉取(pull)镜像到本地 2、给镜像创建一个容器并run(跑)起来，其余的想要对哪个容器进行操作，就进入该容器中，执行的相关命令跟Ubuntu是差不多的 具体命令格式请参考​docker安装各种组件[^1] 二、docker默认是需要sudo权限的，看到什么权限报错，就在前面加上sudo 三、迭代自定义镜像时，每次都一定要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker的摸索之路（妈的）">
 <meta property="og:url" content="https://keysqiu.github.io/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E7%9A%84%E6%91%B8%E7%B4%A2%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%A6%88%E7%9A%84%EF%BC%89/index.html">
 <meta property="og:site_name" content="Keysqiu的小屋">
-<meta property="og:description" content="作用：其实就相当于再生龙🐉，您细品  一、ocker就两步操作： 1、拉取(pull)镜像到本地 2、给镜像创建一个容器并run(跑)起来，其余的想要对哪个容器进行操作，就进入该容器中，执行的相关命令跟Ubuntu是差不多的 具体命令格式请参考​docker安装各种组件 二、docker默认是需要sudo权限的，看到什么权限报错，就在前面加上sudo 三、迭代自定义镜像时，每次都一定要记得co">
+<meta property="og:description" content="作用：其实就相当于再生龙🐉，您细品  一、ocker就两步操作： 1、拉取(pull)镜像到本地 2、给镜像创建一个容器并run(跑)起来，其余的想要对哪个容器进行操作，就进入该容器中，执行的相关命令跟Ubuntu是差不多的 具体命令格式请参考​docker安装各种组件[^1] 二、docker默认是需要sudo权限的，看到什么权限报错，就在前面加上sudo 三、迭代自定义镜像时，每次都一定要">
 <meta property="og:locale">
 <meta property="og:image" content="https://github.com/Keysqiu.png">
 <meta property="article:published_time" content="2025-11-30T10:19:01.000Z">
-<meta property="article:modified_time" content="2026-08-23T12:13:07.997Z">
+<meta property="article:modified_time" content="2026-08-23T12:58:46.393Z">
 <meta property="article:author" content="Keysqiu">
-<meta property="article:tag" content="运维">
+<meta property="article:tag" content="Java,SpringCloud,Redis,MySQL,前端,STM32,运维,技术博客">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/Keysqiu.png"><script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -18,7 +18,7 @@
   "url": "https://keysqiu.github.io/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E7%9A%84%E6%91%B8%E7%B4%A2%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%A6%88%E7%9A%84%EF%BC%89/",
   "image": "https://github.com/Keysqiu.png",
   "datePublished": "2025-11-30T10:19:01.000Z",
-  "dateModified": "2026-08-23T12:13:07.997Z",
+  "dateModified": "2026-08-23T12:58:46.393Z",
   "author": [
     {
       "@type": "Person",
@@ -201,13 +201,13 @@
   isHighlightShrink: false,
   isToc: false,
   pageType: 'post'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">223</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(135deg,;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">docker的摸索之路（妈的）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">docker的摸索之路（妈的）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-11-30T10:19:01.000Z" title="Created 2025-11-30 18:19:01">2025-11-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-08-23T12:13:07.997Z" title="Updated 2026-08-23 20:13:07">2026-08-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">224</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(135deg,;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">docker的摸索之路（妈的）</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">docker的摸索之路（妈的）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-11-30T10:19:01.000Z" title="Created 2025-11-30 18:19:01">2025-11-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-08-23T12:58:46.393Z" title="Updated 2026-08-23 20:58:46">2026-08-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
 <p><strong>作用：其实就相当于再生龙🐉，您细品</strong></p>
 </blockquote>
 <p><strong>一、ocker就两步操作：</strong><br>
 <strong>1、拉取(pull)镜像到本地</strong><br>
 <strong>2、给镜像创建一个容器并run(跑)起来，其余的想要对哪个容器进行操作，就进入该容器中，执行的相关命令跟Ubuntu是差不多的</strong><br>
-<strong>具体命令格式请参考</strong>​<a href="/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6/">docker安装各种组件</a><br>
+<strong>具体命令格式请参考</strong>​<strong>docker安装各种组件</strong>[^1]<br>
 <strong>二、docker默认是需要sudo权限的，看到什么权限报错，就在前面加上sudo</strong><br>
 <strong>三、迭代自定义镜像时，每次都一定要记得commit当前镜像的环境才push到远程，不然不更新(呜呜呜~~~)</strong><br>
 <strong>按我理解 简言之（<strong>​</strong></strong><strong>我愿称之为顶级理解</strong>****​ <strong>）</strong></p>
@@ -215,7 +215,298 @@
 docker 容器： <span class="token operator">--</span><span class="token operator">--</span>java中 <span class="token keyword">class</span> <span class="token keyword">new</span> 出来的实例对象<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>docker compose</strong><br>
 <strong>其实就是用一个docker-compose.yml文件来配置好 docker 镜像和容器的端口号、参数、网络，跟 SpringBoot的配置文件作用一样</strong></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io">Keysqiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E7%9A%84%E6%91%B8%E7%B4%A2%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%A6%88%E7%9A%84%EF%BC%89/">https://keysqiu.github.io/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E7%9A%84%E6%91%B8%E7%B4%A2%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%A6%88%E7%9A%84%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BF%90%E7%BB%B4/">运维</a></div><div class="post-share"><div class="social-share" data-image="https://github.com/Keysqiu.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/bad%20interpreter,No%20such%20file%20or%20directory/" title="bad interpreter,No such file or directory"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">bad interpreter,No such file or directory</div></div><div class="info-2"><div class="info-item-1">问题： 解决Linux服务器执行命令时出现 **==-bash: ./xxx.sh: /bin/sh^M: bad interpreter: No such file or directory==**报错 解决方案： vim [脚本名称].sh :set ff=unix :wq </div></div></div></a><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6/" title="docker安装各种组件"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">docker安装各种组件</div></div><div class="info-2"><div class="info-item-1">==镜像的概念：镜像是将应用程序及其需要的系统函数库、环境、配置、依赖打包而成。== 一	docker基本命令 镜像操作 ① 查看所有镜像 docker images ② 搜索镜像（以jdk为例） docker search jdk  ③ 下载镜像 docker pull java ④ 启动镜像（以jdk8为例） docker run -it --name jdk1.8 -d java:latest /bin/bash ⑤ 删除镜像 docker rmi [镜像id] docker rmi [镜像名称]:[tag] ⑥ 数据卷直接挂载操作 语法：在docker run后面加上 -v参数  -v [宿主机目录]:[容器内目录] -v [宿主机文件]:[容器内文件]  容器操作 ① 进入某个容器进行操作 // 以进入mysql容器为例：  docker exec -it &#123;&#123;容器名称/容器ID，用docker ps查看&#125;&#125; bash ② 查看所有运行着的容器 docker ps -a ③ 启动容器 docker start [容器id] ④ 停...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%A9%E7%94%A8gparted%E9%87%8D%E6%96%B0%E8%B0%83%E6%95%B4%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F/" title="Ubuntu虚拟机利用gparted重新调整磁盘大小"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">Ubuntu虚拟机利用gparted重新调整磁盘大小</div></div><div class="info-2"><div class="info-item-1">1、先在VMware Workstation里面扩展虚拟机的虚拟内存  2、安装gparted sudo apt-get install gparted 2.1、打开gparted，开始重新调整磁盘大小（如果点击调整大小这里出现问题，请往后看，有解决方案）  2.2、填写好调整后的磁盘大小之后，点击应用全部操作即可   出现的问题：resize大小时候出现 cannot resize read-only file system 解决方案 ① 右键需要被resize磁盘，点击“​信息****​ ”  ② 记录该磁盘挂载文件夹目录，我这里系统挂载到两个位置，分别是  /  和  /var/snap/firefox/common/host-hunspell  ③ 打开终端，进入root权限，重新挂载文件夹目录的读写权限，我这里系统挂载了两个目录，那么这两个目录都要重新挂载读写权限 sudo -i mount -o remount -rw / mount -o remount -rw /var/snap/firefox/common/host-hunspell  ④ GParted中刷新...</div></div></div></a><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2springboot%EF%BC%88Centos%EF%BC%89/" title="脚本自动化部署springboot（Centos）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">脚本自动化部署springboot（Centos）</div></div><div class="info-2"><div class="info-item-1"> 如果报-bash: ./xxx.sh: /bin/sh^M: bad interpreter: No such file or directory  请参考​bad interpreter,No such file or directory deploy_software.sh（安装软件） #!/usr/bin/bash echo -e "\n\n\n\n" echo "脚本开始执行======================================="; # 检测git if !(command -v git >/dev/null) then     echo -e "\n\n\n\n"     echo "系统没有安装git，开始安装git=================";     yum install git -y     echo "安装git结束================================="; fi # 检测java if !(command -v java >/dev/null) then     echo -e "\n\n\n\...</div></div></div></a><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E5%AE%9E%E7%8E%B0Ubuntu%E4%B8%8EWindows%E4%B9%8B%E9%97%B4%E7%9A%84%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" title="实现Ubuntu与Windows之间的复制粘贴"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">实现Ubuntu与Windows之间的复制粘贴</div></div><div class="info-2"><div class="info-item-1">实现步骤 实现步骤 Ctrl+Alt+T，新建一个终端 # 卸载已有的工具 sudo apt-get autoremove open-vm-tools # 安装工具open-vm-tools sudo apt-get install open-vm-tools # 安装open-vm-tools-desktop	 sudo apt-get install open-vm-tools-desktop # 重启Ubuntu系统 reboot </div></div></div></a><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Linux%E5%85%B3%E9%97%AD%E5%8D%A0%E7%94%A8%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3%E7%9A%84%E8%BF%9B%E7%A8%8B/" title="Linux关闭占用指定端口的进程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">Linux关闭占用指定端口的进程</div></div><div class="info-2"><div class="info-item-1">两种方式 ① 第一种 用netstat -ano | grep 端口 找出进程号 然后 kill -9 进程号 杀进程 ② 第二种 例：关闭占用80端口的进程 sudo fuser -k -n tcp 80 </div></div></div></a><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Python%E5%85%8D%E8%B4%B9%E6%97%A0%E9%99%90%E5%88%B6%E8%B0%83%E7%94%A8%E5%9B%BD%E4%BA%A7GPT%EF%BC%8C%E6%98%9F%E7%81%AB%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%81%9A%E6%88%91%E7%9A%84AI%E5%8A%A9%E6%89%8B%EF%BC%8C%E5%81%9A%E7%BE%A4%E5%86%85AI%E6%98%BE%E7%9C%BC%E5%8C%85/" title="Python免费无限制调用国产GPT，星火大模型做我的AI助手，做群内AI显眼包"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">Python免费无限制调用国产GPT，星火大模型做我的AI助手，做群内AI显眼包</div></div><div class="info-2"><div class="info-item-1">获取讯飞星火三个参数方法 Web模式下，需要前往讯飞星火大模型web端通过 F12 抓取 3 个参数：cookie、fd、GtToken，讯飞星火的web端有防护，在web端直接按 F12 不能打开开发者窗口。但是可以通过特殊方法打开： 1.进入 https://xinghuo.xfyun.cn/ 2.进入 F12 开发者窗口后，将网页修改为“手机端”窗口  3.在第二步完成后，才点击“进入体验”，进入讯飞星火的web端，可以发现成功变成手机端  4.先发一条简单的语句，让讯飞回复一段话，然后在“Network”栏目找到 “chat” 请求，在该请求下抓取 3 个参数   5.获取后，即可开始使用 Web 模式 </div></div></div></a><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%AE%9A%E4%B9%89/" title="跨域的定义"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">跨域的定义</div></div><div class="info-2"><div class="info-item-1">跨域：域名不一致就是跨域，主要包括：  域名不同： www.taobao.com 和 www.taobao.org 和 www.jd.com 域名相同，端口不同：localhost:8080 和 localhost:8081  ‍ </div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">故不积跬步，无以至千里</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">223</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Keysqiu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">博客由思源笔记自动同步驱动，写作即发布</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/26/1%E7%BB%8F%E9%AA%8C/Hyper-V%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%9E%E7%8E%B0Ubuntu%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" title="Hyper-V虚拟机实现Ubuntu复制粘贴">Hyper-V虚拟机实现Ubuntu复制粘贴</a><time datetime="2026-06-26T02:42:46.000Z" title="Created 2026-06-26 10:42:46">2026-06-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/27/AI/Windows%E4%B8%8A%E7%94%A8RTK%E7%BB%99%E4%BD%A0%E7%9A%84AI%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%8A%82%E7%9C%81Token/" title="Windows上用RTK给你的AI编程助手节省Token">Windows上用RTK给你的AI编程助手节省Token</a><time datetime="2026-05-27T03:24:55.000Z" title="Created 2026-05-27 11:24:55">2026-05-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/25/AI/CodeGraph%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="CodeGraph使用指南">CodeGraph使用指南</a><time datetime="2026-05-25T08:46:26.000Z" title="Created 2026-05-25 16:46:26">2026-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/22/1%E7%BB%8F%E9%AA%8C/GitHub%20%E6%8F%90%E4%BA%A4%20Pull%20Request%20(PR)%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/" title="GitHub 提交 Pull Request (PR)完整流程指南">GitHub 提交 Pull Request (PR)完整流程指南</a><time datetime="2026-05-22T03:27:35.000Z" title="Created 2026-05-22 11:27:35">2026-05-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/17/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%20SERVER%E5%85%B3%E9%94%AE%E5%AD%97%E9%80%9F%E6%9F%A5/" title="SQL SERVER关键字速查">SQL SERVER关键字速查</a><time datetime="2026-03-17T08:25:18.000Z" title="Created 2026-03-17 16:25:18">2026-03-17</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+<p>[^1]: # docker安装各种组件</p>
+<pre><code>==镜像的概念：镜像是将应用程序及其需要的系统函数库、环境、配置、依赖打包而成。==
+
+# 一	docker基本命令
+
+## 镜像操作
+
+### ① **查看所有镜像**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> images<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+### ② 搜索镜像（****以jdk为例****）
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> search jdk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+![](/assets/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6_image_0-20251130181901-4lh9qqa.png)
+
+### ③ 下载镜像
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull <span class="token function">java</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+### ④ 启动镜像（以jdk8为例）
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--name</span> jdk1.8 <span class="token parameter variable">-d</span> java:latest /bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+### ⑤ 删除镜像
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> rmi <span class="token punctuation">[</span>镜像id<span class="token punctuation">]</span>
+<span class="token function">docker</span> rmi <span class="token punctuation">[</span>镜像名称<span class="token punctuation">]</span>:<span class="token punctuation">[</span>tag<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+### ⑥ **数据卷直接挂载操作**
+
+语法：在docker run后面加上 -v参数
+
+- -v [宿主机目录]:[容器内目录]
+- -v [宿主机文件]:[容器内文件]
+
+## **容器操作**
+
+### **① 进入某个容器进行操作**
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token operator">/</span><span class="token operator">/</span> 以进入mysql容器为例： 
+docker exec <span class="token operator">-</span>it <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>容器名称<span class="token operator">/</span>容器ID，用docker <span class="token function">ps</span>查看<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span> bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+### **② 查看所有运行着的容器**
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker <span class="token function">ps</span> <span class="token operator">-</span>a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+### **③ 启动容器**
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker <span class="token function">start</span> <span class="token punctuation">[</span>容器id<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+### **④ 停止容器**
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker stop <span class="token punctuation">[</span>容器id<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+### **⑤ 删除容器**
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker <span class="token function">rm</span> <span class="token punctuation">[</span>容器id<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+### **⑥ 查看运行的容器日志**
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker logs <span class="token namespace">[OPTIONS]</span> 容器ID或容器名称
+<span class="token comment"># 例：查看全部日志</span>
+docker logs <span class="token operator">-</span>f 容器名称
+ 
+<span class="token namespace">[OPTIONS]</span>
+ 
+<span class="token operator">-</span>f : 跟踪日志输出
+ 
+<span class="token operator">-</span>t : 显示时间戳
+ 
+<span class="token operator">--</span>tail :仅列出最新N条容器日志
+ 
+<span class="token operator">--</span>since：显示某个日期至今的所有日志<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&gt; 查看最近10条日志, 并持续打印
+&gt;
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker logs <span class="token operator">-</span>f <span class="token operator">--</span>tail 10 efb78392fcc6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+![0](/assets/0-20251202182336-s73t00f.png)
+
+查看某个日期至今的所有日志, 并持续打印
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker logs <span class="token operator">-</span>f <span class="token operator">--</span>since <span class="token string">"2022-05-16"</span> efb78392fcc6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+# **二	安装mysql**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> login <span class="token parameter variable">--username</span><span class="token operator">=</span>akeys registry.cn-chengdu.aliyuncs.com
+<span class="token function">docker</span> pull registry.cn-chengdu.aliyuncs.com/keys-docker-hub/mysql:8.1.0
+<span class="token comment"># Ubuntu</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/data <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/conf <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> gedit /tmp/mysql/conf/my.cnf
+<span class="token comment"># Centos</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/data <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/mysql/conf <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">vim</span> /tmp/mysql/conf/my.cnf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+**mysql配置文件:  vim**  **/tmp/mysql/conf/my.cnf**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+default-character-set<span class="token operator">=</span>utf8
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+default-character-set<span class="token operator">=</span>utf8
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span><span class="token string">'SET collation_ connection = utf8mb4_unicode_ci'</span>
+<span class="token assign-left variable">init_connect</span><span class="token operator">=</span><span class="token string">'SET NAMES utf8'</span>
+character-set-server<span class="token operator">=</span>utf8mb4
+collation-server<span class="token operator">=</span>utf8mb4_unicode_ci
+skip-character-set-client-handshake
+skip-name-resolve<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+主库配置
+
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># mysql服务ID，保证整个集群环境中唯一，取值范围:1---2^32-1，默认为1</span>
+server<span class="token punctuation">-</span>id=1
+<span class="token comment"># 是否只读,1代表只读,0代表读写</span>
+read<span class="token punctuation">-</span>only=0
+<span class="token comment"># 忽略的数据,指不需要同步的数据库</span>
+<span class="token comment">#binlog-ignore-db=mysql</span>
+<span class="token comment"># 指定同步的数据库</span>
+<span class="token comment">#binlog-do-db=db01</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+从库配置
+
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># mysql服务ID，保证整个集群环境中唯一，取值范围:1---2^32-1，默认为1</span>
+server<span class="token punctuation">-</span>id=2
+<span class="token comment"># 是否只读,1代表只读,0代表读写</span>
+read<span class="token punctuation">-</span>only=1
+<span class="token comment"># 忽略的数据,指不需要同步的数据库</span>
+<span class="token comment">#binlog-ignore-db=mysql</span>
+<span class="token comment"># 指定同步的数据库</span>
+<span class="token comment">#binlog-do-db=db01</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+启动mysql
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 第一个3306是物理机端口，第二个3306是docker容器端口</span>
+docker run <span class="token operator">--</span>name mysql \
+  <span class="token operator">-</span>v <span class="token operator">/</span>tmp/mysql/conf/my<span class="token punctuation">.</span>cnf:<span class="token operator">/</span>etc/mysql/my<span class="token punctuation">.</span>cnf \
+  <span class="token operator">-</span>v <span class="token operator">/</span>tmp/mysql/<span class="token keyword">data</span>:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib/mysql \
+  <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD=root \
+  <span class="token operator">-</span>p 3306:3306 \
+  <span class="token operator">-</span>d registry<span class="token punctuation">.</span>cn-chengdu<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com/keys-docker-hub/mysql:8<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+然后修改权限
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 进入mysql容器：</span>
+docker exec <span class="token operator">-</span>it mysql <span class="token operator">/</span>bin/bash
+<span class="token comment"># 登录mysql：</span>
+mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>proot
+<span class="token comment"># 修改密码：记得flush privileges一下</span>
+ALTER USER <span class="token string">'root'</span>@<span class="token string">'%'</span> IDENTIFIED BY <span class="token string">'G#t9WhZr2@qL7BmPnXeD'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span>
+<span class="token comment"># 修改了之后，如果exit退出去再重进还是没修改的话，不用理他，其实已经修改了的！用Navicat来连就知道了，意思就是拿Navicat来测</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+主库配置
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token string">'itcast'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">WITH</span> mysql_native_password <span class="token keyword">BY</span> <span class="token string">'Root@123456'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">GRANT</span> <span class="token keyword">REPLICATION</span> SLAVE <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'itcast'</span><span class="token variable">@'%'</span><span class="token punctuation">;</span>
+<span class="token comment"># 查看binlog文件位置的命令</span>
+<span class="token keyword">show</span> master <span class="token keyword">status</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+从库配置
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">change <span class="token keyword">replication</span> source <span class="token keyword">to</span> SOURCE_HOST<span class="token operator">=</span><span class="token string">'主库IP'</span><span class="token punctuation">,</span>SOURCE_USER<span class="token operator">=</span><span class="token string">'主库设置的用户名'</span><span class="token punctuation">,</span>SOURCE_PASSWORD<span class="token operator">=</span><span class="token string">'主库设置的密码'</span><span class="token punctuation">,</span>SOURCE_LOG_FILE<span class="token operator">=</span><span class="token string">'主库log文件位置'</span><span class="token punctuation">,</span>SOURCE_LOG_POS<span class="token operator">=</span>同步主库的开始位置<span class="token punctuation">;</span>
+<span class="token comment"># 例子：</span>
+change <span class="token keyword">replication</span> source <span class="token keyword">to</span> SOURCE_HOST<span class="token operator">=</span><span class="token string">'192.168.126.132'</span><span class="token punctuation">,</span>SOURCE_USER<span class="token operator">=</span><span class="token string">'itcast'</span><span class="token punctuation">,</span>SOURCE_PASSWORD<span class="token operator">=</span><span class="token string">'Root@123456'</span><span class="token punctuation">,</span>SOURCE_LOG_FILE<span class="token operator">=</span><span class="token string">'binlog.000002'</span><span class="token punctuation">,</span>SOURCE_LOG_POS<span class="token operator">=</span><span class="token number">664</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 开启同步操作</span>
+<span class="token keyword">start</span> replica<span class="token punctuation">;</span>
+<span class="token comment"># 查看主从同步状态</span>
+<span class="token keyword">show</span> replica <span class="token keyword">status</span>\G<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+下图所示红框都是Yes说明主从复制开启成功！
+
+![0](/assets/0-20251202182651-39brhko.png)
+
+&gt; 测试是否已经部署成功
+&gt;
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> db01<span class="token punctuation">;</span>
+<span class="token keyword">use</span> db01<span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">table</span> tb_user<span class="token punctuation">(</span>
+id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
+sex <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token keyword">engine</span><span class="token operator">=</span><span class="token keyword">innodb</span> <span class="token keyword">default</span> <span class="token keyword">charset</span><span class="token operator">=</span>utf8mb4<span class="token punctuation">;</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> tb_user<span class="token punctuation">(</span>id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span><span class="token keyword">values</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'Tom'</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'Keys'</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token boolean">null</span><span class="token punctuation">,</span><span class="token string">'HaHa'</span><span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+主库中执行上述语句，看看从库有没有作相应改变，如果有，则完结撒花！！！
+
+如果主库中已经存在数据了，可以先把主库中的数据导出到一个sql文件中，然后在从库中执行这个sql文件，再开启同步即可
+
+# **三	安装Oracle**
+
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># 安装oracle</span>
+https:<span class="token operator">/</span><span class="token operator">/</span>hub<span class="token punctuation">.</span>docker<span class="token punctuation">.</span>com/r/oracleinanutshell/oracle-xe-11g
+
+docker pull oracleinanutshell/oracle-xe-11g
+
+<span class="token comment"># 运行镜像  -p: 是容器内部端口绑定到指定的主机端口</span>
+docker run <span class="token operator">--</span>name oracle <span class="token operator">-</span>p 1521:1521 <span class="token operator">-</span>e ORACLE_ALLOW_REMOTE=true oracleinanutshell/oracle-xe-11g
+
+<span class="token comment"># 进入容器</span>
+docker exec <span class="token operator">-</span>it oracle bash
+
+<span class="token comment"># 连接 oracle</span>
+su oracle
+cd <span class="token variable">$ORACLE_HOME</span>
+bin/sqlplus <span class="token operator">/</span> as sysdba
+<span class="token comment"># 创建账号</span>
+create user qingxi identified by 123456<span class="token punctuation">;</span>
+grant connect<span class="token punctuation">,</span>resource to qingxi<span class="token punctuation">;</span>
+
+<span class="token comment"># 修改密码</span>
+alter user 用户名 identified by 新密码<span class="token punctuation">;</span>
+
+<span class="token comment"># 删除用户</span>
+drop user 用户名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# **四	安装Postgresql**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 拉取镜像</span>
+<span class="token function">docker</span> pull postgres
+<span class="token comment"># 启动镜像</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">5432</span>:5432 <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_PASSWORD</span><span class="token operator">=</span>pass123 postgres
+<span class="token comment"># 进入容器</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> 容器id <span class="token function">bash</span>
+<span class="token comment"># 连接pg</span>
+psql <span class="token parameter variable">-U</span> postgres <span class="token parameter variable">-h</span> <span class="token number">127.0</span>.0.1 <span class="token parameter variable">-p</span> <span class="token number">5432</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# **五	安装redis**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+**启动**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">// 创建配置文件
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mydata/redis/data <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mydata/redis/conf <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> gedit /mydata/redis/conf/redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-p</span> <span class="token number">6379</span>:6379 <span class="token parameter variable">--name</span> redis <span class="token punctuation">\</span>
+<span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /mydata/redis/data:/data <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /mydata/redis/conf/redis.conf:/etc/redis/redis.conf <span class="token punctuation">\</span>
+<span class="token parameter variable">-d</span> redis redis-server /etc/redis/redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+**redis-cli控制台:**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> redis redis-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+**redis开启持久化，修改配置文件redis.conf，启动aof持久化，输入：**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">appendonly <span class="token function">yes</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+**docker启动之后，mysql、redis也自动启动：**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> update mysql <span class="token parameter variable">--restart</span><span class="token operator">=</span>always
+<span class="token function">docker</span> update redis <span class="token parameter variable">--restart</span><span class="token operator">=</span>always<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+# 六	安装portainer
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">-it表示使用交互方式运行容器，能进入容器内部进行内容的查看
+<span class="token parameter variable">-p</span> <span class="token number">9000</span>:9000把主机的9000端口映射到docker的9000端口上
+--name给容器命名
+<span class="token parameter variable">--restart</span><span class="token operator">=</span>always是重启策略，表示随着docker的重启而重启
+-v表示把数据挂载到本机
+<span class="token parameter variable">--privileged</span><span class="token operator">=</span>true表示授权
+ 
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">9000</span>:9000  <span class="token parameter variable">--name</span> portainer <span class="token punctuation">\</span>
+<span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+<span class="token parameter variable">--privileged</span><span class="token operator">=</span>true portainer/portainer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# **七	Linux图形话监控netdata**
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span><span class="token operator">=</span>netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-p</span> <span class="token number">19999</span>:19999 <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> netdataconfig:/etc/netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> netdatalib:/var/lib/netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> netdatacache:/var/cache/netdata <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /etc/passwd:/host/etc/passwd:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /etc/group:/host/etc/group:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /proc:/host/proc:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /sys:/host/sys:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">-v</span> /etc/os-release:/host/etc/os-release:ro <span class="token punctuation">\</span>
+  <span class="token parameter variable">--restart</span> unless-stopped <span class="token punctuation">\</span>
+  --cap-add SYS_PTRACE <span class="token punctuation">\</span>
+  --security-opt <span class="token assign-left variable">apparmor</span><span class="token operator">=</span>unconfined <span class="token punctuation">\</span>
+  netdata/netdata<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 八	安装Gitlab
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span>  <span class="token parameter variable">-p</span> <span class="token number">443</span>:443 <span class="token parameter variable">-p</span> <span class="token number">8001</span>:8001 <span class="token parameter variable">-p</span> <span class="token number">222</span>:22 <span class="token parameter variable">--name</span> gitlab <span class="token punctuation">\</span>
+<span class="token parameter variable">--restart</span> always <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/gitlab/config:/etc/gitlab <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/gitlab/logs:/var/log/gitlab <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:12.7.6-ce.0
+<span class="token comment"># -d：后台运行</span>
+<span class="token comment"># -p：将容器内部端口向外映射</span>
+<span class="token comment"># --name：命名容器名称</span>
+<span class="token comment"># -v：将容器内数据文件夹或者日志、配置等文件夹挂载到宿主机指定目录</span>
+   
+<span class="token comment"># 配置http协议所使用的访问地址,不加端口号默认为80</span>
+external_url <span class="token string">'http://121.4.123.248'</span>
+<span class="token comment"># 配置ssh协议所使用的访问地址和端口</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'gitlab_ssh_host'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'121.4.123.248'</span>
+<span class="token comment"># 此端口是run时22端口映射的222端口</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">'gitlab_shell_ssh_port'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">222</span> 
+nginx<span class="token punctuation">[</span><span class="token string">'listen_port'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">8001</span>
+http://121.4.123.248:8001/
+root/ChatP@ss7633<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 九	安装Grafana
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull grafana/grafana
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">3000</span>:3000 <span class="token parameter variable">--restart</span> always <span class="token parameter variable">--name</span><span class="token operator">=</span>grafana <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /root/grafana/data:/var/lib/grafana grafana/grafana<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+# 十	安装 Prometheus
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull bitnami/prometheus
+<span class="token function">docker</span> run <span class="token punctuation">\</span>
+<span class="token parameter variable">-p</span> <span class="token number">9090</span>:9090 <span class="token punctuation">\</span>
+<span class="token parameter variable">-v</span> /root/prometheus/conf/prometheus.yml:/etc/prometheus/prometheus.yml <span class="token punctuation">\</span>
+<span class="token parameter variable">--name</span> prometheus bitnami/prometheus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+‍
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io">Keysqiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E7%9A%84%E6%91%B8%E7%B4%A2%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%A6%88%E7%9A%84%EF%BC%89/">https://keysqiu.github.io/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E7%9A%84%E6%91%B8%E7%B4%A2%E4%B9%8B%E8%B7%AF%EF%BC%88%E5%A6%88%E7%9A%84%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://github.com/Keysqiu.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" title="Window下Redis的安装和部署详细教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Window下Redis的安装和部署详细教程</div></div><div class="info-2"><div class="info-item-1">1、下载Redis压缩包  以下这个是我网盘里面的，后面小改一下路径即可  **链接：**​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1  提取码：x0f1 这里我在GitHub中下载window用的 5.0 版本Redis-x64-5.0.14.1.zip。 https://github.com/tporadowski/redis/releases ​ ​ 将下载的压缩包解压到指定的文件夹中，如：D:\Redis，内容如下： ​ 3、启动Redis服务 在Redis的安装目录下打开cmd窗口，然后执行命令来启动服务： redis-server.exe redis.windows.conf   默认端口为6379，出现图上的图标说明redis服务启动成功。命令里面的 redis.windows.conf 可以省略，省略后，使用redis-server.exe命令会使用默认的配置  为了方便，建议把Redis路径配置到系统变量Path值中，这样就省得再输路径了。  如果连接成功，到此Redis的安装和部署也就完成了...</div></div></div></a><a class="pagination-related" href="/2025/11/30/1%E8%BF%90%E7%BB%B4/docker%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E7%BB%84%E4%BB%B6/" title="docker安装各种组件"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">docker安装各种组件</div></div><div class="info-2"><div class="info-item-1">==镜像的概念：镜像是将应用程序及其需要的系统函数库、环境、配置、依赖打包而成。== 一	docker基本命令 镜像操作 ① 查看所有镜像 docker images ② 搜索镜像（以jdk为例） docker search jdk  ③ 下载镜像 docker pull java ④ 启动镜像（以jdk8为例） docker run -it --name jdk1.8 -d java:latest /bin/bash ⑤ 删除镜像 docker rmi [镜像id] docker rmi [镜像名称]:[tag] ⑥ 数据卷直接挂载操作 语法：在docker run后面加上 -v参数  -v [宿主机目录]:[容器内目录] -v [宿主机文件]:[容器内文件]  容器操作 ① 进入某个容器进行操作 // 以进入mysql容器为例：  docker exec -it &#123;&#123;容器名称/容器ID，用docker ps查看&#125;&#125; bash ② 查看所有运行着的容器 docker ps -a ③ 启动容器 docker start [容器id] ④ 停...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">故不积跬步，无以至千里</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">224</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Keysqiu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">博客由思源笔记自动同步驱动，写作即发布</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/17/1%E7%BB%8F%E9%AA%8C/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E7%90%86%E8%A7%A3/" title="版本管理器的理解">版本管理器的理解</a><time datetime="2026-07-16T19:20:50.000Z" title="Created 2026-07-17 03:20:50">2026-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/26/1%E7%BB%8F%E9%AA%8C/Hyper-V%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%9E%E7%8E%B0Ubuntu%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" title="Hyper-V虚拟机实现Ubuntu复制粘贴">Hyper-V虚拟机实现Ubuntu复制粘贴</a><time datetime="2026-06-26T02:42:46.000Z" title="Created 2026-06-26 10:42:46">2026-06-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/27/AI/Windows%E4%B8%8A%E7%94%A8RTK%E7%BB%99%E4%BD%A0%E7%9A%84AI%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%8A%82%E7%9C%81Token/" title="Windows上用RTK给你的AI编程助手节省Token">Windows上用RTK给你的AI编程助手节省Token</a><time datetime="2026-05-27T03:24:55.000Z" title="Created 2026-05-27 11:24:55">2026-05-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/25/AI/CodeGraph%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="CodeGraph使用指南">CodeGraph使用指南</a><time datetime="2026-05-25T08:46:26.000Z" title="Created 2026-05-25 16:46:26">2026-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/22/1%E7%BB%8F%E9%AA%8C/GitHub%20%E6%8F%90%E4%BA%A4%20Pull%20Request%20(PR)%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/" title="GitHub 提交 Pull Request (PR)完整流程指南">GitHub 提交 Pull Request (PR)完整流程指南</a><time datetime="2026-05-22T03:27:35.000Z" title="Created 2026-05-22 11:27:35">2026-05-22</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
   const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
   const option = null
 
