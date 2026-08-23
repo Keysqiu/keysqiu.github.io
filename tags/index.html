@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>标签 | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Keys 的技术小屋：Java 后端、SpringCloud 微服务、前端、嵌入式与运维的学习笔记与实战经验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="标签">
+<meta property="og:url" content="https://keysqiu.github.io/tags/index.html">
+<meta property="og:site_name" content="Keysqiu的小屋">
+<meta property="og:description" content="Keys 的技术小屋：Java 后端、SpringCloud 微服务、前端、嵌入式与运维的学习笔记与实战经验">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/Keysqiu.png">
+<meta property="article:published_time" content="2026-08-23T12:13:45.012Z">
+<meta property="article:modified_time" content="2026-08-23T12:13:45.012Z">
+<meta property="article:author" content="Keysqiu">
+<meta property="article:tag" content="Java,SpringCloud,Redis,MySQL,前端,STM32,运维,技术博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Keysqiu.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://keysqiu.github.io/tags/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '标签',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">223</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="page type-tags" id="body-wrap"><header class="not-home-page" id="page-header" style="background: linear-gradient(135deg,;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">标签</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="tag-cloud-list text-center"><a href="/tags/AI/" style="font-size: 1.22em; background-color: rgb(50, 53, 50);">AI</a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.22em; background-color: rgb(50, 190, 50);">51单片机</a><a href="/tags/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" style="font-size: 1.5em; background-color: rgb(109, 194, 59);">经验总结</a><a href="/tags/Anaconda/" style="font-size: 1.26em; background-color: rgb(74, 61, 86);">Anaconda</a><a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 1.48em; background-color: rgb(50, 134, 50);">运维</a><a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.2em; background-color: rgb(120, 50, 50);">C语言</a><a href="/tags/Git/" style="font-size: 1.24em; background-color: rgb(50, 122, 110);">Git</a><a href="/tags/Android%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91/" style="font-size: 1.2em; background-color: rgb(92, 71, 50);">Android原生开发</a><a href="/tags/C/" style="font-size: 1.2em; background-color: rgb(171, 50, 197);">C++</a><a href="/tags/IDEA/" style="font-size: 1.29em; background-color: rgb(80, 153, 50);">IDEA</a><a href="/tags/Go/" style="font-size: 1.22em; background-color: rgb(50, 65, 50);">Go</a><a href="/tags/Jekyll/" style="font-size: 1.2em; background-color: rgb(50, 63, 97);">Jekyll</a><a href="/tags/Java/" style="font-size: 1.33em; background-color: rgb(50, 50, 193);">Java</a><a href="/tags/EDA/" style="font-size: 1.2em; background-color: rgb(118, 69, 55);">EDA</a><a href="/tags/PS/" style="font-size: 1.2em; background-color: rgb(198, 50, 113);">PS</a><a href="/tags/OpenCV/" style="font-size: 1.2em; background-color: rgb(50, 166, 50);">OpenCV</a><a href="/tags/MySQL/" style="font-size: 1.35em; background-color: rgb(132, 192, 58);">MySQL</a><a href="/tags/ROS/" style="font-size: 1.35em; background-color: rgb(152, 147, 50);">ROS</a><a href="/tags/RabbitMQ/" style="font-size: 1.2em; background-color: rgb(50, 53, 50);">RabbitMQ</a><a href="/tags/Qt/" style="font-size: 1.29em; background-color: rgb(166, 159, 101);">Qt</a><a href="/tags/UML/" style="font-size: 1.2em; background-color: rgb(75, 155, 50);">UML</a><a href="/tags/Redis/" style="font-size: 1.26em; background-color: rgb(91, 191, 124);">Redis</a><a href="/tags/SpringCloud/" style="font-size: 1.44em; background-color: rgb(148, 77, 138);">SpringCloud</a><a href="/tags/Python/" style="font-size: 1.41em; background-color: rgb(50, 180, 185);">Python</a><a href="/tags/Visual-Studio/" style="font-size: 1.24em; background-color: rgb(50, 157, 91);">Visual Studio</a><a href="/tags/Unity/" style="font-size: 1.2em; background-color: rgb(53, 118, 156);">Unity</a><a href="/tags/VsCode/" style="font-size: 1.26em; background-color: rgb(58, 108, 113);">VsCode</a><a href="/tags/Vue/" style="font-size: 1.37em; background-color: rgb(190, 50, 50);">Vue</a><a href="/tags/Windows/" style="font-size: 1.33em; background-color: rgb(147, 193, 109);">Windows</a><a href="/tags/YOLO/" style="font-size: 1.26em; background-color: rgb(160, 85, 50);">YOLO</a><a href="/tags/STM32/" style="font-size: 1.46em; background-color: rgb(50, 50, 135);">STM32</a><a href="/tags/npm/" style="font-size: 1.2em; background-color: rgb(95, 77, 84);">npm</a><a href="/tags/%E5%86%8D%E7%94%9F%E9%BE%99/" style="font-size: 1.22em; background-color: rgb(156, 63, 50);">再生龙</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.31em; background-color: rgb(99, 167, 76);">前端</a><a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 1.2em; background-color: rgb(111, 157, 102);">微信</a><a href="/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/" style="font-size: 1.37em; background-color: rgb(126, 120, 137);">微信开发</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.22em; background-color: rgb(50, 124, 122);">数据库</a><a href="/tags/%E6%94%B6%E8%97%8F/" style="font-size: 1.2em; background-color: rgb(50, 197, 50);">收藏</a><a href="/tags/SQL%E4%BC%98%E5%8C%96/" style="font-size: 1.22em; background-color: rgb(71, 196, 80);">SQL优化</a><a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" style="font-size: 1.24em; background-color: rgb(179, 126, 50);">自动化测试</a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.2em; background-color: rgb(125, 142, 107);">面试</a><a href="/tags/%E9%85%8D%E7%8E%AF%E5%A2%83/" style="font-size: 1.39em; background-color: rgb(50, 50, 50);">配环境</a><a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.31em; background-color: rgb(72, 50, 50);">微信小程序</a><a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 1.2em; background-color: rgb(50, 115, 174);">微信小游戏</a></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">Keys 的技术小屋：Java 后端、SpringCloud 微服务、前端、嵌入式与运维的学习笔记与实战经验</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">223</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="fab fa-github"><i class="github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/26/1%E7%BB%8F%E9%AA%8C/Hyper-V%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%9E%E7%8E%B0Ubuntu%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" title="Hyper-V虚拟机实现Ubuntu复制粘贴">Hyper-V虚拟机实现Ubuntu复制粘贴</a><time datetime="2026-06-26T02:42:46.000Z" title="Created 2026-06-26 10:42:46">2026-06-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/27/AI/Windows%E4%B8%8A%E7%94%A8RTK%E7%BB%99%E4%BD%A0%E7%9A%84AI%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%8A%82%E7%9C%81Token/" title="Windows上用RTK给你的AI编程助手节省Token">Windows上用RTK给你的AI编程助手节省Token</a><time datetime="2026-05-27T03:24:55.000Z" title="Created 2026-05-27 11:24:55">2026-05-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/25/AI/CodeGraph%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="CodeGraph使用指南">CodeGraph使用指南</a><time datetime="2026-05-25T08:46:26.000Z" title="Created 2026-05-25 16:46:26">2026-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/22/1%E7%BB%8F%E9%AA%8C/GitHub%20%E6%8F%90%E4%BA%A4%20Pull%20Request%20(PR)%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/" title="GitHub 提交 Pull Request (PR)完整流程指南">GitHub 提交 Pull Request (PR)完整流程指南</a><time datetime="2026-05-22T03:27:35.000Z" title="Created 2026-05-22 11:27:35">2026-05-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/17/%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%20SERVER%E5%85%B3%E9%94%AE%E5%AD%97%E9%80%9F%E6%9F%A5/" title="SQL SERVER关键字速查">SQL SERVER关键字速查</a><time datetime="2026-03-17T08:25:18.000Z" title="Created 2026-03-17 16:25:18">2026-03-17</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span><a class="card-more-btn" href="/categories/" title="View More">
+      <i class="fas fa-angle-right"></i></a></div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="card-category-list-name">51单片机</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Anaconda/"><span class="card-category-list-name">Anaconda</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">Android原生开发</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C%E8%AF%AD%E8%A8%80/"><span class="card-category-list-name">C语言</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/EDA/"><span class="card-category-list-name">EDA</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Git/"><span class="card-category-list-name">Git</span><span class="card-category-list-count">3</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" style="font-size: 1.16em; color: #999b9f">自动化测试</a> <a href="/tags/PS/" style="font-size: 1.1em; color: #999">PS</a> <a href="/tags/npm/" style="font-size: 1.1em; color: #999">npm</a> <a href="/tags/SQL%E4%BC%98%E5%8C%96/" style="font-size: 1.13em; color: #999a9c">SQL优化</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 1.1em; color: #999">C语言</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/" style="font-size: 1.35em; color: #99a3b0">微信开发</a> <a href="/tags/Java/" style="font-size: 1.28em; color: #99a0ab">Java</a> <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 1.13em; color: #999a9c">51单片机</a> <a href="/tags/EDA/" style="font-size: 1.1em; color: #999">EDA</a> <a href="/tags/Git/" style="font-size: 1.16em; color: #999b9f">Git</a> <a href="/tags/STM32/" style="font-size: 1.47em; color: #99a8bc">STM32</a> <a href="/tags/Anaconda/" style="font-size: 1.19em; color: #999da2">Anaconda</a> <a href="/tags/OpenCV/" style="font-size: 1.1em; color: #999">OpenCV</a> <a href="/tags/IDEA/" style="font-size: 1.22em; color: #999ea5">IDEA</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.13em; color: #999a9c">数据库</a> <a href="/tags/Python/" style="font-size: 1.41em; color: #99a5b6">Python</a> <a href="/tags/Go/" style="font-size: 1.13em; color: #999a9c">Go</a> <a href="/tags/Redis/" style="font-size: 1.19em; color: #999da2">Redis</a> <a href="/tags/AI/" style="font-size: 1.13em; color: #999a9c">AI</a> <a href="/tags/MySQL/" style="font-size: 1.32em; color: #99a2ad">MySQL</a> <a href="/tags/Vue/" style="font-size: 1.35em; color: #99a3b0">Vue</a> <a href="/tags/C/" style="font-size: 1.1em; color: #999">C++</a> <a href="/tags/UML/" style="font-size: 1.1em; color: #999">UML</a> <a href="/tags/Jekyll/" style="font-size: 1.1em; color: #999">Jekyll</a> <a href="/tags/Android%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91/" style="font-size: 1.1em; color: #999">Android原生开发</a> <a href="/tags/Unity/" style="font-size: 1.1em; color: #999">Unity</a> <a href="/tags/SpringCloud/" style="font-size: 1.44em; color: #99a7b9">SpringCloud</a> <a href="/tags/VsCode/" style="font-size: 1.19em; color: #999da2">VsCode</a> <a href="/tags/%E6%94%B6%E8%97%8F/" style="font-size: 1.1em; color: #999">收藏</a> <a href="/tags/Qt/" style="font-size: 1.22em; color: #999ea5">Qt</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.1em; color: #999">面试</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F/" style="font-size: 1.1em; color: #999">微信小游戏</a> <a href="/tags/Windows/" style="font-size: 1.28em; color: #99a0ab">Windows</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 1.5em; color: #99a9bf">运维</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.25em; color: #999fa8">微信小程序</a> <a href="/tags/%E5%86%8D%E7%94%9F%E9%BE%99/" style="font-size: 1.13em; color: #999a9c">再生龙</a> <a href="/tags/%E9%85%8D%E7%8E%AF%E5%A2%83/" style="font-size: 1.38em; color: #99a4b3">配环境</a> <a href="/tags/%E5%BE%AE%E4%BF%A1/" style="font-size: 1.1em; color: #999">微信</a> <a href="/tags/YOLO/" style="font-size: 1.19em; color: #999da2">YOLO</a> <a href="/tags/Visual-Studio/" style="font-size: 1.16em; color: #999b9f">Visual Studio</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              June 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              May 2026
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/03/">
+            <span class="card-archive-list-date">
+              March 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              January 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              December 2025
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/11/">
+            <span class="card-archive-list-date">
+              November 2025
+            </span>
+            <span class="card-archive-list-count">210</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">223</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-23T12:26:39.574Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Keysqiu/keysqiu.github.io',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
