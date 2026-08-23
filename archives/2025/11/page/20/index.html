@@ -2887,17 +2887,6 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2026/08/23/%E5%BC%95%E7%94%A8%E4%BF%AE%E5%A4%8D%E6%95%88%E6%9E%9C%E6%B5%8B%E8%AF%95/">
-                     
-										    引用修复效果测试
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
@@ -3181,61 +3170,20 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6/">
+			<a href="/2025/11/30/Redis/Redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 				<h2 class="index-title">
-					ros通信机制
+					Redis常用命令
 				</h2>
 				<div class="index-brief">
-					1.话题通信机制（发布/订阅模式）
-具体的实现流程为：创建两个人（节点），然后有共同的话题，发布方就发布消息，订阅方就接收消息
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/ros%E9%85%8D%E7%BD%AElaunch%E6%96%87%E4%BB%B6/">
-				<h2 class="index-title">
-					ros配置launch文件
-				</h2>
-				<div class="index-brief">
-					1.选定功能包右击 —&gt; 添加launch文件夹
-2.选定launch文件夹右击 —&gt; 添加launch文件
-3.编辑launch文件内容
-&lt;launch&gt;
-    &lt;node pkg&#x3D;&quot;helloworld&quot; type&#x3D;&quo
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/ROS/%E5%AE%89%E8%A3%85ros/">
-				<h2 class="index-title">
-					安装ros
-				</h2>
-				<div class="index-brief">
-					系统：Ubuntu 18.04
-安装ROS版本：melodic
-​
-前四个勾选
-​
-打开命令终端，输入以下命令
-1.添加ROS源
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /
+					一、客户端连接
+redis-cli -h host -p port -a password
+输入命令：redis-cli -p 6379
+二、数据导出导入
+导出
+执行备份命令：save
+该命令将在 redis 备份目录中创建dump.rdb文件。
+查看备份路径：config get dir
+备份后的
 					...
 				</div>
 			</a>
@@ -3261,6 +3209,53 @@ catkin_make  #自动生成构建目录
 code .  #在工作区文件夹下
 3.配置json文件
 按住​Ctrl+Shift+B​ ，在弹出的窗口中选择catkin_make:bu
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Redis/Window%E4%B8%8BRedis%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%83%A8%E7%BD%B2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+				<h2 class="index-title">
+					Window下Redis的安装和部署详细教程
+				</h2>
+				<div class="index-brief">
+					1、下载Redis压缩包
+
+以下这个是我网盘里面的（这个是v8.0版本的，支持导入.rdb数据文件），后面小改一下路径即可
+
+链接：​https://pan.baidu.com/s/18dT-0rMtZWQThhVrBtP88A?pwd=x0f1​提取码：x0f1
+这里我在GitHub中下载wind
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2025/11/30/Redis/Linux%E4%B8%8A%E5%AE%89%E8%A3%85Redis/">
+				<h2 class="index-title">
+					Linux上安装Redis
+				</h2>
+				<div class="index-brief">
+					1、安装Redis依赖
+Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
+yum install -y gcc tcl
+2、下载压缩包
+进入/usr/local/src文件夹，个人比较喜欢放在这个文件夹，至于你喜欢放在哪，你自己定
+cd /usr/local/src
+**
 					...
 				</div>
 			</a>
@@ -3299,6 +3294,31 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+				<h2 class="index-title">
+					RabbitMQ部署指南
+				</h2>
+				<div class="index-brief">
+					1、单机部署
+我们在Centos7虚拟机中使用Docker来安装。
+1.1、下载镜像
+方式一：在线拉取
+docker pull rabbitmq:3-management
+方式二：从本地加载
+镜像包下载链接：
+**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2025-11-30</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
 				<h2 class="index-title">
 					Nacos安装指南
@@ -3323,19 +3343,26 @@ code .  #在工作区文件夹下
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/RabbitMQ%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
 				<h2 class="index-title">
-					RabbitMQ部署指南
+					SpringCloud01
 				</h2>
 				<div class="index-brief">
-					1、单机部署
-我们在Centos7虚拟机中使用Docker来安装。
-1.1、下载镜像
-方式一：在线拉取
-docker pull rabbitmq:3-management
-方式二：从本地加载
-镜像包下载链接：
-**链接：**​https://pan.baidu.com/s/1soGiZ_H8KdHv
+					1.认识微服务
+1.1.单体架构
+单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
+单体架构的优缺点如下：
+优点：
+
+架构简单
+部署成本低
+
+缺点：
+
+耦合度高（维护困难、升级困难）
+
+1.2.分布式架构
+分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
 					...
 				</div>
 			</a>
@@ -3387,38 +3414,6 @@ Nacos支持服务端主动检测提供者状态：临时实例采用心跳模式
 临时实例心跳不正常会被剔除，非临时实例则不会被剔除
 Nacos支持服务列表变更的消息推送模式，服务列表更新更及时
 Nacos集群默认采用AP方式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2025/11/30/SpringCloud%E5%AD%A6%E4%B9%A0/SpringCloud01/">
-				<h2 class="index-title">
-					SpringCloud01
-				</h2>
-				<div class="index-brief">
-					1.认识微服务
-1.1.单体架构
-单体架构：将业务的所有功能集中在一个项目中开发，打成一个包部署。
-单体架构的优缺点如下：
-优点：
-
-架构简单
-部署成本低
-
-缺点：
-
-耦合度高（维护困难、升级困难）
-
-1.2.分布式架构
-分布式架构：根据业务功能对系统做拆分，每个业务功能模块作为独立项目开发，称为一
 					...
 				</div>
 			</a>

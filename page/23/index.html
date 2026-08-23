@@ -2887,17 +2887,6 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2026/08/23/%E5%BC%95%E7%94%A8%E4%BF%AE%E5%A4%8D%E6%95%88%E6%9E%9C%E6%B5%8B%E8%AF%95/">
-                     
-										    引用修复效果测试
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
@@ -3201,32 +3190,6 @@ python -
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
-				<h2 class="index-title">
-					外层包报ModuleNotFoundError
-				</h2>
-				<div class="index-brief">
-					
-前提：包确实安装有，且可以访问到
-
-
-**前提没问题再往下看，不然往下也没意义⚠️⚠️⚠️**
-
-可能的原因：当前解释器安装的软件包污染了（所以为什么PyCharm会让你对每一个工程创建对应的虚拟环境）
-①：用pip list 查看当前解释器已安装的所有软件包
-②：找到报错的那个包的包名，使用pi
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2025-11-30</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
 			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/Windows%20%E4%B8%8B%20python%20%E7%89%88%E6%9C%AC%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2/">
 				<h2 class="index-title">
 					Windows 下 python 版本快速切换
@@ -3253,23 +3216,20 @@ python -–version
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%86%85%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
+			<a href="/2025/11/30/Python/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%A4%96%E5%B1%82%E5%8C%85%E6%8A%A5ModuleNotFoundError/">
 				<h2 class="index-title">
-					内层包报ModuleNotFoundError
+					外层包报ModuleNotFoundError
 				</h2>
 				<div class="index-brief">
-					问题：
-最外层的包安装有了，且可以访问到，但是还是报缺少里面的模块，下面是一个示例
+					
+前提：包确实安装有，且可以访问到
 
-ModuleNotFoundError: No module named ‘libsvm.python’
 
-附原先的代码
-​
-解决方案
-这里以anaconda为例，
-找到包的路径
-ps：
-E:\anaconda3\
+**前提没问题再往下看，不然往下也没意义⚠️⚠️⚠️**
+
+可能的原因：当前解释器安装的软件包污染了（所以为什么PyCharm会让你对每一个工程创建对应的虚拟环境）
+①：用pip list 查看当前解释器已安装的所有软件包
+②：找到报错的那个包的包名，使用pi
 					...
 				</div>
 			</a>
