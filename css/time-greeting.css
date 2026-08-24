@@ -1,0 +1,66 @@
+/* 时段问候语 + 背景切换
+   三层兜底：渐变遮罩（氛围色叠加） → 图片 → 纯渐变底色
+   图片 404 时渐变遮罩 + 底色渐变仍然好看 */
+/* 时段背景过渡 */
+#page-header {
+  transition: background 0.8s ease;
+}
+
+/* ===== 问候语样式 ===== */
+.time-greeting {
+  margin-top: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+.time-greeting.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== 早上 5:00-11:00：暖橙日出 ===== */
+#page-header.time-morning {
+  background:
+    /* 1. 渐变遮罩（氛围色，半透明叠加） */
+    linear-gradient(135deg, rgba(255, 140, 80, 0.45) 0%, rgba(255, 185, 120, 0.35) 50%, rgba(255, 220, 160, 0.3) 100%),
+    /* 2. 图片 */
+    url('/img/time/morning.jpg') center/cover no-repeat,
+    /* 3. 纯渐变底色（图片 404 时兜底） */
+    linear-gradient(135deg, #ff9966 0%, #ffc58a 50%, #ffe0b0 100%) !important;
+}
+
+/* ===== 中午 11:00-14:00：清爽蓝天 ===== */
+#page-header.time-noon {
+  background:
+    linear-gradient(135deg, rgba(80, 170, 240, 0.35) 0%, rgba(120, 195, 245, 0.3) 50%, rgba(180, 220, 255, 0.25) 100%),
+    url('/img/time/noon.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #5ba0f0 0%, #78c8f8 50%, #b8dcff 100%) !important;
+}
+
+/* ===== 下午 14:00-18:00：琥珀暖阳 ===== */
+#page-header.time-afternoon {
+  background:
+    linear-gradient(135deg, rgba(240, 140, 60, 0.45) 0%, rgba(245, 170, 80, 0.35) 50%, rgba(250, 200, 130, 0.3) 100%),
+    url('/img/time/afternoon.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #f08840 0%, #f5a850 0%, #fad080 100%) !important;
+}
+
+/* ===== 晚上 18:00-5:00：深蓝星空 ===== */
+#page-header.time-night {
+  background:
+    linear-gradient(135deg, rgba(15, 25, 70, 0.55) 0%, rgba(30, 20, 75, 0.45) 50%, rgba(50, 30, 90, 0.4) 100%),
+    url('/img/time/night.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #0f1a46 0%, #1e144b 50%, #321e5a 100%) !important;
+}
+
+/* 夜间文字更亮一点，确保可读性 */
+#page-header.time-night .time-greeting,
+#page-header.time-night #site-title,
+#page-header.time-night #site-subtitle {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
