@@ -1,13 +1,16 @@
 // 头部鼠标跟随光斑
 // 抄自 WeGraduated 前端 Home.vue：mousemove + requestAnimationFrame 节流，
 // 把鼠标相对 header 的坐标写入 --mx / --my，光斑在 #page-header::before 中跟随。
-// full_page=首页，not-home-page=归档/标签/分类/关于
+// 不区分页面类型：只要 header 用了线性渐变背景（蓝色调渐变横幅）就启用。
 (function () {
   var header = document.getElementById('page-header')
   if (!header) return
-  var isGlowPage = header.classList.contains('full_page') ||
-    header.classList.contains('not-home-page')
-  if (!isGlowPage) return
+
+  // 仅对使用线性渐变背景的 header 生效（首页/归档/标签/分类/关于/具体文章等）
+  var bg = header.style.background || getComputedStyle(header).backgroundImage || ''
+  if (bg.indexOf('linear-gradient') === -1) return
+
+  header.classList.add('glow-header')
 
   var raf = 0
   header.addEventListener('mousemove', function (e) {
