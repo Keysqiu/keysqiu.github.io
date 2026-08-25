@@ -8,9 +8,9 @@
 #page-header.glow-header::before {
   background-color: var(--mark-bg);
   background-image: radial-gradient(
-    circle at var(--mx, 50%) var(--my, 50%),
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.06) 40%,
+    circle 120px at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
     transparent 60%
   );
 }
