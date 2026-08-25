@@ -1,7 +1,10 @@
 // 时段问候语 + 背景切换
 // 检测当前时间，切换 #page-header 背景 class，插入问候语
 // 兼容 pjax 页面切换（监听 pjax:complete 重入）
+// 停留期间到时段边界自动切换（setTimeout 到边界唤醒），切回标签页立即校准
 (function () {
+  var timer = null
+
   function applyTimeGreeting() {
     var header = document.getElementById('page-header')
     if (!header) return
@@ -13,7 +16,8 @@
     // 移除旧时段 class
     header.classList.remove('time-morning', 'time-noon', 'time-afternoon', 'time-night')
 
-    var hour = new Date().getHours()
+    var now = new Date()
+    var hour = now.getHours()
     var period, greeting
 
     if (hour >= 5 && hour < 11) {
@@ -54,6 +58,35 @@
         })
       })
     }
+
+    scheduleNextBoundary(now)
+  }
+
+  // 调度到下一个时段边界（5/11/14/18 点）自动重新应用
+  function scheduleNextBoundary(now) {
+    if (timer) clearTimeout(timer)
+    var next = nextBoundary(now)
+    timer = setTimeout(applyTimeGreeting, next.getTime() - now.getTime() + 1000)
+  }
+
+  // 计算下一个时段边界时刻（5:00 / 11:00 / 14:00 / 18:00）
+  function nextBoundary(now) {
+    var next = new Date(now)
+    var hour = now.getHours()
+
+    if (hour < 5) {
+      next.setHours(5, 0, 0, 0)
+    } else if (hour < 11) {
+      next.setHours(11, 0, 0, 0)
+    } else if (hour < 14) {
+      next.setHours(14, 0, 0, 0)
+    } else if (hour < 18) {
+      next.setHours(18, 0, 0, 0)
+    } else {
+      next.setDate(next.getDate() + 1)
+      next.setHours(5, 0, 0, 0)
+    }
+    return next
   }
 
   // 首次加载
@@ -65,4 +98,9 @@
 
   // pjax 页面切换后重新应用
   document.addEventListener('pjax:complete', applyTimeGreeting)
+
+  // 切回标签页时立即校准（长时间休眠后可能错过边界）
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) applyTimeGreeting()
+  })
 })()
