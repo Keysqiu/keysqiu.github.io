@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>JavaWeb学习笔记 | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="开始打代码之前，先要进行一些前期准备 ①：新建一个Maven项目，点击下一步，修改项目路径及项目名称，最后点完成即可。 ②：文件-&gt;项目结构-&gt;Facet-&gt;添加Web项目，文件夹名称为webapp，下一级目录为WEB-INF，再下一级有一个文件web.xml，如果选项变灰添加不了，可以先把原来的先删除掉先再进行创建 ③：设置-&gt;构建-&gt;构建工具，把任何变更勾上，再点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaWeb学习笔记">
+<meta property="og:url" content="https://keysqiu.github.io/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Keysqiu的小屋">
+<meta property="og:description" content="开始打代码之前，先要进行一些前期准备 ①：新建一个Maven项目，点击下一步，修改项目路径及项目名称，最后点完成即可。 ②：文件-&gt;项目结构-&gt;Facet-&gt;添加Web项目，文件夹名称为webapp，下一级目录为WEB-INF，再下一级有一个文件web.xml，如果选项变灰添加不了，可以先把原来的先删除掉先再进行创建 ③：设置-&gt;构建-&gt;构建工具，把任何变更勾上，再点">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/Keysqiu.png">
+<meta property="article:published_time" content="2025-11-30T10:19:01.000Z">
+<meta property="article:modified_time" content="2026-08-25T06:13:46.641Z">
+<meta property="article:author" content="Keysqiu">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Keysqiu.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JavaWeb学习笔记",
+  "url": "https://keysqiu.github.io/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/",
+  "image": "https://github.com/Keysqiu.png",
+  "datePublished": "2025-11-30T10:19:01.000Z",
+  "dateModified": "2026-08-25T06:13:46.641Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Keysqiu",
+      "url": "https://keysqiu.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://keysqiu.github.io/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaWeb学习笔记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/header-glow.css"><link rel="stylesheet" href="/css/time-greeting.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">224</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">JavaWeb学习笔记</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">JavaWeb学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-11-30T10:19:01.000Z" title="Created 2025-11-30 18:19:01">2025-11-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-08-25T06:13:46.641Z" title="Updated 2026-08-25 14:13:46">2026-08-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><strong>开始打代码之前，先要进行一些前期准备</strong><br>
+<strong>①：新建一个Maven项目，点击下一步，修改项目路径及项目名称，最后点完成即可。</strong><br>
+<strong>②：文件-&gt;项目结构-&gt;Facet-&gt;添加Web项目，文件夹名称为webapp，下一级目录为WEB-INF，再下一级有一个文件web.xml，如果选项变灰添加不了，可以先把原来的先删除掉先再进行创建</strong><br>
+<strong>③：设置-&gt;构建-&gt;构建工具，把任何变更勾上，再点入Maven，把Maven主路径修改为D:/JAVA/Maven/apache-maven-3.6.3，把用户设置文件修改为D:\JAVA\Maven\apache-maven-3.6.3\conf\settings.xml，点击应用-&gt;确定</strong><br>
+<strong>④：在pom.xml文件中添加以下内容</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;build&gt;
+&lt;plugins&gt;
+&lt;plugin&gt;
+&lt;groupId&gt;org.apache.tomcat.maven&lt;&#x2F;groupId&gt;
+&lt;artifactId&gt;tomcat7-maven-plugin&lt;&#x2F;artifactId&gt;
+&lt;version&gt;2.1&lt;&#x2F;version&gt;
+&lt;configuration&gt;
+&lt;port&gt;8080&lt;&#x2F;port&gt;
+&lt;uriEncoding&gt;UTF-8&lt;&#x2F;uriEncoding&gt;
+&lt;url&gt;http:&#x2F;&#x2F;localhost:8080&#x2F;shiro&lt;&#x2F;url&gt;
+&lt;server&gt;Tomcat7&lt;&#x2F;server&gt;
+            &lt;&#x2F;configuration&gt;
+        &lt;&#x2F;plugin&gt;
+        &lt;!-- 编译插件 --&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;&#x2F;groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;&#x2F;artifactId&gt;
+            &lt;version&gt;3.1&lt;&#x2F;version&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.8&lt;&#x2F;source&gt;
+                &lt;target&gt;1.8&lt;&#x2F;target&gt;
+                &lt;encoding&gt;UTF-8&lt;&#x2F;encoding&gt;
+            &lt;&#x2F;configuration&gt;
+        &lt;&#x2F;plugin&gt;
+    &lt;&#x2F;plugins&gt;
+&lt;&#x2F;build&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>⑤：一个jsp对应一个Servlet，Servlet有一个转发函数，也就是对你所做的请求做一个响应，Servlet就像一个中间人，负责接收请求以及响应的业务。</strong><br>
+<strong>⑥：</strong><br>
+<strong>⑦：axios里用的是_this，外面用的都是this</strong><br>
+<strong>⑧：我给服务器数据用post，服务器给我数据用get。</strong><br>
+<strong>②：javaWeb中当出现数据库的属性名和实体类的属性名不一致时，在Mapper.xml文件中取别名</strong><br>
+<strong>例：</strong><br>
+<strong>&lt;resultMap id=“brandResultMap” type=“brand”&gt;</strong><br>
+<strong>&lt;result column=“brand_name” property=“brandName”/&gt;</strong><br>
+<strong>&lt;result column=“company_name” property=“companyName”/&gt;</strong><br>
+<strong>&lt;/resultMap&gt;</strong><br>
+<strong>在sql语句中的占位符使用的都是实体类的属性名</strong></p>
+<p><strong>①：Maven其实就是一个可以自动载入jar包的一个框架，其中最重要的其实就是一个pom.xml文件，其次就是它分了两个目录，一个是开发目录，一个是测试目录。</strong><br>
+<strong>②：MyBatis其实就是对JDBC进行了再度封装，不过得自己搭建，所有可以留一个地方放着，下次要的时候直接导入即可，就这么so easy！</strong></p>
+<p><strong>写程序进行优化时，避免硬编码的形式，把需要载入的数据放入xml文件中</strong></p>
+<h2 id="Mapper代理的方式："><strong>Mapper代理的方式：</strong></h2>
+<p>我觉得就是，把Mapper接口里面的函数名当作一个映射的键，Mapper的xml文件里面对应的sql语句当作一个映射的值。把函数名当作映射的键真的是很巧妙，这样调用的时候以为调用的是函数，没想到是拿去映射一个sql语句了。注意：接口文件和xml文件要在同一级目录下</p>
+<h2 id="给包取别名"><strong>给包取别名</strong></h2>
+<p><strong>（给包取一个别名，这里取的别名，让导com.itheima.pojo包的地方，只要写类就行，包名可以省略，注意：类名可以不区分大小写，mybatis真的很强大！！！搭配上mapper简直绝配）</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image_0-20251130181901-gbhampc.png" alt=""></p>
+<h2 id="sql语句的一些积累："><strong>sql语句的一些积累：</strong></h2>
+<p><strong>as：给数据类型取别名，	like：与等号’='相反，模糊查询。</strong></p>
+<h2 id="Mybatis事务"><strong>Mybatis事务</strong></h2>
+<p><strong>Mybatis是默认手动提交事务的，如果需自动提交事务，则需在创建对象时，给true</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image_1-20251130181901-j0ehwch.png" alt=""></p>
+<p><strong>Mybatis提供的标签为我们在实现动态sql时规避了很多的问题。</strong><br>
+<strong>Mybatis的xml文件传递多个参数时:封装为Map集合,可以使用@Param注解，替换Map集合中默认的arg键名</strong></p>
+<h2 id="HTML（超文本标记语言）"><strong>HTML（超文本标记语言）</strong></h2>
+<p><strong>W3C标准:网页主要由三部分组成</strong></p>
+<blockquote>
+<p><strong>结构:HTML&gt;表现:CSS&gt;行为:JavaScript</strong></p>
+</blockquote>
+<p><strong>html的基本格式：</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image_2-20251130181901-cdqtzx7.png" alt=""></p>
+<p><strong>html的基本知识：</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image_3-20251130181901-aqr0ftv.png" alt=""></p>
+<h1><strong>一些学习经验</strong></h1>
+<pre><code>*request.js封装在doc的7.Vue实现增删改查里面*  
+    解决跨域问题在doc的5.SpringBoot实现分页查询里面
+</code></pre>
+<ul>
+<li><strong>前端界面写的东西没效果，最大的可能是你写的位置不对。</strong></li>
+<li><strong>yml配置文件中，键和值之间一定要空一格，不然会报格式错误的错</strong></li>
+<li><strong>varchar相当于Java中的String，bigint相当于Java中的long</strong></li>
+<li><strong>Vue的data里面，如果直接写对象名称，则在页面调用时，直接</strong><br>
+<strong>.属性名使用即可，Vue会自动生成的</strong></li>
+<li><strong>在sql语句中的占位符使用的都是实体类的属性名</strong></li>
+<li><strong>javaWeb中当出现数据库的字段名和实体类的属性名不一致时，在Mapper.xml文件中取别名</strong></li>
+<li><strong>模糊查询表达式为：%</strong><br>
+<strong>实体类属性名%（实体类属性名为字符串时才需要添加，数字则不需要添加），数字不许模糊查询，1就是1，2就是2！！！！，还有mapper接口方法有返回值的，一定不能去掉，不然会报 It’s likely that neither a Result Type nor a Result Map was specified. 错！！</strong></li>
+<li><strong>前端vue框架用的是JSON字符串，后端接口要的是一个对象或里面的一个数据，所以要进行转换</strong></li>
+<li><strong>如果请求是用get的方式提交，则参数会携带在链接上，Servlet获取参数使用</strong><br>
+request.getParameter(“键名”)得到链接上对应的值，如果请求是用post的方式提交，则参数会携带在data上，Servlet获取参数使用</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">BufferedReader br &#x3D; request.getReader();
+String params &#x3D; br.readLine();&#x2F;&#x2F;json字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>获取</strong></p>
+<ul>
+<li><strong>model是一个大的容器，v-model是model里面的一个属性</strong></li>
+<li><strong>mapper参数有两个以上时才需要添加 @Param注解，只有单独一个则不需要添加 @Param注解</strong></li>
+<li><strong>点击超链接、按钮、图片…，亦或者是刷新，都视为一次请求。Servlet做的就是响应你这次请求</strong></li>
+<li><strong>分页查询使用limit关键字，select * from tb_brand limit 3,4，意思为：在数据表tb_brand中查询下标为3往后的4条数据</strong></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io">Keysqiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://keysqiu.github.io/2025/11/30/Java/JavaWeb%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post-share"><div class="social-share" data-image="https://github.com/Keysqiu.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/11/30/Java/SpringBoot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" title="SpringBoot解决跨域问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">SpringBoot解决跨域问题</div></div><div class="info-2"><div class="info-item-1">遇到前端跨域访问问题，类似于这样的： ​ 在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。 import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import org.springframework.web.cors.CorsConfiguration; import org.springframework.web.cors.UrlBasedCorsConfigurationSource; import org.springframework.web.filter.CorsFilter; @Configuration public class CorsConfig &#123;     // 当前跨域请求最大有效时长。这里默认1天     private static final long MAX_AGE = 24 * 60 * 60; ...</div></div></div></a><a class="pagination-related" href="/2025/11/30/Java/Java%20%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E6%8A%9B%E5%BC%82%E5%B8%B8%E5%BE%80%E8%BF%99%E7%9C%8B/" title="Java 莫名其妙抛异常往这看"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Java 莫名其妙抛异常往这看</div></div><div class="info-2"><div class="info-item-1">前提：如果你核查代码确保都没问题的时候，但还是出现莫名其妙的异常❎❎❎ 解决思路  这时候就要看看是不是导的包导错了（这个跟微信开发小游戏时工具自动导的包一样，不过怎么说呢，idea还是比微信开发者工具智能一点，那个是真的sb），或者类名写错了（这个坑过你一个下午，真的艹了！！！）  ‍ </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/11/30/Java/Java%20%E8%8E%AB%E5%90%8D%E5%85%B6%E5%A6%99%E6%8A%9B%E5%BC%82%E5%B8%B8%E5%BE%80%E8%BF%99%E7%9C%8B/" title="Java 莫名其妙抛异常往这看"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">Java 莫名其妙抛异常往这看</div></div><div class="info-2"><div class="info-item-1">前提：如果你核查代码确保都没问题的时候，但还是出现莫名其妙的异常❎❎❎ 解决思路  这时候就要看看是不是导的包导错了（这个跟微信开发小游戏时工具自动导的包一样，不过怎么说呢，idea还是比微信开发者工具智能一点，那个是真的sb），或者类名写错了（这个坑过你一个下午，真的艹了！！！）  ‍ </div></div></div></a><a class="pagination-related" href="/2025/11/30/Java/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDMySQL%E7%9A%84JDBC%E9%A9%B1%E5%8A%A8%E5%8C%85%E5%B9%B6%E5%AF%BC%E5%85%A5IDEA%E4%B8%AD/" title="如何下载MySQL的JDBC驱动包并导入IDEA中"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">如何下载MySQL的JDBC驱动包并导入IDEA中</div></div><div class="info-2"><div class="info-item-1">一、下载JDBC驱动包 1.打开 MySQL 官网：https://www.mysql.com/ 2.点击 DOWNLOADS，把页面滚动到最下面，点击 MySQL Community (GPL) Downloads   3.点击 Connector/J 4.点击 General Availability(GA) Releases，在 Select Operating System 下拉列表选择 Platform Independent，然后选择任意一种压缩包格式后面的 Download   5.点击 No thanks,just start my download. 6.下载完成后，解压，打开文件夹，就可以看到里面的 JDBC 驱动 JAR 包了   二、将JDBC驱动包导入到IDEA中 文件 –&gt; 项目结构 –&gt; ​**库（项目设置那一栏）******​ –&gt; + –&gt; 选择JDBC驱动包 –&gt; 应用 –&gt; 确定 </div></div></div></a><a class="pagination-related" href="/2025/11/30/Java/Spring%E5%AD%A6%E4%B9%A0/" title="Spring学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">Spring学习</div></div><div class="info-2"><div class="info-item-1">Ioc：好比在一个容器中放了很多对象，我们只需要管对象的调用，至于对象的创建与配置我们无需关心，底层代码已经有人帮你实现，无需担心，用就好 **具体详解，请看链接：**​我们到底为什么要用 IoC 和 AOP - 知乎 (zhihu.com) 总结 IoC 解决了以下问题：  创建了许多重复对象，造成大量资源浪费； 更换实现类需要改动多个地方； 创建和配置组件工作繁杂，给组件调用方带来极大不便。 AOP 解决了以下问题： 切面逻辑编写繁琐，有多少个业务方法就需要编写多少次。  ‍ </div></div></div></a><a class="pagination-related" href="/2025/11/30/Java/SpringBoot%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" title="SpringBoot解决跨域问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">SpringBoot解决跨域问题</div></div><div class="info-2"><div class="info-item-1">遇到前端跨域访问问题，类似于这样的： ​ 在Springboot项目里加上这个配置文件CorsConfig.java，重启之后即可实现跨域访问，前端无需再配置跨域。 import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import org.springframework.web.cors.CorsConfiguration; import org.springframework.web.cors.UrlBasedCorsConfigurationSource; import org.springframework.web.filter.CorsFilter; @Configuration public class CorsConfig &#123;     // 当前跨域请求最大有效时长。这里默认1天     private static final long MAX_AGE = 24 * 60 * 60; ...</div></div></div></a><a class="pagination-related" href="/2025/11/30/Java/IDEA%20%E9%9B%86%E6%88%90JavaFX/" title="IDEA 集成JavaFX"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">IDEA 集成JavaFX</div></div><div class="info-2"><div class="info-item-1">前提 先在IDEA中安装两个插件，如下图所示  1、安装图形化驱动程序（Scene Builder） ==其实只需要下载一个外部程序即可（就这么简单，不要下什么eclipse，纯纯sb！！！）== 提取码：m0ej –来自百度网盘超级会员V4的分享 改一下安装路径，然后不断next即可 2、具体使用 ①：最简单的，直接新建一个普通的Java项目 ②：在src文件夹下新建view软件包 ③：右键view软件包，点击新建FXML文件  ④：右键新建好的fxml文件，选择在SceneBuilder中打开  打开之后的窗口如下图所示 ​ 这里面就可以进行组件的拖拽布局以及设置组件id名，（这个id名和Qt中组件的类名是同一个意思，都是对象名，所以说大佬的设计思想往往不谋而同） 如何设置id名？请看以下分析 点击你想要命名的组件，在右边找到Code菜单项，里面即可设置id，请看下图 ​ </div></div></div></a><a class="pagination-related" href="/2025/11/30/Java/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/" title="个人博客部署"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-30</div><div class="info-item-2">个人博客部署</div></div><div class="info-2"><div class="info-item-1">1、JDK17 wget http://49.232.8.65/jdk/jdk17/jdk-17_linux-x64_bin.tar.gz tar -zxvf jdk-17_linux-x64_bin.tar.gz vim /etc/profile # 文件添加如下内容 export JAVA_HOME=jdk文件夹全路径 export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar # 刷新配置使其生效 source /etc/profile # 查看安装的版本 java -version 2、MySQL 具体教程可以参考 二	安装mysql[^1] 3、Redis wget http://download.redis.io/releases/redis-6.2.7.tar.gz tar -zxvf redis-6.2.7.tar.gz cd redis-6.2.7 make make PREFIX=/usr/local/src/redis-6...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">故不积跬步，无以至千里</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">224</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Keysqiu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">博客由思源笔记自动同步驱动，写作即发布</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">Mapper代理的方式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E5%8C%85%E5%8F%96%E5%88%AB%E5%90%8D"><span class="toc-number">2.</span> <span class="toc-text">给包取别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%A7%AF%E7%B4%AF%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">sql语句的一些积累：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mybatis%E4%BA%8B%E5%8A%A1"><span class="toc-number">4.</span> <span class="toc-text">Mybatis事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML%EF%BC%88%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">HTML（超文本标记语言）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">一些学习经验</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/17/1%E7%BB%8F%E9%AA%8C/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E7%90%86%E8%A7%A3/" title="版本管理器的理解">版本管理器的理解</a><time datetime="2026-07-16T19:20:50.000Z" title="Created 2026-07-17 03:20:50">2026-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/26/1%E7%BB%8F%E9%AA%8C/Hyper-V%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%9E%E7%8E%B0Ubuntu%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" title="Hyper-V虚拟机实现Ubuntu复制粘贴">Hyper-V虚拟机实现Ubuntu复制粘贴</a><time datetime="2026-06-26T02:42:46.000Z" title="Created 2026-06-26 10:42:46">2026-06-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/27/AI/Windows%E4%B8%8A%E7%94%A8RTK%E7%BB%99%E4%BD%A0%E7%9A%84AI%E7%BC%96%E7%A8%8B%E5%8A%A9%E6%89%8B%E8%8A%82%E7%9C%81Token/" title="Windows上用RTK给你的AI编程助手节省Token">Windows上用RTK给你的AI编程助手节省Token</a><time datetime="2026-05-27T03:24:55.000Z" title="Created 2026-05-27 11:24:55">2026-05-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/25/AI/CodeGraph%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="CodeGraph使用指南">CodeGraph使用指南</a><time datetime="2026-05-25T08:46:26.000Z" title="Created 2026-05-25 16:46:26">2026-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/22/1%E7%BB%8F%E9%AA%8C/GitHub%20%E6%8F%90%E4%BA%A4%20Pull%20Request%20(PR)%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B%E6%8C%87%E5%8D%97/" title="GitHub 提交 Pull Request (PR)完整流程指南">GitHub 提交 Pull Request (PR)完整流程指南</a><time datetime="2026-05-22T03:27:35.000Z" title="Created 2026-05-22 11:27:35">2026-05-22</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Keysqiu/keysqiu.github.io',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/time-greeting.js"></script><script src="/js/header-glow.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
