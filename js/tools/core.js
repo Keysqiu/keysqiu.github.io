@@ -21,27 +21,53 @@
 
   /* ---------- 分享 payload：URL base64url <-> UTF-8 字符串 ---------- */
 
-  function encodePayload(str) {
-    var bytes = new TextEncoder().encode(str);
+  function bytesToB64url(bytes) {
     var bin = '';
     for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
     return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   }
 
-  function decodePayload(s) {
+  function b64urlToBytes(s) {
     s = s.replace(/-/g, '+').replace(/_/g, '/');
     while (s.length % 4) s += '=';
     var bin = atob(s);
     var bytes = new Uint8Array(bin.length);
     for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-    return new TextDecoder().decode(bytes);
+    return bytes;
   }
 
-  function readHashPayload() {
+  // 编码：支持 CompressionStream 时先 deflate 压缩（大幅缩短长文档链接），
+  // 结果加前缀 z；否则回退纯 base64，前缀 c。前缀用于解码时区分格式。
+  async function encodePayload(str) {
+    var raw = new TextEncoder().encode(str);
+    if (typeof CompressionStream === 'function') {
+      try {
+        var cs = new CompressionStream('deflate-raw');
+        var stream = new Blob([raw]).stream().pipeThrough(cs);
+        var buf = new Uint8Array(await new Response(stream).arrayBuffer());
+        return 'z' + bytesToB64url(buf);
+      } catch (e) {
+        console.warn('[tools] 压缩失败，回退纯 base64', e);
+      }
+    }
+    return 'c' + bytesToB64url(raw);
+  }
+
+  async function decodePayload(s) {
+    if (s.charAt(0) === 'z') {
+      var ds = new DecompressionStream('deflate-raw');
+      var stream = new Blob([b64urlToBytes(s.slice(1))]).stream().pipeThrough(ds);
+      var buf = new Uint8Array(await new Response(stream).arrayBuffer());
+      return new TextDecoder().decode(buf);
+    }
+    return new TextDecoder().decode(b64urlToBytes(s.charAt(0) === 'c' ? s.slice(1) : s));
+  }
+
+  async function readHashPayload() {
     var m = /(?:^|&)c=([^&]+)/.exec(location.hash.replace(/^#/, ''));
     if (!m) return null;
     try {
-      return decodePayload(m[1]);
+      return await decodePayload(m[1]);
     } catch (e) {
       console.error('[tools] payload 解码失败', e);
       return null;
@@ -95,9 +121,9 @@
     }
   }
 
-  function buildShareUrl(toolId, content) {
+  async function buildShareUrl(toolId, content) {
     var base = location.origin + location.pathname.replace(/index\.html$/, '');
-    return base.replace(/\/tools\/$/, '/tools/') + '?tool=' + toolId + '#c=' + encodePayload(content);
+    return base.replace(/\/tools\/$/, '/tools/') + '?tool=' + toolId + '#c=' + await encodePayload(content);
   }
 
   /* ---------- 渲染 ---------- */
@@ -166,13 +192,13 @@
     }
   }
 
-  function init() {
+  async function init() {
     app.root = document.getElementById('tools-app');
     if (!app.root) return;
 
     var params = new URLSearchParams(location.search);
     var toolId = params.get('tool');
-    app.payload = readHashPayload();
+    app.payload = await readHashPayload();
 
     if (toolId && app.byId[toolId]) {
       openTool(toolId, false);
@@ -180,9 +206,9 @@
       renderGrid();
     }
 
-    window.addEventListener('popstate', function () {
+    window.addEventListener('popstate', async function () {
       var p = new URLSearchParams(location.search).get('tool');
-      app.payload = readHashPayload();
+      app.payload = await readHashPayload();
       if (p && app.byId[p]) openTool(p, false);
       else renderGrid();
     });
@@ -196,13 +222,13 @@
     toast: toast,
     el: el,
     buildShareUrl: buildShareUrl,
-    /** 通用分享按钮：生成指向指定工具的内嵌内容链接并复制 */
-    shareLink: function (toolId, content, sizeLimit) {
-      var url = buildShareUrl(toolId, content);
+    /** 通用分享按钮：生成指向指定工具的内嵌内容链接并复制（先压缩以缩短链接） */
+    shareLink: async function (toolId, content, sizeLimit) {
+      var url = await buildShareUrl(toolId, content);
       if (sizeLimit && url.length > sizeLimit) {
-        toast('内容过长（' + url.length + ' 字符），链接可能在部分浏览器中无法打开');
+        toast('链接较长（' + url.length + ' 字符），部分浏览器或聊天工具可能截断，建议先压缩内容');
       }
-      copyText(url, '分享链接已复制（内容内嵌在链接中）');
+      copyText(url, '分享链接已复制（内容已压缩内嵌在链接中）');
       return url;
     }
   };

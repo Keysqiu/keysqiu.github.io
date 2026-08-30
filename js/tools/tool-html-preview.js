@@ -86,9 +86,9 @@
       timer = setTimeout(run, 400);
     });
 
-    btn('复制分享链接', function () {
+    btn('复制分享链接', async function () {
       if (!input.value.trim()) { B.toast('请先输入 HTML 内容'); return; }
-      B.shareLink('html-preview', input.value, URL_LIMIT);
+      await B.shareLink('html-preview', input.value, URL_LIMIT);
     }, true);
     btn('重新运行', run);
     btn('清空', function () { input.value = ''; run(); });

@@ -94,9 +94,9 @@
       right.innerHTML = renderMarkdown(input.value);
     }
 
-    btn('复制分享链接', function () {
+    btn('复制分享链接', async function () {
       if (!input.value.trim()) { B.toast('请先输入 Markdown 内容'); return; }
-      B.shareLink('md-share', input.value, URL_LIMIT);
+      await B.shareLink('md-share', input.value, URL_LIMIT);
     }, true);
     btn('复制 Markdown', function () {
       if (!input.value.trim()) { B.toast('内容为空'); return; }
