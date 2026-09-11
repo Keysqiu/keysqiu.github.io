@@ -1,0 +1,496 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>📇 本类导航 | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本页自动汇总「数据库」分类下的全部笔记（含子分类），随笔记增删实时更新。  🧠 总结    关键字 用途     GROUP BY 分组聚合   HAVING 过滤分组结果   ORDER BY 排序结果   UNION 合并结果集（去重）   INTERSECT 交集   EXCEPT 差集   FOR 游标操作（PL&#x2F;SQL）   COLLATE 字符串排序规则    GROUP -- 按指">
+<meta property="og:type" content="article">
+<meta property="og:title" content="📇 本类导航">
+<meta property="og:url" content="https://keysqiu.github.io/2026/09/11/%E6%95%B0%E6%8D%AE%E5%BA%93/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/index.html">
+<meta property="og:site_name" content="Keysqiu的小屋">
+<meta property="og:description" content="本页自动汇总「数据库」分类下的全部笔记（含子分类），随笔记增删实时更新。  🧠 总结    关键字 用途     GROUP BY 分组聚合   HAVING 过滤分组结果   ORDER BY 排序结果   UNION 合并结果集（去重）   INTERSECT 交集   EXCEPT 差集   FOR 游标操作（PL&#x2F;SQL）   COLLATE 字符串排序规则    GROUP -- 按指">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/Keysqiu.png">
+<meta property="article:published_time" content="2026-09-11T02:42:07.000Z">
+<meta property="article:modified_time" content="2026-09-11T16:00:02.851Z">
+<meta property="article:author" content="Keysqiu">
+<meta property="article:tag" content="导航">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Keysqiu.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "📇 本类导航",
+  "url": "https://keysqiu.github.io/2026/09/11/%E6%95%B0%E6%8D%AE%E5%BA%93/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/",
+  "image": "https://github.com/Keysqiu.png",
+  "datePublished": "2026-09-11T02:42:07.000Z",
+  "dateModified": "2026-09-11T16:00:02.851Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Keysqiu",
+      "url": "https://keysqiu.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://keysqiu.github.io/2026/09/11/%E6%95%B0%E6%8D%AE%E5%BA%93/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '📇 本类导航',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/header-glow.css"><link rel="stylesheet" href="/css/time-greeting.css"><link rel="stylesheet" href="/css/gh-projects.css"><link rel="stylesheet" href="/css/tools.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">250</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">📇 本类导航</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">📇 本类导航</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-09-11T16:00:02.851Z" title="Updated 2026-09-12 00:00:02">2026-09-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>本页自动汇总「数据库」分类下的全部笔记（含子分类），随笔记增删实时更新。</p>
+<blockquote>
+<h3 id="🧠-总结">🧠 总结</h3>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GROUP BY</code></td>
+<td>分组聚合</td>
+</tr>
+<tr>
+<td><code>HAVING</code></td>
+<td>过滤分组结果</td>
+</tr>
+<tr>
+<td><code>ORDER BY</code></td>
+<td>排序结果</td>
+</tr>
+<tr>
+<td><code>UNION</code></td>
+<td>合并结果集（去重）</td>
+</tr>
+<tr>
+<td><code>INTERSECT</code></td>
+<td>交集</td>
+</tr>
+<tr>
+<td><code>EXCEPT</code></td>
+<td>差集</td>
+</tr>
+<tr>
+<td><code>FOR</code></td>
+<td>游标操作（PL/SQL）</td>
+</tr>
+<tr>
+<td><code>COLLATE</code></td>
+<td>字符串排序规则</td>
+</tr>
+</tbody>
+</table>
+<h3 id="GROUP"><code>GROUP</code></h3>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 按指定列分组，通常与聚合函数一起使用。</span>
+<span class="token comment">-- 按部门分组，统计每个部门的人数</span>
+<span class="token keyword">SELECT</span> department<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> employee_count
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> department<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="HAVING"><code>HAVING</code></h3>
+<p>对 <code>GROUP BY</code>​ 后的结果进行过滤（不能用 <code>WHERE</code> 过滤聚合结果）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 只显示员工人数超过 10 的部门</span>
+<span class="token keyword">SELECT</span> department<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> employee_count
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> department
+<span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ORDER-BY"><code>ORDER BY</code></h3>
+<p>对查询结果排序，默认升序（<code>ASC</code>​），可指定降序（<code>DESC</code>）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 按薪资从高到低排序</span>
+<span class="token keyword">SELECT</span> name<span class="token punctuation">,</span> salary
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> salary <span class="token keyword">DESC</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="UNION"><code>UNION</code></h3>
+<blockquote>
+<p>使用 <code>UNION ALL</code> 可保留重复行。</p>
+</blockquote>
+<p>合并两个查询结果，并自动去重（列数和类型需一致）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 合并员工和外包人员姓名，去除重复</span>
+<span class="token keyword">SELECT</span> name <span class="token keyword">FROM</span> employees
+<span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> name <span class="token keyword">FROM</span> contractors<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="INTERSECT"><code>INTERSECT</code></h3>
+<p>返回两个查询结果中<strong>都存在</strong>的行（交集）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 找出 2025 和 2026 年都卖过的商品</span>
+<span class="token keyword">SELECT</span> product_id <span class="token keyword">FROM</span> orders_2025
+<span class="token keyword">INTERSECT</span>
+<span class="token keyword">SELECT</span> product_id <span class="token keyword">FROM</span> orders_2026<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="EXCEPT"><code>EXCEPT</code></h3>
+<p>返回第一个查询有、但第二个查询<strong>没有</strong>的行（差集）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 找出非 VIP 的普通客户</span>
+<span class="token keyword">SELECT</span> customer_id <span class="token keyword">FROM</span> all_customers
+<span class="token keyword">EXCEPT</span>
+<span class="token keyword">SELECT</span> customer_id <span class="token keyword">FROM</span> vip_customers<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="FOR"><code>FOR</code></h3>
+<p>用于将查询结果格式化为 JSON 或 XML（SQL Server 特有功能）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 将产品列表输出为 JSON 格式</span>
+<span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> name
+<span class="token keyword">FROM</span> products
+<span class="token keyword">FOR</span> JSON AUTO<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>常见用法：<code>FOR JSON PATH</code>​, <code>FOR JSON AUTO</code>​, <code>FOR XML PATH</code></p>
+</blockquote>
+<h3 id="COLLATE"><code>COLLATE</code></h3>
+<p>指定字符串比较时的排序规则（如区分大小写、语言等）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 区分大小写匹配：'Admin' ≠ 'admin'</span>
+<span class="token keyword">SELECT</span> name
+<span class="token keyword">FROM</span> users
+<span class="token keyword">WHERE</span> name <span class="token keyword">COLLATE</span> SQL_Latin1_General_CP1_CS_AS <span class="token operator">=</span> <span class="token string">'Admin'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>常见规则：</p>
+<ul>
+<li><code>_CI_</code> = Case Insensitive（不区分大小写）</li>
+<li><code>_CS_</code> = Case Sensitive（区分大小写）</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<h3 id="🧠-总结-2">🧠 总结</h3>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>用途说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GROUP BY</code></td>
+<td>按列分组，配合聚合函数（如 <code>COUNT</code>​, <code>SUM</code>）使用</td>
+</tr>
+<tr>
+<td><code>HAVING</code></td>
+<td>过滤分组后的结果（作用于聚合值）</td>
+</tr>
+<tr>
+<td><code>ORDER BY</code></td>
+<td>对查询结果排序（支持 <code>ASC</code>​/<code>DESC</code>）</td>
+</tr>
+<tr>
+<td><code>UNION</code></td>
+<td>合并多个查询结果，自动去重；<code>UNION ALL</code> 保留重复行</td>
+</tr>
+<tr>
+<td><code>INTERSECT</code></td>
+<td>返回两个查询结果的交集（仅共有的行）</td>
+</tr>
+<tr>
+<td><code>EXCEPT</code></td>
+<td>返回第一个查询有、但第二个查询没有的行（差集）</td>
+</tr>
+<tr>
+<td><code>FOR</code></td>
+<td>用于格式化输出，如 <code>FOR JSON</code>​, <code>FOR XML</code></td>
+</tr>
+<tr>
+<td><code>COLLATE</code></td>
+<td>指定字符串排序规则，例如大小写敏感或语言特定比较</td>
+</tr>
+</tbody>
+</table>
+<h3 id="GROUP-2"><code>GROUP</code></h3>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 按指定列分组，通常与聚合函数一起使用。</span>
+<span class="token comment">-- 按部门分组，统计每个部门的人数</span>
+<span class="token keyword">SELECT</span> department<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> employee_count
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> department<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="HAVING-2"><code>HAVING</code></h3>
+<p>对 <code>GROUP BY</code>​ 后的结果进行过滤（不能用 <code>WHERE</code> 过滤聚合结果）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 只显示员工人数超过 10 的部门</span>
+<span class="token keyword">SELECT</span> department<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> employee_count
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> department
+<span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ORDER-BY-2"><code>ORDER BY</code></h3>
+<p>对查询结果排序，默认升序（<code>ASC</code>​），可指定降序（<code>DESC</code>）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 按薪资从高到低排序</span>
+<span class="token keyword">SELECT</span> name<span class="token punctuation">,</span> salary
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> salary <span class="token keyword">DESC</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="UNION-2"><code>UNION</code></h3>
+<blockquote>
+<p>使用 <code>UNION ALL</code> 可保留重复行。</p>
+</blockquote>
+<p>合并两个查询结果，并自动去重（列数和类型需一致）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 合并员工和外包人员姓名，去除重复</span>
+<span class="token keyword">SELECT</span> name <span class="token keyword">FROM</span> employees
+<span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> name <span class="token keyword">FROM</span> contractors<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="INTERSECT-2"><code>INTERSECT</code></h3>
+<p>返回两个查询结果中<strong>都存在</strong>的行（交集）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 找出 2025 和 2026 年都卖过的商品</span>
+<span class="token keyword">SELECT</span> product_id <span class="token keyword">FROM</span> orders_2025
+<span class="token keyword">INTERSECT</span>
+<span class="token keyword">SELECT</span> product_id <span class="token keyword">FROM</span> orders_2026<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="EXCEPT-2"><code>EXCEPT</code></h3>
+<p>返回第一个查询有、但第二个查询<strong>没有</strong>的行（差集）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 找出非 VIP 的普通客户</span>
+<span class="token keyword">SELECT</span> customer_id <span class="token keyword">FROM</span> all_customers
+<span class="token keyword">EXCEPT</span>
+<span class="token keyword">SELECT</span> customer_id <span class="token keyword">FROM</span> vip_customers<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="FOR-2"><code>FOR</code></h3>
+<p>用于将查询结果格式化为 JSON 或 XML（SQL Server 特有功能）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 将产品列表输出为 JSON 格式</span>
+<span class="token keyword">SELECT</span> id<span class="token punctuation">,</span> name
+<span class="token keyword">FROM</span> products
+<span class="token keyword">FOR</span> JSON AUTO<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>常见用法：<code>FOR JSON PATH</code>​, <code>FOR JSON AUTO</code>​, <code>FOR XML PATH</code></p>
+</blockquote>
+<h3 id="COLLATE-2"><code>COLLATE</code></h3>
+<p>指定字符串比较时的排序规则（如区分大小写、语言等）。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 区分大小写匹配：'Admin' ≠ 'admin'</span>
+<span class="token keyword">SELECT</span> name
+<span class="token keyword">FROM</span> users
+<span class="token keyword">WHERE</span> name <span class="token keyword">COLLATE</span> SQL_Latin1_General_CP1_CS_AS <span class="token operator">=</span> <span class="token string">'Admin'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>常见规则：</p>
+<ul>
+<li><code>_CI_</code> = Case Insensitive（不区分大小写）</li>
+<li><code>_CS_</code> = Case Sensitive（区分大小写）</li>
+</ul>
+</blockquote>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io">Keysqiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io/2026/09/11/%E6%95%B0%E6%8D%AE%E5%BA%93/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/">https://keysqiu.github.io/2026/09/11/%E6%95%B0%E6%8D%AE%E5%BA%93/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AF%BC%E8%88%AA/">导航</a></div><div class="post-share"><div class="social-share" data-image="https://github.com/Keysqiu.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/09/11/51%E5%8D%95%E7%89%87%E6%9C%BA/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「51单片机」分类下的全部笔记（含子分类），随笔记增删实时更新。  首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解 首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解大多数单片机或芯片： 高电平弱驱动，低电平强驱动 大多数单片机或芯片：​高电平弱驱动，低电平强驱动​单片机（MCU）中的CPU通过操作寄存器来控制引脚的输出电压如图51的数据类型烧录的单片机型号: STC89C516RD+/LE516RD+，11.0592MHz晶振串口通信那里：波特率计算器中的系统频率选择11.0592MHz，记住收发方的波特率事先约定好，不然会出错，也就是常说的不在同一频道^_^LED√独立按键√数码管显示√矩阵键盘√独立按键按下时的键码是0，抬起是1；（说明是上拉输入）定时器跟延时函数的理解差不多，只不过定时器不卡死进程在那，只是在后台默默的计数，当达到指定的数量时，才会阻塞进程，执行我们想要干的活LED灯箭头指的方向就是阴极的方向74HC595和74HC138的区别是：74HC5...</div></div></div></a><a class="pagination-related" href="/2026/09/11/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「自动化测试」分类下的全部笔记（含子分类），随笔记增删实时更新。  一、安装谷歌浏览器（如果已经安装了的，可以忽略这一步） 链接：​https://pan.baidu.com/s/1jcQdFdNHQBHkKAGghd2rpA?pwd=6mt8 提取码：6mt8 –来自百度网盘超级会员V5的分享 把网盘里面的​安装包​下载下来之后，​双击​运行它，它就会自动装好的~~ 二、安装完之后看看谷歌浏览器当前的版本 依次点击  即可看到浏览器当前版本  三、去下载对应版本的驱动 1、chromedriver驱动114（包含）版本之前版本下载步骤 114版本之前chromedriver下载地址：（版本如果没有完全一致的，相近的也是ok的）  2、114以上版本下载 ① https://sites.google.com/chromium.org/driver/home ② 点击 Downloads  ③ 点击 the Chrome for Testing availability dashboard  往下拉，我们可以看见114之后的版本  ④ 我们根据自己的系统的版本复制后面的...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/09/11/VsCode/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「VsCode」分类下的全部笔记（含子分类），随笔记增删实时更新。  一、前提条件 JDK、Maven已配置好 二、安装插件 Language Support for Java(TM) by Red Hat Debugger for Java Spring Boot Extension Spring Boot Dashboard 3. 创建或导入Spring Boot项目 使用Spring Initializr创建新项目  打开命令面板（按 Ctrl+Shift+P 或 Cmd+Shift+P）。 输入 Spring Initializr: Generate a Maven Project 并选择该选项。 按照提示选择项目的配置，例如 Group、Artifact、Dependencies 等。 选择项目生成位置并点击“生成”。 VSCode会提示你打开生成的项目。  导入现有项目  直接将项目文件夹拖到VSCode窗口中。 VSCode会自动检测并建议你安装所需的扩展（如果还没有安装的话）。  4. 配置VSCode 配置调试环境  打开调试视图（点击侧栏上的虫子图...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Vue/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Vue」分类下的全部笔记（含子分类），随笔记增删实时更新。   浏览器加载 index.html。 加载并执行 main.js。 初始化 Vue 实例并挂载到 DOM。 解析根组件 App.vue。 加载路由和状态管理（如果有）。 执行组件的生命周期钩子。 渲染子组件。 响应式数据更新，动态更新页面。  当 Vue 实例启动后，组件会经历以下生命周期钩子：  beforeCreate：实例初始化之前。 created：实例创建完成，数据和事件已初始化，但未挂载 DOM。 beforeMount：模板编译完成，但尚未挂载到 DOM。 mounted：组件挂载到 DOM，页面渲染完成。 updated：响应式数据更新后，重新渲染。(Vue 会自动更新 DOM) destroyed：组件销毁时执行清理操作。    &lt;template>   &lt;div>   //code...   &lt;/div> &lt;/template> &lt;script> export default &#123;   data() &#123;     return &#123;...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Python/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Python」分类下的全部笔记（含子分类），随笔记增删实时更新。  sudo apt-get update &amp;&amp; sudo apt-get install espeak 安装pyttsx3 pyttsx3官方参考文档 pip install pyttsx3 测试代码 import pyttsx3 def say_text(engine, words, voice):     # 设置音色     engine.setProperty('voice', voice)     engine.say(words)     engine.runAndWait()     engine.stop() def main():     # 创建对象     engine = pyttsx3.init()     # 设置语音速率     engine.setProperty('rate', 100)     # 设置语音音量，音量最小为 0，最大为 1     engine.setProperty('volume', 1.0)     # words = inpu...</div></div></div></a><a class="pagination-related" href="/2026/09/11/AI/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「AI」分类下的全部笔记（含子分类），随笔记增删实时更新。  CodeGraph 使用指南  colbymchenry/codegraph — 为编程智能体预构建的代码知识图谱，更少 Token、更少工具调用，100% 本地运行。   一、是什么 CodeGraph 把你的代码库解析成一张语义知识图谱（节点 = 函数/类/方法，边 = 调用/导入/继承），存入本地 SQLite 数据库。AI 编程智能体（Claude Code、Cursor、Codex CLI 等）直接查询图谱，而不是反复用 grep/Read 扫描文件。 核心数据（7个真实代码库测试） ：平均 35% 成本降低 · 57% Token 减少 · 46% 更快的响应 · 71% 更少的工具调用。  二、安装 Windows（PowerShell） irm https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.ps1 | iex macOS / Linux curl -fsSL https://raw.githubus...</div></div></div></a><a class="pagination-related" href="/2026/09/11/%E5%89%8D%E7%AB%AF/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「前端」分类下的全部笔记（含子分类），随笔记增删实时更新。  1.正方形  #square &#123;   width: 100px;   height: 100px;   background: red; &#125; 2.长方形  #rectangle &#123;   width: 200px;   height: 100px;   background: red; &#125; 3.圆形  #circle &#123;   width: 100px;   height: 100px;   background: red;   border-radius: 50% &#125; 4.椭圆形  #oval &#123;   width: 200px;   height: 100px;   background: red;   border-radius: 100px / 50px; &#125; 5.上三角  #triangle-up &#123;   width: 0;   height: 0;   border-left: 50px solid transp...</div></div></div></a><a class="pagination-related" href="/2026/09/11/1%E8%BF%90%E7%BB%B4/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「1运维」分类下的全部笔记（含子分类），随笔记增删实时更新。  wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh 2.执行脚本 下载完成后，在终端中进入包所在的目录，并执行以下命令： bash Anaconda3-2021.05-Linux-x86_64.sh 3.按照提示进行安装 然后，按照提示进行安装。在安装过程中需要输入一些信息，例如安装路径、是否将 Anaconda 添加到 PATH 环境变量中等。 4.激活 Anaconda 环境 安装完成后，需要激活 Anaconda 环境。在终端中输入以下命令： source ~/anaconda3/bin/activate 5.验证 Anaconda 是否正确安装 最后，可以验证 Anaconda 是否正确安装。在终端中输入以下命令： conda --version 如果显示了 Anaconda 的版本号，则说明 Anaconda 安装成功。 注意：在使用 Anaconda 之前，最好先更新一下 conda 和 Anacon...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">故不积跬步，无以至千里</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">250</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Keysqiu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">博客由思源笔记自动同步驱动，写作即发布</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%A7%A0-%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">🧠 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GROUP"><span class="toc-number">2.</span> <span class="toc-text">GROUP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HAVING"><span class="toc-number">3.</span> <span class="toc-text">HAVING</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ORDER-BY"><span class="toc-number">4.</span> <span class="toc-text">ORDER BY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UNION"><span class="toc-number">5.</span> <span class="toc-text">UNION</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INTERSECT"><span class="toc-number">6.</span> <span class="toc-text">INTERSECT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EXCEPT"><span class="toc-number">7.</span> <span class="toc-text">EXCEPT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FOR"><span class="toc-number">8.</span> <span class="toc-text">FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COLLATE"><span class="toc-number">9.</span> <span class="toc-text">COLLATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%A7%A0-%E6%80%BB%E7%BB%93-2"><span class="toc-number">10.</span> <span class="toc-text">🧠 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GROUP-2"><span class="toc-number">11.</span> <span class="toc-text">GROUP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HAVING-2"><span class="toc-number">12.</span> <span class="toc-text">HAVING</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ORDER-BY-2"><span class="toc-number">13.</span> <span class="toc-text">ORDER BY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UNION-2"><span class="toc-number">14.</span> <span class="toc-text">UNION</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INTERSECT-2"><span class="toc-number">15.</span> <span class="toc-text">INTERSECT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EXCEPT-2"><span class="toc-number">16.</span> <span class="toc-text">EXCEPT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FOR-2"><span class="toc-number">17.</span> <span class="toc-text">FOR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COLLATE-2"><span class="toc-number">18.</span> <span class="toc-text">COLLATE</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/51%E5%8D%95%E7%89%87%E6%9C%BA/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/%E5%86%8D%E7%94%9F%E9%BE%99/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/AI/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/Go/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Keysqiu/keysqiu.github.io',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/time-greeting.js"></script><script src="/js/header-glow.js"></script><script src="/js/tools/vendor/marked.min.js"></script><script src="/js/tools/vendor/purify.min.js"></script><script src="/js/tools/core.js"></script><script src="/js/tools/tool-json.js"></script><script src="/js/tools/tool-timestamp.js"></script><script src="/js/tools/tool-md-share.js"></script><script src="/js/tools/tool-html-preview.js"></script><script src="/js/tools/tool-img-base64.js"></script><script src="/js/tools/tool-ico.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>

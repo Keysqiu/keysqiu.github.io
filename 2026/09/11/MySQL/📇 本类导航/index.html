@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>📇 本类导航 | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本页自动汇总「MySQL」分类下的全部笔记（含子分类），随笔记增删实时更新。  前两天申请了个云服务器，然后去关掉防火墙方便调试，结果没两天MySQL就被黑了  一个库被删，多了一个库  内容如下： All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHTChMgrSXU 48 hours fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="📇 本类导航">
+<meta property="og:url" content="https://keysqiu.github.io/2026/09/11/MySQL/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/index.html">
+<meta property="og:site_name" content="Keysqiu的小屋">
+<meta property="og:description" content="本页自动汇总「MySQL」分类下的全部笔记（含子分类），随笔记增删实时更新。  前两天申请了个云服务器，然后去关掉防火墙方便调试，结果没两天MySQL就被黑了  一个库被删，多了一个库  内容如下： All your data is a backed up. You must pay 0.1 BTC to 19sPh8TP3RKHkEG2x9y8y1yXHTChMgrSXU 48 hours fo">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/Keysqiu.png">
+<meta property="article:published_time" content="2026-09-11T02:41:57.000Z">
+<meta property="article:modified_time" content="2026-09-11T16:00:02.671Z">
+<meta property="article:author" content="Keysqiu">
+<meta property="article:tag" content="导航">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Keysqiu.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "📇 本类导航",
+  "url": "https://keysqiu.github.io/2026/09/11/MySQL/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/",
+  "image": "https://github.com/Keysqiu.png",
+  "datePublished": "2026-09-11T02:41:57.000Z",
+  "dateModified": "2026-09-11T16:00:02.671Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Keysqiu",
+      "url": "https://keysqiu.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://keysqiu.github.io/2026/09/11/MySQL/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '📇 本类导航',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/header-glow.css"><link rel="stylesheet" href="/css/time-greeting.css"><link rel="stylesheet" href="/css/gh-projects.css"><link rel="stylesheet" href="/css/tools.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">250</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">📇 本类导航</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">📇 本类导航</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-09-11T02:41:57.000Z" title="Created 2026-09-11 10:41:57">2026-09-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-09-11T16:00:02.671Z" title="Updated 2026-09-12 00:00:02">2026-09-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>本页自动汇总「MySQL」分类下的全部笔记（含子分类），随笔记增删实时更新。</p>
+<blockquote>
+<p><strong>前两天申请了个云服务器，然后去关掉防火墙方便调试，结果没两天MySQL就被黑了</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE_image_0-20251130181901-gp4gpa5.png" alt=""><br>
+一个库被删，多了一个库<br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE_image_1-20251130181901-5qh1qfz.png" alt=""><br>
+内容如下：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">All</span> your <span class="token keyword">data</span> <span class="token operator">is</span> a backed up<span class="token punctuation">.</span> You must pay <span class="token number">0.1</span> BTC <span class="token keyword">to</span> <span class="token number">19</span>sPh8TP3RKHkEG2x9y8y1yXHTChMgrSXU <span class="token number">48</span> hours <span class="token keyword">for</span> recover it<span class="token punctuation">.</span> <span class="token keyword">After</span> <span class="token number">48</span> hours expiration we will sell <span class="token keyword">all</span> your <span class="token keyword">data</span> <span class="token keyword">on</span> dark markets <span class="token operator">and</span> the <span class="token keyword">database</span> <span class="token keyword">dump</span> will be dropped <span class="token keyword">from</span> our server<span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">You can buy bitcoin here<span class="token punctuation">,</span> <span class="token punctuation">[</span>https:<span class="token comment">//localbitcoins.com](https://localbitcoins.com) or [https://buy.moonpay.io/](https://buy.moonpay.io/) After paying write to us in the mail with your DB IP: recmydb+2@onionmail.org and you will receive a link to download your database dump.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>对此我想说：</strong><br>
+1、年轻人劝你不要不讲码德！！！<br>
+2、也提醒各位，千万要记得开防火墙，MySQL千万要改密码：<br>
+3、记得把多余的库<code>z_readme_to_recover</code>​和表<code>xrlbrp</code>​及<code>user</code>​的可疑账号<code>server</code>信息删除。如果觉得不放心可以重装MySQL，哈哈~</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/MySQL%20%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%88%AC%E8%B5%B0%E6%95%B0%E6%8D%AE_image_2-20251130181901-43ur5bc.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><strong>字段的类型为：timestamp，</strong><br>
+往下看，默认那里改为 ==CURRENT_TIMESTAMP==</p>
+</blockquote>
+<blockquote>
+<h1><strong>数据库存储数据的特点</strong></h1>
+<p><strong>1、将数据放到表中，表再放到库中</strong><br>
+<strong>2、一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。</strong><br>
+<strong>3、表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。</strong><br>
+<strong>4、表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似java 中的”属性”</strong><br>
+<strong>5、表中的数据是按行存储的，每一行类似于java中的“对象”。</strong></p>
+</blockquote>
+<blockquote>
+<h1>一、常用的聚合函数（以下都是求以列为单位）</h1>
+<p><strong>count(col) 表示求指定列的总行数</strong></p>
+<p><strong>max(col): 表示求指定列的最大值</strong></p>
+<p><strong>min(col): 表示求指定列的最小值</strong></p>
+<p><strong>sum(col): 表示求指定列的和</strong></p>
+<p><strong>avg(col): 表示求指定列的平均值</strong></p>
+<h2 id="1、求总行数">1、求总行数</h2>
+<p><strong>– 返回非NULL数据的总行数</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>– 返回总行数,包含null值记录</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2、求最大值">2、求最大值</h2>
+<p><strong>– 查询女生的编号最大值</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="3、求最小值">3、求最小值</h2>
+<p><strong>– 查询未删除的学生最小编号</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">min</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> is_delete <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="4、求和">4、求和</h2>
+<p><strong>– 查询男生的总身高</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">sum</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>– 平均身高</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">sum</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>– 求男生的平均身高, 聚合函数不统计null值，平均身高有误</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>– 求男生的平均身高, 包含身高是null的</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>ifnull<span class="token punctuation">(</span>height<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> gender <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>说明:ifnull函数:表示判断指定字段的值是否为null,如果为空使用自己提供的值</strong></p>
+<h1>聚合函数的特点</h1>
+<p><strong>聚合函数默认忽略字段为null的记录 要想列值为null的记录也参与计算,必须使用ifnull函数对null值做替换（详情请看第⑥的第二个例子即可，就在上面一点）</strong></p>
+</blockquote>
+<blockquote>
+<h1>假设有两个表 T1，T2</h1>
+<p><strong>表的结构如下图所示</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89_image_0-20251130181901-qa5d9ev.png" alt=""></p>
+<h1>一、内连接（<strong>inner join</strong>）【普通外键引用】</h1>
+<p><strong>如果想把用户信息、积分、等级都列出来，那么一般会这样写：</strong></p>
+<blockquote>
+<p><strong>select * from T1 ,T2 where T1.userid = T2.userid</strong><br>
+<strong>(其实这样的结果等同于select * from T1 inner join T2 on T1.userid=T2.userid )。</strong></p>
+</blockquote>
+<p><strong>把两个表中都存在userid的行拼成一行(即内联)，但后者的效率会比前者高很多，建议用后者(内联)的写法。</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SQL</span>语句：<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> T1 <span class="token keyword">inner</span> <span class="token keyword">join</span> T2 <span class="token keyword">on</span> T1<span class="token punctuation">.</span>userid<span class="token operator">=</span>T2<span class="token punctuation">.</span>userid<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89_image_1-20251130181901-k4hj8sv.png" alt=""></p>
+<h1>二、外连接</h1>
+<h2 id="①-左外连接（left-join）">① 左外连接（<strong>left join</strong>）</h2>
+<p><strong>显示左表T1中的所有行，并把右表T2中符合条件加到左表T1中;右表T2中不符合条件，就不用加入结果表中，并且NULL表示。</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SQL</span>语句：<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> T1 <span class="token keyword">left</span> <span class="token keyword">join</span> T2 <span class="token keyword">on</span> T1<span class="token punctuation">.</span>userid<span class="token operator">=</span>T2<span class="token punctuation">.</span>userid<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89_image_2-20251130181901-pn9q9tp.png" alt=""></p>
+<h2 id="②-右外连接（right-join）">② 右外连接（<strong>right join</strong>）</h2>
+<p><strong>显示右表T2中的所有行，并把左表T1中符合条件加到右表T2中;左表T1中不符合条件，就不用加入结果表中，并且NULL表示。</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SQL</span>语句：<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> T1 <span class="token keyword">right</span> <span class="token keyword">join</span> T2 <span class="token keyword">on</span> T1<span class="token punctuation">.</span>userid<span class="token operator">=</span>T2<span class="token punctuation">.</span>userid<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89_image_3-20251130181901-yydmh5f.png" alt=""></p>
+<h2 id="③全联（full-join）">③全联（<strong>full join</strong>）</h2>
+<p><strong>显示左表T1、右表T2两边中的所有行，即把左联结果表+右联结果表组合在一起，然后过滤掉重复的。</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SQL</span>语句：<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> T1 <span class="token keyword">full</span> <span class="token keyword">join</span> T2 <span class="token keyword">on</span> T1<span class="token punctuation">.</span>userid<span class="token operator">=</span>T2<span class="token punctuation">.</span>userid<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/mysql%E8%BF%9E%E6%8E%A5%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%86%85%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%8C%E5%B7%A6%E5%8F%B3%E8%BF%9E%E6%8E%A5%EF%BC%89_image_4-20251130181901-osto3ou.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>==说明你上一次生成的id就是乱序了==<br>
+解决方法：<br>
+使用 navicat ，右键表名，选择截断表</p>
+<div>
+<font color= "#F33232">截断表：清空数据表中所有数据，然后ID从1开始</font>
+<font color= "#F33232">清空表：清空数据表中所有数据</font>
+</div>
+</blockquote>
+<blockquote>
+<p>‍</p>
+</blockquote>
+<blockquote>
+<p><strong>如果是重装数据库</strong>​<strong><strong>的话，直接把MySQL文件夹下的data文件夹删掉，再从4.1往后按流程走即可</strong></strong>​ <strong>（先看我！！！）</strong></p>
+<h1><strong>一、下载MySQL压缩包</strong></h1>
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/5.5.html#downloads">dev.mysql.com/downloads/mysql/5.5.html#downloads</a></p>
+<blockquote>
+<p><strong>也可以直接用我这个v8.1.0版本</strong></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ImE4HX1zCwe5CeiMF1UfJw?pwd=xo08">pan.baidu.com/s/1ImE4HX1zCwe5CeiMF1UfJw?pwd=xo08</a></p>
+<p><strong>提取码：xo08</strong><br>
+<strong>–来自百度网盘超级会员V4的分享</strong></p>
+<h1><strong>二、配置环境变量</strong></h1>
+<p><strong>如下图所示</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89_image_0-20251130181901-v0viocd.png" alt=""><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89_image_1-20251130181901-h9hpeg2.png" alt=""></p>
+<h1><strong>三、配置用户配置</strong></h1>
+<p><strong>第一步：在</strong>​<strong><strong><strong>D:\MySQL\mysql-8.1.0-winx64</strong></strong></strong>​<strong>目录下创建一个新的文件后缀名为 .ini 的 my.ini空白文件。</strong><br>
+<strong>第二步：编辑创建好的my.ini文件，用于初始化mysql数据库</strong><br>
+<strong>主要修改下面第</strong> <strong>==5==</strong> <strong>和</strong> <strong>==7==</strong> <strong>行的路径即可	tips：路径必须为“\”的形式。</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">[mysqld]
+# 设置3306端口
+port&#x3D;3306
+# 设置mysql的安装目录   ----------是你的文件路径-------------
+basedir&#x3D;D:\\software\\MySQL\\mysql-8.1.0-winx64
+# 设置mysql数据库的数据的存放目录  ---------是你的文件路径data文件夹自行创建
+datadir&#x3D;D:\\software\\MySQL\\mysql-8.1.0-winx64\\data
+# 允许最大连接数
+max_connections&#x3D;200
+# 允许连接失败的次数。
+max_connect_errors&#x3D;10
+# 服务端使用的字符集默认为utf8mb4
+character-set-server&#x3D;utf8mb4
+# 创建新表时将使用的默认存储引擎
+default-storage-engine&#x3D;INNODB
+# 默认使用“mysql_native_password”插件认证
+#mysql_native_password
+default_authentication_plugin&#x3D;mysql_native_password
+[mysql]
+# 设置mysql客户端默认字符集
+default-character-set&#x3D;utf8mb4
+[client]
+# 设置mysql客户端连接服务端时默认使用的端口
+port&#x3D;3306
+default-character-set&#x3D;utf8mb4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><strong>四、安装MySQL服务</strong></h1>
+<h2 id="4-1">4.1</h2>
+<p><strong>如果先前在电脑中装过mysql，请在cmd命令窗口输入</strong> <strong><strong><strong>sc delete mysql</strong></strong></strong> <strong><strong><strong><strong><strong>删除之前的mysql服务。第一次安装请忽略</strong></strong></strong></strong></strong>​<strong><strong><strong><strong>打开命令行，输入</strong></strong></strong></strong>​<strong><strong>mysqld --initialize</strong></strong> 进行初始化mysql。<br>
+<strong>输入上述命令，按回车，会发现文件夹下会多出一个新的文件夹data。</strong><br>
+<strong>等待初始化完成会生成一个后缀名为.err的文件（在刚刚生成的data文件夹中），里面存放的是初始化登录mysql的密码；</strong><br>
+<strong>打开.err文件：找到下图中所示的root账户和root密码；</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89_image_2-20251130181901-ulpzfo5.png" alt=""></p>
+<h2 id="4-2">4.2</h2>
+<p><strong>打开cmd窗口，输入mysqld --install</strong> 命令；<br>
+<strong>ps！！！： 如果出现</strong> <strong><strong><strong>Install/Remove of the Service Denied!</strong></strong></strong>  <strong>错误的话。解决办法： 使用管理员身份运行cmd</strong><br>
+<strong>接上，输入</strong> <strong><strong><strong>net start mysql</strong></strong></strong>  <strong>开启mysql服务；</strong><br>
+<strong>使用root账户和刚刚文件里查看的密码进行登录；</strong><br>
+<strong>出现以下界面说明mysql登录成功；</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/Windows%E4%B8%8BMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%EF%BC%88%E8%AF%A6%E7%BB%86%EF%BC%89_image_3-20251130181901-ab4xeba.png" alt=""></p>
+<h2 id="4-3">4.3</h2>
+<p><strong>修改mysql root账户密码：使用命令：</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># 本地</span>
+<span class="token keyword">alter</span> <span class="token keyword">user</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">with</span> mysql_native_password <span class="token keyword">by</span> <span class="token string">'**G#t9WhZr2@qL7BmPnXeD**'</span><span class="token punctuation">;</span><span class="token operator">*</span><span class="token operator">*</span>
+<span class="token comment"># 远程</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'G#t9WhZr2@qL7BmPnXeD'</span>（密码）<span class="token punctuation">;</span>
+<span class="token comment"># 修改密码：记得flush privileges一下</span>
+flush <span class="token keyword">privileges</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io">Keysqiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io/2026/09/11/MySQL/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/">https://keysqiu.github.io/2026/09/11/MySQL/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AF%BC%E8%88%AA/">导航</a></div><div class="post-share"><div class="social-share" data-image="https://github.com/Keysqiu.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/09/11/Windows/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Windows」分类下的全部笔记（含子分类），随笔记增删实时更新。  ① 快捷方式：PowerShell 一行命令（查端口并直接杀掉） # 查出占用 8080 端口的进程并强制结束 Get-Process -Id (Get-NetTCPConnection -LocalPort 8080).OwningProcess | Stop-Process -Force ② 找出占用 443 端口的进程号(pid) （第二列是本机应用占用的端口，看第二列即可，下图中对应过去的 pid 是 18072） # 输出的最后一列就是进程号pid netstat -ano | findstr :443  ③ 查看该 pid 对应的程序（这步操作可有可无，如果杀不掉这个进程，可以用这条命令先看看是哪个程序，再进一步处理） tasklist | findstr 进程号pid ④ 通过 pid 杀进程 # 这里的pid为上面找到的pid taskkill /pid [进程号pid] -f ⑤ 按进程名结束（会结束该进程的所有实例） taskkill /im 进程名.exe /f ⑥ 常见问题...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Java/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Java」分类下的全部笔记（含子分类），随笔记增删实时更新。  前提 先在IDEA中安装两个插件，如下图所示  1、安装图形化驱动程序（Scene Builder） ==其实只需要下载一个外部程序即可（就这么简单，不要下什么eclipse，纯纯sb！！！）== 提取码：m0ej –来自百度网盘超级会员V4的分享 改一下安装路径，然后不断next即可 2、具体使用 ①：最简单的，直接新建一个普通的Java项目 ②：在src文件夹下新建view软件包 ③：右键view软件包，点击新建FXML文件  ④：右键新建好的fxml文件，选择在SceneBuilder中打开  打开之后的窗口如下图所示  这里面就可以进行组件的拖拽布局以及设置组件id名，（这个id名和Qt中组件的类名是同一个意思，都是对象名，所以说大佬的设计思想往往不谋而同） 如何设置id名？请看以下分析 点击你想要命名的组件，在右边找到Code菜单项，里面即可设置id，请看下图    前提：如果你核查代码确保都没问题的时候，但还是出现莫名其妙的异常❎❎❎ 解决思路  这时候就要看看是不是导的包导错了（这个跟微信...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/09/11/Go/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Go」分类下的全部笔记（含子分类），随笔记增删实时更新。  go env -w GOPROXY=https://goproxy.cn   ① HelloWorld案例 package main import "fmt" func main()&#123;     fmt.Println("Hello World") //Hello World &#125; ② 数组 创建固定数组，数组长度不可变 a := [5]int&#123;1,2,3,4,5&#125; 创建动态数组 a := make([]int,0) //这里的a是第一行所创建的 a = append(a,1,2,3,4,5) a[0] = 10  //改变数组a中第一个元素的值 ③ 键值对 m := make(map[string]int) m["a"]=1 m["b"]=2 fmt.Println(m)  //map[a:1 b:2] ④ 结构 type Point struct &#123;     X int     Y int &#125; p:=Point&#123;1,2&#125;  //...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Vue/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Vue」分类下的全部笔记（含子分类），随笔记增删实时更新。   浏览器加载 index.html。 加载并执行 main.js。 初始化 Vue 实例并挂载到 DOM。 解析根组件 App.vue。 加载路由和状态管理（如果有）。 执行组件的生命周期钩子。 渲染子组件。 响应式数据更新，动态更新页面。  当 Vue 实例启动后，组件会经历以下生命周期钩子：  beforeCreate：实例初始化之前。 created：实例创建完成，数据和事件已初始化，但未挂载 DOM。 beforeMount：模板编译完成，但尚未挂载到 DOM。 mounted：组件挂载到 DOM，页面渲染完成。 updated：响应式数据更新后，重新渲染。(Vue 会自动更新 DOM) destroyed：组件销毁时执行清理操作。    &lt;template>   &lt;div>   //code...   &lt;/div> &lt;/template> &lt;script> export default &#123;   data() &#123;     return &#123;...</div></div></div></a><a class="pagination-related" href="/2026/09/11/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「自动化测试」分类下的全部笔记（含子分类），随笔记增删实时更新。  一、安装谷歌浏览器（如果已经安装了的，可以忽略这一步） 链接：​https://pan.baidu.com/s/1jcQdFdNHQBHkKAGghd2rpA?pwd=6mt8 提取码：6mt8 –来自百度网盘超级会员V5的分享 把网盘里面的​安装包​下载下来之后，​双击​运行它，它就会自动装好的~~ 二、安装完之后看看谷歌浏览器当前的版本 依次点击  即可看到浏览器当前版本  三、去下载对应版本的驱动 1、chromedriver驱动114（包含）版本之前版本下载步骤 114版本之前chromedriver下载地址：（版本如果没有完全一致的，相近的也是ok的）  2、114以上版本下载 ① https://sites.google.com/chromium.org/driver/home ② 点击 Downloads  ③ 点击 the Chrome for Testing availability dashboard  往下拉，我们可以看见114之后的版本  ④ 我们根据自己的系统的版本复制后面的...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Qt/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Qt」分类下的全部笔记（含子分类），随笔记增删实时更新。  1、同步/异步：指 I/O 操作，也就是说同步会等到程序 IO 操作结束之后才往下执行，而异步的话，在执行 IO 操作时，程序会先往下继续跑，等到 IO 操作完成之后，再合并资源 阻塞/非阻塞：指进程，具体解释和上面差不多，就是说对象不一样而已 2、​在数据流传输过程中，如果服务器和客户端的连接没有问题，但是客户端一直收不到服务器发来的数据包，那么很有可能是服务器那边发送的数据包有问题****​ 。   一、复制项目内容到新的文件夹中。修改文件夹名称   二、手动把  .pro 的名字改写为新的项目名称。删除.pro.user文件   三、用QT Creator打开修改名字之后的.pro文件，重新配置项目（configure project） 完成！     1、​qt项目相对路径的起源是以​编译的build文件夹为主目录 2、信号写在发送窗口的.h中，写一个声明即可，无需实现。槽函数写在目标窗口的.h和.cpp文件中，需要实现。连接写在哪都可。   信号：发送窗口   槽函数与连接：目标窗口  利用Tab...</div></div></div></a><a class="pagination-related" href="/2026/09/11/%E5%86%8D%E7%94%9F%E9%BE%99/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「再生龙」分类下的全部笔记（含子分类），随笔记增删实时更新。  再生龙系统备份系统全过程 利用制作好的再生龙恢复U盘，我们可以备份linux系统，然后进行快速的克隆安装。 1.配置服务器以U盘作为第一启动顺序，以便开机进入再生龙系统  2.开机进入再生龙系统，选择Other mode  3.然后选择To RAM，这样我们在使用过程中，系统已经被加载到内存中了，所以U盘就可以随意插拔更换了。（虽然我们并不需要更换）  4.选择运行语言，简体中文  5.选择默认键盘配置，直接回车  6.选择使用再生龙  7.选择模式，因为我们要备份硬盘，所以选择第一个，将硬盘保存为镜像文件  8.此处，我们选择使用本机分区或者硬盘  9.然后如果是选择upan存储保存的镜像，那么这里会开始检查usb设备，回车继续  10.这里会看到已经扫描到的U盘，我们的是一个Kingston U盘，然后ctrl+c停止扫描  11.这里我们选择存储镜像的U盘，为第二个，金士顿U盘  12.跳过检查文件系统，回车  13.​选择保存路径，我们保存在根目录，所以直接tab至done，回车  14.回车继续...</div></div></div></a><a class="pagination-related" href="/2026/09/11/ROS/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「ROS」分类下的全部笔记（含子分类），随笔记增删实时更新。  欧拉角的单位是****弧度 1弧度=180/pai 度 1度=pai/180 弧度 记不住的时候就像圆 一个圆是360度,2pai弧度 不用写一行代码，ROS都帮你写好了，你只需要调参（​调参侠****​ ） 需要求的就为参考的坐标系 导航涉及的关键技术有如下五点： 1。全局地图 2。自身定位 3。路径规划 4。运动控制 5。环境感知    测试项目demo  catkin_csdn.zip 一、先在小鱼下安装ros wget http:&#x2F;&#x2F;fishros.com&#x2F;install -O fishros &amp;&amp; bash fishros 根据提示一步一步下载即可，大佬就是大佬！！！（版本下载 ros1） 二、安装插件 背景 项目中需要开发与ROS生态和点云可视化相关的图形界面程序（例如开发一个实时接收雷达ros点云话题并显示的例程），经过调研发现在ubuntu上使用Qt是一个比较好的选择。这里对开发环境的配置过程进行记录，供大家参考。 环境：ubuntu20.04...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">故不积跬步，无以至千里</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">250</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Keysqiu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">博客由思源笔记自动同步驱动，写作即发布</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数据库存储数据的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">一、常用的聚合函数（以下都是求以列为单位）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%B1%82%E6%80%BB%E8%A1%8C%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">1、求总行数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%B1%82%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-number">2.2.</span> <span class="toc-text">2、求最大值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%B1%82%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="toc-number">2.3.</span> <span class="toc-text">3、求最小值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%B1%82%E5%92%8C"><span class="toc-number">2.4.</span> <span class="toc-text">4、求和</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">聚合函数的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">假设有两个表 T1，T2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">一、内连接（inner join）【普通外键引用】</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">二、外连接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A0-%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%88left-join%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">① 左外连接（left join）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A1-%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5%EF%BC%88right-join%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">② 右外连接（right join）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A2%E5%85%A8%E8%81%94%EF%BC%88full-join%EF%BC%89"><span class="toc-number">6.3.</span> <span class="toc-text">③全联（full join）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">一、下载MySQL压缩包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">二、配置环境变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">三、配置用户配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">四、安装MySQL服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1"><span class="toc-number">10.1.</span> <span class="toc-text">4.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2"><span class="toc-number">10.2.</span> <span class="toc-text">4.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3"><span class="toc-number">10.3.</span> <span class="toc-text">4.3</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/51%E5%8D%95%E7%89%87%E6%9C%BA/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/%E5%86%8D%E7%94%9F%E9%BE%99/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/AI/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/Go/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Keysqiu/keysqiu.github.io',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/time-greeting.js"></script><script src="/js/header-glow.js"></script><script src="/js/tools/vendor/marked.min.js"></script><script src="/js/tools/vendor/purify.min.js"></script><script src="/js/tools/core.js"></script><script src="/js/tools/tool-json.js"></script><script src="/js/tools/tool-timestamp.js"></script><script src="/js/tools/tool-md-share.js"></script><script src="/js/tools/tool-html-preview.js"></script><script src="/js/tools/tool-img-base64.js"></script><script src="/js/tools/tool-ico.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>

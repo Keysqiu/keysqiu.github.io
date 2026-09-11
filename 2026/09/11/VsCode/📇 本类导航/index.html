@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>📇 本类导航 | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本页自动汇总「VsCode」分类下的全部笔记（含子分类），随笔记增删实时更新。  一、前提条件 JDK、Maven已配置好 二、安装插件 Language Support for Java(TM) by Red Hat Debugger for Java Spring Boot Extension Spring Boot Dashboard 3. 创建或导入Spring Boot项目 使用Spri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="📇 本类导航">
+<meta property="og:url" content="https://keysqiu.github.io/2026/09/11/VsCode/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/index.html">
+<meta property="og:site_name" content="Keysqiu的小屋">
+<meta property="og:description" content="本页自动汇总「VsCode」分类下的全部笔记（含子分类），随笔记增删实时更新。  一、前提条件 JDK、Maven已配置好 二、安装插件 Language Support for Java(TM) by Red Hat Debugger for Java Spring Boot Extension Spring Boot Dashboard 3. 创建或导入Spring Boot项目 使用Spri">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/Keysqiu.png">
+<meta property="article:published_time" content="2026-09-11T02:42:06.000Z">
+<meta property="article:modified_time" content="2026-09-11T16:00:02.831Z">
+<meta property="article:author" content="Keysqiu">
+<meta property="article:tag" content="导航">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Keysqiu.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "📇 本类导航",
+  "url": "https://keysqiu.github.io/2026/09/11/VsCode/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/",
+  "image": "https://github.com/Keysqiu.png",
+  "datePublished": "2026-09-11T02:42:06.000Z",
+  "dateModified": "2026-09-11T16:00:02.831Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Keysqiu",
+      "url": "https://keysqiu.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://keysqiu.github.io/2026/09/11/VsCode/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '📇 本类导航',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/header-glow.css"><link rel="stylesheet" href="/css/time-greeting.css"><link rel="stylesheet" href="/css/gh-projects.css"><link rel="stylesheet" href="/css/tools.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">250</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">📇 本类导航</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">📇 本类导航</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-09-11T02:42:06.000Z" title="Created 2026-09-11 10:42:06">2026-09-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-09-11T16:00:02.831Z" title="Updated 2026-09-12 00:00:02">2026-09-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>本页自动汇总「VsCode」分类下的全部笔记（含子分类），随笔记增删实时更新。</p>
+<blockquote>
+<h1>一、前提条件</h1>
+<p><strong>JDK、Maven已配置好</strong></p>
+<h1>二、安装插件</h1>
+<pre class="line-numbers language-none"><code class="language-none">Language Support for Java(TM) by Red Hat
+Debugger for Java
+Spring Boot Extension
+Spring Boot Dashboard<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h1>3. 创建或导入Spring Boot项目</h1>
+<h2 id="使用Spring-Initializr创建新项目">使用Spring Initializr创建新项目</h2>
+<ol>
+<li><strong>打开命令面板（按 Ctrl+Shift+P 或 Cmd+Shift+P）。</strong></li>
+<li><strong>输入 Spring Initializr: Generate a Maven Project 并选择该选项。</strong></li>
+<li><strong>按照提示选择项目的配置，例如 Group、Artifact、Dependencies 等。</strong></li>
+<li><strong>选择项目生成位置并点击“生成”。</strong></li>
+<li><strong>VSCode会提示你打开生成的项目。</strong></li>
+</ol>
+<h2 id="导入现有项目">导入现有项目</h2>
+<ol>
+<li><strong>直接将项目文件夹拖到VSCode窗口中。</strong></li>
+<li><strong>VSCode会自动检测并建议你安装所需的扩展（如果还没有安装的话）。</strong></li>
+</ol>
+<h1>4. 配置VSCode</h1>
+<h2 id="配置调试环境">配置调试环境</h2>
+<ol>
+<li>打开调试视图（点击侧栏上的虫子图标或按 <strong><strong>Ctrl+Shift+D</strong></strong>）。</li>
+<li>点击 <strong><strong>create a launch.json file</strong></strong>，然后选择 <strong><strong>Java</strong></strong>。</li>
+<li>VSCode会生成一个 <strong><strong>launch.json</strong></strong> 文件，通常位于 .vscode 文件夹中，内容如下：</li>
+</ol>
+<blockquote>
+<p>将 mainClass 和 projectName 修改为你项目的实际值。</p>
+</blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java"</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Debug (Launch) - Current File"</span><span class="token punctuation">,</span>
+            <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
+            <span class="token property">"mainClass"</span><span class="token operator">:</span> <span class="token string">"$&#123;file&#125;"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java"</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Debug (Attach)"</span><span class="token punctuation">,</span>
+            <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"attach"</span><span class="token punctuation">,</span>
+            <span class="token property">"hostName"</span><span class="token operator">:</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span>
+            <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">5005</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java"</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Debug (Launch) - MyApp"</span><span class="token punctuation">,</span>
+            <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
+            <span class="token property">"mainClass"</span><span class="token operator">:</span> <span class="token string">"com.example.MyApp"</span><span class="token punctuation">,</span>
+            <span class="token property">"projectName"</span><span class="token operator">:</span> <span class="token string">"my-app"</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1>5. 运行和调试项目</h1>
+<h2 id="通过命令行运行">通过命令行运行</h2>
+<ol>
+<li><strong>打开终端（按 Ctrl+ 或 Cmd+）。</strong></li>
+<li><strong>导航到项目根目录。</strong></li>
+<li>运行 <strong><strong>mvn spring-boot:run</strong></strong> 命令启动Spring Boot应用。</li>
+</ol>
+<h2 id="通过Spring-Boot-Dashboard运行">通过Spring Boot Dashboard运行</h2>
+<ol>
+<li><strong>点击侧栏上的Spring图标（Spring Boot Dashboard）。</strong></li>
+<li><strong>在Spring Boot Dashboard中找到你的项目。</strong></li>
+<li>点击播放按钮运行项目。</li>
+</ol>
+<h2 id="通过调试模式运行">通过调试模式运行</h2>
+<ol>
+<li><strong>设置断点：在代码行号左侧点击，添加断点。</strong></li>
+<li><strong>打开调试视图（按 Ctrl+Shift+D）。</strong></li>
+<li><strong>选择之前配置的 Debug (Launch) - MyApp 配置。</strong></li>
+<li><strong>点击绿色的开始按钮开始调试</strong></li>
+</ol>
+<h1>6. 使用Spring Boot Actuator (可选)</h1>
+<p>如果你的项目中包含 Spring Boot Actuator，可以通过访问端点（如 /actuator/health）来监控和管理应用。</p>
+<h1>7. 配置任务自动化（可选）</h1>
+<p>你可以使用 VSCode 的任务系统来自动化构建和运行步骤：</p>
+<ol>
+<li><strong>创建</strong>  <strong>.vscode/tasks.json</strong> 文件。</li>
+<li>添加以下配置：</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>
+    <span class="token string">"version"</span><span class="token builtin class-name">:</span> <span class="token string">"2.0.0"</span>,
+    <span class="token string">"tasks"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token string">"label"</span><span class="token builtin class-name">:</span> <span class="token string">"Run Spring Boot"</span>,
+            <span class="token string">"type"</span><span class="token builtin class-name">:</span> <span class="token string">"shell"</span>,
+            <span class="token string">"command"</span><span class="token builtin class-name">:</span> <span class="token string">"mvn spring-boot:run"</span>,
+            <span class="token string">"group"</span><span class="token builtin class-name">:</span> <span class="token string">"build"</span>,
+            <span class="token string">"problemMatcher"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+            <span class="token string">"detail"</span><span class="token builtin class-name">:</span> <span class="token string">"Runs the Spring Boot application"</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>你可以通过任务面板或快捷键运行此任务。</li>
+</ol>
+</blockquote>
+<blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 调试时即使任务出错也继续调试</span>
+    <span class="token property">"debug.onTaskErrors"</span><span class="token operator">:</span> <span class="token string">"debugAnyway"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 差异编辑器中开启自动换行</span>
+    <span class="token property">"diffEditor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 光标平滑闪烁</span>
+    <span class="token property">"editor.cursorBlinking"</span><span class="token operator">:</span> <span class="token string">"smooth"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编辑器字体大小（支持小数）</span>
+    <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">13.5</span><span class="token punctuation">,</span>
+    <span class="token comment">// 显示括号对引导线</span>
+    <span class="token property">"editor.guides.bracketPairs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 按住 Ctrl 并滚动鼠标滚轮可缩放字体</span>
+    <span class="token property">"editor.mouseWheelZoom"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 启用编辑器平滑滚动</span>
+    <span class="token property">"editor.smoothScrolling"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 代码补全默认选中第一个建议项</span>
+    <span class="token property">"editor.suggestSelection"</span><span class="token operator">:</span> <span class="token string">"first"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编辑器自动换行</span>
+    <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 在第 120 列显示标尺线（辅助代码宽度控制）</span>
+    <span class="token property">"editor.rulers"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">120</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Tab 缩进为 4 个空格</span>
+    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token comment">// 自动猜测文件编码（避免乱码）</span>
+    <span class="token property">"files.autoGuessEncoding"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 打开不受信任的文件时不提示</span>
+    <span class="token property">"security.workspace.trust.untrustedFiles"</span><span class="token operator">:</span> <span class="token string">"open"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 粘贴多行内容到终端时不警告</span>
+    <span class="token property">"terminal.integrated.enableMultiLinePasteWarning"</span><span class="token operator">:</span> <span class="token string">"never"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 终端启用平滑滚动</span>
+    <span class="token property">"terminal.integrated.smoothScrolling"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 使用 VS Code 自定义对话框样式（非系统原生）</span>
+    <span class="token property">"window.dialogStyle"</span><span class="token operator">:</span> <span class="token string">"custom"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 资源管理器列表平滑滚动</span>
+    <span class="token property">"workbench.list.smoothScrolling"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 打开项目时自动运行 CMake 配置</span>
+    <span class="token property">"cmake.configureOnOpen"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Vue 文件使用 Volar 作为默认格式化工具</span>
+    <span class="token property">"[vue]"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"Vue.volar"</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token comment">// 启用关联编辑（如修改 HTML 标签时同步更新闭合标签）</span>
+    <span class="token property">"editor.linkedEditing"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<blockquote>
+<ol>
+<li>Vue 3 Snippets</li>
+<li>Vue - Official</li>
+<li>vue</li>
+<li>Spring Initializr Java Support</li>
+<li>Spring Boot Tools</li>
+<li>Spring Boot Extension Pack</li>
+<li>Spring Boot Dashboard</li>
+<li>Python</li>
+<li>Pylance</li>
+<li>One Dark Pro</li>
+<li>Material lcon Theme</li>
+<li>Live Preview</li>
+<li>tongyi</li>
+<li>Language Support for Java™ by Red Hat</li>
+<li>HTML CSS Support</li>
+<li>GitHub Copilot Chat</li>
+<li>GitHub Copilot</li>
+<li>Error Lens</li>
+<li>Debugger for Java</li>
+<li>Code Spell Checker</li>
+<li>CMake Tools</li>
+<li>CMake</li>
+<li>Chinese (Simplified)</li>
+<li>.NET Install Tool</li>
+<li>Auto Rename Tag</li>
+<li>Better C++ Syntax</li>
+<li>Better Comments</li>
+<li>C/C++</li>
+<li>C/C++ Extension Pack</li>
+<li>C/C++ Themes</li>
+<li>C#</li>
+<li>C# Dev Kit</li>
+<li>Markdown Preview Enhanced</li>
+<li>Markdown All in One</li>
+<li>Prettier SQL VSCode</li>
+<li>WSL</li>
+<li>Turbo Console Lo</li>
+<li>Markdown Shortcuts</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>① 按</strong> <strong><strong><strong>Ctrl+Shift+P</strong></strong></strong> <strong>搜索所有命令</strong><br>
+<strong>② 输入</strong>​<strong><strong><strong>settings</strong></strong></strong>​ <strong>，打开用户设置</strong><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/%E8%AE%BE%E7%BD%AEVsCode%E7%BC%96%E7%A0%81_image_0-20251130181902-6uetj9j.png" alt=""><br>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/%E8%AE%BE%E7%BD%AEVsCode%E7%BC%96%E7%A0%81_image_1-20251130181902-mja4scg.png" alt=""></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io">Keysqiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io/2026/09/11/VsCode/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/">https://keysqiu.github.io/2026/09/11/VsCode/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AF%BC%E8%88%AA/">导航</a></div><div class="post-share"><div class="social-share" data-image="https://github.com/Keysqiu.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/09/11/AI/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「AI」分类下的全部笔记（含子分类），随笔记增删实时更新。  CodeGraph 使用指南  colbymchenry/codegraph — 为编程智能体预构建的代码知识图谱，更少 Token、更少工具调用，100% 本地运行。   一、是什么 CodeGraph 把你的代码库解析成一张语义知识图谱（节点 = 函数/类/方法，边 = 调用/导入/继承），存入本地 SQLite 数据库。AI 编程智能体（Claude Code、Cursor、Codex CLI 等）直接查询图谱，而不是反复用 grep/Read 扫描文件。 核心数据（7个真实代码库测试） ：平均 35% 成本降低 · 57% Token 减少 · 46% 更快的响应 · 71% 更少的工具调用。  二、安装 Windows（PowerShell） irm https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.ps1 | iex macOS / Linux curl -fsSL https://raw.githubus...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Visual%20Studio/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Visual Studio」分类下的全部笔记（含子分类），随笔记增删实时更新。  #define _CRT_SECURE_NO_WARNINGS 1   解决思路：（以下思路需对照代码进行逐点分析） ①：代码里函数有声明，但是没有定义  （初学者错这个比较多） ②：类中有静态变量成员，没有对它进行初始化（是变量，不是函数）（开发后期错这个比较多） ③：缺少lib库，可能代码里面引用了一些第三方的库，这个后面导入处理即可   1、启用并行编译, 生成时仅生成启动项目依赖项不全部  2、启用增量编译    3、关闭解决方案实时代码分析   </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/09/11/51%E5%8D%95%E7%89%87%E6%9C%BA/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「51单片机」分类下的全部笔记（含子分类），随笔记增删实时更新。  首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解 首先我们拿到一个芯片时，第一：了解它的功能，第二：拿到这个芯片的数据手册(Datasheet)并了解大多数单片机或芯片： 高电平弱驱动，低电平强驱动 大多数单片机或芯片：​高电平弱驱动，低电平强驱动​单片机（MCU）中的CPU通过操作寄存器来控制引脚的输出电压如图51的数据类型烧录的单片机型号: STC89C516RD+/LE516RD+，11.0592MHz晶振串口通信那里：波特率计算器中的系统频率选择11.0592MHz，记住收发方的波特率事先约定好，不然会出错，也就是常说的不在同一频道^_^LED√独立按键√数码管显示√矩阵键盘√独立按键按下时的键码是0，抬起是1；（说明是上拉输入）定时器跟延时函数的理解差不多，只不过定时器不卡死进程在那，只是在后台默默的计数，当达到指定的数量时，才会阻塞进程，执行我们想要干的活LED灯箭头指的方向就是阴极的方向74HC595和74HC138的区别是：74HC5...</div></div></div></a><a class="pagination-related" href="/2026/09/11/1%E7%BB%8F%E9%AA%8C/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「1经验」分类下的全部笔记（含子分类），随笔记增删实时更新。  在 GitHub 上提交 Pull Request（简称 PR，拉取请求）是参与开源项目或团队协作的核心方式。简单来说，就是把你修改好的代码“请求”合并到别人的项目里。 以下是提交 PR 的完整标准流程，你可以把它看作一份新手避坑指南： 🌱 1. Fork 项目（复制一份到你自己的仓库） 在你想要贡献代码的项目主页，点击右上角的 Fork 按钮。这会在你的 GitHub 账号下生成一个该项目的完整副本。 💻 2. Clone 到本地（把代码下载到电脑） 打开你 Fork 后的仓库，点击绿色的 Code 按钮，复制仓库的 HTTPS 或 SSH 链接。在本地终端（命令行）中执行克隆命令： git clone 你的仓库链接 🌿 3. 配置上游仓库与创建分支（关键步骤） 进入项目文件夹后，千万不要直接在主分支（main/master）上修改代码！  添加上游仓库：为了后续能同步原项目的最新代码，需要把原项目添加为上游仓库（upstream）。 git remote add upstream 原项目的仓库链...</div></div></div></a><a class="pagination-related" href="/2026/09/11/%E5%86%8D%E7%94%9F%E9%BE%99/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「再生龙」分类下的全部笔记（含子分类），随笔记增删实时更新。  再生龙系统备份系统全过程 利用制作好的再生龙恢复U盘，我们可以备份linux系统，然后进行快速的克隆安装。 1.配置服务器以U盘作为第一启动顺序，以便开机进入再生龙系统  2.开机进入再生龙系统，选择Other mode  3.然后选择To RAM，这样我们在使用过程中，系统已经被加载到内存中了，所以U盘就可以随意插拔更换了。（虽然我们并不需要更换）  4.选择运行语言，简体中文  5.选择默认键盘配置，直接回车  6.选择使用再生龙  7.选择模式，因为我们要备份硬盘，所以选择第一个，将硬盘保存为镜像文件  8.此处，我们选择使用本机分区或者硬盘  9.然后如果是选择upan存储保存的镜像，那么这里会开始检查usb设备，回车继续  10.这里会看到已经扫描到的U盘，我们的是一个Kingston U盘，然后ctrl+c停止扫描  11.这里我们选择存储镜像的U盘，为第二个，金士顿U盘  12.跳过检查文件系统，回车  13.​选择保存路径，我们保存在根目录，所以直接tab至done，回车  14.回车继续...</div></div></div></a><a class="pagination-related" href="/2026/09/11/stm32%E5%AD%A6%E4%B9%A0/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「stm32学习」分类下的全部笔记（含子分类），随笔记增删实时更新。  理解：输入捕获模式下，当通道输入引脚出现指定电平跳变时，当前CNT的值将被锁存到CCR中，可用于测量PWM波形的频率、占空比、脉冲间隔、电平持续时间等参数（可以想象成示波器，您细品就懂了！！！）    前提：接线和代码都没问题（一定要先检查完这个前提再往下排查，不然往下毫无意义）  看看是不是你的模块之间设置的IO口都是那一个，冲突了，错了几次，真的艹了！！！   一、下载Astyle **链接：**​https://pan.baidu.com/s/13usAzedx_G2IvIuOVmMHrQ?pwd=hsb0 提取码：hsb0 –来自百度网盘超级会员V4的分享 二、下面针对工具的配置和使用：格式化当前文件、格式化所有的.c文件，格式化所有的.h文件、快捷方式设置 keil(MDK)中加载工具 Astyle（格式化当前文件工具设置）  在Astyle官网 下载完成后，解压到一个目录下，进入解压文件下找到binAstyle.exe  打开 keil(MDK) ,选择 Tools-&gt;Custo...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Git/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Git」分类下的全部笔记（含子分类），随笔记增删实时更新。   生成的.git文件夹中就那个config文件比较重要一点，里面配置了远程仓库信息，其他的没啥用，几乎都是二进制文件  一、绑定远程仓库 1.1 安装Git（Windows版安装） **链接：**​https://pan.baidu.com/s/1n5gAh5QqVwg8f3H5b3ydNA?pwd=so14 提取码：so14 –来自百度网盘超级会员V5的分享 改一下安装路径，然后不断下一步即可 1.2 随便在一个文件夹里面，鼠标右键，选择&quot;Git Bash Here&quot;，打开Git命令窗口 git config --global user.name "SIE-QIUQINGSHENG"   #Keysqiu应改为你自己的名字 git config --global user.email "2586597832@qq.com"   #2586597832@qq.com应改为你自己的邮箱 输入以上指令后，会在​C:\Users\Administrator​目录下生成​ .gitconfig...</div></div></div></a><a class="pagination-related" href="/2026/09/11/Python/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-11</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「Python」分类下的全部笔记（含子分类），随笔记增删实时更新。  sudo apt-get update &amp;&amp; sudo apt-get install espeak 安装pyttsx3 pyttsx3官方参考文档 pip install pyttsx3 测试代码 import pyttsx3 def say_text(engine, words, voice):     # 设置音色     engine.setProperty('voice', voice)     engine.say(words)     engine.runAndWait()     engine.stop() def main():     # 创建对象     engine = pyttsx3.init()     # 设置语音速率     engine.setProperty('rate', 100)     # 设置语音音量，音量最小为 0，最大为 1     engine.setProperty('volume', 1.0)     # words = inpu...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">故不积跬步，无以至千里</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">250</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">45</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">41</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Keysqiu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">博客由思源笔记自动同步驱动，写作即发布</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">一、前提条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二、安装插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">3. 创建或导入Spring Boot项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Spring-Initializr%E5%88%9B%E5%BB%BA%E6%96%B0%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.1.</span> <span class="toc-text">使用Spring Initializr创建新项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E7%8E%B0%E6%9C%89%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.2.</span> <span class="toc-text">导入现有项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">4. 配置VSCode</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text">配置调试环境</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">5. 运行和调试项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8C"><span class="toc-number">5.1.</span> <span class="toc-text">通过命令行运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Spring-Boot-Dashboard%E8%BF%90%E8%A1%8C"><span class="toc-number">5.2.</span> <span class="toc-text">通过Spring Boot Dashboard运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C"><span class="toc-number">5.3.</span> <span class="toc-text">通过调试模式运行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">6. 使用Spring Boot Actuator (可选)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">7. 配置任务自动化（可选）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/51%E5%8D%95%E7%89%87%E6%9C%BA/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/%E5%86%8D%E7%94%9F%E9%BE%99/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/AI/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/Go/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Keysqiu/keysqiu.github.io',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/time-greeting.js"></script><script src="/js/header-glow.js"></script><script src="/js/tools/vendor/marked.min.js"></script><script src="/js/tools/vendor/purify.min.js"></script><script src="/js/tools/core.js"></script><script src="/js/tools/tool-json.js"></script><script src="/js/tools/tool-timestamp.js"></script><script src="/js/tools/tool-md-share.js"></script><script src="/js/tools/tool-html-preview.js"></script><script src="/js/tools/tool-img-base64.js"></script><script src="/js/tools/tool-ico.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
