@@ -1,0 +1,581 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据库-Redis-MQ速记 | Keysqiu的小屋</title><meta name="author" content="Keysqiu"><meta name="copyright" content="Keysqiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="来源：本人笔记「面试&#x2F;面试经」「MySQL」「Redis」「1经验（慢SQL优化 &#x2F; 乐观锁和悲观锁 &#x2F; 高并发方案总结）」「1工作&#x2F;合集（数据库日常运维 &#x2F; 分布式Redis锁）」「SpringCloud学习（RabbitMQ &#x2F; RabbitMQ部署指南）」。面试前一晚只看这一页。  一、数据库 1. 慢 SQL 优化（最高频，背五步）  检查是否走了索引，没走就改 SQL 用上索引 走了索">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库-Redis-MQ速记">
+<meta property="og:url" content="https://keysqiu.github.io/2026/09/22/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93-Redis-MQ%E9%80%9F%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Keysqiu的小屋">
+<meta property="og:description" content="来源：本人笔记「面试&#x2F;面试经」「MySQL」「Redis」「1经验（慢SQL优化 &#x2F; 乐观锁和悲观锁 &#x2F; 高并发方案总结）」「1工作&#x2F;合集（数据库日常运维 &#x2F; 分布式Redis锁）」「SpringCloud学习（RabbitMQ &#x2F; RabbitMQ部署指南）」。面试前一晚只看这一页。  一、数据库 1. 慢 SQL 优化（最高频，背五步）  检查是否走了索引，没走就改 SQL 用上索引 走了索">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/Keysqiu.png">
+<meta property="article:published_time" content="2026-09-22T01:35:38.000Z">
+<meta property="article:modified_time" content="2026-09-22T16:00:01.916Z">
+<meta property="article:author" content="Keysqiu">
+<meta property="article:tag" content="Java,SpringCloud,Redis,MySQL,前端,STM32,运维,技术博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Keysqiu.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "数据库-Redis-MQ速记",
+  "url": "https://keysqiu.github.io/2026/09/22/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93-Redis-MQ%E9%80%9F%E8%AE%B0/",
+  "image": "https://github.com/Keysqiu.png",
+  "datePublished": "2026-09-22T01:35:38.000Z",
+  "dateModified": "2026-09-22T16:00:01.916Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Keysqiu",
+      "url": "https://keysqiu.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://keysqiu.github.io/2026/09/22/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93-Redis-MQ%E9%80%9F%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库-Redis-MQ速记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/header-glow.css"><link rel="stylesheet" href="/css/time-greeting.css"><link rel="stylesheet" href="/css/gh-projects.css"><link rel="stylesheet" href="/css/tools.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">251</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">47</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">40</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Keysqiu的小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">数据库-Redis-MQ速记</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-rocket"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 工具箱</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">数据库-Redis-MQ速记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-09-22T01:35:38.000Z" title="Created 2026-09-22 09:35:38">2026-09-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-09-22T16:00:01.916Z" title="Updated 2026-09-23 00:00:01">2026-09-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>来源：本人笔记「面试/面试经」「MySQL」「Redis」「1经验（慢SQL优化 / 乐观锁和悲观锁 / 高并发方案总结）」「1工作/合集（数据库日常运维 / 分布式Redis锁）」「SpringCloud学习（RabbitMQ / RabbitMQ部署指南）」。面试前一晚只看这一页。</p>
+</blockquote>
+<h2 id="一、数据库">一、数据库</h2>
+<h3 id="1-慢-SQL-优化（最高频，背五步）">1. 慢 SQL 优化（最高频，背五步）</h3>
+<ol>
+<li>检查是否走了索引，没走就改 SQL 用上索引</li>
+<li>走了索引，再看是不是<strong>最优</strong>索引</li>
+<li>查的字段是否都必须，有没有查出多余数据</li>
+<li>数据量是否过多，是否该<strong>分库分表</strong></li>
+<li>机器性能配置是否太低，能否加资源</li>
+</ol>
+<p><strong>口诀补充</strong>：走不走索引，效率差几百倍。</p>
+<h3 id="2-SQL-写法优化清单">2. SQL 写法优化清单</h3>
+<ul>
+<li>批量操作</li>
+<li>连接的表不要过多</li>
+<li>避免 ​<code>select *</code></li>
+<li>小表驱动大表</li>
+<li>使用 ​<code>limit</code></li>
+<li>用 ​<code>union all</code>​ 代替 ​<code>union</code></li>
+<li><strong>in 小，exists 大；in 先内后外，exists 先外后内</strong></li>
+</ul>
+<h3 id="3-引擎与索引（送分题）">3. 引擎与索引（送分题）</h3>
+<ul>
+<li>引擎：<strong>InnoDB、MyISAM、MEMORY</strong></li>
+<li>索引：<strong>B+ Tree 索引、哈希索引、全文索引、普通索引</strong></li>
+</ul>
+<h3 id="4-锁（一句话说清）">4. 锁（一句话说清）</h3>
+<ul>
+<li><strong>乐观锁</strong>：先改，提交时再看有没有人动过，有就重来</li>
+<li><strong>悲观锁</strong>：先占住，别人等我改完才能动</li>
+</ul>
+<h3 id="5-连接方式">5. 连接方式</h3>
+<table>
+<thead>
+<tr>
+<th>连接</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内连接 inner join</td>
+<td>两表都存在的行拼成一行；​<code>from T1,T2 where ...</code> 等价但效率更低，建议用 inner join</td>
+</tr>
+<tr>
+<td>左外 left join</td>
+<td>左表全保留，右表不匹配补 NULL</td>
+</tr>
+<tr>
+<td>右外 right join</td>
+<td>右表全保留，左表不匹配补 NULL</td>
+</tr>
+<tr>
+<td>全联 full join</td>
+<td>两边全保留，去重</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-聚合函数">6. 聚合函数</h3>
+<p><code>count / max / min / sum / avg</code>，均以列为单位。</p>
+<p><strong>坑点</strong>：聚合函数默认忽略 NULL 记录；要让 NULL 参与计算需 ​<code>ifnull(height,0)</code>​。<br>
+​<code>count(col)</code>​ 只算非 NULL 行数，​<code>count(*)</code> 才算总行数。</p>
+<h3 id="7-高并发三条（可结合项目讲）">7. 高并发三条（可结合项目讲）</h3>
+<ol>
+<li>频繁使用、并发率高的表用 ​<code>DB.Update</code>​ 更新对应字段，用 ​<code>RF.Save</code> 会存在字段被覆盖更新的情况</li>
+<li>批处理与延迟提交，批量插入/更新，减少数据库往返次数</li>
+<li>能用异步就用异步、消息队列处理，降低主线程阻塞</li>
+</ol>
+<h3 id="8-运维速查-SQL（被问-你会哪些运维手段-时用）">8. 运维速查 SQL（被问&quot;你会哪些运维手段&quot;时用）</h3>
+<p><strong>查表已有索引（判断单列/组合）</strong></p>
+<ul>
+<li>Oracle：​<code>user_indexes</code>​ + ​<code>user_ind_columns</code>​，​<code>LISTAGG</code> 拼列名</li>
+<li>SQL Server：​<code>sys.indexes</code>​ + ​<code>sys.index_columns</code>​ + ​<code>sys.columns</code>​，​<code>FOR XML PATH</code> 拼列名</li>
+</ul>
+<p><strong>抓慢 SQL（Oracle）</strong> ：​<code>dba_hist_snapshot</code>​ 关联 ​<code>dba_hist_sqlstat</code>​，按 ​<code>elapsed_time_delta</code>​ 倒序取 TOP 10，再 ​<code>select * from v$sql where sql_id='xxx'</code> 看原语句。</p>
+<p><strong>其他常用</strong>：表空间使用情况、数据库连接数、最占空间的表、删除库锁/表锁、查看存储过程对应 SQL。</p>
+<h3 id="9-SQL-关键字速查">9. SQL 关键字速查</h3>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GROUP BY</code></td>
+<td>分组聚合</td>
+</tr>
+<tr>
+<td><code>HAVING</code></td>
+<td>过滤分组结果（聚合值不能用 WHERE 过滤）</td>
+</tr>
+<tr>
+<td><code>ORDER BY</code></td>
+<td>排序，默认 ASC</td>
+</tr>
+<tr>
+<td><code>UNION</code></td>
+<td>合并去重，​<code>UNION ALL</code> 保留重复</td>
+</tr>
+<tr>
+<td><code>INTERSECT</code></td>
+<td>交集</td>
+</tr>
+<tr>
+<td><code>EXCEPT</code></td>
+<td>差集</td>
+</tr>
+<tr>
+<td><code>COLLATE</code></td>
+<td>排序规则，​<code>_CI_</code>​ 不区分大小写 / ​<code>_CS_</code> 区分大小写</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-事务写法（C-，结合项目讲）">10. 事务写法（C#，结合项目讲）</h3>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token comment">// 普通事务</span>
+<span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> trans <span class="token operator">=</span> DB<span class="token punctuation">.</span><span class="token function">TransactionScope</span><span class="token punctuation">(</span>CoreEntityDataProvider<span class="token punctuation">.</span>ConnectionStringName<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    trans<span class="token punctuation">.</span><span class="token function">Complete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 自治事务，不受嵌套事务影响</span>
+<span class="token keyword">using</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> trans <span class="token operator">=</span> DB<span class="token punctuation">.</span><span class="token function">AutonomousTransactionScope</span><span class="token punctuation">(</span>CoreEntityDataProvider<span class="token punctuation">.</span>ConnectionStringName<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    trans<span class="token punctuation">.</span><span class="token function">Complete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>IN 参数上限坑（SQL Server）</strong> ：IN 参数上限 1000，分批按 999 处理，多层循环分批查询后合并结果。</p>
+<h2 id="二、Redis">二、Redis</h2>
+<h3 id="1-缓存的意义与读写逻辑（必背）">1. 缓存的意义与读写逻辑（必背）</h3>
+<p><strong>缓存的意义在于可以保护后台的接口不被大量的请求所攻击。</strong></p>
+<ol>
+<li>客户端第一次请求：先从数据库查到数据，写入 Redis 缓存，后面都直接从 Redis 读</li>
+<li>后台做了增、删、改：把 Redis 对应键值清除；前端再次请求，还是从数据库获取并重新写入缓存</li>
+</ol>
+<p>一句话：<strong>读时回填，写时删除</strong>。</p>
+<h3 id="2-常用命令">2. 常用命令</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 连接</span>
+redis-cli <span class="token parameter variable">-h</span> <span class="token function">host</span> <span class="token parameter variable">-p</span> port <span class="token parameter variable">-a</span> password
+redis-cli <span class="token parameter variable">-p</span> <span class="token number">6379</span>
+
+<span class="token comment"># 备份与恢复</span>
+save                  <span class="token comment"># 在备份目录生成 dump.rdb</span>
+config get <span class="token function">dir</span>        <span class="token comment"># 查看备份路径</span>
+<span class="token comment"># 恢复：拷贝 dump.rdb 覆盖到目标机备份目录 -> 重启 redis -> 客户端刷新</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>增/改</th>
+<th>查</th>
+<th>删</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td><code>set key value</code>​、​<code>mset k1 v1 k2 v2</code></td>
+<td><code>get key</code>​、​<code>mget k1 k2</code></td>
+<td><code>del key</code></td>
+</tr>
+<tr>
+<td>hash</td>
+<td><code>hset key 键 值</code>​、​<code>hmset key 键1 值1</code></td>
+<td><code>hget key 键</code>​、​<code>hgetall key</code></td>
+<td><code>hdel key</code>​（整个）/ ​<code>hdel key 键</code>（单列）</td>
+</tr>
+<tr>
+<td>list</td>
+<td><code>lpush</code>​（左增）/ ​<code>rpush</code>（右增，可多值）</td>
+<td><code>lrange key 0 -1</code></td>
+<td><code>lpop</code>​ / ​<code>rpop</code></td>
+</tr>
+<tr>
+<td>set</td>
+<td><code>sadd key value</code></td>
+<td><code>smembers key</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-分布式-Redis-锁（项目实战，重点讲）">3. 分布式 Redis 锁（项目实战，重点讲）</h3>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token class-name"><span class="token keyword">var</span></span> key <span class="token operator">=</span> <span class="token interpolation-string"><span class="token string">$"JrSubmit:</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token expression language-csharp">submitData<span class="token punctuation">.</span>ShippingOrderNo</span><span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token punctuation">(</span>RT<span class="token punctuation">.</span>Service<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">Resolve</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>RedisLockAbstractHelper<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">LockWait</span><span class="token punctuation">(</span>TimeSpan<span class="token punctuation">.</span><span class="token function">FromMinutes</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> TimeSpan<span class="token punctuation">.</span><span class="token function">FromMinutes</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token keyword">new</span> <span class="token constructor-invocation class-name">List<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span> key <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token interpolation-string"><span class="token string">$"当前自主维护单正在</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token expression language-csharp">isSubmitString</span><span class="token punctuation">&#125;</span></span><span class="token string">，请稍后再试！"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token comment">// 业务逻辑</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>要点：<strong>key 按业务单据号粒度加锁</strong>（如 ​<code>业务名:单据号</code>​），多个 key 可批量加锁；​<code>LockWait</code>​ 两个 TimeSpan 分别是等待时长和持有时间；用 ​<code>using</code> 保证释放。</p>
+<h2 id="三、MQ（消息队列）">三、MQ（消息队列）</h2>
+<h3 id="1-为什么用-MQ：同步-vs-异步">1. 为什么用 MQ：同步 vs 异步</h3>
+<p>同步通讯像打电话，实时响应但<strong>不能同时跟多个人通话</strong>；异步通讯像发邮件，可群发但<strong>响应有延迟</strong>。</p>
+<p><strong>同步调用的问题</strong>：耦合度高、性能和吞吐能力下降、有额外的资源消耗、有级联失败问题。</p>
+<p><strong>异步通讯（事件驱动，中间人 Broker）的好处</strong>：</p>
+<ul>
+<li>吞吐量提升：无需等待订阅者处理完成</li>
+<li>故障隔离：服务间没有直接调用，不存在级联失败</li>
+<li>调用间无阻塞，不造成无效资源占用</li>
+<li>耦合度极低，服务可灵活插拔</li>
+<li>流量削峰：流量波动多大都由 Broker 接收，订阅者按自己速度处理</li>
+</ul>
+<p><strong>缺点</strong>：架构变复杂、业务没有明显流程线不好管理；依赖 Broker 的可靠、安全、性能。</p>
+<h3 id="2-技术选型对比">2. 技术选型对比</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>RabbitMQ</th>
+<th>ActiveMQ</th>
+<th>RocketMQ</th>
+<th>Kafka</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>公司/社区</td>
+<td>Rabbit</td>
+<td>Apache</td>
+<td>阿里</td>
+<td>Apache</td>
+</tr>
+<tr>
+<td>开发语言</td>
+<td>Erlang</td>
+<td>Java</td>
+<td>Java</td>
+<td>Scala&amp;Java</td>
+</tr>
+<tr>
+<td>协议支持</td>
+<td>AMQP、XMPP、SMTP、STOMP</td>
+<td>OpenWire、STOMP、REST、XMPP、AMQP</td>
+<td>自定义协议</td>
+<td>自定义协议</td>
+</tr>
+<tr>
+<td>可用性</td>
+<td>高</td>
+<td>一般</td>
+<td>高</td>
+<td>高</td>
+</tr>
+<tr>
+<td>单机吞吐量</td>
+<td>一般</td>
+<td>差</td>
+<td>高</td>
+<td>非常高</td>
+</tr>
+<tr>
+<td>消息延迟</td>
+<td>微秒级</td>
+<td>毫秒级</td>
+<td>毫秒级</td>
+<td>毫秒以内</td>
+</tr>
+<tr>
+<td>消息可靠性</td>
+<td>高</td>
+<td>一般</td>
+<td>高</td>
+<td>一般</td>
+</tr>
+</tbody>
+</table>
+<p><strong>选型口诀</strong>：追求可用性选 Kafka / RocketMQ / RabbitMQ；追求可靠性选 RabbitMQ / RocketMQ；追求吞吐选 RocketMQ / Kafka；追求低延迟选 RabbitMQ / Kafka。</p>
+<h3 id="3-RabbitMQ-角色与消息模型">3. RabbitMQ 角色与消息模型</h3>
+<p><strong>角色</strong>：publisher（生产者）、consumer（消费者）、exchange（交换机，负责路由）、queue（队列，存储消息）、virtualHost（虚拟主机，隔离不同租户）。</p>
+<p><strong>五个消息模型</strong>：</p>
+<ol>
+<li><strong>简单队列</strong>：生产者 → 队列 → 消费者</li>
+<li><strong>WorkQueue</strong>：多个消费者绑定一个队列共同消费，一条消息只被一个消费者处理；默认平均分配，用 ​<code>prefetch: 1</code>​ 实现<strong>能者多劳</strong></li>
+<li><strong>Fanout</strong>：广播，消息交给所有绑定到交换机的队列</li>
+<li><strong>Direct</strong>：定向，按 ​<code>RoutingKey</code> 精确匹配队列</li>
+<li><strong>Topic</strong>：通配符，​<code>#</code>​ 匹配一个或多个词，​<code>*</code>​ 匹配恰好一个词（如 ​<code>item.#</code>​ 匹配 ​<code>item.spu.insert</code>​；​<code>item.*</code>​ 只匹配 ​<code>item.spu</code>）</li>
+</ol>
+<p><strong>关键结论</strong>：Exchange 只负责转发消息，<strong>不具备存储消息的能力</strong>；没有队列绑定或没有符合路由规则的队列，消息会丢失。</p>
+<h3 id="4-SpringAMQP-要点">4. SpringAMQP 要点</h3>
+<p>三个功能：自动声明队列/交换机/绑定关系；基于注解的监听器模式异步接收；封装 ​<code>RabbitTemplate</code> 发送消息。</p>
+<ul>
+<li>发送：​<code>rabbitTemplate.convertAndSend(exchangeName, routingKey, message)</code></li>
+<li>接收：​<code>@RabbitListener(queues = &quot;simple.queue&quot;)</code>​，或 ​<code>@RabbitListener(bindings = @QueueBinding(...))</code> 注解声明</li>
+<li>声明 Bean：​<code>Queue</code>​、​<code>FanoutExchange</code>​、​<code>Binding</code></li>
+<li>消息转换器：默认 JDK 序列化（体积大、有安全漏洞、可读性差），改为 ​<code>Jackson2JsonMessageConverter</code></li>
+</ul>
+<h3 id="5-部署与集群">5. 部署与集群</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 单机（Docker）</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-e</span> <span class="token assign-left variable">RABBITMQ_DEFAULT_USER</span><span class="token operator">=</span>itcast <span class="token parameter variable">-e</span> <span class="token assign-left variable">RABBITMQ_DEFAULT_PASS</span><span class="token operator">=</span><span class="token number">123321</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--name</span> mq <span class="token parameter variable">--hostname</span> mq1 <span class="token parameter variable">-p</span> <span class="token number">15672</span>:15672 <span class="token parameter variable">-p</span> <span class="token number">5672</span>:5672 <span class="token parameter variable">-d</span> rabbitmq:3-management<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>端口</strong>：5672 通信，15672 管理界面（初始 guest/guest）。</p>
+<p><strong>集群两种模式</strong>：</p>
+<ul>
+<li><strong>普通模式</strong>：不做数据同步，每个 MQ 有自己的队列和数据（交换机等元数据会同步）。消息在 mq1 但连到 mq2，mq2 会去 mq1 拉取；<strong>mq1 宕机消息就丢失</strong></li>
+<li><strong>镜像模式</strong>：队列在各镜像节点之间同步，连任意节点都能取到消息，<strong>一个节点宕机不丢数据</strong>，代价是同步带宽消耗</li>
+</ul>
+<p>集群前置：三台机器 ​<code>/etc/hosts</code>​ 互相写 ​<code>mq1/mq2/mq3</code> 并 ping 通。</p>
+<h2 id="四、临场串讲模板（1-分钟自我介绍里的技术线）">四、临场串讲模板（1 分钟自我介绍里的技术线）</h2>
+<blockquote>
+<p>我做过 MES 制造系统开发，日常接触 Oracle / SQL Server / MySQL 三种库：慢 SQL 排查上我习惯先看执行计划是否走索引，再看索引是否最优、字段是否冗余，最后才考虑分库分表；数据库侧会写抓慢 SQL、查索引、查表空间和连接数的运维脚本。缓存用 Redis，读过回填、写时删除，分布式锁按单据号粒度加锁，防止重复提交和并发覆盖。服务间通信上，能异步的走 MQ，用 RabbitMQ 的 Topic 交换机做业务解耦和流量削峰，消费者侧用 prefetch 做能者多劳。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io">Keysqiu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://keysqiu.github.io/2026/09/22/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93-Redis-MQ%E9%80%9F%E8%AE%B0/">https://keysqiu.github.io/2026/09/22/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93-Redis-MQ%E9%80%9F%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://github.com/Keysqiu.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/09/11/%E5%86%8D%E7%94%9F%E9%BE%99/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">📇 本类导航</div></div><div class="info-2"><div class="info-item-1">本页自动汇总「再生龙」分类下的全部笔记（含子分类），随笔记增删实时更新。  再生龙系统备份系统全过程 利用制作好的再生龙恢复U盘，我们可以备份linux系统，然后进行快速的克隆安装。 1.配置服务器以U盘作为第一启动顺序，以便开机进入再生龙系统  2.开机进入再生龙系统，选择Other mode  3.然后选择To RAM，这样我们在使用过程中，系统已经被加载到内存中了，所以U盘就可以随意插拔更换了。（虽然我们并不需要更换）  4.选择运行语言，简体中文  5.选择默认键盘配置，直接回车  6.选择使用再生龙  7.选择模式，因为我们要备份硬盘，所以选择第一个，将硬盘保存为镜像文件  8.此处，我们选择使用本机分区或者硬盘  9.然后如果是选择upan存储保存的镜像，那么这里会开始检查usb设备，回车继续  10.这里会看到已经扫描到的U盘，我们的是一个Kingston U盘，然后ctrl+c停止扫描  11.这里我们选择存储镜像的U盘，为第二个，金士顿U盘  12.跳过检查文件系统，回车  13.​选择保存路径，我们保存在根目录，所以直接tab至done，回车  14.回车继续...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/Keysqiu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Keysqiu</div><div class="author-info-description">故不积跬步，无以至千里</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">251</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">47</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">40</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Keysqiu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Keysqiu" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">博客由思源笔记自动同步驱动，写作即发布</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">一、数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%85%A2-SQL-%E4%BC%98%E5%8C%96%EF%BC%88%E6%9C%80%E9%AB%98%E9%A2%91%EF%BC%8C%E8%83%8C%E4%BA%94%E6%AD%A5%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1. 慢 SQL 优化（最高频，背五步）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SQL-%E5%86%99%E6%B3%95%E4%BC%98%E5%8C%96%E6%B8%85%E5%8D%95"><span class="toc-number">1.2.</span> <span class="toc-text">2. SQL 写法优化清单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BC%95%E6%93%8E%E4%B8%8E%E7%B4%A2%E5%BC%95%EF%BC%88%E9%80%81%E5%88%86%E9%A2%98%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. 引擎与索引（送分题）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%94%81%EF%BC%88%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%B4%E6%B8%85%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">4. 锁（一句话说清）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-number">1.5.</span> <span class="toc-text">5. 连接方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">1.6.</span> <span class="toc-text">6. 聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E9%AB%98%E5%B9%B6%E5%8F%91%E4%B8%89%E6%9D%A1%EF%BC%88%E5%8F%AF%E7%BB%93%E5%90%88%E9%A1%B9%E7%9B%AE%E8%AE%B2%EF%BC%89"><span class="toc-number">1.7.</span> <span class="toc-text">7. 高并发三条（可结合项目讲）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%BF%90%E7%BB%B4%E9%80%9F%E6%9F%A5-SQL%EF%BC%88%E8%A2%AB%E9%97%AE-%E4%BD%A0%E4%BC%9A%E5%93%AA%E4%BA%9B%E8%BF%90%E7%BB%B4%E6%89%8B%E6%AE%B5-%E6%97%B6%E7%94%A8%EF%BC%89"><span class="toc-number">1.8.</span> <span class="toc-text">8. 运维速查 SQL（被问&quot;你会哪些运维手段&quot;时用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-SQL-%E5%85%B3%E9%94%AE%E5%AD%97%E9%80%9F%E6%9F%A5"><span class="toc-number">1.9.</span> <span class="toc-text">9. SQL 关键字速查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E4%BA%8B%E5%8A%A1%E5%86%99%E6%B3%95%EF%BC%88C-%EF%BC%8C%E7%BB%93%E5%90%88%E9%A1%B9%E7%9B%AE%E8%AE%B2%EF%BC%89"><span class="toc-number">1.10.</span> <span class="toc-text">10. 事务写法（C#，结合项目讲）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Redis"><span class="toc-number">2.</span> <span class="toc-text">二、Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BC%93%E5%AD%98%E7%9A%84%E6%84%8F%E4%B9%89%E4%B8%8E%E8%AF%BB%E5%86%99%E9%80%BB%E8%BE%91%EF%BC%88%E5%BF%85%E8%83%8C%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">1. 缓存的意义与读写逻辑（必背）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text">2. 常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%86%E5%B8%83%E5%BC%8F-Redis-%E9%94%81%EF%BC%88%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%8C%E9%87%8D%E7%82%B9%E8%AE%B2%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">3. 分布式 Redis 锁（项目实战，重点讲）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81MQ%EF%BC%88%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">三、MQ（消息队列）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8-MQ%EF%BC%9A%E5%90%8C%E6%AD%A5-vs-%E5%BC%82%E6%AD%A5"><span class="toc-number">3.1.</span> <span class="toc-text">1. 为什么用 MQ：同步 vs 异步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AF%B9%E6%AF%94"><span class="toc-number">3.2.</span> <span class="toc-text">2. 技术选型对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RabbitMQ-%E8%A7%92%E8%89%B2%E4%B8%8E%E6%B6%88%E6%81%AF%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.3.</span> <span class="toc-text">3. RabbitMQ 角色与消息模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SpringAMQP-%E8%A6%81%E7%82%B9"><span class="toc-number">3.4.</span> <span class="toc-text">4. SpringAMQP 要点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%83%A8%E7%BD%B2%E4%B8%8E%E9%9B%86%E7%BE%A4"><span class="toc-number">3.5.</span> <span class="toc-text">5. 部署与集群</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%B8%B4%E5%9C%BA%E4%B8%B2%E8%AE%B2%E6%A8%A1%E6%9D%BF%EF%BC%881-%E5%88%86%E9%92%9F%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E9%87%8C%E7%9A%84%E6%8A%80%E6%9C%AF%E7%BA%BF%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">四、临场串讲模板（1 分钟自我介绍里的技术线）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/22/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93-Redis-MQ%E9%80%9F%E8%AE%B0/" title="数据库-Redis-MQ速记">数据库-Redis-MQ速记</a><time datetime="2026-09-22T01:35:38.000Z" title="Created 2026-09-22 09:35:38">2026-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/51%E5%8D%95%E7%89%87%E6%9C%BA/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/%E5%86%8D%E7%94%9F%E9%BE%99/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:08.000Z" title="Created 2026-09-11 10:42:08">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/AI/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/11/Go/%F0%9F%93%87%20%E6%9C%AC%E7%B1%BB%E5%AF%BC%E8%88%AA/" title="📇 本类导航">📇 本类导航</a><time datetime="2026-09-11T02:42:07.000Z" title="Created 2026-09-11 10:42:07">2026-09-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Keysqiu</span></div><div class="footer_custom_text"><a href="https://github.com/Keysqiu" target="_blank">GitHub</a> · 思源笔记驱动</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Keysqiu/keysqiu.github.io',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script src="/js/time-greeting.js"></script><script src="/js/header-glow.js"></script><script src="/js/tools/vendor/marked.min.js"></script><script src="/js/tools/vendor/purify.min.js"></script><script src="/js/tools/core.js"></script><script src="/js/tools/tool-json.js"></script><script src="/js/tools/tool-timestamp.js"></script><script src="/js/tools/tool-md-share.js"></script><script src="/js/tools/tool-html-preview.js"></script><script src="/js/tools/tool-img-base64.js"></script><script src="/js/tools/tool-ico.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
