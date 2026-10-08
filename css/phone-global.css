@@ -1,0 +1,103 @@
+/* 全站加载的样式：目前只有右下角迷你播放器。
+ *
+ * 单独一个文件而不是塞进 phone.css，是因为 phone.css 只在首页注入（体积 28KB），
+ * 而文章页只需要这不到 2KB 的迷你播放器样式。
+ */
+
+.ph-mini {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  max-width: min(360px, calc(100vw - 2rem));
+  padding: .5rem .7rem;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 16px;
+  background: rgba(30, 30, 36, .82);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+  color: #fff;
+}
+
+.ph-mini[hidden] {
+  display: none;
+}
+
+.ph-mini__cover {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, .14);
+}
+
+.ph-mini__info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ph-mini__name,
+.ph-mini__artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ph-mini__name {
+  font-size: .82rem;
+}
+
+.ph-mini__artist {
+  font-size: .7rem;
+  opacity: .72;
+}
+
+.ph-mini__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .16);
+  color: #fff;
+  font-size: .7rem;
+  cursor: pointer;
+}
+
+.ph-mini__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .18);
+}
+
+.ph-mini__bar-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #4c8bf5;
+  transition: width .3s linear;
+}
+
+@media (max-width: 640px) {
+  .ph-mini {
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+  }
+}

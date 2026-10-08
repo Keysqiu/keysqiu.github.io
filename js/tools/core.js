@@ -9,7 +9,8 @@
     tools: [],
     byId: {},
     root: null,
-    payload: null // 分享链接 #c=... 解码后的内容，仅在通过分享链接打开时存在
+    payload: null, // 分享链接 #c=... 解码后的内容，仅在通过分享链接打开时存在
+    history: true  // 是否操作浏览器历史；手机端挂载时置 false
   };
 
   function register(tool) {
@@ -168,7 +169,10 @@
     var bar = el('div', 'tools-toolbar');
     var back = el('button', 'tools-back', '← 返回工具箱');
     back.type = 'button';
-    back.addEventListener('click', function () { history.pushState({}, '', location.pathname); renderGrid(); });
+    back.addEventListener('click', function () {
+      if (app.history) history.pushState({}, '', location.pathname);
+      renderGrid();
+    });
     bar.appendChild(back);
     root.appendChild(bar);
 
@@ -187,18 +191,25 @@
       body.appendChild(el('p', 'tools-error', '该工具加载失败，请刷新重试。'));
     }
 
-    if (push) {
+    // 嵌在手机窗口里时不能改地址栏，否则会把宿主页面的 URL 冲掉
+    if (push && app.history) {
       history.pushState({ tool: id }, '', location.pathname + '?tool=' + id);
     }
   }
 
-  async function init() {
-    app.root = document.getElementById('tools-app');
+  // 挂载到指定容器。工具页与手机端的工具 App 共用这一个入口，
+  // opts.history === false 时完全不碰 history 与 popstate（手机窗口里改地址栏会冲掉宿主 URL）。
+  async function mount(rootEl, opts) {
+    opts = opts || {};
+    app.root = rootEl || document.getElementById('tools-app');
     if (!app.root) return;
+    app.history = opts.history !== false;
 
-    var params = new URLSearchParams(location.search);
-    var toolId = params.get('tool');
-    app.payload = await readHashPayload();
+    var toolId = opts.toolId;
+    if (toolId === undefined) {
+      toolId = new URLSearchParams(location.search).get('tool');
+    }
+    app.payload = opts.payload !== undefined ? opts.payload : await readHashPayload();
 
     if (toolId && app.byId[toolId]) {
       openTool(toolId, false);
@@ -206,6 +217,7 @@
       renderGrid();
     }
 
+    if (!app.history) return;
     window.addEventListener('popstate', async function () {
       var p = new URLSearchParams(location.search).get('tool');
       app.payload = await readHashPayload();
@@ -214,8 +226,13 @@
     });
   }
 
+  async function init() {
+    await mount(document.getElementById('tools-app'));
+  }
+
   window.ToolsBox = {
     register: register,
+    mount: mount,
     encodePayload: encodePayload,
     decodePayload: decodePayload,
     copyText: copyText,

@@ -1,0 +1,1778 @@
+/* 手机式首页样式。
+ *
+ * 全部规则都限定在 body.phone-home 之下。内联 bootstrap 没执行时（JS 被禁用、脚本报错），
+ * body 上没有该类，手机界面整体不显示，页面回落到原来的 Butterfly 首页——这是设计的降级路径，
+ * 所以「隐藏手机界面」不能写成对主题的破坏性覆盖，必须靠这个类来开关。
+ *
+ * 文件顺序有讲究：基础规则在前，响应式覆盖在后。同优先级下后写的赢，媒体查询不额外加分，
+ * 所以移动端改列数的规则必须排在基础 grid 规则之后，否则不生效。
+ */
+
+:root {
+  /* 桌面组件透明度，由控制中心的滑块写入 */
+  --ph-op: 1;
+  --ph-glass: rgba(255, 255, 255, .42);
+  --ph-glass-strong: rgba(255, 255, 255, .62);
+  --ph-border: rgba(255, 255, 255, .55);
+  --ph-text: #1c1c1e;
+  --ph-text-dim: rgba(28, 28, 30, .62);
+  --ph-radius: 24px;
+  --ph-radius-sm: 16px;
+  --ph-shadow: 0 8px 32px rgba(31, 38, 135, .16);
+}
+
+html[data-theme="dark"] {
+  --ph-glass: rgba(40, 40, 46, .52);
+  --ph-glass-strong: rgba(48, 48, 56, .72);
+  --ph-border: rgba(255, 255, 255, .14);
+  --ph-text: #f2f2f7;
+  --ph-text-dim: rgba(242, 242, 247, .62);
+  --ph-shadow: 0 8px 32px rgba(0, 0, 0, .38);
+}
+
+/* 纯图标按钮统一居中：不声明居中时图标会贴左上角（button 的默认对齐不可依赖） */
+.ph-music__pbtn,
+.ph-music__btn,
+.ph-music__lyrics-close,
+.ph-overlay__close,
+.ph-cc-btn,
+.ph-cc__mini-btn,
+.ph-games__btn,
+.ph-wall__op button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- 降级：无 phone-home 类时手机界面整体不可见 ---------- */
+
+#ph-lock,
+#ph-home,
+#ph-posts,
+.ph-overlay {
+  display: none;
+}
+
+body.phone-home #ph-lock:not([hidden]) {
+  display: flex;
+}
+
+body.phone-home #ph-home,
+body.phone-home #ph-posts {
+  display: block;
+}
+
+body.phone-home .ph-overlay:not([hidden]) {
+  display: flex;
+}
+
+/* ---------- 隐藏主题内容（只在首页、只在 phone-home 下）---------- */
+
+/* 必须隐藏 #body-wrap 本身，不能只隐藏它的子元素：
+   主题给 .page 设了 min-height:100vh，子元素 display:none 之后这个容器仍然占满一屏，
+   结果第二屏文章列表下面多出整整 900px 空白。 */
+body.phone-home #body-wrap,
+body.phone-home #rightside,
+body.phone-home #sidebar {
+  display: none !important;
+}
+
+/* 锁屏期间禁止文档滚动：锁屏是 position:fixed，但触摸滑动/滚轮的滚动作用在文档上，
+   不解锁也会把背后的页面滚走，解锁后就得多滑一次才能回到顶部 */
+html.ph-locked,
+html.ph-locked body {
+  overflow: hidden !important;
+}
+
+/* ---------- 锁屏 ---------- */
+
+#ph-lock {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  transition: transform .7s cubic-bezier(.5, 0, .2, 1), opacity .7s ease;
+}
+
+/* hidden 时由基础规则 display:none 兜底（可见态是 body.phone-home 下的 :not([hidden]) 规则） */
+#ph-lock.unlocking {
+  transform: translateY(-102%);
+  opacity: .4;
+  pointer-events: none;
+}
+
+.ph-lock__brand {
+  font-size: 1.5rem;
+  letter-spacing: .08em;
+  opacity: .92;
+  margin-bottom: .4em;
+  animation: ph-lock-in 1.1s ease .2s both;
+}
+
+.ph-lock__time {
+  font-size: 4.5rem;
+  font-weight: 200;
+  line-height: 1.1;
+  letter-spacing: .02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ph-lock__date {
+  font-size: 1.05rem;
+  opacity: .85;
+  margin-top: .3em;
+}
+
+.ph-lock__hint {
+  position: absolute;
+  bottom: calc(2.2rem + env(safe-area-inset-bottom, 0px));
+  font-size: .9rem;
+  opacity: .8;
+  animation: ph-lock-hint 2s ease-in-out infinite;
+}
+
+@keyframes ph-lock-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(12px);
+  }
+  to {
+    opacity: .92;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes ph-lock-hint {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: .55;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: .9;
+  }
+}
+
+/* ---------- 壁纸层 ---------- */
+
+/* z-index 必须是负数。壁纸是 #ph-home 的子元素，若用 0（或 auto）它会落在「定位元素、stack level 0」
+   这一绘制层，盖住所有非定位的普通流内容——实测图标文字标签就是这样被整片遮掉的。
+   负值让它在绘制顺序里排到父元素背景之后、所有内容之前。 */
+#ph-wallpaper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);
+  background-size: cover;
+  background-position: center;
+  /* 照参考站：就绪前透明，is-ready 后淡入，避免首屏露出底层 */
+  opacity: 0;
+  transition: opacity .9s ease;
+  pointer-events: none;
+}
+
+#ph-wallpaper.is-ready {
+  opacity: 1;
+}
+
+/* ---------- 桌面 ---------- */
+
+body.phone-home #ph-home {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-height: 100dvh;
+  padding: calc(.55rem + env(safe-area-inset-top, 0px)) 1.1rem calc(1.1rem + env(safe-area-inset-bottom, 0px));
+  color: var(--ph-text);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* ---------- 状态栏 ---------- */
+
+/* 直接铺在壁纸上，壁纸明暗不可控，所以统一白字加深色半透明底，
+   而不是玻璃卡片内部那套 --ph-text（那套在浅色壁纸上会看不清） */
+.ph-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem;
+  padding: .1rem .35rem .55rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, .95),
+    0 1px 2px rgba(0, 0, 0, .7),
+    0 0 6px rgba(0, 0, 0, .5);
+  opacity: var(--ph-op, 1);
+}
+
+.ph-statusbar__right {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .78rem;
+}
+
+.ph-cc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .22rem .55rem;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .22);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: .74rem;
+  cursor: pointer;
+}
+
+/* ---------- 组件网格 ---------- */
+
+.ph-widgets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  opacity: var(--ph-op, 1);
+}
+
+.ph-widget {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  min-height: 132px;
+  padding: .85rem .95rem;
+  border: 1px solid var(--ph-border);
+  border-radius: var(--ph-radius);
+  background: var(--ph-glass);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: var(--ph-shadow);
+  color: var(--ph-text);
+  overflow: hidden;
+}
+
+.ph-widget[role="button"] {
+  cursor: pointer;
+}
+
+/* 时钟组件 */
+.ph-widget--clock {
+  justify-content: center;
+}
+
+.ph-widget__time {
+  font-size: 2.1rem;
+  font-weight: 300;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+
+.ph-widget__date {
+  font-size: .78rem;
+  color: var(--ph-text-dim);
+}
+
+/* 农历日历组件。
+   这里刻意不用 flex，也不给日格 aspect-ratio：
+   格宽是组件宽的 1/7（桌面约 44px），aspect-ratio:1 会让每格 44px 高、6 行就是 264px，
+   把整个第一行组件从 132px 撑到 330px，桌面直接被顶出视口。
+   改用 block 布局让月份与农历同一行内联，日格固定 12px 高。 */
+.ph-widget--calendar {
+  display: block;
+  padding: .55rem .7rem;
+  font-size: .62rem;
+  line-height: 1.2;
+}
+
+.ph-cal__head {
+  display: inline;
+  font-size: .76rem;
+  font-weight: 600;
+}
+
+.ph-cal__lunar {
+  display: inline;
+  margin-left: .35rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-cal__week,
+.ph-cal__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.ph-cal__week {
+  color: var(--ph-text-dim);
+  margin-top: .15rem;
+}
+
+.ph-cal__days span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12px;
+  border-radius: 6px;
+}
+
+.ph-cal__days .today {
+  background: #ff375f;
+  color: #fff;
+  font-weight: 600;
+}
+
+.ph-cal__days .fest {
+  color: #ff9f0a;
+}
+
+/* 问候语组件 */
+.ph-widget--greet {
+  justify-content: center;
+  line-height: 1.3;
+}
+
+.ph-greet__hi {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.ph-greet__sub {
+  font-size: .72rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-greet__quote {
+  margin-top: auto;
+  font-size: .72rem;
+  color: var(--ph-text-dim);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 天气组件。
+   这里必须压 line-height：emoji 图标的默认行盒高达 54px，会把整个第一行组件
+   从 132px 顶到 140px，与第二行不齐。 */
+.ph-widget--weather {
+  justify-content: center;
+  line-height: 1.25;
+}
+
+.ph-wx__main {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+}
+
+.ph-wx__icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.ph-wx__temp {
+  font-size: 1.7rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.ph-wx__city {
+  font-size: .74rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-wx__hours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .15rem .5rem;
+  margin-top: auto;
+  font-size: .68rem;
+  color: var(--ph-text-dim);
+}
+
+/* 音乐组件 */
+.ph-widget--music {
+  flex-direction: row;
+  align-items: center;
+  gap: .6rem;
+}
+
+.ph-music__cover {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, .3);
+}
+
+.ph-music__info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ph-music__name,
+.ph-music__artist {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ph-music__name {
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.ph-music__artist {
+  font-size: .7rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-music__progress {
+  height: 3px;
+  margin-top: .35rem;
+  border-radius: 2px;
+  background: rgba(127, 127, 127, .28);
+  overflow: hidden;
+}
+
+.ph-music__progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #4c8bf5;
+  transition: width .3s linear;
+}
+
+.ph-music__ctrl {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.ph-music__btn {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(127, 127, 127, .18);
+  color: inherit;
+  font-size: .68rem;
+  cursor: pointer;
+}
+
+/* 游戏与工具组件：色块图标预览。
+   单行 4 个定高小方块——若用 aspect-ratio:1 的 2×2 布局，图标会被撑到 150px 以上，
+   把整行组件拉到 365px 高，与第一行的 132px 不一致，桌面直接超出视口 */
+.ph-widget--games,
+.ph-widget--tools {
+  justify-content: space-between;
+}
+
+.ph-games__preview,
+.ph-tools__preview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .3rem;
+}
+
+.ph-games__app,
+.ph-tools__preview span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  border-radius: 11px;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.ph-games__label,
+.ph-tools__label,
+.ph-wall__label {
+  font-size: .72rem;
+  color: var(--ph-text-dim);
+}
+
+/* 壁纸组件 */
+.ph-widget--wallpaper {
+  justify-content: space-between;
+}
+
+.ph-wall__thumb {
+  flex: 1 1 auto;
+  min-height: 54px;
+  border-radius: var(--ph-radius-sm);
+  background: linear-gradient(135deg, #4c8bf5 0%, #9a6cf5 50%, #f56ec6 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+/* ---------- 应用图标网格 ---------- */
+
+.ph-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 12px;
+  margin-top: 22px;
+  opacity: var(--ph-op, 1);
+}
+
+.ph-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ph-app__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background: var(--ph-glass-strong);
+  color: #fff;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 18px rgba(31, 38, 135, .18);
+  transition: transform .25s ease;
+}
+
+.ph-app__label {
+  font-size: .72rem;
+  color: #fff;
+  /* 标签直接压在壁纸上，而壁纸明暗不可控（默认渐变在中下部偏亮，纯白字对比度只有约 1.6:1）。
+     用一圈紧贴字形的深色描边保证任何壁纸下都可读，比加半透明底片更轻。 */
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, .95),
+    0 1px 2px rgba(0, 0, 0, .7),
+    0 0 6px rgba(0, 0, 0, .5);
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 新文章红点 */
+.ph-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #ff375f;
+  color: #fff;
+  font-size: .62rem;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+
+/* ---------- Dock ---------- */
+
+/* 药丸按内容宽度收拢并居中；撑满整行会让图标挤在中间，两侧留大片空白 */
+.ph-dock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 24px auto 0;
+  padding: .6rem .9rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 26px;
+  background: var(--ph-glass);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: var(--ph-shadow);
+  opacity: var(--ph-op, 1);
+}
+
+.ph-dock .ph-app__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  font-size: 1.15rem;
+  background: var(--ph-glass-strong);
+}
+
+.ph-dock .ph-app__label {
+  display: none;
+}
+
+.ph-dock__dynamic {
+  display: contents;
+}
+
+/* ---------- 滚动提示 ---------- */
+
+.ph-scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto 0;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .22);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  text-decoration: none;
+  animation: ph-bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes ph-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* ---------- 浮层 ---------- */
+
+.ph-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, .28);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.ph-overlay__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(920px, 100%);
+  max-height: min(86dvh, 860px);
+  border: 1px solid var(--ph-border);
+  border-radius: var(--ph-radius);
+  background: var(--ph-glass-strong);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+  color: var(--ph-text);
+  overflow: hidden;
+  transform-origin: center;
+}
+
+.ph-overlay.is-launching .ph-overlay__panel {
+  animation: ph-launch .34s cubic-bezier(.2, .8, .3, 1);
+}
+
+.ph-overlay.is-closing .ph-overlay__panel {
+  animation: ph-close .24s ease-in forwards;
+}
+
+@keyframes ph-launch {
+  from {
+    transform: scale(.35);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ph-close {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(.92);
+    opacity: 0;
+  }
+}
+
+.ph-overlay__close {
+  position: absolute;
+  top: .7rem;
+  right: .7rem;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(127, 127, 127, .2);
+  color: inherit;
+  cursor: pointer;
+}
+
+.ph-overlay__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 1.6rem;
+}
+
+/* ---------- 二维码 ---------- */
+
+.ph-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+}
+
+.ph-qr img {
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.ph-qr__tip {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ph-text-dim);
+}
+
+/* ---------- 轻提示 ---------- */
+
+.ph-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(2.4rem + env(safe-area-inset-bottom, 0px));
+  z-index: 5000;
+  transform: translate(-50%, 12px);
+  padding: .55rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .78);
+  color: #fff;
+  font-size: .82rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.ph-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- 壁纸选择器 ---------- */
+
+.ph-wall__section {
+  margin: .7rem 0 .4rem;
+  font-size: .74rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-wall__bing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: .45rem;
+}
+
+.ph-bing-item {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.ph-bing-item.is-active {
+  border-color: #4c8bf5;
+}
+
+.ph-bing-item__img {
+  display: block;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.ph-bing-item__cap {
+  display: block;
+  padding-top: .15rem;
+  font-size: .66rem;
+  color: var(--ph-text-dim);
+  text-align: center;
+}
+
+.ph-wall__hint {
+  grid-column: 1 / -1;
+  font-size: .76rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-wall__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.ph-wall__source {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .45rem .75rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 999px;
+  background: rgba(127, 127, 127, .14);
+  color: inherit;
+  font: inherit;
+  font-size: .78rem;
+  cursor: pointer;
+}
+
+.ph-wall__op {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .9rem;
+  font-size: .76rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-wall__op input[type="range"] {
+  flex: 1 1 auto;
+  accent-color: #4c8bf5;
+}
+
+.ph-wall__op button {
+  padding: .2rem .55rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .72rem;
+  cursor: pointer;
+}
+
+.ph-wall__auto {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  margin-top: .7rem;
+  font-size: .76rem;
+  color: var(--ph-text-dim);
+}
+
+/* 视频壁纸层：铺满、裁切、无交互 */
+.ph-wallpaper-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#ph-wallpaper.has-video {
+  background-image: none !important;
+}
+
+/* ---------- 控制中心 ---------- */
+
+#ph-control .ph-overlay__panel {
+  width: min(560px, 100%);
+}
+
+.ph-cc__tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .6rem;
+}
+
+.ph-cc__tile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: .1rem .6rem;
+  align-items: center;
+  padding: .7rem .85rem;
+  border: 1px solid var(--ph-border);
+  border-radius: var(--ph-radius-sm);
+  background: rgba(127, 127, 127, .14);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ph-cc__tile i {
+  grid-row: span 2;
+  font-size: 1.1rem;
+  color: #4c8bf5;
+}
+
+.ph-cc__tile-name {
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.ph-cc__tile-value {
+  font-size: .72rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-cc__op {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: 1rem;
+  font-size: .78rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-cc__op input {
+  flex: 1 1 auto;
+  accent-color: #4c8bf5;
+}
+
+.ph-cc__section-title {
+  margin: 1.1rem 0 .5rem;
+  font-size: .78rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-cc__running-row {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .5rem .7rem;
+  border-radius: 12px;
+  background: rgba(127, 127, 127, .14);
+  margin-bottom: .4rem;
+}
+
+.ph-cc__running-row i {
+  width: 1.1rem;
+  text-align: center;
+}
+
+.ph-cc__running-name {
+  flex: 1 1 auto;
+  font-size: .82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ph-cc__mini-btn {
+  padding: .2rem .55rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: .72rem;
+  cursor: pointer;
+}
+
+.ph-cc__quick-row {
+  display: flex;
+  gap: .5rem;
+}
+
+.ph-cc__quick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem .8rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 12px;
+  background: rgba(127, 127, 127, .14);
+  color: inherit;
+  font: inherit;
+  font-size: .78rem;
+  cursor: pointer;
+}
+
+/* ---------- 音乐 App ---------- */
+
+.ph-music-app {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  grid-template-rows: 1fr auto;
+  gap: .8rem;
+  height: min(74dvh, 640px);
+}
+
+.ph-music__nav {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.ph-music__nav-item {
+  padding: .45rem .6rem;
+  border-radius: 10px;
+  font-size: .82rem;
+  color: var(--ph-text-dim);
+  cursor: pointer;
+}
+
+.ph-music__nav-item.is-active {
+  background: rgba(76, 139, 245, .2);
+  color: #4c8bf5;
+  font-weight: 600;
+}
+
+.ph-music__main {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ph-music__view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.ph-music__view[hidden] {
+  display: none;
+}
+
+.ph-music__view-head {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .5rem;
+}
+
+.ph-music__view-title {
+  font-size: .84rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-music__view-title--only {
+  margin-bottom: .5rem;
+}
+
+.ph-music__back {
+  padding: .25rem .6rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .76rem;
+  cursor: pointer;
+}
+
+/* 发现页：横幅 + 歌单卡片 */
+
+.ph-music__banner {
+  position: relative;
+  flex: 0 0 auto;
+  height: 108px;
+  margin-bottom: .7rem;
+  border-radius: var(--ph-radius-sm);
+  background: linear-gradient(135deg, #4c8bf5, #9a6cf5);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.ph-music__banner-play {
+  position: absolute;
+  left: .7rem;
+  bottom: .7rem;
+  padding: .4rem .85rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  font: inherit;
+  font-size: .78rem;
+  cursor: pointer;
+}
+
+.ph-music__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: .7rem;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.ph-playlist {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ph-playlist__cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  border-radius: var(--ph-radius-sm);
+  background: rgba(127, 127, 127, .18);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.ph-playlist__play {
+  position: absolute;
+  right: .45rem;
+  bottom: .45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+  font-size: .68rem;
+}
+
+.ph-playlist__count {
+  position: absolute;
+  left: .45rem;
+  bottom: .5rem;
+  font-size: .66rem;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .7);
+}
+
+.ph-playlist__name {
+  font-size: .8rem;
+}
+
+.ph-playlist__desc {
+  font-size: .7rem;
+  color: var(--ph-text-dim);
+}
+
+/* 曲目列表 */
+
+.ph-music__songs {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.ph-song-row {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  padding: .4rem .5rem;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.ph-song-row:hover {
+  background: rgba(127, 127, 127, .14);
+}
+
+.ph-song-row.is-playing {
+  background: rgba(76, 139, 245, .18);
+  color: #4c8bf5;
+}
+
+.ph-song-row__idx {
+  flex: 0 0 1.6rem;
+  font-size: .72rem;
+  color: var(--ph-text-dim);
+  text-align: right;
+}
+
+.ph-song-row__name {
+  flex: 1 1 auto;
+  font-size: .82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ph-song-row__artist {
+  flex: 0 0 auto;
+  font-size: .72rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-music__loading {
+  padding: .6rem .5rem;
+  font-size: .8rem;
+  color: var(--ph-text-dim);
+  list-style: none;
+}
+
+/* 歌词面板 */
+
+.ph-music__lyrics {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  padding: .6rem .8rem;
+  border-radius: var(--ph-radius-sm);
+  background: var(--ph-glass-strong);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 3;
+}
+
+.ph-music__lyrics[hidden] {
+  display: none;
+}
+
+.ph-music__lyrics-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--ph-border);
+  margin-bottom: .4rem;
+}
+
+.ph-music__lyrics-song {
+  font-size: .78rem;
+  color: var(--ph-text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ph-music__lyrics-close {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(127, 127, 127, .2);
+  color: inherit;
+  cursor: pointer;
+}
+
+.ph-music__lrc {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.ph-music__lrc-line {
+  padding: .3rem 0;
+  font-size: .8rem;
+  color: var(--ph-text-dim);
+  cursor: pointer;
+  transition: color .2s ease;
+}
+
+.ph-music__lrc-line.is-active {
+  color: #4c8bf5;
+  font-weight: 600;
+}
+
+/* 底部播放条 */
+
+.ph-music__player {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding-top: .5rem;
+  border-top: 1px solid var(--ph-border);
+}
+
+.ph-music__pcover {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: rgba(127, 127, 127, .18);
+}
+
+.ph-music__pinfo {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 130px;
+  min-width: 0;
+}
+
+.ph-music__pname,
+.ph-music__partist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ph-music__pname {
+  font-size: .78rem;
+}
+
+.ph-music__partist {
+  font-size: .68rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-music__progress {
+  flex: 1 1 auto;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(127, 127, 127, .28);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ph-music__progress-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #4c8bf5;
+  transition: width .3s linear;
+}
+
+.ph-music__time {
+  flex: 0 0 auto;
+  font-size: .68rem;
+  color: var(--ph-text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.ph-music__pbtn {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--ph-border);
+  border-radius: 50%;
+  background: rgba(127, 127, 127, .14);
+  color: inherit;
+  font-size: .72rem;
+  cursor: pointer;
+}
+
+.ph-music__pbtn--main {
+  width: 36px;
+  height: 36px;
+  font-size: .86rem;
+}
+
+.ph-music__pbtn.is-liked {
+  color: #fa586a;
+  border-color: #fa586a;
+}
+
+@media (max-width: 768px) {
+  .ph-music-app {
+    grid-template-columns: 1fr;
+    height: min(78dvh, 620px);
+  }
+
+  .ph-music__nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .ph-music__pinfo {
+    flex-basis: 90px;
+  }
+
+  .ph-music__time {
+    display: none;
+  }
+}
+
+/* ---------- 游戏中心 ---------- */
+
+.ph-games__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: .7rem;
+}
+
+.ph-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+  padding: .6rem .4rem;
+  border: 0;
+  border-radius: var(--ph-radius-sm);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ph-game__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ph-game__name {
+  font-size: .72rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.ph-games__stage {
+  display: flex;
+  flex-direction: column;
+  height: min(70dvh, 620px);
+}
+
+.ph-games__bar {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding-bottom: .5rem;
+}
+
+.ph-games__btn {
+  padding: .3rem .7rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .78rem;
+  cursor: pointer;
+}
+
+.ph-games__title {
+  font-size: .82rem;
+  color: var(--ph-text-dim);
+}
+
+.ph-games__frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: 1px solid var(--ph-border);
+  border-radius: var(--ph-radius-sm);
+  background: #fff;
+}
+
+.ph-games__fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  padding: 2rem 1rem;
+  font-size: .84rem;
+  text-align: center;
+}
+
+.ph-games__open {
+  padding: .45rem 1rem;
+  border-radius: 999px;
+  background: #4c8bf5;
+  color: #fff;
+  text-decoration: none;
+  font-size: .8rem;
+}
+
+/* ---------- 工具 App ---------- */
+
+.ph-tools__error {
+  margin: .8rem 0;
+  font-size: .84rem;
+  color: var(--ph-text-dim);
+}
+
+/* 工具页的卡片网格在手机窗口里重排 */
+#ph-tools-app .tools-grid {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+/* ---------- Dock 菜单 ---------- */
+
+.ph-dock-menu {
+  position: fixed;
+  z-index: 3000;
+  min-width: 132px;
+  padding: .3rem;
+  border: 1px solid var(--ph-border);
+  border-radius: 14px;
+  background: var(--ph-glass-strong);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .28);
+  color: var(--ph-text);
+}
+
+.ph-dock-menu__title {
+  padding: .35rem .6rem .25rem;
+  font-size: .72rem;
+  color: var(--ph-text-dim);
+  border-bottom: 1px solid var(--ph-border);
+  margin-bottom: .2rem;
+}
+
+.ph-dock-menu__item {
+  display: block;
+  width: 100%;
+  padding: .45rem .6rem;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .82rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ph-dock-menu__item:hover {
+  background: rgba(127, 127, 127, .18);
+}
+
+/* ---------- 第二屏 ---------- */
+
+#ph-posts {
+  position: relative;
+  z-index: 1;
+  padding: 2.4rem 1.2rem 4rem;
+  color: #fff;
+}
+
+.ph-posts__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ph-posts__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: .9rem;
+}
+
+.ph-posts__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ph-posts__more {
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .82);
+}
+
+.ph-posts__list {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ph-post__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  padding: .8rem 1rem;
+  /* 同状态栏：直接压在壁纸上，用深色半透明底 + 白字，任何壁纸下都可读 */
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: var(--ph-radius-sm);
+  background: rgba(0, 0, 0, .28);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: #fff;
+  text-decoration: none;
+}
+
+.ph-post__title {
+  font-size: .9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ph-post__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  flex: 0 0 auto;
+  font-size: .72rem;
+  color: rgba(255, 255, 255, .78);
+}
+
+.ph-post__cat {
+  padding: .1rem .45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .22);
+}
+
+/* ---------- 响应式（必须排在基础 grid 规则之后）---------- */
+
+@media (max-width: 768px) {
+  /* 间距整体收紧：按 390x844 实测，原值让 Dock 底部超出视口 4px，
+     首屏看 Dock 是被切掉一点的。收紧后桌面能整屏放下。 */
+  .ph-widgets {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .ph-widget {
+    min-height: 108px;
+    padding: .7rem .8rem;
+    border-radius: 20px;
+  }
+
+  .ph-grid {
+    gap: 12px 8px;
+    margin-top: 18px;
+  }
+
+  .ph-app__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    font-size: 1.25rem;
+  }
+
+  .ph-dock {
+    gap: 10px;
+    margin-top: 18px;
+    padding: .5rem .7rem;
+    /* 固定到 Dock 的图标多了会超出屏宽，这里允许横向滚动兜底 */
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .ph-dock::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ph-dock .ph-app__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+
+  .ph-scroll-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .ph-overlay {
+    padding: .6rem;
+  }
+
+  .ph-overlay__body {
+    padding: 1.1rem;
+  }
+
+  .ph-post__link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .35rem;
+  }
+}
+
+/* iOS Safari 下 fixed 背景渲染有问题，触屏设备改为随页面滚动 */
+@media (hover: none), (pointer: coarse) {
+  #ph-wallpaper {
+    position: absolute;
+    height: 100dvh;
+  }
+
+  .ph-app__icon {
+    transition: none;
+  }
+}
+
+@media (hover: hover) {
+  .ph-app:hover .ph-app__icon {
+    transform: scale(1.06);
+  }
+}
+
+/* ---------- 减弱动态效果 ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  #ph-lock {
+    transition: none;
+  }
+
+  .ph-lock__brand,
+  .ph-lock__hint,
+  .ph-scroll-hint {
+    animation: none;
+  }
+
+  .ph-overlay.is-launching .ph-overlay__panel,
+  .ph-overlay.is-closing .ph-overlay__panel {
+    animation: none;
+  }
+
+  .ph-app__icon,
+  .ph-music__progress span {
+    transition: none;
+  }
+}
