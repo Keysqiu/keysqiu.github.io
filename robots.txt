@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qqs666-lgtm.github.io/sitemap.xml
+Sitemap: https://keysqiu.github.io/sitemap.xml
